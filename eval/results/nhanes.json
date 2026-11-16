@@ -1,0 +1,176 @@
+{
+  "protocol": "docs/EVAL_PROTOCOL.md",
+  "files": {
+    "DEMO_L": "ca4374a158b493b8b0163e1388da21d57a18d1b9cecff2aa4e2fa2bec494fe23",
+    "BIOPRO_L": "912b345aad6b71d53a3bc299a7f3bb0d5530e9fa5b6e76d2d00103979861a476",
+    "ALB_CR_L": "fc011a80d14419884559372a3196f0a268b494f4f2fa972d00be1f3a23ba3c41",
+    "DIQ_L": "9535a023673ae869afae19d842d8679e06f6a464606ac15900686b41ef05090f",
+    "BPQ_L": "0acde3af0526c375942fe0735e3bf69a0422bcbc606f98a478209d2f47baa4b5",
+    "KIQ_U_L": "2f114aeee6e9c7bc9381729b95a6685e28f35c3fbc26558ca8b9458bf4bf3437",
+    "DEMO_F": "78c4d4a6e5eafa9da3bbb24a90d140fef5d8c0cda932a7ff8ee609288d4fae07",
+    "BIOPRO_F": "d138350f6a9318bb6a411b67f511e8eded677baa6ca8f4cad70dd86a0f0f428a",
+    "ALB_CR_F": "f902e8892db69054e8898022dc1ced19770cc2fa613bf2655455f6a4f1cfbb67",
+    "DIQ_F": "7e90371cbc98e77a9684eff32ffa0e4ee3e8fc04d97581a8773e19cb9fe901fa",
+    "BPQ_F": "e592c987f07002eb309a63dc7ebf6a7eaa83d740a4fd6ae69af15da40c65a21a",
+    "P_DEMO": "2e46c6c26bf77cd8989f64011ace12cbf42c0f3e03414eb59acc5328c8f87913",
+    "P_BIOPRO": "f242cb9f9da5787f77d81ffb02822350e01cea4adf072d23bc96eb008182010c",
+    "P_ALB_CR": "c493f6b74cc0608bb7083b92e074fc3070b9e614fd5e1e34d0ce943e0f6116bf",
+    "P_DIQ": "79153f799fc2171792771c4aa250029c62807f14915f1f81405b03233b1e5ae3",
+    "P_BPQ": "88af3557dd185cee2533c94c5302b361e89a54eb50754704f35d4e8120868c02",
+    "P_KIQ_U": "e1f6cc9b6b06c826731b453a77c8b44acd53f03e254f1a0690a0c6e3598d2e15",
+    "P_RXQ_RX": "0ee30345ccfee5ce0ff55e51fca4dec7389d3a8e985c59485d13400e9ec2ee2e"
+  },
+  "primary": {
+    "cycle": "NHANES August 2021-August 2023",
+    "population": {
+      "examined_adults": 8153,
+      "with_diabetes_or_hypertension": 3257,
+      "pregnant_excluded": 4,
+      "missing_creatinine_or_acr": 1037,
+      "in_population": 2216
+    },
+    "engine_rules_fired": {
+      "S1b": 442
+    },
+    "per_1000_adults_with_diabetes_or_hypertension": {
+      "albuminuria_behind_acceptable_egfr (ACR>=30, eGFR>=60; missed by baseline)": {
+        "per_1000": 142.8,
+        "ci95_lo": 127.7,
+        "ci95_hi": 159.4,
+        "n": 2216,
+        "events": 318,
+        "df": 15,
+        "t": 2.1314
+      },
+      "of_those_flagged_by_engine (per 1000 hidden; same threshold, so 1000 by construction)": {
+        "per_1000": 1000.0,
+        "ci95_lo": 1000.0,
+        "ci95_hi": 1000.0,
+        "n": 318,
+        "events": 318,
+        "df": 15,
+        "t": 2.1314
+      },
+      "baseline_flags (eGFR<60)": {
+        "per_1000": 132.4,
+        "ci95_lo": 118.9,
+        "ci95_hi": 147.2,
+        "n": 2216,
+        "events": 344,
+        "df": 15,
+        "t": 2.1314
+      },
+      "engine_flags": {
+        "per_1000": 192.9,
+        "ci95_lo": 172.2,
+        "ci95_hi": 215.5,
+        "n": 2216,
+        "events": 442,
+        "df": 15,
+        "t": 2.1314
+      },
+      "kidney_marker (eGFR<60 or ACR>=30, single visit)": {
+        "per_1000": 275.2,
+        "ci95_lo": 253.4,
+        "ci95_hi": 298.2,
+        "n": 2216,
+        "events": 662,
+        "df": 15,
+        "t": 2.1314
+      }
+    },
+    "share_of_kidney_markers_found (per 1000 with a marker)": {
+      "baseline_eGFR<60_only": {
+        "per_1000": 481.0,
+        "ci95_lo": 445.0,
+        "ci95_hi": 517.3,
+        "n": 662,
+        "events": 344,
+        "df": 15,
+        "t": 2.1314
+      },
+      "engine_only (= ACR>=30 on one visit)": {
+        "per_1000": 701.0,
+        "ci95_lo": 647.2,
+        "ci95_hi": 749.8,
+        "n": 662,
+        "events": 442,
+        "df": 15,
+        "t": 2.1314
+      }
+    },
+    "by_construction": "baseline + engine together find every single-visit marker (1000 per 1000): the marker is defined as eGFR<60 or ACR>=30, which is exactly the union of the two. Not a result.",
+    "end_to_end_check": {
+      "engine_flag_differs_from_ACR>=30": 0,
+      "examples": []
+    },
+    "note": "On one visit the engine's S1b threshold and the albuminuria reference are the same: 'engine flags' checks the pipeline on real values, it is not an accuracy claim."
+  },
+  "secondary": {
+    "cycle": "NHANES 2009-2010 (second urine = first-morning void at home within 10 days)",
+    "population_with_second_sample": 1933,
+    "population_without_second_sample": 179,
+    "repeat_orders_confirmed (per 1000 engine 'repeat ACR' orders, second ACR>=30)": {
+      "per_1000": 523.8,
+      "ci95_lo": 440.8,
+      "ci95_hi": 605.6,
+      "n": 360,
+      "events": 202,
+      "df": 16,
+      "t": 2.1199
+    },
+    "missed_by_single_test (per 1000 not flagged, second ACR>=30)": {
+      "per_1000": 13.5,
+      "ci95_lo": 9.0,
+      "ci95_hi": 20.2,
+      "n": 1573,
+      "events": 28,
+      "df": 16,
+      "t": 2.1199
+    },
+    "published_check": {
+      "source": "CDC/NCHS, NHANES 2009-2010 ALB_CR_F codebook, analytic note (read 15 Nov 2026): adults >=20 y (n=5247), weighted mean ACR 23.7 mg/g (random urine, first collection) and 15.9 mg/g (first-morning void, second collection); ACR >=30 mg/g in 7.7 % and 3.4 %, MEC weights.",
+      "n": {
+        "ours": 5247,
+        "published": 5247,
+        "matches": true
+      },
+      "mean_acr_first_mg_g": {
+        "ours": 23.7,
+        "published": 23.7,
+        "matches": true
+      },
+      "mean_acr_second_mg_g": {
+        "ours": 15.9,
+        "published": 15.9,
+        "matches": true
+      },
+      "median_acr_first_mg_g": {
+        "ours": 6.0,
+        "published": 6.0,
+        "matches": true
+      },
+      "median_acr_second_mg_g": {
+        "ours": 4.5,
+        "published": 4.5,
+        "matches": true
+      },
+      "acr_ge_30_first_pct": {
+        "ours": 7.7,
+        "published": 7.7,
+        "matches": true
+      },
+      "acr_ge_30_second_pct (as the note words it)": {
+        "ours": 4.7,
+        "published": 3.4,
+        "matches": false
+      },
+      "acr_ge_30_on_both_pct (alternative reading)": {
+        "ours": 3.4,
+        "published": 3.4,
+        "matches": true
+      },
+      "reading": "All figures match except 'ACR >= 30 on the second collection' (ours 4.7 % vs 3.4 %). The CDC's 3.4 % matches ACR >= 30 on BOTH samples (persistent), so the note most likely reports persistence under the label 'second collection'. Unconfirmed with CDC."
+    }
+  }
+}

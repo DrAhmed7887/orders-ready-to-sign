@@ -1,0 +1,33 @@
+.DS_Store
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+*.db
+*.sqlite
+eval/results/*.json
+!eval/results/.gitkeep
+node_modules/
+.claude/
+
+# NHANES raw downloads (public, re-fetched by eval/nhanes/fetch.py; pinned in MANIFEST.json)
+eval/nhanes/raw/
+# Committed external evaluation results
+!eval/results/nhanes.json
+!eval/results/nhanes_people.json
+!eval/results/nhanes_trace.json
+!eval/results/nhanes_errors.json
+!eval/results/notas_reales.json
+!eval/results/notas_reales_recall.json
+!eval/results/notas_reales_recall_acr.json
+
+# CodiEsp raw texts (public, CC BY 4.0, re-fetched by eval/notas_reales/fetch.py; SHA-256 pinned)
+eval/notas_reales/raw/
+!eval/results/notas_reales_heldout.json
+!eval/results/notas_reales_heldout2.json
+!eval/results/ciego_v15_set1.json
+!eval/results/ciego_v15_set2.json
+!eval/results/ciego_v15_set1_tuning.json
+!eval/results/vuelta15_tuning.json
+!eval/results/ciego_v15_set3.json
+!eval/results/ciego_v15_set*_signed.json

@@ -1,0 +1,65 @@
+{
+  "source": "CodiEsp v1.4, doi:10.5281/zenodo.3837305, CC BY 4.0",
+  "cases": 300,
+  "model": "grabado:Qwen/Qwen3-4B-Instruct-2507",
+  "checks_sha256": "aa338bda7bd9120786788229a89e91c86dc3df9d690117612dfe2c556f4c7af3",
+  "missing_outputs": 0,
+  "cases_cut_at_6000_chars": 13,
+  "model_said": {
+    "ninguna": 295,
+    "nefrologia": 5
+  },
+  "model_said_by_stratum": {
+    "fg": {
+      "ninguna": 70
+    },
+    "nefrologia": {
+      "ninguna": 9,
+      "nefrologia": 5
+    },
+    "rechazo": {
+      "ninguna": 40
+    },
+    "resto": {
+      "ninguna": 176
+    }
+  },
+  "accepted_findings": 4,
+  "accepted_by_label": {
+    "nefrologia": 4
+  },
+  "rejected_by_reason": {
+    "el modelo no encontró nada": 295,
+    "la frase no dice que esté en seguimiento por Nefrología (derivación, valoración o mención)": 1
+  },
+  "primary": {
+    "reviewer": "AI agent (Claude Sonnet 5.5 sub-agent), not a physician; every verdict re-read against the text by the main Claude session",
+    "wrong_accepted_findings": 1,
+    "notes": 300,
+    "sample": "enriched: resto 176, fg 70, rechazo 40, nefrologia 14 (only 'resto' is random)",
+    "judgment_calls_counted_correct": [
+      "background/S1139-13752011000300008-1#0"
+    ],
+    "strict_reading_wrong": 2,
+    "per_100_notes": 0.33,
+    "ci95_exact": [
+      0.01,
+      1.84
+    ],
+    "by_verdict": {
+      "correct": 3,
+      "wrong_label": 1
+    },
+    "wrong_that_could_change_an_order": 0,
+    "wrong_shown_only_as_a_grey_line_under_the_order": 1,
+    "wrong_cases": [
+      {
+        "key": "background/S0211-69952013000500032-1#0",
+        "label": "nefrologia",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "Only an acute admission: \"Se ingresó en Nefrología con el diagnóstico de IRA prerrenal\", resolved (creatinine 0,86 at discharge) with no ongoing Nephrology follow-up described."
+      }
+    ]
+  }
+}

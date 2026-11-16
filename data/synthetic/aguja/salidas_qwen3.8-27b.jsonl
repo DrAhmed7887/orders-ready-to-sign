@@ -1,0 +1,6 @@
+{"sha256": "f19c5f620ed682691eb8c9f613cd3b49a1cab21aff43779177deeccb1eda9472", "salida": {"etiqueta": "ya_realizada", "prueba": "CAC", "fecha_en_nota": "2026-09-12", "frase": 2}, "modelo": "qwen3.8-27b"}
+{"sha256": "4ccd5b92579afd4811cd5124f317388e0f106019efbd57a10b20688d96502fc2", "salida": {"etiqueta": "ya_realizada", "prueba": "CAC", "fecha_en_nota": "2026-11-05", "frase": 1}, "modelo": "qwen3.8-27b"}
+{"sha256": "0fb68c8dfdaef38c673a4f9d78fe23f6ba41c242f34c5554e44ada17818892ac", "salida": {"etiqueta": "ninguna", "prueba": null, "fecha_en_nota": null, "frase": null}, "modelo": "qwen3.8-27b"}
+{"sha256": "574110753998eaed24f09de1bbadc20a56ee50028fb524a16eec2dc4c7eb99ea", "salida": {"etiqueta": "ninguna", "prueba": null, "fecha_en_nota": null, "frase": null}, "modelo": "qwen3.8-27b"}
+{"sha256": "6307c542651783d9873e870a8d6d07ee64b9dcb5397a9d3724394f6cdade78f2", "salida": {"etiqueta": "rechazo", "prueba": "CAC", "fecha_en_nota": null, "frase": 2}, "modelo": "qwen3.8-27b"}
+{"sha256": "771d637e97debc3a34a61880d522ac47c4119119bf9ab36d388dfe34e9d1ecd8", "salida": {"etiqueta": "nefrologia", "prueba": null, "fecha_en_nota": null, "frase": 2}, "modelo": "qwen3.8-27b"}

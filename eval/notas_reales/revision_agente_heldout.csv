@@ -1,0 +1,5 @@
+"key","verdict","comment"
+"background/S0211-69952013000500032-1#0","wrong_label","Only an acute admission: ""Se ingresó en Nefrología con el diagnóstico de IRA prerrenal"", resolved (creatinine 0,86 at discharge) with no ongoing Nephrology follow-up described."
+"background/S1139-13752011000300008-1#0","correct","The sentence says the CKD was ""en seguimiento hasta entonces por nefrología pediátrica"", and the case continues with dialysis and a transplant with periodic visits (""acudiendo periódicamente a la consulta de TX.Renal""), so she is followed by Nephrology; the sentence alone is past tense, which is the only doubt."
+"background/S0004-06142008000400015-1#0","correct","""en control por nefrología infantil"" states ongoing paediatric Nephrology follow-up for renal angiomyolipomas in tuberous sclerosis."
+"background/S0211-69952012000200015-1#0","correct","""efectuar seguimiento en la consulta externa de Nefrología"" for residual proteinuria, and the text later refers to ""repetidos estudios a lo largo del seguimiento""."

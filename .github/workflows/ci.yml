@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.9 = los portátiles del equipo; 3.12 = actual. Imagen oficial de Python: no depende de la versión de Ubuntu.
+        python-version: ["3.9", "3.12"]
+    container: python:${{ matrix.python-version }}-slim
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -c "import sqlite3, sys; print('Python', sys.version.split()[0], '· SQLite', sqlite3.sqlite_version)"
+      - run: python -m pip install -q -r requirements.txt
+      - run: python -m pytest -q
+      - name: Demo de punta a punta (las mismas reglas que ve el médico)
+        run: python ejecutar.py data/synthetic/demo_seed.sql -o "$RUNNER_TEMP/pedidos.json"
+      - name: La misma demo leída desde un Bundle FHIR R4 sintético (fhir/leer_fhir.py)
+        run: python ejecutar.py data/synthetic/fhir/demo_bundle.json --sistema-cie urn:sintetico:cie-10-es --sistema-sip urn:sintetico:sip -o "$RUNNER_TEMP/pedidos_fhir.json"
+      - name: Evaluación frente a etiquetas y al filtro básico
+        run: |
+          python eval/evaluar.py data/synthetic/demo_seed.sql data/synthetic/demo_etiquetas.csv \
+            -o "$RUNNER_TEMP/demo.md" --exigir
+          cat "$RUNNER_TEMP/demo.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Set adversarial de SET_CIEGO.md (20 casos difíciles, etiquetas antes de las reglas)
+        run: |
+          python eval/evaluar.py data/synthetic/ciego/extracto.sql data/synthetic/ciego/etiquetas.csv \
+            -o "$RUNNER_TEMP/ciego.md" --exigir
+          cat "$RUNNER_TEMP/ciego.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Lector de notas, set de desarrollo (salidas grabadas; la CI nunca llama a un modelo)
+        run: |
+          python eval/evaluar.py data/synthetic/notas_dev/extracto.sql data/synthetic/notas_dev/etiquetas_sin_notas.csv --exigir > /dev/null
+          python eval/evaluar.py data/synthetic/notas_dev/extracto.sql data/synthetic/notas_dev/etiquetas.csv \
+            --notas-grabadas data/synthetic/notas_dev/salidas_oraculo.jsonl -o "$RUNNER_TEMP/notas_dev.md" --exigir
+          { echo "### Lector de notas: set de desarrollo con salidas «oráculo» (comprueba el código, no el modelo)"; cat "$RUNNER_TEMP/notas_dev.md"; } >> "$GITHUB_STEP_SUMMARY"
+      - name: La aguja en el pajar (cupo 250 + Amparo; sin notas → S1b, con notas → S1c)
+        run: |
+          python eval/evaluar.py data/synthetic/aguja/extracto.sql data/synthetic/aguja/etiquetas_sin_notas.csv --exigir > /dev/null
+          python eval/evaluar.py data/synthetic/aguja/extracto.sql data/synthetic/aguja/etiquetas.csv \
+            --notas-grabadas data/synthetic/aguja/salidas_oraculo.jsonl -o "$RUNNER_TEMP/aguja.md" --exigir
+          python eval/notas.py data/synthetic/aguja data/synthetic/aguja/salidas_oraculo.jsonl -o "$RUNNER_TEMP/aguja_notas.md"
+          { echo "### La aguja en el pajar (salidas «oráculo»: comprueba el código, no el modelo)"; cat "$RUNNER_TEMP/aguja.md" "$RUNNER_TEMP/aguja_notas.md"; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Modelo real grabado (Qwen3-4B en Modal UE, una vez; la CI solo repite sus salidas)
+        run: |
+          for s in notas_dev aguja; do
+            python eval/evaluar.py data/synthetic/$s/extracto.sql data/synthetic/$s/etiquetas.csv \
+              --notas-grabadas data/synthetic/$s/salidas_qwen3-4b-instruct-2507.jsonl -o "$RUNNER_TEMP/${s}_qwen.md" --exigir
+            python eval/notas.py data/synthetic/$s data/synthetic/$s/salidas_qwen3-4b-instruct-2507.jsonl -o "$RUNNER_TEMP/${s}_qwen_notas.md"
+            { echo "### $s con las salidas grabadas de Qwen3-4B-Instruct-2507"; cat "$RUNNER_TEMP/${s}_qwen.md" "$RUNNER_TEMP/${s}_qwen_notas.md"; } >> "$GITHUB_STEP_SUMMARY"
+          done
+      - name: Cupo AP español de 1.000 pacientes (etiquetas desde el estado latente, no desde el SQL)
+        run: |
+          python scripts/generar_cupo_espanol.py --comprobar
+          D=data/synthetic/cupo_espanol_1000
+          python eval/evaluar.py $D/extracto.sql $D/etiquetas_sin_notas.csv --exigir > /dev/null
+          python eval/evaluar.py $D/extracto.sql $D/etiquetas_cupo_1000.csv --notas-grabadas $D/salidas_oraculo.jsonl -o "$RUNNER_TEMP/cupo1000.md" --exigir
+          { echo "### Cupo AP español, 1.000 pacientes (salidas «oráculo»)"; cat "$RUNNER_TEMP/cupo1000.md"; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Bucle de estrés (todos los conjuntos)
+        run: python eval/bucle_estres.py --exigir >> "$GITHUB_STEP_SUMMARY"
+      - name: Rendimiento sobre un cupo sintético de 250 pacientes (ruido, no validación)
+        run: |
+          python eval/rendimiento.py data/synthetic/cupo_250.sql -o "$RUNNER_TEMP/cupo.md"
+          cat "$RUNNER_TEMP/cupo.md" >> "$GITHUB_STEP_SUMMARY"
+
+  pantalla:
+    # Clics reales sobre ui/index.html: firmar, aplazar, descartar con motivo, recargar, exportar, enlace manipulado.
+    runs-on: ubuntu-24.04   # versión que Playwright soporta para --with-deps
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright-core install --with-deps chromium
+      - run: npm run test:ui
+        env:
+          PYTHON: python

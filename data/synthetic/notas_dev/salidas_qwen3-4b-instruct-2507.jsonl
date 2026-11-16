@@ -1,0 +1,11 @@
+{"sha256": "a6ef567b36a4f8b4f8fc6774622decf26996d7e3b296fcd91a8aba678ef722ac", "salida": {"etiqueta": "ya_realizada", "prueba": "CAC", "fecha_en_nota": "2026-10-20", "frase": 2}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "dd10d2d93471b565092e208c14ca38da4035a2c3c3e121c90ad803511debd72d", "salida": {"etiqueta": "ya_realizada", "prueba": "CAC", "fecha_en_nota": null, "frase": 2}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "07e3805bb26e6357810464fa5dea1cbc8471ca7fc06472a077662e4b6626a362", "salida": {"etiqueta": "ya_realizada", "prueba": "CAC", "fecha_en_nota": "2026-09-15", "frase": 1}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "56bc43d391e20e7e00a17a0fd73dec7ede7012cf4f0b4e47301e7d9413b2708e", "salida": {"etiqueta": "ya_realizada", "prueba": "CAC", "fecha_en_nota": "2026-01-01", "frase": 1}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "8cb63f1212acae1419f03c98d15b506c7f8a8baec59b7d6383f574eaef210697", "salida": {"etiqueta": "rechazo", "prueba": "CAC", "fecha_en_nota": null, "frase": 1}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "6cdd38d1b1698cf078e96ebfdb7111d503290282f63f01c479449935c57d8d9c", "salida": {"etiqueta": "nefrologia", "prueba": null, "fecha_en_nota": null, "frase": 2}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "671ab2a8c2baed9ec160914376fec0aac88442eb3821bdc089a3af47e91ca85f", "salida": {"etiqueta": "ninguna", "prueba": null, "fecha_en_nota": null, "frase": null}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "bdecd2084e30ab3c94245c85d3231bca78e58b3399dc5be35303398b44179eaf", "salida": {"etiqueta": "ya_realizada", "prueba": "CAC", "fecha_en_nota": "2026-10-02", "frase": 3}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "9ec4b81085387a4c102899ad6c12f3f396bfdd93493d87cd3daf758a11ecf57f", "salida": {"etiqueta": "ninguna", "prueba": null, "fecha_en_nota": null, "frase": null}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "c39142b70c1f96045643ed0ec5ca714f534ba05252369ada937b7aa738a37d76", "salida": {"etiqueta": "ya_realizada", "prueba": "FGe", "fecha_en_nota": "2026-11-05", "frase": 1}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}
+{"sha256": "ad25447299e5e9faf5a8bf0ed1a566abe81572aa08a3e67cb38831643b80b646", "salida": {"etiqueta": "ya_realizada", "prueba": "CAC", "fecha_en_nota": "2025-10-03", "frase": 1}, "modelo": "Qwen/Qwen3-4B-Instruct-2507"}

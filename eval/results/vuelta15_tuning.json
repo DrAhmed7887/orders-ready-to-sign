@@ -1,0 +1,275 @@
+{
+ "reference": "AI agents (Claude Sonnet 5.5 sub-agents) blind to the model output; not a physician",
+ "sample": "albumin stratum of held-out 2 (LivingNER): every case naming urine albumin, all of them",
+ "albumin_cases": 66,
+ "cases_with_a_marked_acr": 21,
+ "marks_by_label": {
+  "acr": 24,
+  "other_urine": 44,
+  "nefrologia": 1
+ },
+ "primary_acr_recall_per_note": {
+  "k": 7,
+  "n": 21,
+  "pct": 33.3,
+  "ci95": [
+   14.6,
+   57.0
+  ]
+ },
+ "model_pointed_to_a_marked_acr_sentence": {
+  "k": 9,
+  "n": 21,
+  "pct": 42.9,
+  "ci95": [
+   21.8,
+   66.0
+  ]
+ },
+ "of_which_model_named_the_acr_test": 8,
+ "accepted_with_a_value_read": 0,
+ "accepted_with_the_right_value_and_unit": 0,
+ "cases": [
+  {
+   "case": "livingner_test_background/cc_reumatologia65",
+   "model_said": "ya_realizada",
+   "model_test": "CAC",
+   "model_sentence": 3,
+   "marked_acr_sentences": [
+    3
+   ],
+   "accepted": true,
+   "value_marked": "",
+   "unit_marked": "",
+   "value_read": null,
+   "unit_read": null
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna335",
+   "model_said": "ya_realizada",
+   "model_test": "FGe",
+   "model_sentence": 12,
+   "marked_acr_sentences": [
+    12
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/casos_clinicos_cardiologia337",
+   "model_said": null,
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    31
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna670",
+   "model_said": "ninguna",
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    2
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna27",
+   "model_said": "ya_realizada",
+   "model_test": "CAC",
+   "model_sentence": 8,
+   "marked_acr_sentences": [
+    8
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/cc_onco405",
+   "model_said": "nefrologia",
+   "model_test": null,
+   "model_sentence": 3,
+   "marked_acr_sentences": [
+    3
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna726",
+   "model_said": "ninguna",
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    11
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/cc_onco630",
+   "model_said": "ninguna",
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    1
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_urologia409",
+   "model_said": "ya_realizada",
+   "model_test": "CAC",
+   "model_sentence": 18,
+   "marked_acr_sentences": [
+    5,
+    18,
+    21
+   ],
+   "accepted": true,
+   "value_marked": "3,5",
+   "unit_marked": "",
+   "value_read": null,
+   "unit_read": null
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_neurologia21",
+   "model_said": "ninguna",
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    9
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/cc_reumatologia284",
+   "model_said": null,
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    1
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/casos_clinicos_pediatria10",
+   "model_said": null,
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    45
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medtropical3",
+   "model_said": "ya_realizada",
+   "model_test": "CAC",
+   "model_sentence": 11,
+   "marked_acr_sentences": [
+    11,
+    13
+   ],
+   "accepted": true,
+   "value_marked": "mayor a 50",
+   "unit_marked": "mg/g Cr",
+   "value_read": null,
+   "unit_read": null
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna58",
+   "model_said": "ya_realizada",
+   "model_test": "CAC",
+   "model_sentence": 11,
+   "marked_acr_sentences": [
+    11
+   ],
+   "accepted": true,
+   "value_marked": "57",
+   "unit_marked": "mg/g",
+   "value_read": null,
+   "unit_read": null
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna365",
+   "model_said": "ya_realizada",
+   "model_test": "CAC",
+   "model_sentence": 11,
+   "marked_acr_sentences": [
+    11
+   ],
+   "accepted": true,
+   "value_marked": "normal",
+   "unit_marked": "",
+   "value_read": null,
+   "unit_read": null
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna955",
+   "model_said": "ya_realizada",
+   "model_test": "CAC",
+   "model_sentence": 11,
+   "marked_acr_sentences": [
+    11
+   ],
+   "accepted": true,
+   "value_marked": "",
+   "unit_marked": "",
+   "value_read": null,
+   "unit_read": null
+  },
+  {
+   "case": "livingner_test_background/cc_reumatologia283",
+   "model_said": "ninguna",
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    17
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_endocrinologia123",
+   "model_said": "ninguna",
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    14
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna505",
+   "model_said": "ya_realizada",
+   "model_test": "CAC",
+   "model_sentence": 8,
+   "marked_acr_sentences": [
+    8
+   ],
+   "accepted": true,
+   "value_marked": "36",
+   "unit_marked": "mg/g",
+   "value_read": null,
+   "unit_read": null
+  },
+  {
+   "case": "livingner_test_background/casos_clinicos_cardiologia280",
+   "model_said": null,
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    66
+   ],
+   "accepted": false
+  },
+  {
+   "case": "livingner_test_background/caso_clinico_medicina_interna869",
+   "model_said": "ninguna",
+   "model_test": null,
+   "model_sentence": null,
+   "marked_acr_sentences": [
+    6
+   ],
+   "accepted": false
+  }
+ ]
+}

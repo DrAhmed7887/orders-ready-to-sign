@@ -1,0 +1,110 @@
+{
+  "DEMO_L": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.xpt",
+    "sha256": "ca4374a158b493b8b0163e1388da21d57a18d1b9cecff2aa4e2fa2bec494fe23",
+    "bytes": 2582160,
+    "pinned_on": "2026-11-15"
+  },
+  "BIOPRO_L": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BIOPRO_L.xpt",
+    "sha256": "912b345aad6b71d53a3bc299a7f3bb0d5530e9fa5b6e76d2d00103979861a476",
+    "bytes": 2425520,
+    "pinned_on": "2026-11-15"
+  },
+  "ALB_CR_L": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/ALB_CR_L.xpt",
+    "sha256": "fc011a80d14419884559372a3196f0a268b494f4f2fa972d00be1f3a23ba3c41",
+    "bytes": 545440,
+    "pinned_on": "2026-11-15"
+  },
+  "DIQ_L": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DIQ_L.xpt",
+    "sha256": "9535a023673ae869afae19d842d8679e06f6a464606ac15900686b41ef05090f",
+    "bytes": 847600,
+    "pinned_on": "2026-11-15"
+  },
+  "BPQ_L": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BPQ_L.xpt",
+    "sha256": "0acde3af0526c375942fe0735e3bf69a0422bcbc606f98a478209d2f47baa4b5",
+    "bytes": 409680,
+    "pinned_on": "2026-11-15"
+  },
+  "KIQ_U_L": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/KIQ_U_L.xpt",
+    "sha256": "2f114aeee6e9c7bc9381729b95a6685e28f35c3fbc26558ca8b9458bf4bf3437",
+    "bytes": 564320,
+    "pinned_on": "2026-11-15"
+  },
+  "DEMO_F": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2009/DataFiles/DEMO_F.xpt",
+    "sha256": "78c4d4a6e5eafa9da3bbb24a90d140fef5d8c0cda932a7ff8ee609288d4fae07",
+    "bytes": 3631600,
+    "pinned_on": "2026-11-15"
+  },
+  "BIOPRO_F": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2009/DataFiles/BIOPRO_F.xpt",
+    "sha256": "d138350f6a9318bb6a411b67f511e8eded677baa6ca8f4cad70dd86a0f0f428a",
+    "bytes": 2187200,
+    "pinned_on": "2026-11-15"
+  },
+  "ALB_CR_F": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2009/DataFiles/ALB_CR_F.xpt",
+    "sha256": "f902e8892db69054e8898022dc1ced19770cc2fa613bf2655455f6a4f1cfbb67",
+    "bytes": 758400,
+    "pinned_on": "2026-11-15"
+  },
+  "DIQ_F": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2009/DataFiles/DIQ_F.xpt",
+    "sha256": "7e90371cbc98e77a9684eff32ffa0e4ee3e8fc04d97581a8773e19cb9fe901fa",
+    "bytes": 1620960,
+    "pinned_on": "2026-11-15"
+  },
+  "BPQ_F": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2009/DataFiles/BPQ_F.xpt",
+    "sha256": "e592c987f07002eb309a63dc7ebf6a7eaa83d740a4fd6ae69af15da40c65a21a",
+    "bytes": 1161040,
+    "pinned_on": "2026-11-15"
+  },
+  "P_DEMO": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/P_DEMO.xpt",
+    "sha256": "2e46c6c26bf77cd8989f64011ace12cbf42c0f3e03414eb59acc5328c8f87913",
+    "bytes": 3614720,
+    "pinned_on": "2026-11-15"
+  },
+  "P_BIOPRO": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/P_BIOPRO.xpt",
+    "sha256": "f242cb9f9da5787f77d81ffb02822350e01cea4adf072d23bc96eb008182010c",
+    "bytes": 3420640,
+    "pinned_on": "2026-11-15"
+  },
+  "P_ALB_CR": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/P_ALB_CR.xpt",
+    "sha256": "c493f6b74cc0608bb7083b92e074fc3070b9e614fd5e1e34d0ce943e0f6116bf",
+    "bytes": 835600,
+    "pinned_on": "2026-11-15"
+  },
+  "P_DIQ": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/P_DIQ.xpt",
+    "sha256": "79153f799fc2171792771c4aa250029c62807f14915f1f81405b03233b1e5ae3",
+    "bytes": 3361520,
+    "pinned_on": "2026-11-15"
+  },
+  "P_BPQ": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/P_BPQ.xpt",
+    "sha256": "88af3557dd185cee2533c94c5302b361e89a54eb50754704f35d4e8120868c02",
+    "bytes": 899520,
+    "pinned_on": "2026-11-15"
+  },
+  "P_KIQ_U": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/P_KIQ_U.xpt",
+    "sha256": "e1f6cc9b6b06c826731b453a77c8b44acd53f03e254f1a0690a0c6e3598d2e15",
+    "bytes": 1184720,
+    "pinned_on": "2026-11-15"
+  },
+  "P_RXQ_RX": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/P_RXQ_RX.xpt",
+    "sha256": "0ee30345ccfee5ce0ff55e51fca4dec7389d3a8e985c59485d13400e9ec2ee2e",
+    "bytes": 16154000,
+    "pinned_on": "2026-11-15"
+  }
+}

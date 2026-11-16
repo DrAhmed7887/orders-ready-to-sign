@@ -1,0 +1,1516 @@
+{
+ "source": "LivingNER v6.3.1, doi:10.5281/zenodo.7684093, CC BY 4.0",
+ "seed": 20261118,
+ "excluded_earlier_samples": [],
+ "excluded_cases": 0,
+ "pool_sizes": {
+  "albumin": 66,
+  "nefrologia": 122,
+  "fg": 856,
+  "rechazo": 264,
+  "resto": 8061
+ },
+ "excluded_near_duplicates": 5603,
+ "cases": [
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna97",
+   "stratum": "nefrologia",
+   "sha256": "3ea5da61a4f8513cd7672aa0a561073bb56f3cba7377fc60ba754a2858237d2b"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia624",
+   "stratum": "resto",
+   "sha256": "7979ea4c3921bf118c1a98a86c25bee4d98fb35b05119bd0a8d78f7aec4c7ba9"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna787",
+   "stratum": "resto",
+   "sha256": "c85ed08f32b56cc0a64fab33f23634a0defdc6c13cd21e81a3fe954e3b3caa87"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas151",
+   "stratum": "fg",
+   "sha256": "d343746ce60e4c1009ea1328466a9c6e55cd30c7adedf9202b04670bc1afbc2e"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia69",
+   "stratum": "rechazo",
+   "sha256": "1bf7c2d25e7c35635d9e7410c5620b4c7e0c048511f509d011498b630baa6a98"
+  },
+  {
+   "id": "livingner_test_background/cc_onco830",
+   "stratum": "nefrologia",
+   "sha256": "8b4dd4164b06bd6597d2ec69f62c77693803b10cd222b6f09b2f87b114bc2c59"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas200",
+   "stratum": "fg",
+   "sha256": "2ff2b0759c848a977ea27d04884dcddfeac3ca61fc9eacd5fa49c51b5cff09cc"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna159",
+   "stratum": "albumin",
+   "sha256": "8c8aba9ff38180ba7526895005ba60bfa2534cac4d58eba4e8ef06d77b823870"
+  },
+  {
+   "id": "livingner_test_background/cc_geneticas70",
+   "stratum": "resto",
+   "sha256": "77f50db1f827c390acd86bbcb76dccee3487cf19629dfafbac814dedd353a0cf"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia132",
+   "stratum": "resto",
+   "sha256": "49f9f32d7518e05a4d31355571958a4d4b4d6753102040c404c55e6a2707c589"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia213",
+   "stratum": "fg",
+   "sha256": "9ea4c9eac011e3b8236eb8b34d1c9080d464b02677d0a2a48cf322bbdc3e28db"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria368",
+   "stratum": "rechazo",
+   "sha256": "ea9063ecb6f2de5bb6bd3ad1418e210384f79c834176052b8c3a7ed16b1727e2"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna900",
+   "stratum": "albumin",
+   "sha256": "58ccf281a0c1b613e50f47f5f486b594f4524d608e51e9b4ec93d6d01569cadc"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria279",
+   "stratum": "rechazo",
+   "sha256": "54ba36311701a7d6d34178225449789db6a30ec313afdfc488c0a741129ff319"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna314",
+   "stratum": "nefrologia",
+   "sha256": "a026e46ea51b58dd4b7e960585a19a2e40ab6ef733c94b29367f2073cbaaf89f"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia65",
+   "stratum": "albumin",
+   "sha256": "8ea6ce328f67a6028df4cd76a3150149e865cd01c0b0cdd585999510d16f17d8"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1838",
+   "stratum": "resto",
+   "sha256": "95e43526d447aa4886184f8de8ba6b616f622a43b49b758127df59beb1c7762a"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia235",
+   "stratum": "resto",
+   "sha256": "c8954881d08d102bcce4c323292d3d1c61fe74066b007a37acdb920094de06e0"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria492",
+   "stratum": "rechazo",
+   "sha256": "7bb3ff2ec7768f7a71a0fa2731a54bc666c98f344b8b5f24c201a268def81473"
+  },
+  {
+   "id": "livingner_test_background/cc_geneticas64",
+   "stratum": "resto",
+   "sha256": "a2ccb58136513c01324b00b5a9e7ce7761fb918d883e551c7b5d64e56517cf54"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1778",
+   "stratum": "fg",
+   "sha256": "1a99ad95a92de1fb4795e60d8c7abd247556d661559517fd1eb27930383fc6c3"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1226",
+   "stratum": "resto",
+   "sha256": "cfa21e8e98139b139d35babb68e46e657c44ac857e9c2ca3f9d6fb4cb5705ec7"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_profesiones27",
+   "stratum": "resto",
+   "sha256": "d138a377b949a1544ca26ad9501e77d5fb695fe7b5463a0b24bd5697e7729071"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia424",
+   "stratum": "resto",
+   "sha256": "407cd9e0d6b512f892c86d9f8a72de678189bf5d3e221421f131544145bbc106"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia261",
+   "stratum": "albumin",
+   "sha256": "648b45b2334f904e124fef3745512e4acc2739e851780d18b54a50734e22b89d"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia52",
+   "stratum": "fg",
+   "sha256": "9d1707df2a96f03bde8b6c87bb3188829b1302c384dbb3b7109f467daf10c1de"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia102",
+   "stratum": "resto",
+   "sha256": "e11b2a9af1635f12aa3b011f2f21f6520a5f89316c77b779c56ba5d5305f8357"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia382",
+   "stratum": "resto",
+   "sha256": "830059beb898a1a1a41b1f4f3c819c8e21d1297328026ba0398b2d820f1212bc"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna186",
+   "stratum": "albumin",
+   "sha256": "94582b0c13bb498d12d9bfe080729eeea29e5d855d9ee3c342836a0ef172af3a"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1071",
+   "stratum": "resto",
+   "sha256": "3bf97f045f094101efd8b2d7154a21286fd1975f8a2c0f79cecc62caa085c607"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_atencion_primaria83",
+   "stratum": "fg",
+   "sha256": "94b67b87bf81f8d8c018604d3a52b26cc6bccbee82dd964445d9998d6f0185e2"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia215",
+   "stratum": "albumin",
+   "sha256": "61f74ff430489a73a11757415383ecaebd6f6ccf93754de6da574cfb1cd0157e"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia220",
+   "stratum": "resto",
+   "sha256": "6d15f539624f58fe3d208cf11d74483802ebdcebd7ff261357f5d7e6349d00e3"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia33",
+   "stratum": "nefrologia",
+   "sha256": "c3073619066bb8e82f6e30140ffa54b012c50b10b41e803879272966529d626b"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1522",
+   "stratum": "fg",
+   "sha256": "e648162f2df14dd04cd970f54de428fed35339a27824dd9d7da7e5602b6858e4"
+  },
+  {
+   "id": "livingner_test_background/cc_onco902",
+   "stratum": "albumin",
+   "sha256": "d9351fa3501961be0ecd0853314d1a8e8931e80aff9abc26433300bbe87fb0af"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna867",
+   "stratum": "resto",
+   "sha256": "825448783e5f2ce9f1bc762feed5ac27569706669169cfffd81a02a80a9da366"
+  },
+  {
+   "id": "livingner_test_background/cc_onco388",
+   "stratum": "fg",
+   "sha256": "30014875d77910f31e2a0ecc3e912c420a41aad65b2c7c0ecc707d24096991fe"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia103",
+   "stratum": "fg",
+   "sha256": "f2eeb61c385c673b95d9c86533995f815bc973a2f984a99c08b0b915bda68427"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_atencion_primaria102",
+   "stratum": "nefrologia",
+   "sha256": "585a3f0c2c15d01b580193060147d56f33b19b821dda00267be57ba70dbd9689"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas120",
+   "stratum": "resto",
+   "sha256": "f9b63c74f2a4096b535f10ad9dc242b7c5eda91943689c9ae9e42d70b62b15d3"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1180",
+   "stratum": "fg",
+   "sha256": "d140e7ef1367027681bdbfd33bc6dd5e58f24baac65391746cc37b146e9e0827"
+  },
+  {
+   "id": "livingner_test_background/cc_onco491",
+   "stratum": "albumin",
+   "sha256": "82330429d2bc64ed4ba3843379df7d5322da214c5a435019bccb07a416176197"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna54",
+   "stratum": "albumin",
+   "sha256": "5c7e910f394b8122a94300b15f0e9d8deaa8f3142e83ff8273e0a5c919dda512"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia152",
+   "stratum": "resto",
+   "sha256": "20b91030baf78811b630a9185dce4c7ce89b279b5ebf491d61df29255142bf3f"
+  },
+  {
+   "id": "livingner_test_background/cc_geneticas2",
+   "stratum": "resto",
+   "sha256": "ed19040054965694fe8983b5ef81f612c246ed50a748c991714110f5a68cf057"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_alergologia109",
+   "stratum": "resto",
+   "sha256": "4d4047aa5dccd5944f39288980626b411ad8bd23e4c2ea5b249ed9a8ca792e8f"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna335",
+   "stratum": "albumin",
+   "sha256": "54c50a403d172262c4b7b6d7c6950ea92d78e87a87a8f330666dcb5f675fbbfc"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_endocrinologia117",
+   "stratum": "resto",
+   "sha256": "0858a7d7777e322e34dca1f3c91c0f2843eb00c5c42cc73ca0ea49429a8cc5f5"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia271",
+   "stratum": "albumin",
+   "sha256": "9cc88f7e94d27b799115ff966d12a58c28ba584013ef464cff51ed5547d3bd41"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia374",
+   "stratum": "rechazo",
+   "sha256": "3929e01d9485b48526bbf61566794c2a18c50ef6c3c3240c1addc432ba9c7d6a"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia173",
+   "stratum": "fg",
+   "sha256": "b1660b0067a578cd7e9fd7263ff25c3443929e6a4690c2e53a6e9dbcdec8dad3"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas152",
+   "stratum": "fg",
+   "sha256": "3beb043ce4685221fbea278a94c795797d4fbf36bf35ebca61a9023d7b735936"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia337",
+   "stratum": "albumin",
+   "sha256": "482e1f65dcf27f0514faf75ff8f90ea7a6eed12fac7f997b279f87d00343b45f"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia319",
+   "stratum": "nefrologia",
+   "sha256": "cc069e73646018a73f745e26d9020927c2cc3b1c45556b033d61e1df83355edc"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia183",
+   "stratum": "fg",
+   "sha256": "a8a2b02e68d86f5b03812ef850d14cb121272707e098b05472f7fbdcf088d90b"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna799",
+   "stratum": "albumin",
+   "sha256": "2744100eeda87b48e4f7377644cb47b3b2a0592a1ef0bf62311b5420774f60c2"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria105",
+   "stratum": "rechazo",
+   "sha256": "0b1e24f66d06dadc09e763710ed3d86a9ac169d3dc226fdba8aeff0a79455b08"
+  },
+  {
+   "id": "livingner_test_background/cc_onco965",
+   "stratum": "resto",
+   "sha256": "5a7f21e6235b7ecea72313d2a12597d0f5bfbb72d94cd9dea9e31a6685ed337d"
+  },
+  {
+   "id": "livingner_test_background/cc_onco362",
+   "stratum": "resto",
+   "sha256": "64df440c8678c48a3c2ed47ecb48e6af8e64b3a1f7b58b0809c4b98d326388a6"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna281",
+   "stratum": "nefrologia",
+   "sha256": "5a343479925e82b817e1926358f572c45888e49cc89c14a1f6566569741bea69"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_alergologia40",
+   "stratum": "rechazo",
+   "sha256": "74d11811e51f6c2a6ae0ff12269e9f12d600ca2e60affcf4629ffd1dbb4dcbde"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia10",
+   "stratum": "albumin",
+   "sha256": "f64fe429d7833d4d8943b165fe15c3e6180acdc76981103b1b40d54d8145df5c"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna874",
+   "stratum": "rechazo",
+   "sha256": "85b083aca761cf77b9ee28f19304312311514d32940d5d73f98a606758fbd179"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia210",
+   "stratum": "rechazo",
+   "sha256": "388aba5f5cc58a25c81370703a829e02c3647ed1c3e31e4133cd2a02453a709e"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia92",
+   "stratum": "nefrologia",
+   "sha256": "b963f196c78702ff9ba177f0454c6f879da4510f1c0ded3ae4ad05b8cd11eaa8"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1500",
+   "stratum": "rechazo",
+   "sha256": "0e827368f5cdf791952f179af29d9fc28d3328aeec50db3cc747ec24371d6ddc"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria297",
+   "stratum": "rechazo",
+   "sha256": "df0ffe39ea90893b4a71138b0db3d187e94a58587dabc292a7b7b5b71bd21135"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_profesiones32",
+   "stratum": "resto",
+   "sha256": "0fe70d440ec4805a1ecb1588baa68be160a351065dfd815907b76e2fc60a9e12"
+  },
+  {
+   "id": "livingner_test_background/cc_onco698",
+   "stratum": "rechazo",
+   "sha256": "967162840968ea4a81550eba6db5ed9363777608cc19b5151b036a66010e6203"
+  },
+  {
+   "id": "livingner_test_background/cc_onco816",
+   "stratum": "resto",
+   "sha256": "04cf7d2c15567ea51dd72b285fc50d7ba82bb0d411729dd1b4aec2deb2c94f77"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia355",
+   "stratum": "resto",
+   "sha256": "6a5d06253a5c4b949fbdfd7df935d5974fa49878c40bb338de5603222aedfb3d"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna670",
+   "stratum": "albumin",
+   "sha256": "1435dff059eb66a01c34624642532e78182915b48613792c38a4bee8d161ea05"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1089",
+   "stratum": "nefrologia",
+   "sha256": "2380bc0be4fd267b757300e15dc4cad0eb0d3398a46f40eb4d443975241391da"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia273",
+   "stratum": "resto",
+   "sha256": "34fd3c755614ca813643bde0745cdd17a9fa42d5f9d464807371fe625c87638a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna516",
+   "stratum": "fg",
+   "sha256": "61b1509fb38ee0328418e906eaa1a54c5c5222f0a6afed2e2c65653d724b0b57"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urgencias151",
+   "stratum": "resto",
+   "sha256": "113bf33daa576c3fd8f0b84222742a0b2aa6d20c4cd94c600b540ec962d30600"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas150",
+   "stratum": "resto",
+   "sha256": "efba1965967e80c96495f236ee39043724a5bd73fb6b3853df0cb8a1ad637707"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia98",
+   "stratum": "fg",
+   "sha256": "0ba6c67654a2f308c6a36a84830f0527da919bab0f78b4526fec5cc2d84b9def"
+  },
+  {
+   "id": "livingner_test_background/cc_onco794",
+   "stratum": "nefrologia",
+   "sha256": "ab29cda1c436b3e7744f384385c20ad50ec3b8ee17b4b6613a681a4ea494ee28"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia367",
+   "stratum": "albumin",
+   "sha256": "203f4f954daf8ae3f9458d11e0621a5a97c29277df43016c7bfaa15e76345de2"
+  },
+  {
+   "id": "livingner_test_background/cc_onco547",
+   "stratum": "nefrologia",
+   "sha256": "aa6c7e69e6861e358ef93a5ad48d7d3340be1526aa0c66a72addafab387ca210"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia26",
+   "stratum": "rechazo",
+   "sha256": "e78a718e733061acbee62b208b9b4ca4b00465e31642b8689e19d52874ce497a"
+  },
+  {
+   "id": "livingner_test_background/cc_onco676",
+   "stratum": "nefrologia",
+   "sha256": "fd92de2ee97e83c63d8adec5747479487ca0a6cf0bb3a56c2f0423ed4bbf3a26"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia814",
+   "stratum": "resto",
+   "sha256": "bb45cbca656bb444021d95c7b5d9333b9fb6bd0a23a249dafc8ef196201af093"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia53",
+   "stratum": "fg",
+   "sha256": "2aa0bc43d67de1c5f87b58ed2737fbdfa858eace4c83beef258763ab65ac8fbf"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia518",
+   "stratum": "albumin",
+   "sha256": "535584ef705e5b51c9f5612777d425cac600e3454133a0ebb37ce8680ca011ee"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia953",
+   "stratum": "resto",
+   "sha256": "53023ca429e7ae58d114620cb05361dd6437185240f4f9f82a51e63ceadbfd7f"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna566",
+   "stratum": "nefrologia",
+   "sha256": "db04e07893c7a8b59fca92a68eb99a50481f904891f47aaeaa307d2cdd78f145"
+  },
+  {
+   "id": "livingner_test_background/cc_geneticas13",
+   "stratum": "resto",
+   "sha256": "48863f0f5f0c390d27e42222e082a6384835ff33f33baa3c2b86e7bec6686e85"
+  },
+  {
+   "id": "livingner_test_background/cc_onco729",
+   "stratum": "resto",
+   "sha256": "7c870836806c7024f959c239a176eee5f59ecc580fa57a547347027dac0009c5"
+  },
+  {
+   "id": "livingner_test_background/cc_onco53",
+   "stratum": "resto",
+   "sha256": "55713d9d7d54db1016e07777a6514f9bd4546d1af70df100e175bcc8f2864226"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna323",
+   "stratum": "resto",
+   "sha256": "91446f2021a99b29069322b77a34cbd49c233994cd1fc150b812557873314c28"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna27",
+   "stratum": "albumin",
+   "sha256": "bbc392889489143e81d7cf428333deef95aec27a3b0e8d4aaa2138645339acb6"
+  },
+  {
+   "id": "livingner_test_background/cc_onco683",
+   "stratum": "nefrologia",
+   "sha256": "cd4403b72ef5eb7615a9d3c766e3042e11f1c96a7b7945d3925d80e3c3e5e0aa"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia276",
+   "stratum": "albumin",
+   "sha256": "a06786568a96f5029283c17663c516ff32bda3fe79d70b972f1e4d515dc9f01f"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia305",
+   "stratum": "fg",
+   "sha256": "41dfeeabdcccc275a21dc93ad3b7f14c7bcec9c1a8caff77c7313c704972b2ac"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia135",
+   "stratum": "resto",
+   "sha256": "cc95449e177edd66f9eb0ce41f39e5332cb2bd57fd5b203c06cc3f2a4995e2fb"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia204",
+   "stratum": "albumin",
+   "sha256": "49c77f6e2079c5af980cd9f030a43845169f923429b68d8f79b61b7e453a1a6b"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria220",
+   "stratum": "rechazo",
+   "sha256": "2fc29031a00a1fce628611ecfab1300ce8747017f831f7560104227536e0d4d3"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia449",
+   "stratum": "fg",
+   "sha256": "d6b5740500214c79d75f079720ad63bee1eec0f22bca4dc5f66b18ccb831320b"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia3",
+   "stratum": "nefrologia",
+   "sha256": "33f97d9873840f9193ca21b17b8c200eb22154da489aebe3b9546a770c126f7f"
+  },
+  {
+   "id": "livingner_test_background/cc_onco166",
+   "stratum": "nefrologia",
+   "sha256": "6f4344c0b18a8049068d83dda969e3589e3fc6ecf40a5c4ea8e0cbb5c674168d"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia176",
+   "stratum": "albumin",
+   "sha256": "ed579c9b1439834c26f74e760cde621824c3a84be25fc149b9fa21ced700dbf7"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna196",
+   "stratum": "fg",
+   "sha256": "ba0f23a8b56ca87a1abf806450adfce56b9ce10c4da89de0574fd96b942d1af9"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia194",
+   "stratum": "resto",
+   "sha256": "9e1c8a4e8feb1a1b99cd6dd1d6f73d5346629578b50609a0c54abd348d7b7638"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia177",
+   "stratum": "fg",
+   "sha256": "9fb23ed4107594de2be48162f2036237fb44557eb9c61986beeba92ff42aac6d"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia42",
+   "stratum": "resto",
+   "sha256": "de496485355570d00f25e17f373c2cd59e0a813ce1251d1e35a71e554a64a222"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1444",
+   "stratum": "resto",
+   "sha256": "a5dd453c61f4b22bcb3b211733e9372f019623baea3d4dfafddf3e4921a2bee0"
+  },
+  {
+   "id": "livingner_test_background/cc_onco405",
+   "stratum": "albumin",
+   "sha256": "d502ab3bf2d91949426413db56c51ce929a04a6a93c784c8f30213e34673acd6"
+  },
+  {
+   "id": "livingner_test_background/cc_onco154",
+   "stratum": "resto",
+   "sha256": "8fd3b04080ddbee668cf8874967f0b9f6d3a4008284dc47fe2ad70275332ee76"
+  },
+  {
+   "id": "livingner_test_background/cc_onco55",
+   "stratum": "rechazo",
+   "sha256": "4324dcb6a6b41f824519dc3cb54bf2dc706651c5af52e9a5044c96ce87c8bd65"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia128",
+   "stratum": "rechazo",
+   "sha256": "af55c27fd9a62eddea1bbc8c13e27a3d1fe4bab3b39162af0730f753c5dc041e"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medtropical12",
+   "stratum": "resto",
+   "sha256": "0526a59c6f296bf3a724795963f66b418ca1fd4d88a4ef5741dbca35b8dc88cc"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_profesiones89",
+   "stratum": "resto",
+   "sha256": "99e8f170cbf460115f85da761dbc8a71e1070406ddd24ebe44d70b3060d1f76a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia149",
+   "stratum": "albumin",
+   "sha256": "b9434b32786719c3ba1c4d978bccd3f0a287c53b1bdce44822680b7ada55b2e3"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urgencias133",
+   "stratum": "fg",
+   "sha256": "8be415d6db5bc64b7d09c6c2a8175d188a40e96e31c8cc48096fc273ff59efa4"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1794",
+   "stratum": "resto",
+   "sha256": "a1c9cf0799299dc0926a6528fab864837072f54ccc5e7cc9b32f06abfff62bf2"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia113",
+   "stratum": "fg",
+   "sha256": "663427ec136bc97323751f19f84f0f21ae4252492db5a4ec4d031bd5c5aeaf89"
+  },
+  {
+   "id": "livingner_test_background/cc_onco839",
+   "stratum": "fg",
+   "sha256": "0d98de3876223a8600cf5c42c146ac491cb9f9b4ab5949b20e3f441a4c08aba8"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna726",
+   "stratum": "albumin",
+   "sha256": "af9ecc1d149e678bc45462451ab10868c9a5018d2afe3972eb2edaeb14e28849"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia222",
+   "stratum": "fg",
+   "sha256": "2b6841fc2477871dcf7ff8c3cbf7a1a9dd5974ad1f2515ba0cbc8801f05fc06c"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia630",
+   "stratum": "albumin",
+   "sha256": "a2922bcb50930c38b69e78a2fd59545627b7cc6de047c27656535071c5bbe63b"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia331",
+   "stratum": "rechazo",
+   "sha256": "0e9b162b67d599625e67e8685cf7ce0d840e976d1f261815f0884a5bacbe2324"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1799",
+   "stratum": "fg",
+   "sha256": "c237e282ac7e6c1227638fdee40b813416092664e15c4ab33e3d6dd1bc581353"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia321",
+   "stratum": "fg",
+   "sha256": "eb23566823fd9b30e9fab49a0c8b2b1b4ccb30d732810b9172269146f42ae03d"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia207",
+   "stratum": "fg",
+   "sha256": "dc89814d10d4d64e465b67dd3e91410cca772275e10b4608d1fbc570203478ce"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia659",
+   "stratum": "resto",
+   "sha256": "dd69810dd509bd221e57ce505cce56e8682cbfe99103fae2fd8967d3a07a3c48"
+  },
+  {
+   "id": "livingner_test_background/cc_onco630",
+   "stratum": "albumin",
+   "sha256": "4e6b3ff56ea4641617fea118557feaa8cb7374e4c520ea0edddb555ad0c2766c"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia14",
+   "stratum": "nefrologia",
+   "sha256": "975bfe03fb0a4083ea452ce4f6c7dab96a7c3b658e2e6bf6f5de6f87fbe7ad4a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urgencias143",
+   "stratum": "resto",
+   "sha256": "456ff64e491071eece50cd5f81c86ec3f66a2f4982e45ce4dfdd0429d327cd7f"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia306",
+   "stratum": "fg",
+   "sha256": "ae1b0fdab48c0b193a90181f71b6783333d5f54eabd8dccf7197d3ce22cc512e"
+  },
+  {
+   "id": "livingner_test_background/cc_onco730",
+   "stratum": "rechazo",
+   "sha256": "a1e0ba5f92cb2e2e3fd75148face44a44367cc1e067c5ba234826cbdc4e709f6"
+  },
+  {
+   "id": "livingner_test_background/cc_onco22",
+   "stratum": "nefrologia",
+   "sha256": "6c7d196787c1472d94b82322b282fd3bd907ae17e7bf77e307ba72525db123f3"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1506",
+   "stratum": "fg",
+   "sha256": "f8118d30487cfe1a3fe0e5b5a7d2014aaa37688bdcaded874999ab843c68c92c"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia201",
+   "stratum": "fg",
+   "sha256": "c3305b81033a5f4cc90cca1aa058d3fec89587803b00d6183d8ad7355a1bc812"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia105",
+   "stratum": "resto",
+   "sha256": "4b7c473fda73e0dd8b9df3dcd15a75c6ab07b82ac2e253dcc083737dbe6bd40b"
+  },
+  {
+   "id": "livingner_test_background/cc_onco445",
+   "stratum": "fg",
+   "sha256": "030f85ccddbe7d578b384969b56c4e3003781ec72131269f094dfce6c4e39ec1"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna918",
+   "stratum": "fg",
+   "sha256": "b40befaa681830cca0da9276181985fcb84b89d8d0b586bc24cd8bf523c42fa2"
+  },
+  {
+   "id": "livingner_test_background/cc_onco78",
+   "stratum": "rechazo",
+   "sha256": "54da1a6ca5ee7f695f2c0b64df98cf16310b6f0a84d1448c282f45c4e5f76d42"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas140",
+   "stratum": "resto",
+   "sha256": "287f26ce86d8f87fe631a383c8bd0ec24921d74dbb447c968a6cd9cc49256a8a"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_profesiones101",
+   "stratum": "rechazo",
+   "sha256": "9711699bbddbcc55d86ceb9e3c04d62340f237c21adc2ef51370b0364f294e17"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia109",
+   "stratum": "nefrologia",
+   "sha256": "6f7f9a5acb20a928e1584072b0bc5ba1f0cce1e6e650762e61794b91aa374a0c"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia230",
+   "stratum": "fg",
+   "sha256": "2336d9abb6979b6bb65d5bb60d3fd0e1fce8f1b744305d71e624f2332ad8f73c"
+  },
+  {
+   "id": "livingner_test_background/cc_onco985",
+   "stratum": "rechazo",
+   "sha256": "26f9ee0137f4f0710279daad5260b90c0c2d7f3db419773abd6432cad1164618"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia409",
+   "stratum": "albumin",
+   "sha256": "a7bd57542c73ea055facf45c2c267a0bcd3d5f512ba891e525b98dd83f62eacf"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna655",
+   "stratum": "albumin",
+   "sha256": "cab7f27ce5b693f6db9de395ec1ae95845cb6d88b6f34fd986875ff2993c603b"
+  },
+  {
+   "id": "livingner_test_background/cc_onco969",
+   "stratum": "fg",
+   "sha256": "49a35a7a1effc1734491e350e2c2c129aa0e0eccc2fda501e643e5c0e0eb3897"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_profesiones84",
+   "stratum": "rechazo",
+   "sha256": "bb3bdd9ec9ed961be1fcc9cd57b9034cddc12b35faded3445bc0a85ea280cece"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna981",
+   "stratum": "fg",
+   "sha256": "203c10c5394c9eaa46829a988558fb08cf0e6bfec8f564818e157f6ba5179393"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna87",
+   "stratum": "albumin",
+   "sha256": "8c2a92136b571d5f13c3d3c65b1478217a36a7feb5c0215d3860d8d3fcfb5461"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia21",
+   "stratum": "albumin",
+   "sha256": "752fb78f6d2f256e46efd9a804c510e4d7f3b978a291de3cb3fef4386d976a2e"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia454",
+   "stratum": "resto",
+   "sha256": "74a3158765854c123b064673900b3ffd35e433393a0dfddf494d7e29aa1a84c3"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_oftalmologia206",
+   "stratum": "resto",
+   "sha256": "61db370596e4bff23c36a9b31eacdf2a4f2a668b31ef46d1f79438442f872d83"
+  },
+  {
+   "id": "livingner_test_background/cc_onco79",
+   "stratum": "rechazo",
+   "sha256": "d3200831adf1e9333a5684b166ea4b118df4b30d0a608d1fff82ea6f05f27e8e"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia341",
+   "stratum": "albumin",
+   "sha256": "90630de2c9bd2363b45038115e18ab472e40072f4481186591601ca3cfc0ee34"
+  },
+  {
+   "id": "livingner_test_background/cc_onco957",
+   "stratum": "resto",
+   "sha256": "c77835694b4c5faeb6d50e1a64e61629764b87f350e7609c0787e707d3d096cd"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna491",
+   "stratum": "resto",
+   "sha256": "e7e4af55fc46683c952f358d638c3b3febf1d3cc7822fdd161e0510c33f3c53f"
+  },
+  {
+   "id": "livingner_test_background/cc_onco728",
+   "stratum": "albumin",
+   "sha256": "ec324aed04390be2faa2f243e72b576365276ce39b6a3fbea6a315ee0fd527c2"
+  },
+  {
+   "id": "livingner_test_background/32174057_ES",
+   "stratum": "resto",
+   "sha256": "bab0aba1dc73fbb809516f291b5d75a2555ea76c8d81d6320430a00ba3e410ea"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia323",
+   "stratum": "albumin",
+   "sha256": "e7e8a4d0eaead76f2524cd771e1f6117bd3a9f8a11cfb2967280fc7201a4ac84"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas130",
+   "stratum": "rechazo",
+   "sha256": "440da3932cf02d51de7c098c2a584503a88342acd932e39a7e5ffd1401657df0"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_pediatria88",
+   "stratum": "nefrologia",
+   "sha256": "59fe77bab74354ce181d4d48a4ec24790711c6b1d9ee7b152d374ecbe322d976"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1007",
+   "stratum": "resto",
+   "sha256": "39c2de9ddc9581cef201ca94fde6cd3660fa3538e659a83b35125ccf7906b1ff"
+  },
+  {
+   "id": "livingner_test_background/cc_onco924",
+   "stratum": "resto",
+   "sha256": "3af7a2deb57f72ccc8643c3560c70ba485f6d85d6977686897ffd059bae4cb67"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia174",
+   "stratum": "fg",
+   "sha256": "dbbf48b8e4b63afc01231e0c105d42cfd10d427d643600ace1c2fa76e8de26e8"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_pediatria25",
+   "stratum": "nefrologia",
+   "sha256": "1e2fd661e4821f60765bf96bcd71c9f66a4811b02c8856a1aa110f64ef65a7d7"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_atencion_primaria152",
+   "stratum": "albumin",
+   "sha256": "5a0a46aa2e11c3748b91688ff312a2dbe97b07e666b89f07ca878a03ab6e4c98"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia154",
+   "stratum": "fg",
+   "sha256": "465a62e80412b1ec04024bf91dc4180b05fc9c847267cde9600963cc5b80b0a0"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia284",
+   "stratum": "albumin",
+   "sha256": "8d1b365ead6ea66177ee7094160e3f36ecbab2f38317bbe6416f570db8631010"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna55",
+   "stratum": "fg",
+   "sha256": "29c13429959b0cb4a8dea3bc0e780711145ff3283816c3e6ff5cf04c8073f489"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia443",
+   "stratum": "nefrologia",
+   "sha256": "81036cce832e72c46b7397b1511b1e9efb326b1a74f154ece4cc2959f8a11aff"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia1105",
+   "stratum": "resto",
+   "sha256": "852da8e6a3b280c3ec91d2d48ba357bbe1dbce62809965ec9a5ac03aa390a398"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1701",
+   "stratum": "rechazo",
+   "sha256": "197f637cc1d6bb71db79679a43a5092363d2fd2e180fc94f14a08bea65fca12e"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia287",
+   "stratum": "fg",
+   "sha256": "26e2158143a38abbbecd539350a74e02846b53063a37f8b874b1fe59bdb0ab9c"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia46",
+   "stratum": "fg",
+   "sha256": "9ea63fb783155408ab4e191f102add502f95e0dcd6a41d53eb30719d0323287c"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna780",
+   "stratum": "nefrologia",
+   "sha256": "807a0f0d4ccd425dd63be926641ec1722f68bfa23f12948f449d3147d1553947"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia224",
+   "stratum": "fg",
+   "sha256": "6f8ceb4a02b69980a83b58fc7924e5da09f55060e0dfc79efeba759d24422d68"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas71",
+   "stratum": "fg",
+   "sha256": "0f1aba49bd0318bb9bb2677a969933f526d8018d23ce57f5191d09b5e1a5449f"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia209",
+   "stratum": "nefrologia",
+   "sha256": "d9c8d1efbd48ce72feac97897cd07244fca72e1b7952a0e75fa18a3695c58c63"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_pediatria10",
+   "stratum": "albumin",
+   "sha256": "6cf4997861183f489146e007d06fad26b7e402ade8d45655c50b95f8e6969bee"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia495",
+   "stratum": "resto",
+   "sha256": "a020c1f3a3d34d1114d04eb996bc4788384f8a1d25bfe45b0e7543c028865481"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1775",
+   "stratum": "fg",
+   "sha256": "88efcad577f34c11466946f419409172f1fcaad0fe3edb8d4767870354a5e274"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna969",
+   "stratum": "rechazo",
+   "sha256": "30f993c8f356f75d608b10c4f26a9500c6f084972c123e8f473e03b7ed1cad77"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1079",
+   "stratum": "fg",
+   "sha256": "bb25d0b8ff0620483701ae3c4bebe53cacbb3999922c4bff36dc52ab9ddb4ec0"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia100",
+   "stratum": "resto",
+   "sha256": "21addbcdf44ce510c405ebf4ea46ed7c18eff36b0630753459c580d4476ade5c"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1520",
+   "stratum": "rechazo",
+   "sha256": "c5dbf7af7e22ac54e9165b8e740c98dd0e8befa9c2b7d7145491de4eb5b17e04"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia226",
+   "stratum": "albumin",
+   "sha256": "16be7d670d918f706f4349edf582856f7b07a439cbde6f04bac764307a62d2bb"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia226",
+   "stratum": "nefrologia",
+   "sha256": "69641d51a7e242fa8708774cd82b1aa0064cebdb8b716597e8664e4a35147276"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_endocrinologia134",
+   "stratum": "resto",
+   "sha256": "c61f71311d274d3650a9fa4203703b9d53548e7f7148ac3bc5bf00f6d2c54fef"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia270",
+   "stratum": "resto",
+   "sha256": "64240bfe13edffef069205259e5c1401774b4c20472047b9842ef028683567f2"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medtropical3",
+   "stratum": "albumin",
+   "sha256": "7479ae3f231bfcb86db21fbe1ac3eb92b9055d8aa12f903cb19ffc0202b89f6f"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia189",
+   "stratum": "fg",
+   "sha256": "c65e950659ffc6c6b19a23a2cea245dda1f35e84cddbb9c1122569a9444ea110"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna480",
+   "stratum": "albumin",
+   "sha256": "1f2cd4df9071ae73ed7b032448f549be1559df47dd547a974f1c6288690eb4ce"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna101",
+   "stratum": "fg",
+   "sha256": "3101b40066fcf0dd43d44bd701c2ba8c4af1111a35916c635072ed15b0cce0e0"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria225",
+   "stratum": "resto",
+   "sha256": "b0f9dc7f4e60d868afe5ef55bd701d4df2c6fab7df7014ef2746f611a9126776"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia8",
+   "stratum": "fg",
+   "sha256": "25e204eba39f161a4f3b5e5b9beec7f6e652f2b677fb6b117a620af6abec9464"
+  },
+  {
+   "id": "livingner_test_background/cc_onco812",
+   "stratum": "nefrologia",
+   "sha256": "3de58e3e6fadf39fdf49adb785faae98fc17acec9cf4c966f0edad66fb4ad12f"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna176",
+   "stratum": "fg",
+   "sha256": "d87971de33c7c4a38f99702e8fc8d95360215a3306721f7eca1af19e406d47b9"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_endocrinologia156",
+   "stratum": "resto",
+   "sha256": "20e1d18543d97666968b54917198c23ad7e19e105782491dbec7b863a05ad0de"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_pediatria70",
+   "stratum": "albumin",
+   "sha256": "d2e3eb4b25c7639f1b4ed3bce6e0dc6655907a2ba9cdc3e13aa493e9a980013d"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna58",
+   "stratum": "albumin",
+   "sha256": "69f553a97e5e4e45a3f3f7e5406472c50eb0cfd5bc14077c3edb65442893f0f2"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_endocrinologia122",
+   "stratum": "albumin",
+   "sha256": "19c2b94d83f0d02913a22359b1329d31e6d47ba8a1d34ceccbe9e1f19434bdde"
+  },
+  {
+   "id": "livingner_test_background/cc_onco756",
+   "stratum": "nefrologia",
+   "sha256": "9bb4c673df69d1a0a549917bc5152fcb20dc873ddf9245970a9038a83b286f76"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia312",
+   "stratum": "albumin",
+   "sha256": "d364f02db25bf40660e2b4104a3f6dea1b444fec02c1dd130c6a6faf8dc41872"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia209",
+   "stratum": "fg",
+   "sha256": "6e6885005a8681b0a0e8c5836d21da18fe672ea54f963669dea667c608a834b2"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1629",
+   "stratum": "fg",
+   "sha256": "94af47089bbaf2d33decd8bd0337b4a797cd1387a9418a3bf210b50874df36bc"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna365",
+   "stratum": "albumin",
+   "sha256": "fd42a1463bb6b6c93f449a818ebe452f25d32e2145c419189c88bf22f9b1449c"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna955",
+   "stratum": "albumin",
+   "sha256": "df3091562730430717101ddd3ea0d2bcdbcc49e0983943a1dedc89870cb8b965"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna623",
+   "stratum": "resto",
+   "sha256": "5262a5fc4af0ffc7319b8f39f587a72237ed1a23fe076ec3155d2d91a4e1757c"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna131",
+   "stratum": "nefrologia",
+   "sha256": "06bca00db4a5d97ed1b1a1251892ca047a3dd7d52a6ac42b39c091e735b04d23"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna688",
+   "stratum": "resto",
+   "sha256": "87e37947f53a8514f7e9293f162d535162292bd469380beb85f2406f81be3bf6"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia283",
+   "stratum": "albumin",
+   "sha256": "bc36de90940269a50d8cee89d3e16d22153a903b6b7bdb16df5e4ced8b269fce"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia505",
+   "stratum": "albumin",
+   "sha256": "7e4068dd6d0e75d9d40abe2c8957c593073a1b577fe262818b9d3aa170f2c5a6"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia279",
+   "stratum": "nefrologia",
+   "sha256": "34f2ea5fbfd383f3983df497e000535f0abf2ba8de5689289a82c6055da42e8b"
+  },
+  {
+   "id": "livingner_test_background/cc_onco269",
+   "stratum": "nefrologia",
+   "sha256": "dcb4e2819d3d33db752c64cff15246da3c1dafbbaf1c2ee9f4355bd94d167810"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia137",
+   "stratum": "fg",
+   "sha256": "09882ed08b3b30393b2ffa801fe8caaf9a6cbcd35b0c2871d45aae24caa88e01"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_endocrinologia123",
+   "stratum": "albumin",
+   "sha256": "0c7e1a064e79129a9a6c10e7407d8d7d83ff12084bc490f39fb9158589966084"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia274",
+   "stratum": "resto",
+   "sha256": "0db81f9c744f221950a5767aa759215f4206de879acfe8c8c3b1fd53e9f0edf3"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia277",
+   "stratum": "resto",
+   "sha256": "26c802e1d238a72ae1c1db10a6bf266ad1c6bf4dd52932224b79dfc0978cb74a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_atencion_primaria128",
+   "stratum": "rechazo",
+   "sha256": "2b7c65331b0614bdc68018ab9d6ee10f3cdb517e776fae34a8ab3357346ba4fa"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia1113",
+   "stratum": "resto",
+   "sha256": "969076f5b61d718b263bb8cf7a4edb77e599fe68cc2fff94ce1176b9885a39e1"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria146",
+   "stratum": "rechazo",
+   "sha256": "dd50430aeb06f5b220567f412a99bb76014e8bd899b7dc2988856584b52a6c47"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria531",
+   "stratum": "resto",
+   "sha256": "0cbbd69ebac93e7f2c5581a5aa28dd4dc6f6bf59da4c63c03abb75c5428e9caa"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia319",
+   "stratum": "fg",
+   "sha256": "a6ce8456bf0f5857d6e2291b8e2b6babc4a75d4dd2ad63e77392847a11b4b7b0"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia98",
+   "stratum": "resto",
+   "sha256": "b35ccc813083e73a339866a194ca42ae064e0d61d0e0ea09e1b5853fc3aef505"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia38",
+   "stratum": "albumin",
+   "sha256": "795f32716851e06c446a10ade10cb1fc8878792ebbc898835faa361610d89c74"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna45",
+   "stratum": "albumin",
+   "sha256": "65941294113c8411f22e92f7b7ef24632f5f37f0ef38518c213fef75261dd568"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia4",
+   "stratum": "fg",
+   "sha256": "269760554bef749dc720853fe3423d2bba42cc772efeedb141b556454852704e"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia1123",
+   "stratum": "resto",
+   "sha256": "3dc2e295ef96e67d84410b820945d071aedbc6bf35ca1519f19b8d181387c3b0"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia2",
+   "stratum": "fg",
+   "sha256": "f36b77633256a86b7b64d65a366a51cf3189ae6db6990e3db1fde1913ee039bc"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia217",
+   "stratum": "fg",
+   "sha256": "95124f85f43f2f2e7f953292fd06cfaa6f9b05e981e346b61ad66d8c62b978fd"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1193",
+   "stratum": "resto",
+   "sha256": "3a4c0326e3da73cfb48deb41e3df19c567919e69b461d36c0e698cfaa55caa9a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna872",
+   "stratum": "fg",
+   "sha256": "f641cf7611b6cae8270aee90692b3d4ea015eb85273de2ab2d973e845b2ef2fa"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medtropical10",
+   "stratum": "resto",
+   "sha256": "379271f1c966b45881e8133555c9b2cc1c2c1d9d5ab355fc5277a9ff011144cc"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia378",
+   "stratum": "rechazo",
+   "sha256": "3fdc3b91a905d0803b99fb86a1ffc40a8e089ce9da582bbf3bdeafbaea5f28e2"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_profesiones80",
+   "stratum": "fg",
+   "sha256": "d7a8b0801b5c88a6c10c9d66ca5dae37955cab152d61b1e4e3e5dc815e45a8d9"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia264",
+   "stratum": "nefrologia",
+   "sha256": "216f0eee31f7521bc1bd149348a5203923d75d6d013f51ed37f1be582488308a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia183",
+   "stratum": "albumin",
+   "sha256": "c00186c4ce64a0cd957be145596f61da7a38b319dd0bebce9e5c4035057c314a"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia175",
+   "stratum": "albumin",
+   "sha256": "5d7339d052fbe8ad29e70e55460c2d4ed48a66df4e62f0b35b58b664de8e1273"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1757",
+   "stratum": "fg",
+   "sha256": "2632a0b895b8350ac152c855cb0a02ee30f9899cf19185ac9672075edf89bcae"
+  },
+  {
+   "id": "livingner_test_background/cc_geneticas119",
+   "stratum": "resto",
+   "sha256": "58174661f62a00a38b03ebf4c35f1695e812fdc92dde1a890d6ca54da168efe1"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia408",
+   "stratum": "albumin",
+   "sha256": "439a2eb62d52e8c630def1574f9ef34f51b93854ea7ecea68380c4191780d5ac"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria46",
+   "stratum": "rechazo",
+   "sha256": "92629c318737e5bfcebf9306c983c923456d2ff555396cdbdaaafbe8feec21c1"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia12",
+   "stratum": "nefrologia",
+   "sha256": "c25b5a4cf516b1f2f631cf09db6443444dbed8471d814aa4a4fcb347a506ede2"
+  },
+  {
+   "id": "livingner_test_background/cc_onco408",
+   "stratum": "rechazo",
+   "sha256": "91651c2f95fb4c16fb2b19eef5c782798c2dbb555cd62585a151dc1f1d6cb4d0"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia57",
+   "stratum": "fg",
+   "sha256": "a5d88627a8e499636746e8b54f8b4c9db452d527eff957f7477602454dd47344"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna505",
+   "stratum": "albumin",
+   "sha256": "653b7ede16015a48baef2b7f18228643e7cfb6e4fcccae28d4db5943e7cbad6e"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_radiologia518",
+   "stratum": "resto",
+   "sha256": "e9b1676ec6796fef195fe085e525a04fc4a1a36e2aab600a9f775803544701ac"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria358",
+   "stratum": "resto",
+   "sha256": "c3873f042684d5937703ea5fd8070ed9c89836b86f98aac4a48fb78b4d11240f"
+  },
+  {
+   "id": "livingner_test_background/cc_odontologia3",
+   "stratum": "rechazo",
+   "sha256": "f3181941feffde9cc93b93083e4bbcdfa79ec018fa5423cf74dbddbf70356695"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia256",
+   "stratum": "fg",
+   "sha256": "749b7481b8c32dcf29b023aef8036bcb27bebc7cdfe240348e7b606a2f1483e9"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria211",
+   "stratum": "rechazo",
+   "sha256": "35e9a71583ed17a6fc472e341a3f40615e78fbcac20bc9a6abe6cf5477579b1d"
+  },
+  {
+   "id": "livingner_test_background/cc_onco483",
+   "stratum": "resto",
+   "sha256": "b759d43f7ffdc3232903fd1a7ce08846eb460d8ae8b8286b381845f1394242dd"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna877",
+   "stratum": "rechazo",
+   "sha256": "e8f6ab5f8d2899d38ec24d19f843bacd735f2a190120714ab56ee00eb2653615"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_oftalmologia229",
+   "stratum": "nefrologia",
+   "sha256": "f1c0d88bddb4252b3fb8c8de9fd3715573bb40903dd5791bbe2bc5e477c90c79"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia222",
+   "stratum": "albumin",
+   "sha256": "16c2f2b8632578fdf7c29ae900b2f6dfa8b4f61f390f43c824d1777521dec36d"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia155",
+   "stratum": "albumin",
+   "sha256": "00034046d167db6305a43de526b574fd274dc82b5ab9bd9dc607f6d171737b05"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna664",
+   "stratum": "resto",
+   "sha256": "c7fd9b6bc377c8f8177aab3cb1154ff79747b7ec8b0526f80b047bcbdaadb231"
+  },
+  {
+   "id": "livingner_test_background/cc_onco10",
+   "stratum": "nefrologia",
+   "sha256": "92ec878cfe16765495267b1c7d12e14d9677d1d338859ad882a1a40eea326a3c"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna433",
+   "stratum": "albumin",
+   "sha256": "08fd148f1709c35d2d76d44df5da4eceecf344f8dad55def4ea8e74ab67a837f"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia184",
+   "stratum": "albumin",
+   "sha256": "e9716ce36dde347a93a5ab903568a08e5845d232ded4b57159d267c0e3c2b05e"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_endocrinologia62",
+   "stratum": "rechazo",
+   "sha256": "10c2bd8df71726b4b5bbf2523a95fbb0b96879539dde0a1a537a60f6dc3dd2bc"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia280",
+   "stratum": "albumin",
+   "sha256": "cd1f84e2eaea49ae6f80bab2aa37a028c1fd6341706b52db9ddc1ea465831c40"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna869",
+   "stratum": "albumin",
+   "sha256": "0bd556823e2b2142a6ff2b10bc21c48d71193450aeea6b8b580b3a88ee4da1df"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1784",
+   "stratum": "nefrologia",
+   "sha256": "76c45709073dfc73efc687c67b96d0e8cd9a3577b0ad06056a27fe6388b70312"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia623",
+   "stratum": "albumin",
+   "sha256": "422491193fbc95473bdea01b940cb3b51d58d6253f073e644699042f94e594d7"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_atencion_primaria3",
+   "stratum": "albumin",
+   "sha256": "f33a6d4e563a3faee7789481c8e29d210be04dba6cd3457d38cf9cd40c1ed773"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna628",
+   "stratum": "resto",
+   "sha256": "00f508c63f588a95071dd86dc4b51dd0e21872e872646a19e98866fb01f6d74a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna142",
+   "stratum": "fg",
+   "sha256": "76e96697772c9c7442c6e21b0d110f5382cbb71e2493d33e5b6d5d4b665cb3b3"
+  },
+  {
+   "id": "livingner_test_background/cc_otorrinolaringologia215",
+   "stratum": "resto",
+   "sha256": "f57b60b17c43fd804933fda5feed2b5f143f91bc58ed2e41b428dc9737fcd42d"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1381",
+   "stratum": "resto",
+   "sha256": "20d9fbe712c4ac8d47da609be71c54ca286b694683c3d3053efd3eba6d124bc4"
+  },
+  {
+   "id": "livingner_test_background/cc_onco49",
+   "stratum": "resto",
+   "sha256": "1598ffd502f593b9d97462abc5b9df5e319b7444ba7a9c2d99f2005825cd7ecd"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_endocrinologia46",
+   "stratum": "resto",
+   "sha256": "675d129a1425e27ffe6cab6e0dd4a81341ece8d7bb1d94c27fcd0a915fa51f5b"
+  },
+  {
+   "id": "livingner_test_background/cc_onco1631",
+   "stratum": "fg",
+   "sha256": "a8dc04f64feeabfb129df889f561ad13179b4969767dcad323fa80fe081a2e7c"
+  },
+  {
+   "id": "livingner_test_background/cc_covid46",
+   "stratum": "nefrologia",
+   "sha256": "07431b6f023e3ebcd648dbc708d47190ab38840f1a1762c59fee45579ba91315"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria431",
+   "stratum": "albumin",
+   "sha256": "b0310e4323be8f751021357264ba6a3fb11ba6a496779d49129f09c72fb6d7d1"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_pediatria92",
+   "stratum": "rechazo",
+   "sha256": "e3801122c80661bc36423f1052c2b0669a24cd77c960dbaba2426d09950a94bd"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_pediatria51",
+   "stratum": "fg",
+   "sha256": "9632f70a2e44497a4d9bc6b4b719d1515f16e564b43b73ddaeb8f94287a90314"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia268",
+   "stratum": "resto",
+   "sha256": "9d9535cde86ef80e7cd17045a0ad54a5dbd0fb284d35f555ebf15338aa9a6df4"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia282",
+   "stratum": "albumin",
+   "sha256": "3ec7ccb3549ddcb4d3084e2405ddd4400ceb468662bbadf49a69eb78368d42c5"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia71",
+   "stratum": "nefrologia",
+   "sha256": "f05eec5cb5fff067ed541d2a1b81235433289cc41d9ac2343d7b475257e8f24a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria400",
+   "stratum": "rechazo",
+   "sha256": "5074883c4e357ece0e2e61933c7695404922ac97bdb69b3b958152f1d3806b7a"
+  },
+  {
+   "id": "livingner_test_background/cc_onco944",
+   "stratum": "albumin",
+   "sha256": "6ec9fffa8d6f5d62860feaacd128713770e1b0a751c0db15a4a20a46348c5084"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_psiquiatria378",
+   "stratum": "rechazo",
+   "sha256": "0547d08070031eaa3b35e38b1c3f1e3ae7c48fb30f9e267bbd929019f7d04859"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_oftalmologia96",
+   "stratum": "nefrologia",
+   "sha256": "f8dbb294e54bdb8c4c1596b5523af8e59f088bb498b8d6a51c39e2a422043bcd"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia305",
+   "stratum": "fg",
+   "sha256": "1c824118e35e1aa3f9e9a6acb1e6b81b4c74296b3f554023f61a43a98d90ebd0"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_endocrinologia196",
+   "stratum": "fg",
+   "sha256": "498895227c2b9618cc7353f699d0183918a984d5f2664d05bf977828b0dc51b8"
+  },
+  {
+   "id": "livingner_test_background/cc_reumatologia272",
+   "stratum": "albumin",
+   "sha256": "47972fd5bc24a844565bed8ccd3764c03a1dda33e1a91084e5947873d8ed3ce3"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna406",
+   "stratum": "fg",
+   "sha256": "86dc4c0d181695c7de789dcf0502855f69a47369f2a3622b27d38db056182a5b"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia235",
+   "stratum": "fg",
+   "sha256": "753b528ab78abf8d825dae44cf34138b5cd4266c1c1643dd111e248833906e29"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_dermatologia508",
+   "stratum": "resto",
+   "sha256": "dada81c78b1fb712133147930f9296940d55992e13b3ceb3ab47001725b99654"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_pediatria72",
+   "stratum": "rechazo",
+   "sha256": "a9ed1d94015e7fdb59d09313c9674d827a9ef4b0e627e02bb349394f6a9fb199"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_urologia314",
+   "stratum": "nefrologia",
+   "sha256": "ceaf0014072c2d706797e5245bb97b1b6dbf43560060ebb5aedada76928a820a"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna894",
+   "stratum": "fg",
+   "sha256": "aabb4c958cd02fdbbd76130b5dde7a5560b78f17123deea3a9d8487e5aca6408"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia126",
+   "stratum": "nefrologia",
+   "sha256": "2c0dd83d41f891c4b6125fc5f74c37fbf228ce32eb25c8b24b85183cc9a50a28"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_infecciosas59",
+   "stratum": "fg",
+   "sha256": "4ee2c6571bf22372293fff964f27d22fe9c7279f002912b98f601efa731849a3"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_neurologia327",
+   "stratum": "resto",
+   "sha256": "436b3920e18381707be63345cc1f8693bb8fb1eb38bbcaf77f2e8d9ff59527b2"
+  },
+  {
+   "id": "livingner_test_background/casos_clinicos_cardiologia256",
+   "stratum": "fg",
+   "sha256": "e82dcc06c8deb7dcd72e203abe92f8cb9d83f8e585cc8efe5bbfb4276e5593cf"
+  },
+  {
+   "id": "livingner_test_background/caso_clinico_medicina_interna129",
+   "stratum": "resto",
+   "sha256": "32ed09d183455ad4296b54a39d733dae41be03aa28081388dc2cae7b3685d8a7"
+  }
+ ]
+}

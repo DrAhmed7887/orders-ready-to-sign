@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review accepted findings</title>
+<style>
+:root{--bg:#f5f6f8;--panel:#fff;--ink:#0e1726;--muted:#5d6779;--line:#e4e7ec;--accent:#0b6b61;--soft:#e6f2f0;--bad:#b42318}
+@media (prefers-color-scheme:dark){:root{--bg:#0f141b;--panel:#171e27;--ink:#eef2f6;--muted:#9aa6b5;--line:#2a3441;--accent:#3fb8a8;--soft:#12302c;--bad:#f97066}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:16px}
+header{position:sticky;top:0;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);z-index:1}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0}
+.card.done{border-color:var(--accent)} .card.bad{border-color:var(--bad)}
+.meta{color:var(--muted);font-size:14px} .ctx{color:var(--muted)}
+.s{background:var(--soft);padding:2px 4px;border-radius:4px}
+.read{font-weight:600;margin:8px 0}
+label{display:inline-flex;gap:6px;align-items:center;margin:4px 12px 4px 0;font-size:15px}
+input[type=text]{width:100%;box-sizing:border-box;padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
+button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer}
+</style></head><body><main>
+<header><b>Accepted findings on real case reports: is each one right?</b>
+<div class="meta">Excerpts (whitespace-normalised) from CodiEsp v1.4, Miranda-Escalada, Gonzalez-Agirre, Armengol-Estapé,
+Krallinger, doi:10.5281/zenodo.3837305, licence CC BY 4.0 (creativecommons.org/licenses/by/4.0); see NOTICE.md. Mark each card, then Export CSV and
+save it as <code>eval/notas_reales/revision_ahmed.csv</code>. Progress is kept in this browser.</div>
+<div><span id="prog"></span> &nbsp; <button id="exp">Export CSV</button></div></header>
+<div id="list"></div></main>
+<script>
+const ROWS = [{"key": "background/S0211-69952013000500032-1#0", "case": "background/S0211-69952013000500032-1", "stratum": "nefrologia", "label": "nefrologia", "test": null, "value": null, "unit": null, "date": null, "note": null, "sentence_no": 7, "sentence": "Se ingresó en Nefrología con el diagnóstico de IRA prerrenal, hipernatremia e infección urinaria, se inició tratamiento antibiótico y reposición hidroelectrolítica controlada con buena respuesta, siendo la creatinina al alta de 0,86 mg/dl.", "before": "Se realizó analítica: glucosa 214 mg/dl, urea 403 mg/dl, creatinina (Cr) 9,2 mg/dl, Na 151 mmol/l, Cl 113 mmol/l, K 4 mmol/l; hemograma: hemoglobina (Hb) 15,4 g/dl, VH 44,5%; leucocitos 18800/uL; plaquetas 287000/uL; función renal en orina: urea 239 mg/dl, Cr 339 mg/dl, Na 52 mmol/l, K 9,1 mmol/l, excreción fraccional de sodio (EF Na) 0,9%; gasometría venosa: pH 7,33, bicarbonato 11,1 mmol/l, pCO2 21 mmHg.", "after": ""}, {"key": "background/S1139-13752011000300008-1#0", "case": "background/S1139-13752011000300008-1", "stratum": "nefrologia", "label": "nefrologia", "test": null, "value": null, "unit": null, "date": null, "note": null, "sentence_no": 2, "sentence": "Como antecedentes personales destacan: Sordera neurosensorial profunda (implante coclear no funcionante desde 2003), Crisis mioclónicas estáticas en tratamiento con Valproato, retraso psicomotor de origen mitocondrial con afectación de la cadena respiratoria 1 y 3, Portadora de mutación en el gen de protrombina, Escoliosis e IRC de etiología túbulo-intersticial por enfermedad Mitocondrial Congénita en seguimiento hasta entonces por nefrología pediátrica.", "before": "Mujer de 17 años de edad, sordomuda, sin reacciones alérgicas conocidas.", "after": "Antecedentes Familiares: Un único hermano mayor afectado como ella de Enfermedad Mitocondrial, sordomudo, en diálisis peritoneal durante 4 años, actualmente trasplantado renal de donante cadáver en 2006."}, {"key": "background/S0004-06142008000400015-1#0", "case": "background/S0004-06142008000400015-1", "stratum": "nefrologia", "label": "nefrologia", "test": null, "value": null, "unit": null, "date": null, "note": null, "sentence_no": 1, "sentence": "Paciente de 17 años, en control por nefrología infantil, afecta de esclerosis tuberosa caracterizada por crisis epilépticas, retraso psicomotor y presencia ya conocida de angiomiolipomas renales.", "before": "", "after": "Encontrándose la paciente asintomática, en un control rutinario mediante TAC se apreció una lesión inferior a 5 mm en el riñón derecho en región interpolar, y otra de 4 x 4 cm en polo inferior del mismo riñón, que a diferencia del anterior captaba contraste de forma homogénea, siendo compatible con un hipernefroma."}, {"key": "background/S0211-69952012000200015-1#0", "case": "background/S0211-69952012000200015-1", "stratum": "nefrologia", "label": "nefrologia", "test": null, "value": null, "unit": null, "date": null, "note": null, "sentence_no": 4, "sentence": "Por remisión parcial espontánea del cuadro, con proteinuria residual en torno a 1 g/24 h, y dado que mantuvo una función renal normal en todo momento, se decidió no biopsiar y efectuar seguimiento en la consulta externa de Nefrología.", "before": "La historia nefrológica comienza en abril de 2003, cuando presentó un síndrome nefrótico clínico y analítico, en el contexto de una otitis media tratada con amoxicilina-clavulánico.", "after": "A partir de entonces, la proteinuria fue incrementándose progresivamente hasta 14 g/24 h, de tipo selectivo, sin alteraciones en los sedimentos urinarios."}];
+const VERDICTS = ["correct", "not_this_patient", "not_a_result", "wrong_value_or_unit", "wrong_label", "other"];
+const NAMES = {correct:"Correct", not_this_patient:"Not about this patient", not_a_result:"Not a result / not done",
+  wrong_value_or_unit:"Wrong value or unit", wrong_label:"Wrong label", other:"Other"};
+const KEY = "revision-notas-reales-v1";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { state = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} render(); };
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+function render() {
+  const n = ROWS.filter((r) => state[r.key]?.verdict).length;
+  document.getElementById("prog").textContent = `${n} of ${ROWS.length} reviewed`;
+  document.querySelectorAll(".card").forEach((el) => {
+    const v = state[el.dataset.key]?.verdict;
+    el.classList.toggle("done", v === "correct"); el.classList.toggle("bad", !!v && v !== "correct");
+  });
+}
+const list = document.getElementById("list");
+ROWS.forEach((r, i) => {
+  const el = document.createElement("section");
+  el.className = "card"; el.dataset.key = r.key;
+  const read = r.label === "ya_realizada"
+    ? `Code read: test already done · ${esc(r.test)} = ${esc(r.value ?? "no value")} ${esc(r.unit ?? "")}${r.date ? " · " + esc(r.date) : " · no date"}`
+    : r.label === "rechazo" ? "Code read: the patient refuses the test" : "Code read: followed in Nephrology";
+  el.innerHTML = `<div class="meta">${i + 1} / ${ROWS.length} · case ${esc(r.case)} · sentence ${esc(r.sentence_no)}</div>
+    <p><span class="ctx">${esc(r.before)}</span> <span class="s">${esc(r.sentence)}</span> <span class="ctx">${esc(r.after)}</span></p>
+    <div class="read">${read}${r.note ? " · note: " + esc(r.note) : ""}</div>
+    <div>${VERDICTS.map((v) => `<label><input type="radio" name="v${i}" value="${v}">${NAMES[v]}</label>`).join("")}</div>
+    <input type="text" placeholder="Comment (optional)">`;
+  el.querySelectorAll("input[type=radio]").forEach((b) => {
+    if (state[r.key]?.verdict === b.value) b.checked = true;
+    b.addEventListener("change", () => { state[r.key] = {...state[r.key], verdict: b.value}; save(); });
+  });
+  const c = el.querySelector("input[type=text]");
+  c.value = state[r.key]?.comment || "";
+  c.addEventListener("input", () => { state[r.key] = {...state[r.key], comment: c.value}; save(); });
+  list.appendChild(el);
+});
+document.getElementById("exp").addEventListener("click", () => {
+  const q = (s) => '"' + String(s ?? "").replace(/"/g, '""') + '"';
+  const lines = ["key,verdict,comment", ...ROWS.map((r) => [r.key, state[r.key]?.verdict || "", state[r.key]?.comment || ""].map(q).join(","))];
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([lines.join("\n") + "\n"], {type: "text/csv"}));
+  a.download = "revision_ahmed.csv"; a.click();
+});
+render();
+</script></body></html>

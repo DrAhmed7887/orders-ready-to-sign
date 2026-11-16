@@ -1,0 +1,116 @@
+"""What hidden albuminuria means for people: awareness, treatment, scale (descriptive, NHANES).
+
+    python3 eval/nhanes/fetch.py && python3 eval/nhanes/people.py
+    → eval/results/nhanes_people.json and eval/results/nhanes_people.md
+
+Added 15 Nov 2026 at Ahmed's request, after the pre-registered run (amendment 6 in docs/EVAL_PROTOCOL.md).
+Descriptive only: no rule or measure of the engine changes. "Hidden albuminuria" = adults >= 20 with diagnosed
+diabetes or hypertension, not pregnant, ACR >= 30 mg/g and eGFR (CKD-EPI 2021) >= 60 on a single visit.
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent.parent
+sys.path.insert(0, str(HERE))
+
+try:
+    import pandas as pd
+    import scipy  # noqa: F401
+except ImportError:  # pragma: no cover
+    sys.exit("pandas and scipy are required: pip install -r requirements-eval.txt")
+
+from core import egfr_ckd_epi_2021, survey_proportion  # noqa: E402
+
+RAW = HERE / "raw"
+OUT_JSON = ROOT / "eval" / "results" / "nhanes_people.json"
+OUT_MD = ROOT / "eval" / "results" / "nhanes_people.md"
+# ACE inhibitor / ARB by generic name (also inside combination products). Signed by Ahmed, 15 Nov 2026 (amendment 6).
+RAS_PATTERN = r"PRIL\b|SARTAN"
+KDIGO_121 = ("KDIGO 2022 Diabetes in CKD, Recommendation 1.2.1: \"We recommend that treatment with an "
+             "angiotensin-converting enzyme inhibitor (ACEi) or an angiotensin II receptor blocker (ARB) be initiated in "
+             "patients with diabetes, hypertension, and albuminuria, and that these medications be titrated to the highest "
+             "approved dose that is tolerated (1B).\" Kidney Int 2022;102(5S):S1-S127, doi:10.1016/j.kint.2022.06.008")
+
+
+def load(names, weight):
+    d = pd.read_sas(RAW / f"{names[0]}.xpt", format="xport")
+    for n in names[1:]:
+        d = d.merge(pd.read_sas(RAW / f"{n}.xpt", format="xport"), on="SEQN", how="left")
+    d = d[d[weight] > 0].copy()
+    d["egfr"] = [egfr_ckd_epi_2021(s, a, g == 2) if s == s and s > 0 else float("nan")
+                 for s, a, g in zip(d.LBXSCR, d.RIDAGEYR, d.RIAGENDR)]
+    d["base"] = ((d.RIDAGEYR >= 20) & (d.RIDEXPRG != 1) & ((d.DIQ010 == 1) | (d.BPQ020 == 1))
+                 & d.LBXSCR.notna() & d.URDACT.notna())
+    d["hidden"] = d.base & (d.URDACT >= 30) & (d.egfr >= 60)
+    return d
+
+
+def est(d, y, dom, weight):
+    return survey_proportion(y.astype(int).tolist(), dom.astype(int).tolist(), d[weight].tolist(),
+                             d.SDMVSTRA.astype(int).tolist(), d.SDMVPSU.astype(int).tolist()).per_1000()
+
+
+def main() -> int:
+    out = {"definition": __doc__.split("\n\n")[2].strip()}
+
+    # 2021-2023: scale and awareness
+    w = "WTMEC2YR"
+    d = load(["DEMO_L", "BIOPRO_L", "ALB_CR_L", "DIQ_L", "BPQ_L", "KIQ_U_L"], w)
+    answered = d.KIQ022.isin([1, 2])
+    out["2021_2023"] = {
+        "hidden_per_1000_adults_with_dm_or_htn": est(d, d.hidden, d.base, w),
+        "us_adults_with_hidden_albuminuria_millions": round(d.loc[d.hidden, w].sum() / 1e6, 1),
+        "us_adults_with_hidden_albuminuria_note": "sum of MEC weights of tested participants; complete cases, "
+                                                  "weights not re-adjusted for the ~1/3 without a lab, so an undercount",
+        "never_told_weak_or_failing_kidneys_per_1000_hidden": est(d, d.KIQ022 != 1, d.hidden & answered, w),
+        "median_age_hidden": float(d.loc[d.hidden, "RIDAGEYR"].median()),
+        "severely_increased_acr_300_per_1000_hidden": est(d, d.URDACT >= 300, d.hidden, w),
+    }
+
+    # 2017-March 2020: treatment (last cycle with drug names)
+    w = "WTMECPRP"
+    d = load(["P_DEMO", "P_BIOPRO", "P_ALB_CR", "P_DIQ", "P_BPQ", "P_KIQ_U"], w)
+    rx = pd.read_sas(RAW / "P_RXQ_RX.xpt", format="xport", encoding="latin-1")
+    use = rx.groupby("SEQN").RXDUSE.first()
+    ras = set(rx.loc[rx.RXDDRUG.fillna("").str.upper().str.contains(RAS_PATTERN, regex=True), "SEQN"])
+    d["ras"] = d.SEQN.isin(ras)
+    known = d.SEQN.map(use).isin([1, 2])
+    kdigo_pop = d.hidden & known & (d.DIQ010 == 1) & (d.BPQ020 == 1)
+    out["2017_2020"] = {
+        "hidden_per_1000_adults_with_dm_or_htn": est(d, d.hidden, d.base, w),
+        "never_told_weak_or_failing_kidneys_per_1000_hidden": est(d, d.KIQ022 != 1, d.hidden & d.KIQ022.isin([1, 2]), w),
+        "not_on_acei_or_arb_per_1000 (diabetes + hypertension + hidden albuminuria)": est(d, ~d.ras, kdigo_pop, w),
+        "guideline": KDIGO_121,
+        "drug_matching": f"generic name matches /{RAS_PATTERN}/ (signed by Ahmed Zayed, 15 Nov 2026)",
+    }
+    OUT_JSON.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+
+    a, b = out["2021_2023"], out["2017_2020"]
+    def row(label, v):  # noqa: E306
+        return f"| {label} | {v['per_1000']} | {v['ci95_lo']}–{v['ci95_hi']} | {v['n']} ({v['events']}) |"
+    md = ["# What hidden albuminuria means for people (NHANES, descriptive)", "",
+          "Generated by `python3 eval/nhanes/people.py`. Survey-weighted, 95 % CI. Added after the pre-registered run "
+          "(amendment 6); descriptive, not an engine accuracy measure.", "",
+          f"Definition: {out['definition']}", "",
+          "| Measure | Per 1,000 | 95 % CI | n (events) |", "|---|---|---|---|",
+          row("2021–2023 · hidden albuminuria, per 1,000 adults with diabetes or hypertension", a["hidden_per_1000_adults_with_dm_or_htn"]),
+          row("2021–2023 · never told of weak or failing kidneys, per 1,000 with hidden albuminuria", a["never_told_weak_or_failing_kidneys_per_1000_hidden"]),
+          row("2021–2023 · ACR ≥ 300 mg/g, per 1,000 with hidden albuminuria", a["severely_increased_acr_300_per_1000_hidden"]),
+          row("2017–2020 · hidden albuminuria, per 1,000 adults with diabetes or hypertension", b["hidden_per_1000_adults_with_dm_or_htn"]),
+          row("2017–2020 · never told, per 1,000 with hidden albuminuria", b["never_told_weak_or_failing_kidneys_per_1000_hidden"]),
+          row("2017–2020 · not on an ACE inhibitor or ARB, per 1,000 with diabetes + hypertension + hidden albuminuria",
+              b["not_on_acei_or_arb_per_1000 (diabetes + hypertension + hidden albuminuria)"]),
+          "", f"US adults with hidden albuminuria (2021–2023, tested participants): about **{a['us_adults_with_hidden_albuminuria_millions']} million** "
+          f"({a['us_adults_with_hidden_albuminuria_note']}). Median age {a['median_age_hidden']:.0f}.", "",
+          f"Guideline: {KDIGO_121}", "", f"Drug matching: {b['drug_matching']}.", ""]
+    OUT_MD.write_text("\n".join(md))
+    print("\n".join(md))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

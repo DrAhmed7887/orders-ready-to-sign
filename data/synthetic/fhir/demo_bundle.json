@@ -1,0 +1,509 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "timestamp": "2026-11-14T00:00:00+01:00",
+ "meta": {
+  "tag": [
+   {
+    "system": "urn:sintetico",
+    "code": "synthetic",
+    "display": "Solo datos sintéticos"
+   }
+  ]
+ },
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:pac-1",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "pac-1",
+    "birthDate": "1954",
+    "gender": "male",
+    "name": [
+     {
+      "text": "Manuel"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:pac-2",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "pac-2",
+    "birthDate": "1959",
+    "gender": "female",
+    "name": [
+     {
+      "text": "Pilar"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:pac-3",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "pac-3",
+    "birthDate": "1967",
+    "gender": "female",
+    "name": [
+     {
+      "text": "Rosa"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:pac-4",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "pac-4",
+    "birthDate": "1962",
+    "gender": "male",
+    "name": [
+     {
+      "text": "Antonio"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:cond-1",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "cond-1",
+    "subject": {
+     "reference": "urn:uuid:pac-1"
+    },
+    "verificationStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+       "code": "confirmed"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "urn:sintetico:cie-10-es",
+       "code": "I10"
+      }
+     ]
+    },
+    "onsetDateTime": "2015-03-10"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:cond-2",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "cond-2",
+    "subject": {
+     "reference": "urn:uuid:pac-2"
+    },
+    "verificationStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+       "code": "confirmed"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "urn:sintetico:cie-10-es",
+       "code": "E11.9"
+      }
+     ]
+    },
+    "onsetDateTime": "2014-06-21"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:cond-3",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "cond-3",
+    "subject": {
+     "reference": "urn:uuid:pac-3"
+    },
+    "verificationStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+       "code": "confirmed"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "urn:sintetico:cie-10-es",
+       "code": "E11.9"
+      }
+     ]
+    },
+    "onsetDateTime": "2016-01-15"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:cond-4",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "cond-4",
+    "subject": {
+     "reference": "urn:uuid:pac-3"
+    },
+    "verificationStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+       "code": "confirmed"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "urn:sintetico:cie-10-es",
+       "code": "I10"
+      }
+     ]
+    },
+    "onsetDateTime": "2019-09-02"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:cond-5",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "cond-5",
+    "subject": {
+     "reference": "urn:uuid:pac-4"
+    },
+    "verificationStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+       "code": "confirmed"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "urn:sintetico:cie-10-es",
+       "code": "E11.9"
+      }
+     ]
+    },
+    "onsetDateTime": "2017-04-30"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-1",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-1"
+    },
+    "effectiveDateTime": "2024-11-05",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "62238-1"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 78.0,
+     "unit": "mL/min/1.73m2"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-2",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-1"
+    },
+    "effectiveDateTime": "2025-11-10",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "62238-1"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 69.0,
+     "unit": "mL/min/1.73m2"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-3",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-3",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-1"
+    },
+    "effectiveDateTime": "2026-11-02",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "62238-1"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 61.0,
+     "unit": "mL/min/1.73m2"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-4",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-1"
+    },
+    "effectiveDateTime": "2026-11-02",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "9318-7"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 12.0,
+     "unit": "mg/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-5",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-2"
+    },
+    "effectiveDateTime": "2026-02-12",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "62238-1"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 74.0,
+     "unit": "mL/min/1.73m2"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-6",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-6",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-2"
+    },
+    "effectiveDateTime": "2026-02-12",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "9318-7"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 85.0,
+     "unit": "mg/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-7",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-7",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-3"
+    },
+    "effectiveDateTime": "2025-05-12",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "9318-7"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 18.0,
+     "unit": "mg/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-8",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-8",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-3"
+    },
+    "effectiveDateTime": "2025-05-12",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "62238-1"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 91.0,
+     "unit": "mL/min/1.73m2"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-9",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-9",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-3"
+    },
+    "effectiveDateTime": "2026-06-01",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "62238-1"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 88.0,
+     "unit": "mL/min/1.73m2"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-10",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-10",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-4"
+    },
+    "effectiveDateTime": "2026-03-03",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "9318-7"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 120.0,
+     "unit": "mg/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:obs-11",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-11",
+    "status": "final",
+    "subject": {
+     "reference": "urn:uuid:pac-4"
+    },
+    "effectiveDateTime": "2026-03-03",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "62238-1"
+      }
+     ]
+    },
+    "valueQuantity": {
+     "value": 74.0,
+     "unit": "mL/min/1.73m2"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:cita-1",
+   "resource": {
+    "resourceType": "Appointment",
+    "id": "cita-1",
+    "status": "booked",
+    "start": "2026-11-14T10:40:00+01:00",
+    "participant": [
+     {
+      "actor": {
+       "reference": "urn:uuid:pac-2"
+      },
+      "status": "accepted"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:ped-1",
+   "resource": {
+    "resourceType": "ServiceRequest",
+    "id": "ped-1",
+    "status": "active",
+    "intent": "order",
+    "subject": {
+     "reference": "urn:uuid:pac-4"
+    },
+    "authoredOn": "2026-11-02",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "9318-7"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

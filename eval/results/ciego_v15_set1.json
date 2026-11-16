@@ -1,0 +1,733 @@
+{
+ "set": "eval/ciego_v15/frases_set1.csv",
+ "split_handling": "fallo",
+ "rows": 160,
+ "before_commit": "b83fa2c",
+ "versions": {
+  "before": {
+   "by_expected": {
+    "FGe/value": {
+     "correct": 12,
+     "UNSAFE": 1,
+     "missed": 2
+    },
+    "CAC/normal": {
+     "missed": 15
+    },
+    "CAC/unreadable": {
+     "correct": 24,
+     "missed": 11
+    },
+    "CAC/value": {
+     "missed": 42,
+     "correct": 3
+    },
+    "CAC/not_acr": {
+     "correct": 17,
+     "grey_line": 18
+    },
+    "FGe/bound": {
+     "UNSAFE": 13,
+     "missed": 2
+    }
+   },
+   "unsafe": 14,
+   "acr_values_correct": 3,
+   "not_acr_as_grey_line": 18
+  },
+  "after": {
+   "by_expected": {
+    "FGe/value": {
+     "correct": 12,
+     "UNSAFE": 1,
+     "missed": 2
+    },
+    "CAC/normal": {
+     "missed": 15
+    },
+    "CAC/unreadable": {
+     "correct": 28,
+     "missed": 7
+    },
+    "CAC/value": {
+     "correct": 38,
+     "missed": 7
+    },
+    "CAC/not_acr": {
+     "correct": 28,
+     "grey_line": 7
+    },
+    "FGe/bound": {
+     "correct": 13,
+     "missed": 2
+    }
+   },
+   "unsafe": 1,
+   "acr_values_correct": 38,
+   "not_acr_as_grey_line": 7
+  }
+ },
+ "cases": [
+  {
+   "id": "v15-011",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-022",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-025",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-037",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-045",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-060",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    15.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-071",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    15.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-075",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-086",
+   "version": "before",
+   "expect": "FGe/value",
+   "value": "57",
+   "got": [
+    "value",
+    2021.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-093",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-101",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-104",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-136",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-137",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    30.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-002",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-003",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-005",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-007",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-009",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-019",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-023",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "95",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-029",
+   "version": "after",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-033",
+   "version": "after",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-040",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "85",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-041",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "v15-042",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-047",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "not_acr",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-048",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-052",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-061",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "45",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-068",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-073",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-074",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-081",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "3",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-083",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-086",
+   "version": "after",
+   "expect": "FGe/value",
+   "value": "57",
+   "got": [
+    "value",
+    2021.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "v15-094",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "60",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-103",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "v15-108",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "not_acr",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-109",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "v15-111",
+   "version": "after",
+   "expect": "FGe/value",
+   "value": "36",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-114",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "not_acr",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-115",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "v15-120",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "25",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-122",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "v15-124",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-134",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-135",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "v15-138",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "v15-139",
+   "version": "after",
+   "expect": "FGe/value",
+   "value": "24,5",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-145",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-147",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-149",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "150",
+   "got": [
+    "split",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-154",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "v15-159",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  }
+ ],
+ "pass": false
+}

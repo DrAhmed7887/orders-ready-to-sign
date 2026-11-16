@@ -1,0 +1,56 @@
+{
+  "data": "NHANES 2009-2010 public-use files (CDC/NCHS), one visit per participant",
+  "steps_on_real_data": {
+    "1_extract_loaded_participants": 2112,
+    "2_rules_fired": {
+      "S1a": 0,
+      "S1b": 404,
+      "S1c": 0,
+      "S3": 0,
+      "S3c": 0
+    },
+    "3_note_reader": "not run: NHANES has no clinical notes",
+    "4_S1c": 0,
+    "4_rows_removed_from_list_any_reason": 0,
+    "extract_rows": {
+      "note": 0,
+      "nota_hallazgo": 0,
+      "pedido_pendiente": 0,
+      "drug_exposure": 0
+    },
+    "s1b_on_one_visit_means": "ACR >= 30 mg/g with no CKD code (dates are fixed by the mapping, not real)",
+    "5_orders_prepared": 404,
+    "orders_with_note_text": 0
+  },
+  "selection_rule": "diabetes + hypertension, S1b order, second sample; first ACR nearest the group median; ties lowest SEQN",
+  "trace": {
+    "any_egfr": {
+      "group_size": 131,
+      "group_median_first_acr_mg_g": 99.5,
+      "age_band": "60-69",
+      "sex": "female",
+      "egfr": 42,
+      "acr_first_mg_g": 100,
+      "acr_second_mg_g": 59,
+      "second_sample_confirms": true,
+      "engine_rule": "S1b",
+      "engine_order": "Albuminuria sin confirmar: repetir CAC en primera orina de la mañana",
+      "engine_review_date": "2025-09-14",
+      "in_baseline_eGFR_lt_60": true
+    },
+    "egfr_60_or_more": {
+      "group_size": 82,
+      "group_median_first_acr_mg_g": 107.2,
+      "age_band": "60-69",
+      "sex": "female",
+      "egfr": 105,
+      "acr_first_mg_g": 98,
+      "acr_second_mg_g": 31,
+      "second_sample_confirms": true,
+      "engine_rule": "S1b",
+      "engine_order": "Albuminuria sin confirmar: repetir CAC en primera orina de la mañana",
+      "engine_review_date": "2025-09-14",
+      "in_baseline_eGFR_lt_60": false
+    }
+  }
+}

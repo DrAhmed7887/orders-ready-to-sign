@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Orders ready to sign · hidden kidney damage</title>
+<meta name="description" content="1 in 7 people with diabetes or high blood pressure have signs of kidney damage hiding behind a normal blood test. 19 in 20 of them have never been told. A family doctor's morning list that finds them and prepares the next test to sign.">
+<!-- Static page: no server, no external fonts, no network calls. Every number is checked against
+     eval/results/*.json by tests/test_landing_claims.py. Synthetic patients only; NHANES is public CDC data. -->
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#f5f6f8; --panel:#fff; --ink:#0e1726; --ink-2:#344054; --muted:#5d6779; --line:#e4e7ec;
+  --accent:#0b6b61; --accent-ink:#fff; --accent-soft:#e6f2f0;
+  --warn:#b54708; --warn-soft:#fef0e6; --warn-ink:#93370d;
+  --shadow:0 1px 2px rgba(16,24,40,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f141b; --panel:#171e27; --ink:#eef2f6; --ink-2:#c9d1dc; --muted:#9aa6b5; --line:#2a3441;
+    --accent:#3fb8a8; --accent-ink:#06201d; --accent-soft:#12302c;
+    --warn:#f5a25d; --warn-soft:#3a2414; --warn-ink:#f8c08f;
+    --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+html{accent-color:var(--accent)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-feature-settings:"tnum" 1}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);background:var(--panel)}
+header.top .wrap{display:flex;align-items:center;gap:12px;min-height:60px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em}
+.mark i{width:30px;height:30px;border-radius:9px;background:var(--accent);display:grid;place-items:center}
+.top nav{margin-left:auto;display:flex;gap:16px;font-size:15px;flex-wrap:wrap}
+.top nav a{color:var(--ink-2);text-decoration:none}
+.top nav a:hover{color:var(--accent)}
+section{padding:44px 0}
+section + section{border-top:1px solid var(--line)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+h1{font-size:clamp(30px,5.2vw,50px);line-height:1.08;letter-spacing:-.025em;margin:0 0 18px;font-weight:850;text-wrap:balance}
+h1 em{font-style:normal;color:var(--warn)}
+h2{font-size:clamp(24px,3.4vw,32px);line-height:1.15;letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
+h3{font-size:19px;margin:0 0 6px}
+p{margin:0 0 14px;max-width:68ch}
+.lede{font-size:clamp(18px,2.2vw,21px);color:var(--ink-2)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:12px;font-weight:700;text-decoration:none;font-size:16px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--panel)}
+.btn:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px}
+.grid-2{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));align-items:start}
+.stats{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.stat b{display:block;font-size:44px;line-height:1;letter-spacing:-.03em;color:var(--warn);margin-bottom:10px}
+.stat span{display:block;color:var(--ink-2)}
+.stat small{display:block;color:var(--muted);font-size:13.5px;margin-top:10px}
+.timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.timeline li{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:baseline}
+.timeline time{font-weight:700;color:var(--muted);font-size:14.5px}
+.flag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:13px;font-weight:700;background:var(--warn-soft);color:var(--warn-ink)}
+.ok{display:inline-block;padding:1px 8px;border-radius:999px;font-size:13px;font-weight:700;background:var(--accent-soft);color:var(--accent)}
+.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;margin-bottom:12px}
+.table-wrap{overflow:auto;max-inline-size:100%;border:1px solid var(--line);border-radius:14px;background:var(--panel);container-type:inline-size}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:15.5px}
+caption{text-align:left;padding:14px 16px 0;font-weight:700}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+thead th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td.num{font-weight:800;white-space:nowrap}
+@container (width < 620px){
+  table,thead,tbody,tr,th,td{display:block}
+  thead{display:none}
+  tr{padding:10px 0;border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:0}
+  th,td{border:0;padding:4px 16px}
+  td:nth-child(2)::before{content:"Result: ";font-weight:600;color:var(--muted)}
+  td:nth-child(3)::before{content:"How: ";font-weight:600;color:var(--muted)}
+}
+ul.plain{margin:0;padding-left:20px;max-width:70ch}
+ul.plain li{margin-bottom:8px}
+.note{font-size:14.5px;color:var(--muted)}
+.diagram{margin:18px 0 0;padding:12px}.diagram img{display:block;width:100%;height:auto;border-radius:10px}.diagram figcaption{margin-top:8px;color:var(--muted);font-size:15px}.diagram .diagram-title{margin:0 0 10px;color:var(--ink);font-weight:700;font-size:17px}
+code{font:14px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--accent-soft);padding:2px 6px;border-radius:6px;overflow-wrap:anywhere}
+pre{margin:0;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+pre code{background:none;padding:0}
+footer{padding:32px 0 48px;color:var(--muted);font-size:14.5px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="mark"><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></i>Orders ready to sign</div>
+    <nav aria-label="Sections"><a href="#amparo">The problem</a><a href="#how">How it works</a><a href="#evidence">Evidence</a><a href="#harm">Who could be harmed</a></nav>
+  </div>
+</header>
+
+<main>
+<section aria-labelledby="hero-title">
+  <div class="wrap">
+    <p class="eyebrow">Primary care · kidney damage · family doctors</p>
+    <h1 id="hero-title"><em>1 in 7</em> people with diabetes or high blood pressure have signs of kidney damage hiding behind a normal blood test. <em>19 in 20</em> of them have never been told.</h1>
+    <p class="lede">Every morning, this tool reads a family doctor's list, finds those people, and prepares the next test, ready to sign. The computer does the checking. The doctor decides.</p>
+    <div class="cta">
+      <a class="btn primary" href="ui/index.html?lang=en&amp;cohort=aguja#consulta/S1c-251-2026-09-12">Open the doctor's screen <span aria-hidden="true">→</span></a>
+      <a class="btn ghost" href="#evidence">How we measured it</a>
+    </div>
+  </div>
+</section>
+
+<section id="amparo" aria-labelledby="amparo-title">
+  <div class="wrap grid-2">
+    <div>
+      <p class="eyebrow">The problem, from one patient's side</p>
+      <h2 id="amparo-title">Meet Amparo. Nothing hurts. Nothing looks wrong.</h2>
+      <p>Amparo is 69, with type 2 diabetes and high blood pressure. Her blood test says her kidneys filter well, so her results are called "acceptable".</p>
+      <p>But a urine test found <b>albumin</b>, a protein that should not be there. That is often the first sign that diabetes and high blood pressure are damaging the kidneys. A second high result came in a letter from her private insurer and was typed into a note, where no filter looks.</p>
+      <p>Her record has no kidney diagnosis. She is not on the blood-pressure medicine that also protects the kidneys. <b>The warning sign is hiding behind a normal blood test.</b></p>
+      <p class="note">Amparo is made up: she is patient 251 in our synthetic demo. The numbers below are real.</p>
+    </div>
+    <div class="card" aria-label="Amparo's record">
+      <h3>Amparo's record</h3>
+      <ol class="timeline">
+        <li><time>2014 · 2016</time><span>Type 2 diabetes, then high blood pressure</span></li>
+        <li><time>Jan 2026</time><span>Urine albumin <b>85 mg/g</b> <span class="flag">normal is under 30</span></span></li>
+        <li><time>Sep 2026</time><span>Blood test eGFR <b>68</b> <span class="ok">"acceptable"</span></span></li>
+        <li><time>Sep 2026</time><span>Note: insurer's report, urine albumin <b>110 mg/g</b> <span class="flag">only in free text</span></span></li>
+        <li><time>Today</time><span>No kidney diagnosis · metformin only · appointment at 10:20</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="numbers-title">
+  <div class="wrap">
+    <p class="eyebrow">How many people are like Amparo</p>
+    <h2 id="numbers-title">Measured on the US national health survey (NHANES, CDC)</h2>
+    <div class="stats">
+      <div class="card stat"><b>1 in 7</b><span>adults with diabetes or high blood pressure have albumin in their urine while their blood test looks normal.</span><small>143 per 1,000 (95 % CI 128–159) · NHANES 2021–2023, n = 2,216</small></div>
+      <div class="card stat"><b>19 in 20</b><span>of them have never been told they have a kidney problem.</span><small>953 per 1,000 (95 % CI 904–977) · NHANES 2021–2023, n = 313</small></div>
+      <div class="card stat"><b>1 in 5</b><span>of those who also have both diabetes and high blood pressure take no ACE inhibitor or ARB, the medicine guidelines recommend for this (some may have a reason not to).</span><small>218 per 1,000 (95 % CI 151–304) · NHANES 2017–2020, n = 204</small></div>
+    </div>
+    <p class="note" style="margin-top:16px">That is about <b>10.6 million</b> US adults, an undercount, since a third of people had no lab result. The same gap exists in Spain: 54 % of kidney disease in 5,009 adults with type 2 diabetes in Spanish primary care was undiagnosed, "mainly in patients with isolated eGFR or uACR abnormalities" (<a href="https://doi.org/10.1016/j.pcd.2026.02.007">DIAMOND2, 2026</a>).</p>
+  </div>
+</section>
+
+<section aria-labelledby="why-title">
+  <div class="wrap grid-2">
+    <div>
+      <p class="eyebrow">Why it matters</p>
+      <h2 id="why-title">There is a clear next step. It just doesn't happen.</h2>
+      <ul class="plain">
+        <li>Albumin in the urine predicts a higher risk of death, independently of the kidney blood test (105,872 people, 14 population studies; <a href="https://doi.org/10.1016/S0140-6736(10)60674-5">Matsushita et al., Lancet 2010</a>).</li>
+        <li>The international kidney guideline: "We recommend that treatment with an ACEi or an ARB be initiated in patients with diabetes, hypertension, and albuminuria" (<a href="https://doi.org/10.1016/j.kint.2022.06.008">KDIGO 2022, Rec. 1.2.1</a>).</li>
+        <li>But one urine test is not a diagnosis: about <b>half</b> of high results are high again on a second sample 10 days later. So the right first step is simple: <b>repeat the urine test.</b></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Why it gets missed</p>
+      <h2>Attention, not knowledge</h2>
+      <p>The blood test is the number most people read as "the kidney result", and it looks fine. The urine result sits elsewhere in the record, sometimes only in a note or a letter, and goes out of date quietly.</p>
+      <p>No one has time to check every chart, every morning.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <p class="eyebrow">What we built</p>
+    <h2 id="how-title">Three steps. The doctor makes every decision.</h2>
+    <ol class="steps">
+      <li class="card"><h3>It reads the list</h3><p>Every morning, it checks everyone with diabetes or high blood pressure with rules from kidney guidelines (KDIGO, Valencian primary-care protocol), signed by the project's physician. A small open AI model also reads the notes for results typed there; the code checks every sentence it points to.</p></li>
+      <li class="card"><h3>It prepares the next step</h3><p>For each person it finds: the test order, one line for the notes and a date to review the result, with the reason, the number and the date.</p></li>
+      <li class="card"><h3>The doctor signs</h3><p>One click to sign, or "no" with a reason. If a test is already ordered or was repeated recently, the person is not listed again.</p></li>
+    </ol>
+    <figure class="card diagram">
+      <figcaption class="diagram-title">Inside the tool, step by step, with Amparo</figcaption>
+      <picture>
+        <source media="(max-width: 640px)" srcset="docs/workflow_4x5.svg" width="1080" height="1350">
+        <img src="docs/workflow.svg" width="1600" height="900" loading="lazy" decoding="async"
+           alt="How it works, traced with Amparo: 1 Extract, 2 Signed rules find her urine test was never repeated, 3 the note reader points to the sentence with her second result and the code checks it, 4 the final rules see two high results 8 months apart, 5 the doctor signs an order to consider a kidney disease code. Each step also shows a real NHANES participant, the median case of those like Amparo (a woman in her 60s, eGFR 105, urine albumin 98, then 31 on a sample 10 days later); the note reader and the final rules are marked not tested on real data.">
+      </picture>
+      <figcaption>Drawn from the code by <code>docs/diagram/build.mjs</code>; the numbers are read from the committed results.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="evidence" aria-labelledby="evidence-title">
+  <div class="wrap">
+    <p class="eyebrow">Evidence · pre-registered protocol, reproducible</p>
+    <h2 id="evidence-title">What we measured, and how</h2>
+    <p>The kidney rules were signed before we touched any real data. We wrote the evaluation plan down first, then ran the unchanged rules on public CDC survey data.</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="ev-caption">
+      <table>
+        <caption id="ev-caption">External evaluation on NHANES (survey-weighted, 95 % CI)</caption>
+        <thead><tr><th scope="col">Question</th><th scope="col">Result</th><th scope="col">How</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">How many kidney warning signs does a blood-test-only filter find?</th><td class="num">48 %</td><td>Filter "eGFR under 60" on NHANES 2021–2023 adults with diabetes or high blood pressure (481 per 1,000; 445–517). The other 52 % are the people like Amparo; the tool prepares a repeat urine test for each of them.</td></tr>
+          <tr><th scope="row">When the tool asks for a repeat urine test, how often is it confirmed?</th><td class="num">52 %</td><td>NHANES 2009–2010, the only cycle with a second urine sample (524 per 1,000; 441–606; n = 360). Not flagged but high on the second sample: 13.5 per 1,000.</td></tr>
+          <tr><th scope="row">Do we read the CDC files the way the CDC does?</th><td class="num">7 of 8</td><td>Figures in the CDC's own analytic note reproduced exactly. The eighth is explained in the results file.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:14px">Limits: single visits (a kidney diagnosis needs 3 months); self-reported diagnoses; a third of people had no lab result; US data, while the tool is designed for Spanish primary care. The note reader, tested on real published case reports, found an ACR result in 5 of 21 real case reports that state one, and read none of their values; Amparo's note is synthetic. Full protocol, results and code: <code>docs/EVAL_PROTOCOL.md</code>, <code>eval/results/</code>.</p>
+    <pre><code>pip install -r requirements-eval.txt
+python3 eval/nhanes/fetch.py     # public CDC files, pinned by SHA-256
+python3 eval/nhanes/run.py       # engine on NHANES → eval/results/nhanes.md
+python3 eval/nhanes/people.py    # awareness, treatment → eval/results/nhanes_people.md</code></pre>
+  </div>
+</section>
+
+<section id="harm" aria-labelledby="harm-title">
+  <div class="wrap">
+    <p class="eyebrow">Who benefits, and who could be harmed</p>
+    <h2 id="harm-title">Honest about what it can and can't do</h2>
+    <div class="grid-2">
+      <div class="card"><h3>Who benefits</h3><ul class="plain"><li>People like Amparo: a kidney problem found while it can still be slowed.</li><li>Family doctors: the checking is done before the clinic opens.</li></ul></div>
+      <div class="card"><h3>Who could be harmed</h3><ul class="plain"><li><b>Extra tests:</b> about half of repeat orders come back normal.</li><li><b>False reassurance:</b> not on the list is not "cleared"; it only sees the record.</li><li><b>Wrong setting:</b> the numbers are from the US.</li></ul></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Synthetic patients only; no real patient data anywhere. NHANES is public CDC/NCHS data. Built with AI assistance (Claude for code and analysis; a small open model, Qwen3-4B, reads synthetic notes and published case reports); every clinical rule and threshold was signed by the project's physician.</p>
+  </div>
+</footer>
+</body>
+</html>

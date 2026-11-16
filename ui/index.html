@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estación Clínica AP · Pedidos para firmar</title>
+<!-- Página estática: lee pedidos.js (y pedidos_aguja.js si existe). Sin servidor, sin fuentes externas, sin llamadas de red.
+     Diseño: Estación Clínica AP «Historia Clínica y Pedidos para firmar» (lista, consulta, ficha y registro). -->
+<style>
+:root{
+  --fondo:#f5f6f8; --panel:#fff; --tinta:#0e1726; --tinta-2:#344054; --suave:#5d6779; --borde:#e4e7ec; --linea:#eef0f3;
+  --acento:#0b6b61; --acento-osc:#08534b; --acento-claro:#e6f2f0;
+  --g1:#b54708; --g1-txt:#93370d; --g1-claro:#fef0e6; --g2:#1d4ed8; --g2-claro:#eaf0fe; --g3:#475467; --g3-claro:#f2f4f7;
+  --aviso:#fef3c7; --aviso-borde:#d97706;
+  --sombra:0 1px 2px rgba(16,24,40,.04);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:15px/1.45 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-feature-settings:"tnum" 1}
+a{color:var(--acento)} a:hover{color:var(--acento-osc)}
+header{background:var(--panel);border-bottom:1px solid var(--borde);display:flex;align-items:center;gap:14px;padding:12px 24px;flex-wrap:wrap}
+.marca{display:flex;align-items:center;gap:12px}
+.marca i{width:32px;height:32px;border-radius:9px;background:var(--acento);display:grid;place-items:center;flex:0 0 auto}
+.marca b{display:block;font-size:15px;letter-spacing:-.01em}
+.marca small{display:block;font-size:12.5px;color:var(--suave)}
+.pastillas-hdr{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pastilla{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;font-size:12.5px;font-weight:600;background:var(--g1-claro);color:var(--g1-txt)}
+.pastilla-verde{background:var(--acento-claro);color:var(--acento-osc)}
+.selector-cohorte{display:inline-flex;align-items:center;padding:3px;border-radius:999px;background:var(--fondo);border:1px solid var(--borde);gap:2px}
+.btn-cohorte{height:28px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:var(--tinta-2);font-size:12.5px;font-weight:600;cursor:pointer}
+.btn-cohorte:hover{background:#e9edf2;color:var(--tinta)}
+.btn-cohorte.activo{background:var(--tinta);color:#fff}
+.btn-cohorte.activo:hover{background:var(--tinta)}
+header .quien{margin-left:auto;font-size:14px;color:var(--tinta-2)}
+.cuerpo{display:flex;flex-wrap:wrap;align-items:flex-start}
+nav{flex:1 1 250px;max-width:268px;padding:20px 14px;display:flex;flex-direction:column;gap:2px}
+nav a{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 12px;border-radius:9px;color:var(--tinta-2);text-decoration:none;font-weight:500;white-space:nowrap;font-size:14.5px}
+nav a:hover{background:#eceef2;color:var(--tinta)}
+nav a.activo{background:var(--panel);color:var(--tinta);font-weight:700;box-shadow:0 1px 2px rgba(16,24,40,.06),0 0 0 1px var(--borde)}
+nav .n{margin-left:auto;min-width:24px;height:22px;padding:0 7px;border-radius:999px;background:#eaecf0;color:var(--tinta-2);font-size:12.5px;font-weight:700;display:grid;place-items:center}
+nav a.activo .n{background:var(--acento);color:#fff}
+.nota-nav{margin-top:18px;padding:12px;border-radius:10px;background:var(--panel);border:1px solid var(--borde);font-size:12.5px;color:var(--suave);line-height:1.45}
+main{flex:999 1 560px;min-width:0;max-width:1320px;padding:26px 32px 40px;display:flex;flex-direction:column;gap:20px}
+h1{margin:0;font-size:30px;line-height:1.15;letter-spacing:-.02em;font-weight:800;text-wrap:balance}
+h1 em{font-style:normal;color:var(--g1)}
+h2{margin:0;font-size:17px;font-weight:800;letter-spacing:-.01em}
+.sub{color:var(--suave);font-size:14px}
+.antetitulo{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--suave)}
+.caja{background:var(--panel);border:1px solid var(--borde);border-radius:14px;box-shadow:var(--sombra);padding:20px 22px}
+/* Resultado arriba: lo que la revisión ha encontrado y por qué importa */
+.resultado{display:flex;flex-wrap:wrap;gap:24px;padding:24px 26px}
+.resultado > div:first-child{flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.apuesta{font-size:16px;color:var(--tinta-2)} .apuesta b{color:var(--g1-txt)}
+.cifras{flex:1 1 440px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cifra{background:var(--fondo);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.cifra b{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.cifra span{font-size:13px;color:var(--tinta-2);line-height:1.35}
+/* Cómo se ha preparado la lista: cada paso a la vista */
+.pasos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:0}
+.paso{padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.paso + .paso{border-left:1px solid var(--linea)}
+.paso .k{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--acento);text-transform:uppercase;letter-spacing:.05em}
+.paso.tu .k{color:var(--tinta)} .paso.mal .k{color:#b42318}
+.paso b{font-size:15px} .paso span:last-child{font-size:13px;color:var(--suave)}
+.banner{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 18px;background:var(--tinta);color:#fff;border-radius:14px}
+.banner .et{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#c3cad5}
+.banner .q{font-weight:600}
+.nav-2l{display:flex;flex-direction:column;line-height:1.2;min-width:0} .nav-2l small{font-size:11.5px;font-weight:600;color:var(--tinta-2)}
+nav a svg{flex:0 0 auto}
+.cupo-tira{border:1px solid var(--borde);border-left:4px solid var(--g2)}
+.cupo-tira .tira-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px}
+.cupo-tira .tira-c{background:var(--fondo);border:1px solid var(--borde);border-radius:8px;padding:8px 10px}
+.cupo-tira .tira-c b{display:block;font-size:20px;line-height:1.1;color:var(--tinta)}
+.cupo-tira .tira-c span{font-size:12px;color:var(--tinta-2)}
+.cupo-tira .tira-c.alerta-c{border-color:var(--g1);background:#fff6f4}
+.cupo-tira .agujas{margin-top:10px;font-size:13.5px;color:var(--tinta-2);line-height:1.5}
+.cupo-tira .agujas a{font-weight:700}
+.ws-campos{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin:8px 0}
+.ws-campos div{font-size:12.5px;color:var(--tinta-2)} .ws-campos b{display:block;color:var(--tinta);font-size:13px}
+.aguja-banner{border:1px solid var(--acento);border-left:4px solid var(--acento);background:linear-gradient(90deg,var(--acento-claro) 0%,#fff 45%)}
+.aguja-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.grupo-t{display:flex;align-items:center;gap:10px;margin:4px 2px 8px}
+.grupo-t i{width:10px;height:10px;border-radius:3px}
+.grupo-t b{font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.grupo-t span{font-size:13px;color:var(--suave)}
+.lista{background:var(--panel);border:1px solid var(--borde);border-radius:14px;box-shadow:var(--sombra);overflow:hidden}
+.fila{display:grid;grid-template-columns:190px minmax(0,1.5fr) minmax(0,1fr) auto;gap:22px;align-items:center;padding:16px 18px}
+.fila + .fila{border-top:1px solid var(--linea)}
+.fila.hecha{background:#fafbfc} .fila.hecha > div:not(.acciones){opacity:.6}
+.nombre{font-size:18px;font-weight:800;letter-spacing:-.01em}
+.nombre a{color:inherit;text-decoration:none} .nombre a:hover{text-decoration:underline}
+.chip{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;background:var(--g3-claro);color:var(--tinta-2);font-size:12.5px;font-weight:600;margin:6px 4px 0 0}
+.chip.osc{background:var(--tinta);color:#fff}
+.chip.a2{background:var(--g2-claro);color:var(--g2)} .chip.a3{background:var(--g1-claro);color:var(--g1-txt)}
+.motivo{display:flex;align-items:center;gap:16px}
+.motivo svg{flex:0 0 auto}
+.fuente{font-size:12.5px;color:var(--suave);margin-top:2px}
+.farmaco{margin-top:6px;padding:6px 10px;background:var(--aviso);border:1px solid var(--aviso-borde);border-radius:8px;font-size:13.5px}
+.tambien{margin-top:4px;font-size:13.5px;color:var(--suave)}
+.fuentes{margin:10px 0 0}.fuentes dt{min-width:170px}.fuentes dd{margin:0}
+.etq{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--suave)}
+.pedido-txt{font-weight:600}
+.acciones{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;align-items:center}
+button,.btn{height:44px;padding:0 18px;border-radius:10px;font:600 15px Inter,system-ui,sans-serif;cursor:pointer;border:1px solid #d0d5dd;background:#fff;color:var(--tinta);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+button:hover,.btn:hover{background:#f9fafb}
+button.firmar,.btn.prim{border-color:var(--acento);background:var(--acento);color:#fff;font-weight:700}
+button.firmar:hover,.btn.prim:hover{background:var(--acento-osc)}
+.btn.claro{border-color:#fff;background:#fff;color:var(--tinta);margin-left:auto}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--g2);outline-offset:2px}
+.estado{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--acento)}
+.estado.desc{color:#7a4b00}
+.deshacer{height:44px;border:0;padding:0 4px;background:none;color:var(--suave);text-decoration:underline;font-size:13px;font-weight:500}
+.deshacer:hover{background:none;color:var(--tinta)}
+.discontinua{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;background:var(--panel);border:1px dashed #b5bcc7;border-radius:14px;color:var(--tinta-2)}
+.discontinua a{margin-left:auto;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--linea);vertical-align:top}
+th{color:var(--suave);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.tabla{overflow-x:auto}
+/* Ficha */
+.paciente{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.inicial{width:52px;height:52px;border-radius:14px;background:var(--g2-claro);color:var(--g2);display:grid;place-items:center;font-weight:800;font-size:20px;flex:0 0 auto}
+.cita{margin-left:auto;display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;background:var(--tinta);color:#fff}
+.cita .et{font-size:12px;color:#c3cad5;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.ficha{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+.ficha > .izq{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.ficha > .der{flex:1 1 380px;min-width:0}
+.condiciones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.cond{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;background:var(--fondo)}
+.cond svg{flex:0 0 auto;margin-top:2px}
+.cond b{display:block;font-size:14px}
+.cond span{font-size:12.5px;color:var(--suave)}
+.cond .prop{display:inline-block;margin-top:4px;padding:1px 7px;border-radius:5px;background:var(--aviso);color:#7a4b00;font-weight:700;font-size:11.5px}
+.pedido-caja{padding:0;border:1px solid var(--acento);box-shadow:0 0 0 4px var(--acento-claro),0 8px 24px rgba(16,24,40,.08)}
+.pedido-caja .cab{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px dashed #d0d5dd}
+.pedido-caja .cab .chip{white-space:nowrap;flex:0 0 auto}
+.campo{padding:12px 20px;border-bottom:1px solid var(--linea)}
+.campo div{font-weight:600;margin-top:2px}
+.campo .sub{font-weight:400}
+.pedido-caja .acciones{justify-content:flex-start;padding:16px 20px}
+.pedido-caja .acciones .firmar{flex:1 1 100%}
+.pedido-caja .acciones button:not(.firmar):not(.deshacer){flex:1 1 0}
+.pedido-caja .pie{padding:0 20px 16px;font-size:13px;color:var(--suave)}
+.medidor{display:flex;gap:22px;flex-wrap:wrap;color:var(--suave);font-size:13.5px}
+.medidor b{color:var(--tinta)}
+/* Fuera de la lista: Pilar 2 */
+.pilar-desconocido{border-left:4px solid var(--acento);background:var(--acento-claro)}
+.pilar-titulo{font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--acento-osc)}
+.fuera-sec-h{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.fuera-sec-h .chip{margin:0}
+/* Consulta AP · Historia (sin tablas) */
+.flujo-integracion{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;background:var(--panel);border:1px solid var(--borde);border-radius:14px;padding:14px 16px;box-shadow:var(--sombra)}
+.paso-flujo{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:10px;background:var(--fondo)}
+.paso-flujo.activo{background:var(--acento-claro);border:1px solid var(--acento)}
+.num-flujo{width:24px;height:24px;border-radius:999px;background:var(--tinta);color:#fff;font-size:12.5px;font-weight:800;display:grid;place-items:center;flex:0 0 auto;margin-top:1px}
+.paso-flujo.activo .num-flujo{background:var(--acento);color:#fff}
+.paso-flujo b{display:block;font-size:13px;line-height:1.25}
+.paso-flujo > div > span{display:block;font-size:12px;color:var(--suave);line-height:1.3;margin-top:2px}
+.pac-selector{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn-pac-sel{height:34px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:600;background:var(--panel);border:1px solid var(--borde);color:var(--tinta-2)}
+.btn-pac-sel:hover{background:#eceef2}
+.btn-pac-sel.activo{background:var(--acento);border-color:var(--acento);color:#fff}
+.btn-pac-sel.activo:hover{background:var(--acento-osc)}
+.sel-pac-combo{height:34px;padding:0 10px;border-radius:8px;border:1px solid var(--borde);background:var(--panel);font:600 13px Inter,system-ui,sans-serif;color:var(--tinta-2)}
+.consulta-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(360px,1fr);gap:20px;align-items:start}
+.ehr-col,.drawer-col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ehr-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;font-size:13px;color:var(--suave)}
+.ehr-meta b{color:var(--tinta-2)}
+.ehr-sec-t{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.ehr-lab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.ehr-lab-item{padding:10px 12px;border-radius:10px;background:var(--fondo);border:1px solid var(--linea)}
+.ehr-lab-val{font-size:17px;font-weight:800;margin-top:2px}
+.ehr-tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:6px;font-size:11.5px;font-weight:700;margin-top:6px}
+.ehr-tag.normal{background:#e7f5ef;color:#08534b}
+.ehr-tag.atencion{background:var(--g2-claro);color:var(--g2)}
+.ehr-tag.alerta-valor{background:var(--g1-claro);color:var(--g1-txt)}
+.ehr-nota-box{padding:12px 14px;border-radius:10px;background:#fafbfc;border:1px solid var(--borde);font-size:14px;line-height:1.5}
+.ehr-nota-cita{margin-top:8px;padding:8px 10px;border-radius:8px;background:var(--acento-claro);color:var(--acento-osc);font-size:12.5px;font-weight:600}
+.ehr-cie-box{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ehr-cie-sin{margin-top:8px;font-size:13px;color:var(--g1-txt);background:var(--g1-claro);padding:6px 10px;border-radius:8px;font-weight:600}
+.consulta-fuentes{display:flex;flex-direction:column;gap:8px;margin:6px 0 0}
+.consulta-fuente-item{padding:8px 10px;border-radius:8px;background:var(--fondo);font-size:13px}
+.consulta-fuente-item dt{font-weight:700;color:var(--acento-osc);font-size:12px;margin-bottom:2px}
+.consulta-fuente-item dd{margin:0;color:var(--tinta-2);line-height:1.35}
+dialog{border:0;border-radius:14px;padding:22px;max-width:440px;width:calc(100% - 32px);box-shadow:0 20px 50px rgba(16,24,40,.25)}
+dialog::backdrop{background:rgba(14,23,38,.45)}
+dialog label{display:flex;align-items:center;gap:10px;min-height:40px;padding:0 10px;border-radius:8px;cursor:pointer}
+dialog label:hover{background:var(--fondo)}
+.alerta{padding:12px 16px;border-radius:12px;background:#fef3f2;border:1px solid #b42318;color:#7a271a}
+.vacio{padding:30px;text-align:center;color:var(--suave)}
+@media (max-width:1100px){
+  .fila{grid-template-columns:1fr 1fr} .acciones{justify-content:flex-start}
+  .pasos{grid-template-columns:repeat(2,minmax(0,1fr))} .paso + .paso{border-left:0}
+  .flujo-integracion{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .consulta-grid{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  header{padding:12px 16px} header .quien{margin-left:0}
+  nav{max-width:none;flex-direction:row;flex-wrap:wrap} .nota-nav{display:none}
+  main{padding:18px 16px} .fila{grid-template-columns:1fr} .pasos,.condiciones,.flujo-integracion{grid-template-columns:1fr}
+  .motivo{flex-direction:column;align-items:flex-start;gap:8px} .cifra b{font-size:20px} .cifra span{font-size:12px}
+  .cita{margin-left:0}
+}
+
+/* ===== Puesto clínico de AP (maqueta): el módulo se ve dentro de una estación de trabajo, no como una web aparte.
+   Referencia de estilo: estaciones de AP públicas (cabecera de paciente, problemas con CIE-10/CIAP-2, pestañas de
+   historia y cajón de petición). Sin logotipos ni marcas oficiales: es una maqueta con datos sintéticos. ===== */
+:root{
+  --fondo:#e8ecf1; --borde:#c8d1dc; --linea:#e1e6ed; --host:#1d3a5c; --host-2:#2b5a8a; --host-claro:#dfe8f3;
+  --acento:#0b6b61; --acento-osc:#08534b; --acento-claro:#e3f1ee;
+}
+body{font:14px/1.45 "Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--fondo)}
+.host-barra{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--host);color:#dbe6f3;font-size:12.5px;padding:5px 18px}
+.host-barra b{color:#fff;font-weight:600}
+.host-barra .host-maqueta{margin-left:auto;background:#f6c343;color:#3a2a00;font-weight:700;padding:1px 8px;border-radius:3px;letter-spacing:.02em}
+header{background:linear-gradient(#f7f9fb,#eef2f6);border-bottom:1px solid var(--borde);padding:8px 18px;gap:12px}
+.marca i{border-radius:4px;width:28px;height:28px;background:var(--host-2)}
+.marca b{font-size:14px} .marca small{font-size:12px}
+.pastilla{border-radius:3px;height:24px;font-size:12px}
+.selector-cohorte{border-radius:4px;padding:2px} .btn-cohorte{border-radius:3px;height:26px;font-size:12px}
+nav{background:#f7f9fb;border-right:1px solid var(--borde);align-self:stretch}
+nav a{min-height:38px;border-radius:3px;font-size:13.5px;border-left:3px solid transparent}
+nav a.activo{background:var(--host-claro);box-shadow:none;border-left-color:var(--host-2);color:var(--host)}
+nav a.activo .n{background:var(--host-2)}
+.nota-nav{border-radius:4px}
+main{padding:18px 22px 32px;gap:14px}
+h1{font-size:24px;font-weight:700;letter-spacing:-.01em}
+h2{font-size:15px;font-weight:700}
+.caja,.lista,.discontinua,.flujo-integracion{border-radius:4px;box-shadow:none;border-color:var(--borde)}
+.caja{padding:16px 18px}
+.banner{border-radius:4px;background:var(--host)}
+.cifra,.cita,.inicial,.ehr-lab-item,.ehr-nota-box,.consulta-fuente-item,.paso-flujo{border-radius:4px}
+button,.btn{border-radius:4px;height:38px;font:600 14px "Segoe UI",system-ui,sans-serif;padding:0 14px}
+.deshacer{height:38px}
+.chip{border-radius:3px}
+th{background:#f1f4f8}
+/* Consulta: puesto de trabajo */
+.ws{display:flex;flex-direction:column;gap:0;border:1px solid var(--borde);background:#fff}
+.ws-citados{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:6px 10px;background:#f1f4f8;border-bottom:1px solid var(--borde)}
+.ws-rotulo{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--suave);margin-right:4px}
+.btn-pac-sel{height:28px;border-radius:3px;font-size:12.5px;padding:0 10px}
+.btn-pac-sel .hora{font-weight:700;margin-right:6px;opacity:.8}
+.btn-pac-sel.activo{background:var(--host-2);border-color:var(--host-2)}
+.sel-pac-combo{height:28px;border:1px solid var(--borde);border-radius:3px;font:inherit;font-size:12.5px;background:#fff}
+.ws-banner{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:8px 14px;background:var(--host-2);color:#fff}
+.ws-quien{display:flex;align-items:baseline;gap:10px}
+.ws-quien b{font-size:17px;letter-spacing:.02em}
+.ws-quien span{font-size:13px;color:#dbe6f3}
+.ws-sint{background:rgba(255,255,255,.16);padding:0 6px;border-radius:3px;font-size:11.5px!important}
+.ws-banner dl{display:flex;gap:16px;flex-wrap:wrap;margin:0;font-size:12.5px}
+.ws-banner dl div{display:flex;gap:5px} .ws-banner dt{color:#b9cce2} .ws-banner dd{margin:0;font-weight:600}
+.ws-alertas{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.ws-alerta{font-size:12px;font-weight:700;padding:2px 8px;border-radius:3px}
+.ws-alerta.ambar{background:#fde8c8;color:#7a3e00} .ws-alerta.azul{background:#e3edfb;color:#163e75}
+.ws-cuerpo{display:grid;grid-template-columns:230px minmax(0,1fr) minmax(330px,380px);min-height:520px}
+.ws-arbol{border-right:1px solid var(--borde);background:#f7f9fb;padding:8px 0;font-size:13px}
+.ws-tit{padding:6px 12px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--host);border-bottom:1px solid var(--linea)}
+.ws-tit small{font-weight:600;color:var(--suave);text-transform:none;letter-spacing:0;margin-left:4px}
+.ws-arbol ul{list-style:none;margin:0 0 10px;padding:4px 0}
+.ws-arbol li{display:flex;gap:8px;padding:5px 12px;align-items:baseline}
+.ws-arbol li code{font-size:12px;color:var(--host-2);font-weight:700;min-width:44px}
+.ws-arbol li small{display:block;font-size:11.5px;color:var(--suave)}
+.ws-arbol li.falta{background:#fff4e5;border-left:3px solid #d97706;padding-left:9px}
+.ws-arbol li.falta code{color:#9a4a00}
+.ws-centro{display:flex;flex-direction:column;min-width:0}
+.ws-pestanas{display:flex;gap:2px;padding:6px 10px 0;background:#f1f4f8;border-bottom:1px solid var(--borde)}
+.ws-pestana{height:32px;border-radius:3px 3px 0 0;border:1px solid var(--borde);border-bottom:0;background:#e6ebf1;font-size:13px;font-weight:600;color:var(--tinta-2);padding:0 12px}
+.ws-pestana.activa{background:#fff;color:var(--host);position:relative;top:1px}
+.ws-panel{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.ws-evol{border:1px solid var(--linea);border-radius:3px}
+.ws-evol header{display:block;background:#f6f8fa;border-bottom:1px solid var(--linea);padding:5px 10px;font-size:12.5px;color:var(--suave)}
+.ws-evol header b{color:var(--tinta)}
+.ws-evol p{margin:0;padding:9px 10px;font-size:14px}
+.ws-evol mark{background:#fff1a8;padding:0 2px;border-bottom:2px solid #d9a400}
+.ws-evol .ehr-nota-cita{margin:0 10px 10px}
+.ws-tabla td,.ws-tabla th{padding:7px 8px;font-size:13px}
+.ws-linea{font-size:13.5px}
+.ws .drawer-col{border-left:1px solid var(--borde);background:#fbfcfd;padding:10px}
+.ws .pedido-caja{border-top:3px solid var(--acento)}
+@media (max-width:1100px){.ws-cuerpo{grid-template-columns:200px minmax(0,1fr)} .ws .drawer-col{grid-column:1 / -1;border-left:0;border-top:1px solid var(--borde)}}
+@media (max-width:700px){.ws-cuerpo{grid-template-columns:1fr} .ws-arbol{border-right:0;border-bottom:1px solid var(--borde)} .ws-alertas{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="host-barra" role="presentation"><span><b>Historia de salud · Atención Primaria</b> — entorno de demostración</span><span>Centro de salud (ficticio) · Consulta 4</span><span class="host-maqueta">MAQUETA · no es un sistema oficial · datos sintéticos</span></div>
+<header>
+  <div class="marca"><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i>
+    <div><b>Estación Clínica AP · Cupo Dra. Carmen López</b><small>Módulo de cribado renal integrado en el puesto (maqueta)</small></div></div>
+  <div class="pastillas-hdr">
+    <span class="pastilla pastilla-verde">Sin conexión · datos sintéticos · trazable</span>
+    <div id="selector-cohorte" class="selector-cohorte" role="group" aria-label="Cohorte de demostración" style="display:none">
+      <button type="button" class="btn-cohorte activo" data-cohorte="base">Caso Carmen · 4 pac.</button>
+      <button type="button" class="btn-cohorte" data-cohorte="aguja">Aguja · Amparo (251 pac.)</button>
+      <button type="button" class="btn-cohorte" data-cohorte="cupo">Cupo AP Español · 1.000 pac.</button>
+    </div>
+  </div>
+  <div class="quien" id="quien"></div>
+</header>
+<div class="cuerpo">
+  <nav aria-label="Secciones">
+    <a href="#agenda" data-v="agenda"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agenda de hoy <span class="n" id="n-agenda"></span></a>
+    <a href="#pedidos" data-v="pedidos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg>Pedidos para firmar <span class="n" id="n-pedidos"></span></a>
+    <a href="#consulta" data-v="consulta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M8 14h4M8 18h8"/></svg>Consulta AP · Historia</a>
+    <a href="#fuera" data-v="fuera"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><span class="nav-2l">Fuera de la lista<small>Desconocido ≠ Normal</small></span> <span class="n" id="n-fuera"></span></a>
+    <a href="#registro" data-v="registro"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg>Registro de decisiones <span class="n" id="n-registro"></span></a>
+    <div class="nota-nav"><b>Página local, sin conexión · trazable.</b><br>Nunca propone un fármaco; el diagnóstico lo decide el médico. Cada pedido espera tu firma.</div>
+  </nav>
+  <main id="vista" aria-live="polite"></main>
+</div>
+
+<dialog id="dlg-descartar">
+  <form method="dialog">
+    <h2>Descartar: <span id="dlg-quien"></span></h2>
+    <p class="sub">El motivo queda en el registro. No se vuelve a proponer con los mismos datos.</p>
+    <div id="dlg-motivos"></div>
+    <div class="acciones" style="margin-top:14px">
+      <button value="cancelar" type="submit">Cancelar</button>
+      <button value="ok" type="submit" class="firmar">Descartar</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="pedidos.js"></script>
+<script src="pedidos_aguja.js"></script>
+<script src="pedidos_cupo.js"></script>
+<script src="i18n_en.js"></script>
+<script>
+"use strict";
+let cohorte = "base";
+let D = window.PEDIDOS;
+const MOTIVOS = ["Ya valorado en otra consulta", "Seguimiento en nefrología u otro centro",
+                 "El paciente no lo desea", "Dato erróneo en la historia", "Otro"];
+const MESES = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+// La clave lleva la fuente del extracto: dos extractos con la misma fecha (demo y ciego) no mezclan decisiones.
+let CLAVE = "g35-decisiones-" + (D ? (D.fuente || "extracto") + "-" + D.fecha_referencia : "x");
+let PAR = Object.fromEntries(((D && D.parametros) || []).map(p => [p.clave, p]));
+const COLOR = {1: "var(--g1)", 2: "var(--g2)", 3: "var(--g3)"};
+let consultaPacienteId = null;
+let pestanaConsulta = "seguimiento";
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+// Devuelve HTML ya escapado: solo formatea fechas AAAA-MM-DD; cualquier otra cosa sale escapada tal cual.
+const fecha = iso => {
+  if (!iso) return "—";
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  return m && MESES[+m[2]-1] ? esc(`${+m[3]} ${MESES[+m[2]-1]} ${m[1]}`) : esc(iso);
+};
+// Texto de las reglas: se escapa primero y luego se cambian las fechas ISO por «12 feb 2026».
+const txt = s => esc(s).replace(/\b\d{4}-\d{2}-\d{2}\b/g, fecha);
+const miles = n => String(n ?? "—").replace(/\B(?=(\d{3})+(?!\d))/g, ".");   // 1000 → «1.000»
+const num = v => (typeof v === "number" ? String(Math.round(v * 10) / 10).replace(".", ",") : "—");
+const par = k => PAR[k] ? num(PAR[k].valor) : "—";
+const ahora = () => new Date().toTimeString().slice(0,5);
+const icono = {
+  ok: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>',
+  firma: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>',
+  flecha: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+};
+
+// Solo se aceptan decisiones bien formadas y de pedidos que siguen en el extracto activo (no restos de otra ejecución).
+const ACCIONES = new Set(["firmado", "aplazado", "descartado"]);
+function leer() {
+  let crudo;
+  try { crudo = JSON.parse(localStorage.getItem(CLAVE)); } catch { return {}; }
+  if (!crudo || typeof crudo !== "object" || Array.isArray(crudo)) return {};
+  const ids = new Set((D ? D.pedidos : []).map(p => p.id));
+  return Object.fromEntries(Object.entries(crudo).filter(([id, d]) =>
+    ids.has(id) && d && typeof d === "object" && ACCIONES.has(d.accion) && typeof d.hora === "string"));
+}
+let decisiones = leer();
+let sinGuardar = false;
+let clics = 0;
+
+// Cohortes de demostración: cada una es un pedidos*.js generado por ejecutar.py (nunca datos escritos a mano).
+const COHORTES = {base: () => window.PEDIDOS, aguja: () => window.PEDIDOS_AGUJA, cupo: () => window.PEDIDOS_CUPO};
+const datosDe = k => (COHORTES[k] && COHORTES[k]()) || null;
+function actualizarD() {
+  D = datosDe(cohorte) || window.PEDIDOS;
+  CLAVE = "g35-decisiones-" + (D ? (D.fuente || "extracto") + "-" + D.fecha_referencia : "x");
+  PAR = Object.fromEntries(((D && D.parametros) || []).map(p => [p.clave, p]));
+  decisiones = leer();
+}
+
+function actualizarQuien() {
+  if (!D) return;
+  const sub = cohorte === "aguja" ? " · Cohorte Aguja (251 pac.)"
+    : cohorte === "cupo" ? ` · Cupo AP Español (${esc(miles(D.pacientes_extracto))} pac.)` : "";
+  document.getElementById("quien").innerHTML = `Consulta 4 · <b>Dra. Carmen López</b> · ${fecha(D.fecha_referencia)}${sub}`;
+}
+
+function actualizarSelectorCohorte() {
+  document.querySelectorAll(".btn-cohorte").forEach(b => {
+    b.classList.toggle("activo", b.dataset.cohorte === cohorte);
+  });
+}
+
+function cambiarCohorte(nueva) {
+  if (!Object.prototype.hasOwnProperty.call(COHORTES, nueva) || !datosDe(nueva)) return;
+  cohorte = nueva;
+  consultaPacienteId = null;
+  const q = new URLSearchParams(location.search);   // la cohorte va en la dirección: recargar o cambiar de idioma la mantiene
+  q.set("cohort", nueva);
+  history.replaceState(null, "", location.pathname + "?" + q + location.hash);
+  sinGuardar = false;
+  actualizarD();
+  actualizarQuien();
+  actualizarSelectorCohorte();
+  // Revisión externa (F5): #ficha/<id> o #consulta/<id> son de la cohorte anterior → vista general de la nueva.
+  const [v, arg] = location.hash.slice(1).split("/");
+  if (arg) history.replaceState(null, "", "#" + (v === "consulta" ? "consulta" : "pedidos"));
+  pintar();
+}
+
+function guardar(nuevas) {
+  decisiones = nuevas;                       // se reemplaza el objeto, no se muta
+  try { localStorage.setItem(CLAVE, JSON.stringify(decisiones)); sinGuardar = false; }
+  catch { sinGuardar = true; }   // no se finge que quedó guardado: se avisa y se ofrece exportar
+  pintar();
+}
+function decidir(id, accion, motivo) {
+  clics += 1;
+  const p = D.pedidos.find(x => x.id === id);
+  if (!p) return;
+  // Una decisión cubre el pedido principal y todo lo agrupado en «También»: queda todo en el registro.
+  const todos = [p, ...p.tambien];
+  guardar({...decisiones, [id]: {accion, motivo: motivo || null, hora: ahora(), nombre: p.nombre,
+    pedido: todos.map(x => x.pedido).join(" + "), regla: todos.map(x => x.regla).join(" + "),
+    incluye: todos.map(x => x.id)}});
+}
+function deshacer(id) {
+  clics += 1;
+  const {[id]: _, ...resto} = decisiones;
+  guardar(resto);
+}
+
+// ---- Un dibujo pequeño por regla: la prueba del hallazgo a simple vista ----
+const valores = (p, prueba) => p.procedencia.filter(x => x.prueba === prueba && typeof x.valor === "number")
+  .sort((a,b) => a.fecha.localeCompare(b.fecha));
+const meses = (desde, hasta) => (new Date(hasta) - new Date(desde)) / (30.44 * 864e5);
+
+function sparkline(p, W = 132, H = 52) {
+  const v = valores(p, "FGe");
+  if (v.length < 2) return "";
+  const min = Math.min(...v.map(x=>x.valor)) - 5, max = Math.max(...v.map(x=>x.valor)) + 5;
+  const pts = v.map((x,i) => [8 + i*(W-16)/(v.length-1), 6 + (max-x.valor)*(H-12)/(max-min)]);
+  const lab = v.map(x => Math.round(x.valor)).join(", ");
+  const ult = pts[pts.length - 1];
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="FGe ${lab}">
+    <polyline points="${pts.map(q=>q.join(",")).join(" ")}" fill="none" stroke="var(--g1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    ${pts.slice(0, -1).map(q=>`<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="var(--g1)"/>`).join("")}
+    <circle cx="${ult[0]}" cy="${ult[1]}" r="4.5" fill="#fff" stroke="var(--g1)" stroke-width="3"/></svg>`;
+}
+// Categoría KDIGO de un CAC con los umbrales de parametros: 0 = A1, 1 = A2, 2 = A3; null si no se puede clasificar.
+function categoriaCac(x) {
+  if (!x || typeof x.valor !== "number") return null;
+  if (x.unidad !== "mg/g" && x.unidad !== "mg/mmol") return null;   // como la SQL: otra unidad no se clasifica
+  const mmol = x.unidad === "mg/mmol";
+  const a2 = PAR[mmol ? "cac_umbral_mg_mmol" : "cac_umbral_mg_g"], a3 = PAR[mmol ? "cac_a3_mg_mmol" : "cac_a3_mg_g"];
+  if (!a2 || !a3) return null;
+  return x.valor >= a3.valor ? 2 : x.valor >= a2.valor ? 1 : 0;
+}
+function albuminuria(p, W = 132) {
+  const v = valores(p, "CAC");
+  if (!v.length) return "";
+  // C2: varios CAC el mismo último día → manda la peor categoría (A3 > A2 > A1), como la SQL.
+  const ultimo = v[v.length - 1].fecha;
+  const c = v.filter(x => x.fecha === ultimo).map(categoriaCac).reduce((m, x) => (x !== null && (m === null || x > m) ? x : m), null);
+  if (c === null) return "";
+  const seg = [[4, 30], [36, 60], [98, 30]].map(([x, w]) => [x * W / 132, w * W / 132]);
+  const col = ["#eaecf0", "#c7d7fe", "#fedfc4"];
+  return `<svg width="${W}" height="52" viewBox="0 0 ${W} 52" role="img" aria-label="CAC en categoría A${c + 1}">
+    ${seg.map(([x, w], i) => `<rect x="${x}" y="22" width="${w}" height="10" rx="3" fill="${i === c ? col[i] : "#f2f4f7"}"/>
+      <text x="${x + w / 2}" y="48" font-size="10" text-anchor="middle" fill="${i === c ? "#0e1726" : "#5d6779"}" font-weight="${i === c ? 700 : 400}">A${i + 1}</text>`).join("")}
+    <path d="M${seg[c][0] + seg[c][1] / 2 - 5} 6l5 8 5-8z" fill="${c === 2 ? "var(--g1)" : "var(--g2)"}"/></svg>`;
+}
+function vencido(p, W = 132) {
+  const v = p.procedencia.filter(x => x.prueba === "CAC").sort((a,b) => a.fecha.localeCompare(b.fecha));
+  const limite = PAR.meses_sin_cac ? PAR.meses_sin_cac.valor : null;
+  if (!limite) return "";
+  const m = v.length ? meses(v[v.length - 1].fecha, D.fecha_referencia) : null;
+  const tope = Math.max(limite * 1.6, (m || 0) * 1.1), x = u => 4 + (W - 12) * Math.min(u, tope) / tope;
+  return `<svg width="${W}" height="52" viewBox="0 0 ${W} 52" role="img" aria-label="${m === null ? "Sin ningún CAC" : `Último CAC hace ${Math.round(m)} meses`}; el cribado es cada ${num(limite)} meses">
+    <rect x="4" y="22" width="${W - 8}" height="8" rx="4" fill="#eaecf0"/>
+    <rect x="${x(limite)}" y="22" width="${W - 4 - x(limite)}" height="8" rx="4" fill="#98a2b3"/>
+    <line x1="${x(limite)}" y1="14" x2="${x(limite)}" y2="38" stroke="#344054" stroke-width="2"/>
+    <text x="${x(limite)}" y="49" font-size="10" text-anchor="middle" fill="#344054">${num(limite)} m</text>
+    ${m === null ? "" : `<circle cx="${x(m)}" cy="26" r="5" fill="#fff" stroke="#344054" stroke-width="2.5"/>`}</svg>`;
+}
+const dibujo = (p, W) => p.regla.startsWith("S3") ? sparkline(p, W, W > 200 ? 110 : 52)
+  : (p.regla === "S1b" || p.regla === "S1c") ? albuminuria(p, W) : p.regla === "S1a" ? vencido(p, W) : "";
+const guia = nota => { const m = /\(([^)]+)\)/.exec(nota || ""); return m ? m[1] : ""; };
+
+// ---- Condiciones que cumple cada regla, con sus umbrales y su fuente (de parametros) ----
+function condiciones(regla) {
+  const pend = {t: "Sin un pedido pendiente que ya lo cubra", k: ["meses_pedido_vigente"]};
+  return ({
+    S1a: [{t: "Diabetes tipo 2, hipertensión o FGe <60", k: []}, {t: `Sin CAC en los últimos ${par("meses_sin_cac")} meses`, k: ["meses_sin_cac"]}, pend],
+    S1b: [{t: `CAC ≥${par("cac_umbral_mg_g")} mg/g (≥${par("cac_umbral_mg_mmol")} mg/mmol)`, k: ["cac_umbral_mg_g", "cac_umbral_mg_mmol"]},
+          {t: `Sin repetir en más de ${par("meses_sin_repetir_cac")} meses`, k: ["meses_sin_repetir_cac"]},
+          {t: "Sin código de ERC (N18) en la historia", k: []}, pend],
+    S1c: [{t: `CAC ≥${par("cac_umbral_mg_g")} mg/g en el laboratorio, sin repetir y sin código de ERC (S1b)`, k: ["cac_umbral_mg_g", "cac_umbral_mg_mmol"]},
+          {t: `Una nota trae otro CAC ≥${par("cac_umbral_mg_g")} mg/g al menos ${par("meses_persistencia_cac")} meses después, con la cita comprobada por el código`, k: ["meses_persistencia_cac"]},
+          {t: "El lector local solo lee la nota; el valor, la fecha y la regla los comprueba el código", k: [], f: "notas/verificar.py · regla N1 (firmada 14 nov 2026)"}],
+    S3: [{t: `≥3 FGe de los últimos ${par("meses_ventana_fge")} meses que abarcan ≥${par("meses_min_tendencia")} meses`, k: ["meses_min_tendencia", "meses_ventana_fge"]},
+         {t: `Pendiente < ${par("pendiente_fge")} ml/min/1,73 m²/año, o bajada de categoría con caída ≥${par("caida_categoria_pct")} %`, k: ["pendiente_fge", "caida_categoria_pct"]}, pend],
+    S3c: [{t: `Caída aislada >${par("caida_aislada_pct")} % entre los dos últimos FGe`, k: ["caida_aislada_pct"]},
+          {t: "Sin una tendencia que ya cumpla la regla S3", k: []}, pend],
+  })[regla] || [];
+}
+function condicion(c) {
+  const ps = c.k.map(k => PAR[k]).filter(Boolean);
+  const unicas = [...new Set(ps.map(x => x.fuente))];
+  // «Decisión de diseño» y «Decisión de diseño: …» no se repiten: se queda la más completa.
+  const fuentes = c.f || unicas.filter(a => !unicas.some(b => b !== a && b.startsWith(a))).join(" · ") || "población del cupo crónico";
+  const prop = [...new Set(ps.filter(x => /^propuesta/.test(x.estado)).map(x => x.estado))];
+  return `<div class="cond"><span style="color:var(--acento)">${icono.ok}</span><div><b>${esc(c.t)}</b><span>${esc(fuentes)}</span>
+    ${prop.length ? `<div class="prop">${esc(prop.join(", "))} · pendiente de firma clínica</div>` : ""}</div></div>`;
+}
+
+function estado(id) {
+  const d = decisiones[id];
+  if (!d) return "";
+  const t = {firmado: "Firmado", aplazado: "Aplazado", descartado: "Descartado"}[d.accion];
+  return `<span class="estado ${d.accion === "descartado" ? "desc" : ""}">${d.accion === "firmado" ? icono.ok : ""}<span>${t}</span> ${esc(d.hora)}${d.motivo ? ` · <span>${esc(d.motivo)}</span>` : ""}</span>
+          <button class="deshacer" data-deshacer="${esc(id)}">deshacer</button>`;
+}
+
+function botones(p, conAplazar) {
+  if (decisiones[p.id]) return estado(p.id);
+  return `<button class="firmar" data-firmar="${esc(p.id)}">${icono.firma}Firmar</button>
+          ${conAplazar ? `<button data-aplazar="${esc(p.id)}">Aplazar</button>` : ""}
+          <button data-descartar="${esc(p.id)}">Descartar…</button>`;
+}
+
+function chips(p) {
+  return p.diagnosticos.map(d => `<span class="chip">${esc(d)}</span>`).join("")
+    + (p.hoy_en_consulta ? `<span class="chip osc">Hoy${p.hora_cita ? " " + esc(p.hora_cita) : ""}</span>` : "");
+}
+
+function fila(p) {
+  const tambien = p.tambien.length ? `<div class="tambien">También (${p.tambien.length}): ${p.tambien.map(t => `${esc(t.pedido)} — ${txt(t.motivo)}`).join(" · ")}</div>` : "";
+  const farmaco = p.aviso_farmaco ? `<div class="farmaco">${esc(p.aviso_farmaco)}</div>` : "";
+  const notas = (p.anotaciones || []).map(a => `<div class="tambien">${esc(a)}</div>`).join("");
+  return `<div class="fila ${decisiones[p.id] ? "hecha" : ""}">
+    <div><div class="nombre"><a href="#ficha/${encodeURIComponent(p.id)}">${esc(p.nombre)}, ${esc(p.edad)}</a></div><div>${chips(p)}</div></div>
+    <div><div class="motivo">${dibujo(p, 132)}<div><div>${txt(p.motivo)}</div><div class="fuente">Regla ${esc(p.regla)}${guia(p.nota) ? " · " + esc(guia(p.nota)) : ""}</div></div></div>${farmaco}${tambien}${notas}</div>
+    <div><span class="etq">Pedido</span><div class="pedido-txt">${esc(p.pedido)}</div><span class="etq" style="margin-top:6px">Revisión</span><div>${fecha(p.fecha_revision)}</div></div>
+    <div class="acciones">${botones(p, false)}</div>
+  </div>`;
+}
+
+function bannerHoy() {
+  const hoy = D.pedidos.filter(p => p.hoy_en_consulta && !decisiones[p.id]);
+  const mas = hoy.length > 3 ? `<div class="discontinua"><b>Y ${hoy.length - 3} más con cita hoy</b> <a href="#agenda">Ver la agenda de hoy</a></div>` : "";
+  return hoy.slice(0, 3).map(p => `<div class="banner">
+    <div><div class="et">Hoy en consulta${p.hora_cita ? " · " + esc(p.hora_cita) : ""}</div>
+    <div class="q">${esc(p.nombre)}, ${esc(p.edad)} · ${esc(p.pedido)}</div></div>
+    <a class="btn claro" href="#ficha/${encodeURIComponent(p.id)}">Abrir ficha${icono.flecha}</a></div>`).join("") + mas;
+}
+
+function bannerAguja() {
+  if (cohorte !== "aguja") return "";
+  const amparo = D.pedidos.find(p => p.person_id === 251);
+  return `<section class="caja aguja-banner" aria-label="Resumen cohorte Aguja">
+    <div class="aguja-top">
+      <span class="pastilla" style="background:var(--acento);color:#fff">Pilar 1 · Caza pacientes invisibles en 4 tablas OMOP</span>
+      ${amparo ? `<div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn" style="height:34px;font-size:13.5px" href="#consulta/${encodeURIComponent(amparo.id)}">Ver en Consulta AP</a>
+        <a class="btn prim" style="height:34px;font-size:13.5px" href="#ficha/${encodeURIComponent(amparo.id)}">Ficha de Amparo${icono.flecha}</a>
+      </div>` : ""}
+    </div>
+    <div style="font-size:15.5px;font-weight:800;margin-top:8px;color:var(--tinta)">
+      Aguja en el pajar (cohorte sintética · ${esc(D.pacientes_revisados)} pacientes): ${esc(D.pedidos.length)} pedidos en el cupo · 1 único caso S1c confirmado en nota (Amparo, pac. 251)
+    </div>
+    <div style="font-size:13.5px;color:var(--tinta-2);margin-top:6px;line-height:1.45">
+      Señal reconstruida cruzando <code>condition_occurrence</code> (DM2 E11.9, HTA I10, sin N18) + <code>measurement</code> (CAC 85 mg/g hace 10 meses, FGe 68 “normal”) + <code>pedido_pendiente</code> (ninguno vigente) + <code>note</code> (<b>informe externo en nota (pendiente de validar/incorporar)</b>: «Trae informe de la mutua: CAC 110 mg/g el 12/09/2026»).
+    </div>
+  </section>`;
+}
+
+function destacadoCohorte() {
+  if (cohorte === "aguja") return D.pedidos.find(x => x.person_id === 251);
+  if (cohorte === "cupo") return D.pedidos.find(x => x.regla === "S1c" && x.hoy_en_consulta) || D.pedidos.find(x => x.regla === "S1c");
+  return null;
+}
+
+// Tira de resumen del cupo de 1.000: todas las cifras salen de pedidos_cupo.js (nada escrito a mano).
+function bannerCupo() {
+  if (cohorte !== "cupo") return "";
+  const n = D.pedidos.length, base = new Set(D.baseline_fge_menor_60);
+  const porRegla = r => D.pedidos.filter(p => p.regla === r).length;
+  const motivo = re => D.fuera_de_la_lista.filter(f => !f.sigue_en_lista && re.test(f.motivo_supresion || "")).length;
+  const agujas = D.pedidos.filter(p => p.regla === "S1c");
+  const c = (v, t, cls = "") => `<div class="tira-c ${cls}"><b>${esc(v)}</b><span>${t}</span></div>`;
+  return `<section class="caja cupo-tira" aria-label="Resumen del cupo AP español">
+    <div class="aguja-top"><span class="pastilla" style="background:var(--g2);color:#fff">Cupo AP Español · ${esc(miles(D.pacientes_extracto))} adultos sintéticos</span>
+      <span class="sub" style="font-size:12.5px">Calibrado con IBERICAN, BDCAP 2016, Girona Sud y BIG-PAC · etiquetas independientes del SQL</span></div>
+    <div class="tira-grid">
+      ${c(D.pacientes_revisados, `cupo crónico revisado (DM2, HTA o FGe &lt;60) de ${esc(miles(D.pacientes_extracto))}`)}
+      ${c(porRegla("S3") + porRegla("S3c"), "función renal en descenso o caída (S3 · S3c)", "alerta-c")}
+      ${c(porRegla("S1b"), "albuminuria sin repetir (S1b)")}
+      ${c(agujas.length, "albuminuria persistente leída en nota: valorar N18 (S1c)", "alerta-c")}
+      ${c(porRegla("S1a"), "cribado anual de CAC vencido (S1a)")}
+      ${c(D.pedidos.filter(p => p.hoy_en_consulta).length, "con cita hoy: el pedido sale en la consulta")}
+      ${c(motivo(/^Pedido ya pendiente|^Ya cubierto/), "fuera: ya pedido o ya hecho según nota")}
+      ${c(motivo(/^Información insuficiente/), "fuera: Desconocido ≠ Normal")}
+      ${c(motivo(/^Excluido/), "fuera: excluidos (diálisis, trasplante, paliativos, embarazo)")}
+      ${c(D.fuera_de_la_lista.filter(f => f.sigue_en_lista).length, "con un pedido retirado que siguen en la lista por otro")}
+      ${c(`${D.pedidos.filter(p => base.has(p.person_id)).length} de ${n}`, "vistos por el filtro básico (último FGe &lt;60)")}
+    </div>
+    ${agujas.length ? `<div class="agujas"><b>Agujas en el pajar (S1c):</b> ${agujas.map(p => `<a href="#consulta/${encodeURIComponent(p.id)}">${esc(p.nombre)}</a>${p.hoy_en_consulta ? " (hoy " + esc(p.hora_cita || "") + ")" : ""}`).join(" · ")}</div>` : ""}
+  </section>`;
+}
+
+// Lo primero que se ve: el resultado y lo que se juega, con cifras que salen de pedidos.js.
+function resultado() {
+  const n = D.pedidos.length;
+  const base = new Set(D.baseline_fge_menor_60);
+  const vistos = D.pedidos.filter(p => base.has(p.person_id)).length;
+  const titulo = n && vistos === 0 ? `<em>${n}</em> ${n === 1 ? "pedido renal que un filtro básico no ve" : "pedidos renales que un filtro básico no ve"}`
+    : `<em>${n}</em> pedidos preparados para firmar`;
+  return `<section class="caja resultado" aria-label="Resultado de la revisión">
+    <div><div class="antetitulo">Pedidos preparados para firmar · extracto del ${fecha(D.fecha_referencia)}</div>
+      <h1>${titulo}</h1>
+      <div class="apuesta">${n ? `Un filtro básico (último FGe &lt;60) ve <b>${vistos} de ${n}</b>. ` : ""}La orden y la línea de nota ya están escritas: solo falta tu firma.</div></div>
+    <div class="cifras">
+      <div class="cifra"><b>${vistos} de ${n}</b><span>vistos por “último FGe &lt;60”</span></div>
+      <div class="cifra"><b>${n ? "1 clic" : "—"}</b><span>para firmar un pedido desde la lista</span></div>
+      <div class="cifra"><b>${D.fuera_de_la_lista.length}</b><span>fuera de la lista, cada uno con su motivo</span></div>
+    </div></section>`;
+}
+
+function pasos() {
+  const n = D.pedidos.length, hechas = Object.keys(decisiones).length;
+  const revisados = typeof D.pacientes_revisados === "number" ? D.pacientes_revisados : "—";
+  const p = (k, v, d, cls = "", ic = icono.ok) => `<div class="paso ${cls}"><span class="k">${ic}${k}</span><b>${v}</b><span>${d}</span></div>`;
+  return `<section class="caja pasos" aria-label="Cómo se ha preparado esta lista">
+    ${p("Cupo crónico", `${revisados} pacientes`, D.extracto_completo === true ? "DM2, HTA o FGe &lt;60 · extracto completo" : "extracto incompleto", D.extracto_completo === true ? "" : "mal")}
+    ${p("Reglas", cohorte === "base" ? "S1a · S1b · S3 · S3c" : "S1a · S1b · S1c · S3 · S3c", "PROT-AP ERC 2025 · KDIGO")}
+    ${p("Supresión", `${D.fuera_de_la_lista.length} fuera`, "pedido pendiente o datos insuficientes")}
+    ${p("Preparado", `${n} pedidos`, "orden + línea de nota")}
+    ${p("Tú decides", `${hechas} de ${n} decididos`, "firmar · aplazar · descartar", "tu", icono.firma)}
+  </section>`;
+}
+
+function medidor() {
+  const n = Object.values(decisiones);
+  const f = n.filter(d => d.accion === "firmado").length;
+  return `<div class="medidor">Medido en esta sesión: <span><b>${clics}</b> clics</span>
+    <span><b>${f}</b> firmados</span><span><b>${n.length - f}</b> aplazados o descartados</span>
+    <span><b>${D.pedidos.length - n.length}</b> pendientes</span></div>`;
+}
+
+// Avisos que van arriba en todas las vistas.
+function avisosGenerales() {
+  const a = [];
+  if (D.extracto_completo !== true) a.push(`<div class="alerta" role="alert"><b>Extracto incompleto.</b>
+    No se muestra ningún pedido: todo lo que se pudo evaluar está en “Fuera de la lista” como información insuficiente.</div>`);
+  if (sinGuardar) a.push(`<div class="alerta" role="alert"><b>Esta decisión no se ha podido guardar en este navegador.</b>
+    Se perderá al cerrar: <a href="#registro">exporta el registro</a> antes de salir.</div>`);
+  return a.join("");
+}
+
+function seleccionarPacienteConsulta(param) {
+  if (!D || !D.pedidos || !D.pedidos.length) return null;
+  if (param) {
+    const porParam = D.pedidos.find(x => x.id === param);
+    if (porParam) consultaPacienteId = porParam.id;
+  }
+  let pac = consultaPacienteId ? D.pedidos.find(x => x.id === consultaPacienteId) : null;
+  if (!pac) {
+    pac = destacadoCohorte()
+      || D.pedidos.find(x => x.hoy_en_consulta)
+      || D.pedidos[0];
+    consultaPacienteId = pac.id;
+  }
+  return pac;
+}
+
+const VISTAS = {
+  pedidos() {
+    const grupos = [[1, "Empeorando", "var(--g1-txt)", "función renal en descenso"],
+                    [2, "Sin seguimiento", "var(--g2)", "albuminuria sin confirmar"],
+                    [3, "Prueba pendiente", "var(--tinta-2)", "cribado anual vencido"]];
+    const bloques = grupos.map(([g, t, c, d]) => {
+      const filas = D.pedidos.filter(p => p.grupo === g);
+      return filas.length ? `<section aria-label="${t}"><div class="grupo-t"><i style="background:${COLOR[g]}"></i><b style="color:${c}">${t}</b><span>${d}</span></div>
+        <div class="lista">${filas.map(fila).join("")}</div></section>` : "";
+    }).join("");
+    const listaFuera = D.fuera_de_la_lista;
+    const textoFuera = listaFuera.length <= 4
+      ? listaFuera.map(f => `${esc(f.nombre)} · ${txt(f.motivo_supresion)}`).join(" · ")
+      : listaFuera.slice(0, 3).map(f => `${esc(f.nombre)} · ${txt(f.motivo_supresion)}`).join(" · ") + ` · y ${listaFuera.length - 3} más`;
+    const fuera = listaFuera.length ? `<div class="discontinua"><b>Fuera de la lista (${listaFuera.length})</b>
+      <span>${textoFuera}</span> <a href="#fuera">Ver por qué</a></div>` : "";
+    return `${resultado()}${pasos()}${bannerAguja()}${bannerCupo()}${bannerHoy()}${bloques || `<div class="vacio">Nada que firmar hoy.</div>`}${fuera}${medidor()}`;
+  },
+  consulta(param) {
+    const pac = seleccionarPacienteConsulta(param);
+    if (!pac) {
+      return `<div><h1>Consulta · Historia de salud</h1><div class="sub">Vista de estación clínica con el módulo de cribado renal.</div></div>
+        <div class="caja vacio">No hay pacientes con pedidos activos en este extracto.</div>`;
+    }
+    // Lista de citados (la «agenda» del puesto): destacados + desplegable con toda la cohorte.
+    const destacados = [];
+    const agregar = p => { if (p && !destacados.some(x => x.id === p.id)) destacados.push(p); };
+    agregar(pac);
+    agregar(destacadoCohorte());
+    D.pedidos.filter(x => x.hoy_en_consulta).slice(0, 3).forEach(agregar);
+    D.pedidos.slice(0, 5).forEach(p => { if (destacados.length < 5) agregar(p); });
+    const pillsPac = destacados.map(p => {
+      const dec = decisiones[p.id];
+      return `<button type="button" class="btn-pac-sel ${p.id === pac.id ? "activo" : ""}" data-pac-id="${esc(p.id)}">${p.hora_cita ? `<span class="hora">${esc(p.hora_cita)}</span>` : ""}${esc(p.nombre)}, ${esc(p.edad)}${dec ? ` · <span>${esc(dec.accion)}</span>` : ""}</button>`;
+    }).join("");
+    const comboPac = D.pedidos.length > destacados.length
+      ? `<select id="sel-pac-consulta" class="sel-pac-combo" aria-label="Elegir otro paciente de la cohorte">
+          ${D.pedidos.map(p => `<option value="${esc(p.id)}" ${p.id === pac.id ? "selected" : ""}>${esc(p.nombre)}, ${esc(p.edad)} · ${esc(p.regla)}</option>`).join("")}
+         </select>` : "";
+
+    const fuentePorTabla = t => (pac.fuentes || []).find(f => f.tabla === t);
+    const fCond = fuentePorTabla("condition_occurrence");
+    const fDrug = fuentePorTabla("drug_exposure");
+    const fPend = fuentePorTabla("pedido_pendiente");
+    const sinN18 = fCond && /sin N18/i.test(fCond.dato);
+    const codigos = fCond ? fCond.dato.split("·")[0].split(",").map(s => s.trim()).filter(s => /^[A-Z]\d/i.test(s)) : [];
+    // CIE-10 → nombre y CIAP-2 solo para los códigos que la demo usa (los demás se enseñan tal cual).
+    const PROBLEMA = {E11: ["Diabetes mellitus tipo 2", "T90"], E10: ["Diabetes mellitus tipo 1", "T89"], I10: ["Hipertensión arterial esencial", "K86"],
+      I11: ["Cardiopatía hipertensiva", "K87"], I12: ["Enfermedad renal hipertensiva", "K87"], I13: ["Enfermedad cardiorrenal hipertensiva", "K87"],
+      I15: ["Hipertensión secundaria", "K87"], E78: ["Dislipemia", "T93"], N18: ["Enfermedad renal crónica", "U99"]};
+    const problemas = codigos.map(c => {
+      const [nombre, ciap] = PROBLEMA[c.slice(0, 3)] || [null, null];
+      return `<li><code>${esc(c)}</code><span>${nombre ? esc(nombre) : "Código del extracto"}${ciap ? `<small>CIAP-2 ${ciap}</small>` : ""}</span></li>`;
+    }).join("");
+
+    const labs = [...pac.procedencia].sort((a, b) => b.fecha.localeCompare(a.fecha)).map(x => {
+      let tag = "";
+      if (x.prueba === "FGe" && typeof x.valor === "number") {
+        tag = x.valor >= 60 ? `<span class="ehr-tag normal">≥60: sin alerta del filtro básico</span>` : `<span class="ehr-tag alerta-valor">FGe &lt;60</span>`;
+      } else if (x.prueba === "CAC") {
+        const c = categoriaCac(x);
+        if (c !== null) tag = `<span class="ehr-tag ${c === 2 ? "alerta-valor" : "atencion"}">KDIGO A${c + 1}</span>`;
+      }
+      return `<tr><td>${fecha(x.fecha)}</td><td>${x.prueba === "CAC" ? "Cociente albúmina/creatinina (orina)" : "Filtrado glomerular estimado"}</td>
+        <td><b>${typeof x.valor === "number" ? num(x.valor) : esc(x.valor)}</b> ${esc(x.unidad || "")}</td><td>${tag}</td></tr>`;
+    }).join("");
+
+    const resaltar = (texto, cita) => {
+      const t = esc(texto);
+      if (!cita) return t;
+      const c = esc(cita).replace(/[.\s]+$/, "");
+      const i = t.indexOf(c);
+      return i < 0 ? t : `${t.slice(0, i)}<mark title="Frase comprobada por el código">${t.slice(i, i + c.length)}</mark>${t.slice(i + c.length)}`;
+    };
+    const evol = (pac.evolutivos || []).map(n => `<article class="ws-evol">
+        <header><b>${fecha(n.fecha)}</b> · Medicina de familia · Evolutivo (texto libre)</header>
+        <p lang="es" class="nota-original">${resaltar(n.texto, n.cita_comprobada)}</p>
+        ${n.cita_comprobada ? `<div class="ehr-nota-cita">✓ Frase comprobada por el código: está literalmente en la nota, nombra la prueba, y la fecha y el valor los leyó el código, no el modelo.</div>` : ""}
+      </article>`).join("") || `<div class="vacio" style="padding:14px">Sin evolutivos en los últimos 12 meses en el extracto.</div>`;
+
+    const PESTANAS = [["seguimiento", "Hoja de evolución"], ["resultados", "Resultados"], ["prescripcion", "Prescripción"], ["peticiones", "Peticiones en curso"]];
+    const activa = PESTANAS.some(([k]) => k === pestanaConsulta) ? pestanaConsulta : "seguimiento";
+    const contenido = {
+      seguimiento: evol,
+      resultados: `<div class="tabla"><table class="ws-tabla"><thead><tr><th>Fecha</th><th>Determinación</th><th>Resultado</th><th></th></tr></thead><tbody>${labs}</tbody></table></div>`,
+      prescripcion: `<div class="ws-linea"><b>Dispensaciones (<code>drug_exposure</code>):</b> ${fDrug ? txt(fDrug.dato) : "—"}</div>${pac.aviso_farmaco ? `<div class="farmaco">${esc(pac.aviso_farmaco)}</div>` : ""}`,
+      peticiones: `<div class="ws-linea"><b>Peticiones en curso:</b> ${fPend ? txt(fPend.dato) : "ningún pedido vigente"}</div><div class="ws-linea sub">Una prueba ya pedida no se vuelve a pedir: el módulo la deja fuera de la lista.</div>`,
+    }[activa];
+
+    return `<div class="ws" aria-label="Estación clínica de atención primaria (maqueta)">
+      <div class="ws-citados" aria-label="Pacientes citados">
+        <span class="ws-rotulo">Citados hoy</span>${pillsPac}${comboPac}
+      </div>
+      <section class="ws-banner" aria-label="Cabecera del paciente">
+        <div class="ws-quien"><b>${esc(String(pac.nombre).toUpperCase())}</b><span>${esc(pac.edad)} años${pac.sexo ? " · " + esc(pac.sexo) : ""}</span><span class="ws-sint">Paciente sintético</span></div>
+        <dl>
+          <div><dt>NHC</dt><dd>AP-${String(pac.person_id).padStart(5, "0")}</dd></div>
+          <div><dt>SIP</dt><dd>${pac.sip ? esc(pac.sip) : "SINT-" + String(pac.person_id).padStart(7, "0")}</dd></div>
+          <div><dt>Cita</dt><dd>${pac.hoy_en_consulta ? `Hoy ${pac.hora_cita ? esc(pac.hora_cita) : ""} · presencial` : "Revisión de cupo"}</dd></div>
+          <div><dt>Alergias / Alertas</dt><dd>no constan en el extracto</dd></div>
+        </dl>
+        <div class="ws-alertas">${sinN18 ? `<span class="ws-alerta ambar" title="Hallazgo del módulo">ERC sin codificar (N18)</span>` : ""}<span class="ws-alerta azul">Cribado renal: 1 pedido para firmar</span></div>
+      </section>
+      <div class="ws-cuerpo">
+        <aside class="ws-arbol" aria-label="Problemas de salud">
+          <div class="ws-tit">Problemas de salud <small>CIE-10 · CIAP-2</small></div>
+          <ul>${problemas || `<li><span>Sin diagnósticos codificados en el extracto</span></li>`}${sinN18 ? `<li class="falta"><code>N18</code><span>Enfermedad renal crónica<small>no codificada: la valora el médico</small></span></li>` : ""}</ul>
+          <div class="ws-tit">Episodio actual</div>
+          <ul><li><span>Control de crónicos · ${pac.hoy_en_consulta ? "consulta de hoy" : "revisión de cupo"}</span></li></ul>
+        </aside>
+        <div class="ws-centro">
+          <div class="ws-pestanas" role="tablist" aria-label="Historia de salud">
+            ${PESTANAS.map(([k, n]) => `<button type="button" role="tab" aria-selected="${k === activa}" class="ws-pestana ${k === activa ? "activa" : ""}" data-pestana="${k}">${n}</button>`).join("")}
+          </div>
+          <div class="ws-panel" role="tabpanel">${contenido}</div>
+        </div>
+        <aside class="drawer-col" aria-label="Módulo de cribado renal">
+          <section class="caja pedido-caja">
+            <div class="cab">
+              <div>
+                <span class="etq" style="color:var(--acento)">Petición clínica · módulo de cribado renal</span>
+                <div style="font-size:17px;font-weight:700;margin-top:2px">${pac.regla === "S1c" ? "Valoración clínica (KDIGO / N18)" : "Solicitar laboratorio"}</div>
+              </div>
+              <span class="chip osc" style="margin:0">Regla ${esc(pac.regla)}</span>
+            </div>
+            <div class="ws-campos"><div>Especialidad<b>Medicina familiar</b></div><div>Prioridad<b>Ordinaria</b></div>
+              <div>Estado<b>${decisiones[pac.id] ? esc(decisiones[pac.id].accion) : "Preparada · falta tu firma"}</b></div><div>Revisión<b>${fecha(pac.fecha_revision)}</b></div></div>
+            <div class="campo"><span class="etq">Orden / acción preparada</span><div>${esc(pac.pedido)}</div></div>
+            <div class="campo"><span class="etq">Motivo de solicitud (por qué aparece)</span><div class="sub" style="color:var(--tinta-2);font-weight:500">${txt(pac.motivo)}</div></div>
+            <div class="campo"><span class="etq">De dónde sale (tablas del extracto)</span>
+              <dl class="consulta-fuentes">${(pac.fuentes || []).map(f => `<div class="consulta-fuente-item"><dt><code>${esc(f.tabla)}</code></dt><dd>${txt(f.dato)}</dd></div>`).join("")}</dl>
+            </div>
+            <div class="campo"><span class="etq">Línea para el evolutivo</span><div class="sub">${esc(pac.nota)}</div></div>
+            ${pac.tambien.length ? `<div class="campo"><span class="etq">En la misma petición</span>${pac.tambien.map(t => `<div class="sub" style="margin-top:4px"><b>${esc(t.regla)}:</b> ${esc(t.pedido)} — ${txt(t.motivo)}</div>`).join("")}</div>` : ""}
+            <div class="acciones">${botones(pac, true)}</div>
+            <div class="pie">Nunca propone un fármaco; el diagnóstico lo decide el médico. La decisión aparece también en “Pedidos para firmar” y en el “Registro de decisiones”.</div>
+          </section>
+        </aside>
+      </div>
+    </div>`;
+  },
+  ficha(id) {
+    const p = D.pedidos.find(x => x.id === id);
+    if (!p) return `<h1>Pedido no encontrado</h1><div class="vacio"><a href="#pedidos">Volver a los pedidos</a></div>`;
+    const filas = p.procedencia.map(x => {
+      const c = x.prueba === "CAC" ? categoriaCac(x) : null;
+      return `<tr><td>${fecha(x.fecha)}</td><td>${x.prueba === "CAC" ? "CAC (orina)" : "FGe"}</td>
+      <td><b>${typeof x.valor === "number" ? num(x.valor) : esc(x.valor)}</b> ${esc(x.unidad || "")}${c === null ? "" : ` <span class="chip ${c ? "a" + (c + 1) : ""}" style="margin:0 0 0 6px">A${c + 1}</span>`}</td></tr>`;
+    }).join("");
+    const fge = valores(p, "FGe");
+    return `<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <a href="#pedidos" style="font-weight:600;text-decoration:none">← Pedidos para firmar</a>
+        <a href="#consulta/${encodeURIComponent(p.id)}" style="font-weight:600;text-decoration:none">Abrir en Consulta AP · Historia →</a>
+      </div>
+      <section class="caja paciente" aria-label="Paciente">
+        <div class="inicial" aria-hidden="true">${esc(String(p.nombre).slice(0, 1))}</div>
+        <div><h1 style="font-size:26px">${esc(p.nombre)}, ${esc(p.edad)}</h1>
+          <div>${p.diagnosticos.map(d => `<span class="chip">${esc(d)}</span>`).join("")}${fge.length ? `<span class="chip">Último FGe ${num(fge[fge.length - 1].valor)}</span>` : ""}<span class="chip">Paciente sintético</span></div></div>
+        ${p.hoy_en_consulta ? `<div class="cita"><div><div class="et">Hoy en consulta</div><b>${p.hora_cita ? esc(p.hora_cita) + " · " : ""}pedido preparado</b></div></div>` : ""}
+      </section>
+      <div class="ficha">
+        <div class="izq">
+          <section class="caja" aria-label="Por qué aparece"><h2>Por qué aparece</h2>
+            <div class="sub">${txt(p.motivo)}</div>
+            ${dibujo(p, 300) ? `<div style="margin-top:12px">${dibujo(p, 300)}</div>` : ""}
+            ${p.aviso_farmaco ? `<div class="farmaco">${esc(p.aviso_farmaco)}</div>` : ""}
+            <div class="condiciones">${condiciones(p.regla).map(condicion).join("")}</div>
+            <div class="fuente" style="margin-top:12px">Regla ${esc(p.regla)} · ${esc(guia(p.nota))} · la lista solo incluye pacientes que cumplen todas las condiciones</div>
+          </section>
+          <section class="caja" aria-label="Resultados renales"><h2>Resultados renales (procedencia)</h2>
+            <div class="sub">Cada valor sale del extracto, con su fecha</div>
+            <div class="tabla"><table><thead><tr><th>Fecha</th><th>Prueba</th><th>Resultado</th></tr></thead><tbody>${filas}</tbody></table></div>
+          </section>
+          ${(p.fuentes || []).length ? `<section class="caja" aria-label="De dónde sale"><h2>De dónde sale</h2>
+            <div class="sub">La señal está repartida entre ${p.fuentes.length} tablas del mismo extracto: las reglas las cruzan y el lector de notas aporta la frase</div>
+            <dl class="fuentes">${p.fuentes.map(f => `<div class="cond"><dt><code>${esc(f.tabla)}</code></dt><dd>${esc(f.dato)}</dd></div>`).join("")}</dl>
+            </section>` : ""}
+        </div>
+        <aside class="der">
+          <section class="caja pedido-caja" aria-label="Pedido preparado">
+            <div class="cab"><div><span class="etq" style="color:var(--acento)">Pedido preparado</span><div style="font-size:18px;font-weight:800">${p.regla === "S1c" ? "Valoración clínica" : "Orden de laboratorio"}</div></div>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--acento)" stroke-width="1.8" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 001.3 2h11.4a1.5 1.5 0 001.3-2L14 9V3"/><path d="M7.5 15h9"/></svg></div>
+            <div class="campo"><span class="etq">Orden</span><div>${esc(p.pedido)}</div></div>
+            <div class="campo"><span class="etq">Línea de nota</span><div style="font-weight:500">${esc(p.nota)}</div></div>
+            <div class="campo"><span class="etq">Revisión</span><div>${fecha(p.fecha_revision)}</div></div>
+            ${p.tambien.map(t => `<div class="campo"><span class="etq">También en este pedido · ${esc(t.regla)}</span><div>${esc(t.pedido)}</div>
+              <div class="sub">${txt(t.motivo)}</div></div>`).join("")}
+            ${(p.anotaciones || []).map(a => `<div class="campo"><span class="etq">Nota clínica (cita comprobada)</span><div class="sub">${esc(a)}</div></div>`).join("")}
+            ${p.tambien.length ? `<div class="campo sub">Firmar, aplazar o descartar se aplica a todo lo anterior.</div>` : ""}
+            <div class="acciones">${botones(p, true)}</div>
+            <div class="pie">La decisión queda registrada con su hora, solo en este navegador. Nunca propone un fármaco; el diagnóstico lo decide el médico.</div>
+          </section>
+        </aside>
+      </div>`;
+  },
+  agenda() {
+    const hoy = D.pedidos.filter(p => p.hoy_en_consulta);
+    return `<div><h1>Agenda de hoy</h1><div class="sub">Pacientes citados hoy que tienen un pedido preparado</div></div>
+      ${hoy.length ? `<div class="caja tabla"><table><thead><tr><th>Hora</th><th>Paciente</th><th>Pedido preparado</th><th>Estado</th></tr></thead><tbody>
+      ${hoy.map(p => `<tr><td><b>${esc(p.hora_cita || "—")}</b></td><td><a href="#ficha/${encodeURIComponent(p.id)}">${esc(p.nombre)}, ${esc(p.edad)}</a> · <a href="#consulta/${encodeURIComponent(p.id)}" style="font-size:12.5px">Consulta AP</a></td>
+        <td>${esc(p.pedido)}</td><td>${decisiones[p.id] ? esc(decisiones[p.id].accion) : "pendiente"}</td></tr>`).join("")}</tbody></table></div>`
+        : `<div class="vacio">Ningún paciente citado hoy tiene pedido preparado.</div>`}`;
+  },
+  fuera() {
+    const b = D.baseline_fge_menor_60;
+    const ids = new Set(D.pedidos.map(p => p.person_id));
+    const coincide = b.filter(x => ids.has(x)).length;
+    const esEnCurso = f => /^Pedido ya pendiente|^Ya cubierto/i.test(f.motivo_supresion || "");
+    const enCurso = D.fuera_de_la_lista.filter(esEnCurso);
+    const esExcluido = f => /^Excluido/.test(f.motivo_supresion || "");   // vuelta 13, R2
+    const excluidos = D.fuera_de_la_lista.filter(esExcluido);
+    const desconocidos = D.fuera_de_la_lista.filter(f => !esEnCurso(f) && !esExcluido(f));
+    const filaFuera = f => `<tr><td><b>${esc(f.nombre)}</b></td><td>${esc(f.regla)}</td><td>${txt(f.motivo)}</td><td><b>${txt(f.motivo_supresion)}</b>${f.sigue_en_lista ? " · <i>el paciente sigue en la lista por otro hallazgo</i>" : ""}</td></tr>`;
+    return `<div><h1>Fuera de la lista, y por qué</h1>
+      <div class="sub">No molesta cuando no debe: cada paciente que la revisión deja fuera queda aquí con su motivo.</div></div>
+      <div class="caja pilar-desconocido">
+        <div class="pilar-titulo">Pilar 2 · Desconocido ≠ Normal (estado clínico de primera clase)</div>
+        <p style="margin:6px 0 0;color:var(--tinta-2)">Desconocido ≠ Normal: un dato faltante, unidad desconocida o extracto incompleto nunca se rellena como normal por defecto; queda registrado para revisión manual.</p>
+      </div>
+      <section class="caja" aria-label="Pedidos ya en curso">
+        <div class="fuera-sec-h"><h2>Pedidos ya en curso (sin duplicados ni fatiga)</h2><span class="chip">${enCurso.length}</span></div>
+        <div class="sub" style="margin-bottom:10px">Pruebas ya solicitadas o confirmadas con cita literal en nota clínica.</div>
+        <div class="tabla"><table><thead><tr><th>Paciente</th><th>Regla</th><th>Hallazgo</th><th>Por qué no está en la lista</th></tr></thead><tbody>
+        ${enCurso.map(filaFuera).join("") || `<tr><td colspan="4" class="vacio">Ningún pedido ya en curso en este extracto.</td></tr>`}</tbody></table></div>
+      </section>
+      <section class="caja" aria-label="Información insuficiente">
+        <div class="fuera-sec-h"><h2>Desconocido ≠ Normal · Información insuficiente</h2><span class="chip a3">${desconocidos.length}</span></div>
+        <div class="sub" style="margin-bottom:10px">Casos excluidos por falta de datos, unidad no clasificable o extracto incompleto (nunca asumidos como normales).</div>
+        ${desconocidos.length ? `<div class="tabla"><table><thead><tr><th>Paciente</th><th>Regla</th><th>Hallazgo</th><th>Motivo de revisión manual</th></tr></thead><tbody>
+        ${desconocidos.map(filaFuera).join("")}</tbody></table></div>`
+        : `<div class="vacio" style="padding:16px">En este extracto completo no hay casos bloqueados por información insuficiente; ante cualquier variable ausente o extracto incompleto aparecen aquí para revisión manual.</div>`}
+      </section>
+      <section class="caja" aria-label="Excluidos">
+        <div class="fuera-sec-h"><h2>Excluidos de la lista</h2><span class="chip">${excluidos.length}</span></div>
+        <div class="sub" style="margin-bottom:10px">Diálisis, trasplante renal, cuidados paliativos o embarazo reciente: estos pedidos no se proponen.</div>
+        ${excluidos.length ? `<div class="tabla"><table><thead><tr><th>Paciente</th><th>Regla</th><th>Hallazgo</th><th>Motivo</th></tr></thead><tbody>
+        ${excluidos.map(filaFuera).join("")}</tbody></table></div>`
+        : `<div class="vacio" style="padding:16px">Ningún paciente excluido en este extracto.</div>`}
+      </section>
+      <div class="caja"><h2>Comparación con un filtro básico</h2>
+        <p style="margin:8px 0 0">Filtro de 1 variable (último FGe &lt;60): <b>${b.length}</b> pacientes, de los que <b>${coincide}</b> están entre los
+        <b>${D.pedidos.length}</b> pedidos de hoy. Los hallazgos de la revisión se esconden detrás de valores “aceptables”.</p></div>`;
+  },
+  registro() {
+    const filas = Object.entries(decisiones).sort((a,b) => a[1].hora.localeCompare(b[1].hora));
+    return `<div><h1>Registro de decisiones</h1><div class="sub">Cada firma, aplazamiento o descarte, con su hora y su motivo</div></div>
+      <div class="caja"><div class="tabla"><table><thead><tr><th>Hora</th><th>Paciente</th><th>Regla</th><th>Pedido</th><th>Decisión</th><th>Motivo</th></tr></thead><tbody>
+      ${filas.map(([id, d]) => `<tr><td>${esc(d.hora)}</td><td>${esc(d.nombre)}</td><td>${esc(d.regla)}</td><td>${esc(d.pedido)}</td><td>${esc(d.accion)}</td><td>${esc(d.motivo || "—")}</td></tr>`).join("")
+        || `<tr><td colspan="6" class="vacio">Aún no hay decisiones.</td></tr>`}</tbody></table></div>
+      <div class="acciones" style="justify-content:flex-start;margin-top:12px"><button id="exportar">Exportar registro (JSON)</button></div></div>
+      ${medidor()}`;
+  },
+};
+
+function pintar() {
+  const [v, arg] = (location.hash.slice(1) || "pedidos").split("/");
+  // Solo rutas propias de VISTAS: nunca propiedades heredadas («constructor», «__proto__»…).
+  const vista = Object.prototype.hasOwnProperty.call(VISTAS, v) ? v : "pedidos";
+  let param = null;
+  try { param = arg ? decodeURIComponent(arg) : null; } catch { param = null; }
+  document.getElementById("vista").innerHTML = avisosGenerales() + VISTAS[vista](param);
+  document.querySelectorAll("nav a").forEach(a => a.classList.toggle("activo", a.dataset.v === (vista === "ficha" ? "pedidos" : vista)));
+  const pend = D.pedidos.filter(p => !decisiones[p.id]).length;
+  document.getElementById("n-pedidos").textContent = pend;
+  document.getElementById("n-agenda").textContent = D.pedidos.filter(p => p.hoy_en_consulta).length;
+  document.getElementById("n-fuera").textContent = D.fuera_de_la_lista.length;
+  document.getElementById("n-registro").textContent = Object.keys(decisiones).length;
+}
+
+// Revisión externa (F5): con #consulta/<id> el parámetro mandaba en cada repintado y las pastillas no cambiaban
+// de paciente. El paciente elegido pasa a la dirección (y el botón Atrás del navegador vuelve al anterior).
+function elegirPaciente(id) {
+  consultaPacienteId = id;
+  const destino = "#consulta/" + encodeURIComponent(id);
+  if (location.hash !== destino) history.pushState(null, "", destino);
+  pintar();
+}
+
+const dlg = document.getElementById("dlg-descartar");
+function pedirMotivo(id) {
+  const p = D.pedidos.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById("dlg-quien").textContent = `${p.nombre}, ${p.edad}`;
+  document.getElementById("dlg-motivos").innerHTML = MOTIVOS.map((m, i) =>
+    `<label><input type="radio" name="motivo" value="${esc(m)}" ${i === 0 ? "checked" : ""}> ${esc(m)}</label>`).join("");
+  dlg.onclose = () => {
+    if (dlg.returnValue === "ok") decidir(id, "descartado", dlg.querySelector("input[name=motivo]:checked").value);
+  };
+  dlg.returnValue = "";   // si no, Esc reutiliza el «ok» de la vez anterior y descarta sin querer
+  dlg.showModal();
+}
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("button");
+  if (!t) return;
+  if (t.dataset.firmar) decidir(t.dataset.firmar, "firmado");
+  else if (t.dataset.aplazar) decidir(t.dataset.aplazar, "aplazado");
+  else if (t.dataset.descartar) { clics += 1; pedirMotivo(t.dataset.descartar); }
+  else if (t.dataset.deshacer) deshacer(t.dataset.deshacer);
+  else if (t.dataset.cohorte) cambiarCohorte(t.dataset.cohorte);
+  else if (t.dataset.pacId) elegirPaciente(t.dataset.pacId);
+  else if (t.dataset.pestana) { pestanaConsulta = t.dataset.pestana; pintar(); }
+  else if (t.id === "exportar") {
+    const blob = new Blob([JSON.stringify({fecha_referencia: D.fecha_referencia, decisiones}, null, 2)], {type: "application/json"});
+    const a = Object.assign(document.createElement("a"), {href: URL.createObjectURL(blob), download: `registro_${D.fecha_referencia}.json`});
+    a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+});
+document.addEventListener("change", e => {
+  if (e.target && e.target.id === "sel-pac-consulta") {
+    elegirPaciente(e.target.value);
+  }
+});
+window.addEventListener("hashchange", pintar);
+
+if (!D) {
+  document.getElementById("vista").innerHTML = `<div class="vacio">Falta <code>pedidos.js</code>. Ejecuta:<br><code>python ejecutar.py data/synthetic/demo_seed.sql -o ui/pedidos.json</code></div>`;
+} else {
+  if (datosDe("aguja") || datosDe("cupo")) {
+    document.querySelectorAll(".btn-cohorte").forEach(b => { if (!datosDe(b.dataset.cohorte)) b.hidden = true; });
+    const sel = document.getElementById("selector-cohorte");
+    if (sel) sel.style.display = "inline-flex";
+  }
+  // ?cohort=aguja|cupo|base abre esa cohorte (enlace desde la página de inicio en inglés).
+  const pedida = new URLSearchParams(location.search).get("cohort");
+  if (pedida && Object.prototype.hasOwnProperty.call(COHORTES, pedida) && datosDe(pedida)) {
+    cohorte = pedida;
+    actualizarD();
+  }
+  actualizarQuien();
+  actualizarSelectorCohorte();
+  pintar();
+}
+</script>
+</body>
+</html>

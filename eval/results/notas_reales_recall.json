@@ -1,0 +1,1027 @@
+{
+ "reference": "AI agents (Claude Sonnet 5.5 sub-agents) blind to the model output; not a physician",
+ "physician_check": "pending: Ahmed checks 20 random marks (seed 20261119), listed in physician_check_marks",
+ "checks_used": "notas/verificar.py as of round 13 (signed 16 Nov 2026)",
+ "cases_in_sample": 300,
+ "cases_with_a_mark": 98,
+ "marks": 158,
+ "marks_by_label": {
+  "ya_realizada": 152,
+  "nefrologia": 6
+ },
+ "marks_by_test": {
+  "FGe": 152,
+  "-": 6
+ },
+ "primary_recall_per_note": {
+  "k": 3,
+  "n": 98,
+  "pct": 3.1,
+  "ci95": [
+   0.6,
+   8.7
+  ]
+ },
+ "model_pointed_per_note": {
+  "k": 3,
+  "n": 98,
+  "pct": 3.1,
+  "ci95": [
+   0.6,
+   8.7
+  ]
+ },
+ "recall_per_note_without_vague_marks": {
+  "k": 3,
+  "n": 92,
+  "pct": 3.3,
+  "ci95": [
+   0.7,
+   9.2
+  ]
+ },
+ "recall_by_label": {
+  "nefrologia": {
+   "k": 3,
+   "n": 6,
+   "pct": 50.0,
+   "ci95": [
+    11.8,
+    88.2
+   ]
+  },
+  "ya_realizada": {
+   "k": 0,
+   "n": 94,
+   "pct": 0.0,
+   "ci95": [
+    0.0,
+    3.8
+   ]
+  }
+ },
+ "missed_notes": [
+  {
+   "case": "background/S0004-06142008000500013-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#5"
+   ]
+  },
+  {
+   "case": "background/S0004-06142009000300010-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S0034-98872007000100014-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#13",
+    "ya_realizada#17",
+    "ya_realizada#18",
+    "ya_realizada#21",
+    "ya_realizada#24",
+    "ya_realizada#27"
+   ]
+  },
+  {
+   "case": "background/S0034-98872007000800013-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#9"
+   ]
+  },
+  {
+   "case": "background/S0034-98872008000100011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10"
+   ]
+  },
+  {
+   "case": "background/S0034-98872009000200011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#8"
+   ]
+  },
+  {
+   "case": "background/S0034-98872009000800010-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#17"
+   ]
+  },
+  {
+   "case": "background/S0034-98872012000700011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#12",
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S0034-98872012000800011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#22",
+    "ya_realizada#9"
+   ]
+  },
+  {
+   "case": "background/S0034-98872012001000011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S0034-98872013000100014-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#25"
+   ]
+  },
+  {
+   "case": "background/S0034-98872013000400014-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#21",
+    "ya_realizada#25",
+    "ya_realizada#38",
+    "ya_realizada#41",
+    "ya_realizada#43"
+   ]
+  },
+  {
+   "case": "background/S0034-98872013000400016-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S0034-98872013000600016-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#17",
+    "ya_realizada#6"
+   ]
+  },
+  {
+   "case": "background/S0034-98872014001200014-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#5"
+   ]
+  },
+  {
+   "case": "background/S0034-98872015000500015-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10"
+   ]
+  },
+  {
+   "case": "background/S0034-98872016000900019-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#15"
+   ]
+  },
+  {
+   "case": "background/S0034-98872017000100018-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10",
+    "ya_realizada#23",
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S0034-98872018001101347-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#7",
+    "ya_realizada#8"
+   ]
+  },
+  {
+   "case": "background/S0120-41572009000200002-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#6"
+   ]
+  },
+  {
+   "case": "background/S0120-41572009000400007-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "nefrologia#25",
+    "ya_realizada#1",
+    "ya_realizada#26"
+   ]
+  },
+  {
+   "case": "background/S0120-41572014000400005-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#11",
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "background/S0120-41572015000300003-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#16"
+   ]
+  },
+  {
+   "case": "background/S0210-48062006000700014-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#6"
+   ]
+  },
+  {
+   "case": "background/S0210-48062009000800016-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#12",
+    "ya_realizada#14"
+   ]
+  },
+  {
+   "case": "background/S0210-56912007000200007-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "background/S0210-56912007000200007-2",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "background/S0211-69952010000100017-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#8"
+   ]
+  },
+  {
+   "case": "background/S0211-69952010000500016-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#8"
+   ]
+  },
+  {
+   "case": "background/S0211-69952011000100018-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#11",
+    "ya_realizada#23"
+   ]
+  },
+  {
+   "case": "background/S0211-69952011000100023-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S0211-69952012000500028-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#1",
+    "ya_realizada#16",
+    "ya_realizada#26",
+    "ya_realizada#46"
+   ]
+  },
+  {
+   "case": "background/S0211-69952012000800031-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#11",
+    "ya_realizada#14",
+    "ya_realizada#16",
+    "ya_realizada#18",
+    "ya_realizada#23",
+    "ya_realizada#26",
+    "ya_realizada#28",
+    "ya_realizada#29",
+    "ya_realizada#8",
+    "ya_realizada#9"
+   ]
+  },
+  {
+   "case": "background/S0211-69952013000200016-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10"
+   ]
+  },
+  {
+   "case": "background/S0211-69952013000500018-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#1",
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "background/S0211-69952013000500032-1",
+   "model_said": "nefrologia",
+   "model_sentence": 7,
+   "marked": [
+    "ya_realizada#6",
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "background/S0211-69952013000600021-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#16",
+    "ya_realizada#18",
+    "ya_realizada#2",
+    "ya_realizada#5",
+    "ya_realizada#8"
+   ]
+  },
+  {
+   "case": "background/S0211-69952016000100010-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#21",
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "background/S0211-69952017000200206-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10",
+    "ya_realizada#14",
+    "ya_realizada#18",
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "background/S0212-71992001000400009-2",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S0212-71992005000100006-3",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "background/S0212-71992007000400006-2",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#5"
+   ]
+  },
+  {
+   "case": "background/S0325-00752008000100011-2",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#19"
+   ]
+  },
+  {
+   "case": "background/S0325-00752008000300013-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#8"
+   ]
+  },
+  {
+   "case": "background/S0325-00752010000300014-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#19"
+   ]
+  },
+  {
+   "case": "background/S0370-41062014000100009-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#9"
+   ]
+  },
+  {
+   "case": "background/S0465-546X2012000200009-1",
+   "model_said": "nefrologia",
+   "model_sentence": 17,
+   "marked": [
+    "nefrologia#18"
+   ]
+  },
+  {
+   "case": "background/S0716-10182012000300016-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S0716-10182014000300003-2",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "background/S1130-01082008000800012-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#15"
+   ]
+  },
+  {
+   "case": "background/S1130-01082008001200011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#18"
+   ]
+  },
+  {
+   "case": "background/S1130-01082009000100009-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10"
+   ]
+  },
+  {
+   "case": "background/S1130-01082009000800017-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "background/S1130-01082010000200014-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "background/S1130-01082011000300009-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "background/S1130-01082011000400009-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10"
+   ]
+  },
+  {
+   "case": "background/S1130-01082011001000009-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#13"
+   ]
+  },
+  {
+   "case": "background/S1130-01082015000400011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#22"
+   ]
+  },
+  {
+   "case": "background/S1131-57682001000800008-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#14"
+   ]
+  },
+  {
+   "case": "background/S1137-66272010000400009-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#13",
+    "ya_realizada#17"
+   ]
+  },
+  {
+   "case": "background/S1137-66272012000300022-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "background/S1139-13752009000300010-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "nefrologia#1"
+   ]
+  },
+  {
+   "case": "background/S1889-836X2015000200004-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "dev/S0210-56912007000900007-6",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#11"
+   ]
+  },
+  {
+   "case": "dev/S0211-69952010000400013-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#8"
+   ]
+  },
+  {
+   "case": "dev/S0365-66912003000600010-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#4"
+   ]
+  },
+  {
+   "case": "test/S0210-48062004000700006-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "test/S0210-48062009000600017-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#22",
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "test/S0210-48062009000900015-3",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#5"
+   ]
+  },
+  {
+   "case": "test/S0210-56912006000200007-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10"
+   ]
+  },
+  {
+   "case": "test/S0210-56912006000800008-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#15",
+    "ya_realizada#5"
+   ]
+  },
+  {
+   "case": "test/S0210-56912008000200007-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#2",
+    "ya_realizada#5"
+   ]
+  },
+  {
+   "case": "test/S0211-69952011000600018-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#11",
+    "ya_realizada#18"
+   ]
+  },
+  {
+   "case": "test/S0212-16112004000400007-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#31",
+    "ya_realizada#8"
+   ]
+  },
+  {
+   "case": "test/S0212-16112012000500042-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#20"
+   ]
+  },
+  {
+   "case": "test/S0212-71992005000400007-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "test/S1130-01082007001000017-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "test/S1130-01082009000400009-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#5",
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "test/S1139-76322017000100011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#6"
+   ]
+  },
+  {
+   "case": "train/S0004-06142009000500011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#6",
+    "ya_realizada#7"
+   ]
+  },
+  {
+   "case": "train/S0210-48062007001000004-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#27"
+   ]
+  },
+  {
+   "case": "train/S0211-69952013000500032-2",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#5"
+   ]
+  },
+  {
+   "case": "train/S0211-69952013000500035-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#6"
+   ]
+  },
+  {
+   "case": "train/S0211-69952014000100016-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#19"
+   ]
+  },
+  {
+   "case": "train/S0211-69952014000200016-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#10",
+    "ya_realizada#2"
+   ]
+  },
+  {
+   "case": "train/S0211-69952015000200015-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#1",
+    "ya_realizada#15"
+   ]
+  },
+  {
+   "case": "train/S0211-69952016000200176-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#12",
+    "ya_realizada#24",
+    "ya_realizada#25",
+    "ya_realizada#7",
+    "ya_realizada#9"
+   ]
+  },
+  {
+   "case": "train/S0212-16112009000600018-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#15"
+   ]
+  },
+  {
+   "case": "train/S0212-16112010000100017-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#17"
+   ]
+  },
+  {
+   "case": "train/S0212-16112010000600022-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#9"
+   ]
+  },
+  {
+   "case": "train/S0376-78922009000400011-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#6"
+   ]
+  },
+  {
+   "case": "train/S0378-48352006000500005-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#6"
+   ]
+  },
+  {
+   "case": "train/S1130-01082008000400013-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#3"
+   ]
+  },
+  {
+   "case": "train/S1130-63432014000100012-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#11",
+    "ya_realizada#26",
+    "ya_realizada#27"
+   ]
+  },
+  {
+   "case": "train/S1137-66272016000300012-1",
+   "model_said": "ninguna",
+   "model_sentence": null,
+   "marked": [
+    "ya_realizada#17",
+    "ya_realizada#8"
+   ]
+  }
+ ],
+ "physician_check_marks": [
+  {
+   "case": "test/S0211-69952011000600018-1",
+   "sentence": "18",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "A los dos años de haber realizado tratamiento anti-CD20, el "
+  },
+  {
+   "case": "train/S0004-06142009000500011-1",
+   "sentence": "6",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Es dada de alta en la quinta semana tras la intervención con"
+  },
+  {
+   "case": "train/S1137-66272016000300012-1",
+   "sentence": "8",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Asimismo presentaba anemia (Hb: 9,2 g/dL), deterioro de la f"
+  },
+  {
+   "case": "background/S0211-69952012000500028-1",
+   "sentence": "26",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "En el análisis de orina recogida de 24 horas: proteinuria: 0"
+  },
+  {
+   "case": "background/S0034-98872007000100014-1",
+   "sentence": "18",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "A los cuatro meses del trasplante renal (TxR) y días después"
+  },
+  {
+   "case": "background/S0211-69952012000800031-1",
+   "sentence": "28",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Controles posteriores con creatinina entre 1,7 y 1,4 mg/dl."
+  },
+  {
+   "case": "train/S0211-69952016000200176-1",
+   "sentence": "12",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Sin embargo, la función renal empeoró en pocos días hasta al"
+  },
+  {
+   "case": "test/S0210-48062004000700006-1",
+   "sentence": "3",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "En la analítica presenta una bioquímica con parámetros norma"
+  },
+  {
+   "case": "background/S0716-10182014000300003-2",
+   "sentence": "7",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Los análisis de laboratorio mostraban: recuento leucocitario"
+  },
+  {
+   "case": "background/S0034-98872012000700011-1",
+   "sentence": "12",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "El laboratorio muestra anemia moderada (hemoglobina 9,1 g/dl"
+  },
+  {
+   "case": "background/S0211-69952013000500032-1",
+   "sentence": "6",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Se realizó analítica: glucosa 214 mg/dl, urea 403 mg/dl, cre"
+  },
+  {
+   "case": "train/S1130-63432014000100012-1",
+   "sentence": "27",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Tras tres dosis de tratamiento se monitorizaron las concentr"
+  },
+  {
+   "case": "background/S0034-98872009000800010-1",
+   "sentence": "17",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "En la actualidad se encuentra desarrollando una vida laboral"
+  },
+  {
+   "case": "background/S0210-56912007000200007-2",
+   "sentence": "3",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "En la analítica destacan: plaquetopenia (13.000/mm3); proteí"
+  },
+  {
+   "case": "background/S0211-69952013000600021-1",
+   "sentence": "2",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "A los 57 días de este, presentaba función renal correcta con"
+  },
+  {
+   "case": "background/S0034-98872007000100014-1",
+   "sentence": "24",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Once semanas después, recibiendo MMF 1.000 mg, CsA 70 mg (ob"
+  },
+  {
+   "case": "test/S0212-16112004000400007-1",
+   "sentence": "8",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Analíticamente presentaba: hemoglobina 12,3 g/dl; leucocitos"
+  },
+  {
+   "case": "test/S1130-01082009000400009-1",
+   "sentence": "5",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "La analítica urgente mostraba anemia (Hb 7,9 g/dl, Hcto 29%)"
+  },
+  {
+   "case": "background/S0212-71992005000100006-3",
+   "sentence": "3",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "Exámenes de laboratorio: hemoglobina, hematocrito, leucogram"
+  },
+  {
+   "case": "background/S0211-69952013000600021-1",
+   "sentence": "18",
+   "label": "ya_realizada",
+   "prueba": "FGe",
+   "quote": "La evolución posprocedimental fue satisfactoria, sin recidiv"
+  }
+ ],
+ "deviation": "one labelling agent (part 2, 100 cases) searched its file for kidney terms instead of reading every sentence"
+}

@@ -1,0 +1,161 @@
+id,test,sentence,expect,value,unit,why
+s2-001,CAC,"Analítica: creatinina 1,1 mg/dl, urea 48 mg/dl, Hb 12,9 g/dl, potasio 4,6 mEq/l, cociente albúmina/creatinina 85 mg/g, HbA1c 7,4 %.",value,85,mg/g,plain ACR in list
+s2-002,CAC,"CAC 12 mg/g, colesterol LDL 98 mg/dl, TA 138/82 mmHg, peso 81 kg, IMC 28,4 kg/m2.",value,12,mg/g,abbrev CAC low
+s2-003,CAC,"El índice albúmina/creatinina fue de 2,4 mg/mmol; sodio 139 mmol/l, ferritina 88 ng/ml.",value,"2,4",mg/mmol,"mmol unit, below 3"
+s2-004,CAC,"Microalbuminuria de 45 mg/g con creatinina 0,9 mg/dl y GGT 38 U/l.",value,45,mg/g,microalbuminuria named with value
+s2-005,CAC,"Albuminuria 120 mg/g, PCR 6 mg/l, leucocitos 7.400 /µl, plaquetas 210.000 /µl.",value,120,mg/g,albuminuria with ACR unit
+s2-006,CAC,"Ratio albumina/creatinina 310 mg/g Cr, CPC 0,45 g/g, urea 71 mg/dl.",value,310,mg/g,mg/g Cr equals mg/g; PCR ratio ignored
+s2-007,CAC,"Proteinuria 410 mg/24 h; cociente albúmina/creatinina 28 mg/g, potasio 5,1 mEq/l.",value,28,mg/g,24 h protein beside real ACR
+s2-008,CAC,"Cociente microalbúmina/creatinina 18 µg/mg, HbA1c 6,8 %, colesterol LDL 112 mg/dl.",value,18,µg/mg,ug/mg unit
+s2-009,CAC,"Albúmina en orina 64 mg/l y cociente albúmina/creatinina 52 mg/g, Hb 11,8 g/dl.",value,52,mg/g,urine albumin conc beside ACR
+s2-010,CAC,"Cociente proteína/creatinina 0,2 g/g; CAC 160 mg/g; NT-proBNP 1850 pg/ml.",value,160,mg/g,PCR ratio and ACR
+s2-011,CAC,"Relación albúmina/creatinina de 5,8 mg/mmol (14/03/2026), creatinina 1,4 mg/dl, sodio 141 mmol/l.",value,"5,8",mg/mmol,"dated, above 3 mg/mmol"
+s2-012,CAC,"En orina de 24 h proteínas 0,38 g; el cociente albúmina/creatinina puntual era 33 mg/g, urea 55 mg/dl.",value,33,mg/g,"24 h urine mentioned, ACR spot"
+s2-013,CAC,"Destaca albuminuria de 780 mg/g Cr junto con creatinina 2,3 mg/dl, Hb 10,4 g/dl y K 5,3 mEq/l.",value,780,mg/g,high albuminuria
+s2-014,CAC,"La paciente presentaba un CAC de 6 mg/g, TA 124/76 mmHg, IMC 24 kg/m2 y LDL 130 mg/dl.",value,6,mg/g,narrative CAC
+s2-015,CAC,"Cociente albúmina/creatinina: 0,9 mg/mmol; ferritina 40 ng/ml; plaquetas 250.000 /µl.",value,"0,9",mg/mmol,colon form
+s2-016,CAC,"Se objetivó microalbuminuria de 95 µg/mg (06/09/2026) con HbA1c 8,1 % y creatinina 1,0 mg/dl.",value,95,µg/mg,dated microalbuminuria ug/mg
+s2-017,CAC,"CAC 410 mg/g; albúmina urinaria 210 mg/l; CPC 0,6 g/g; urea 90 mg/dl.",value,410,mg/g,conc and PCR ratio extra
+s2-018,CAC,"Índice albúmina/creatinina urinario 30 mg/g, borderline, con potasio 4,4 mEq/l y GGT 51 U/l.",value,30,mg/g,threshold value
+s2-019,CAC,"Hb 13,2 g/dl, leucocitos 6.100 /µl, creatinina 0,8 mg/dl y cociente albúmina/creatinina de 3 mg/mmol.",value,3,mg/mmol,value at 3 mg/mmol
+s2-020,CAC,"Ratio albúmina/creatinina 72 mg/g (valor de referencia inferior a 30 mg/g), TA 150/90 mmHg.",value,72,mg/g,value plus reference range
+s2-021,CAC,"Cociente albumina/creatinina en muestra aislada de orina: 215 mg/g, peso 92 kg, IMC 31,5 kg/m2.",value,215,mg/g,"unaccented, spot sample"
+s2-022,CAC,"CAC de 1,8 mg/mmol, LDL 76 mg/dl, HbA1c 5,9 %, sodio 138 mmol/l.",value,"1,8",mg/mmol,CAC de value
+s2-023,CAC,"Microalbuminuria 150 mg/g; proteinuria de 24 h 0,52 g/24 h; creatinina 1,6 mg/dl.",value,150,mg/g,microalb with 24 h protein
+s2-024,CAC,"Cociente albúmina/creatinina 560 mg/g, urea 102 mg/dl, hematíes 4 por campo, K 5,0 mEq/l.",value,560,mg/g,urinary sediment extra
+s2-025,CAC,"Al ingreso (02/10/2026): creatinina 1,3 mg/dl, PCR 48 mg/l, CAC 64 mg/g, leucocitos 11.200 /µl.",value,64,mg/g,dated admission list
+s2-026,CAC,"Cociente microalbúmina/creatinina de 22 mg/g y cociente proteína/creatinina de 0,1 g/g.",value,22,mg/g,"two ratios, only ACR counts"
+s2-027,CAC,Se midió albuminuria en micción aislada: 38 mg/g Cr; colesterol LDL 145 mg/dl.,value,38,mg/g,mg/g Cr
+s2-028,CAC,"CAC 9 µg/mg, Hb 14,0 g/dl, ferritina 120 ng/ml, TA 118/70 mmHg.",value,9,µg/mg,ug/mg low
+s2-029,CAC,"Relación albúmina/creatinina 0,4 mg/mmol (normal), sodio 140 mmol/l, urea 33 mg/dl.",value,"0,4",mg/mmol,value with word normal
+s2-030,CAC,"La relación albúmina/creatinina urinaria resultó 205 mg/g, NT-proBNP 920 pg/ml, peso 77 kg.",value,205,mg/g,relación resultó
+s2-031,CAC,"Albuminuria de 1250 mg/g, creatinina 2,9 mg/dl, K 5,6 mEq/l, Hb 9,8 g/dl.",value,1250,mg/g,"no separator, large"
+s2-032,CAC,"Cociente albúmina/creatinina 41 mg/g, albúmina en orina 29 mg/l, creatinina urinaria 70 mg/dl.",value,41,mg/g,conc and urinary creatinine
+s2-033,CAC,"Analítica de control: CAC 26 mg/g, GGT 22 U/l, glucosa 118 mg/dl, HbA1c 6,5 %.",value,26,mg/g,below 30
+s2-034,CAC,"Índice albúmina/creatinina 3,6 mg/mmol, creatinina 1,2 mg/dl, potasio 4,9 mEq/l, urea 60 mg/dl.",value,"3,6",mg/mmol,just above 3
+s2-035,CAC,"Se observó una microalbuminuria de 70 mg/g; CPC 0,25 g/g; Hb 12,2 g/dl.",value,70,mg/g,microalbuminuria with CPC
+s2-036,CAC,"En la orina de 24 h se recogieron 0,3 g de proteínas y el cociente albúmina/creatinina fue 19 mg/g.",value,19,mg/g,24 h urine text
+s2-037,CAC,"Cociente albúmina/creatinina 340 mg/g, creatinina 1,9 mg/dl, TA 160/95 mmHg, LDL 160 mg/dl.",value,340,mg/g,plain
+s2-038,CAC,"Albuminuria, 55 mg/g, con PCR 3 mg/l y leucocitos 5.900 /µl.",value,55,mg/g,comma after word
+s2-039,CAC,"Ratio microalbúmina/creatinina de 0,6 mg/mmol; sodio 142 mmol/l.",value,"0,6",mg/mmol,short sentence
+s2-040,CAC,"Hallazgos: creatinina 1,5 mg/dl, K 4,8 mEq/l, albuminuria 1,9 mg/g, ferritina 210 ng/ml.",value,"1,9",mg/g,low decimal mg/g
+s2-041,CAC,"El CAC en orina matutina es de 88 mg/g (08/10/2026); Hb 11,1 g/dl; peso 69 kg.",value,88,mg/g,morning urine dated
+s2-042,CAC,"Cociente albumina/creatinina 135 mg/g, proteína/creatinina 0,35 g/g, urea 66 mg/dl, K 4,7 mEq/l.",value,135,mg/g,both ratios
+s2-043,CAC,"Microalbuminuria 24 µg/mg, glucosa 101 mg/dl, TA 130/80 mmHg.",value,24,µg/mg,ug/mg
+s2-044,CAC,"Índice albúmina/creatinina 7 mg/mmol; albúmina urinaria 18 mg/dl; creatinina sérica 1,7 mg/dl.",value,7,mg/mmol,conc mg/dl beside ACR
+s2-045,CAC,"Relación albúmina/creatinina 48 mg/g en la última determinación, LDL 88 mg/dl, IMC 29 kg/m2.",value,48,mg/g,last determination
+s2-046,CAC,"Sin microalbuminuria, colesterol LDL 136 mg/dl, HbA1c 6,9 %.",normal,,,no microalbuminuria
+s2-047,CAC,"Microalbuminuria negativa; creatinina 0,9 mg/dl, urea 34 mg/dl.",normal,,,negative microalbuminuria
+s2-048,CAC,"CAC normal, Hb 13,5 g/dl, potasio 4,2 mEq/l, TA 122/74 mmHg.",normal,,,CAC normal
+s2-049,CAC,"Albuminuria ausente, sodio 139 mmol/l, GGT 25 U/l.",normal,,,albuminuria absent
+s2-050,CAC,"Cociente albúmina/creatinina dentro de la normalidad, peso 70 kg, IMC 23 kg/m2.",normal,,,ACR within normal
+s2-051,CAC,"Creatinina 0,8 mg/dl, urea 29 mg/dl y cociente albúmina/creatinina normal.",normal,,,ACR normal at end
+s2-052,CAC,"La microalbuminuria no fue detectable (11/09/2026), ferritina 95 ng/ml.",normal,,,not detectable
+s2-053,CAC,Ratio albúmina/creatinina normal; PCR 2 mg/l; leucocitos 6.800 /µl.,normal,,,ratio normal
+s2-054,CAC,"Albuminuria negativa y creatinina 1,0 mg/dl.",normal,,,albuminuria negative
+s2-055,CAC,"CAC dentro de rango normal, LDL 101 mg/dl, K 4,5 mEq/l.",normal,,,CAC in normal range
+s2-056,CAC,"Sin albuminuria; plaquetas 230.000 /µl; HbA1c 5,8 %.",normal,,,no albuminuria
+s2-057,CAC,"Microalbuminuria: no detectada, urea 40 mg/dl, Hb 12,6 g/dl.",normal,,,not detected
+s2-058,CAC,"Cociente albumina/creatinina normal en dos controles, TA 126/78 mmHg.",normal,,,unaccented normal
+s2-059,CAC,"Analítica sin hallazgos: CAC normal, creatinina 0,7 mg/dl, sodio 140 mmol/l, NT-proBNP 90 pg/ml.",normal,,,list then normal CAC
+s2-060,CAC,"La excreción de albúmina urinaria (CAC) era normal, glucosa 96 mg/dl.",normal,,,excretion normal
+s2-061,CAC,"Índice albúmina/creatinina negativo, HbA1c 6,1 %, LDL 120 mg/dl.",normal,,,index negative
+s2-062,CAC,"No se detecta microalbuminuria, colesterol LDL 92 mg/dl, TA 119/72 mmHg.",normal,,,not detected micro
+s2-063,CAC,"Microalbuminuria normal, GGT 31 U/l, urea 37 mg/dl, peso 64 kg.",normal,,,microalb normal
+s2-064,CAC,"Con albuminuria normal y FG conservado, potasio 4,3 mEq/l.",normal,,,normal albuminuria
+s2-065,CAC,"Ausencia de albuminuria, creatinina 0,9 mg/dl, Hb 14,2 g/dl, IMC 26 kg/m2.",normal,,,absence of albuminuria
+s2-066,CAC,"Cociente albúmina/creatinina 85, creatinina 1,2 mg/dl, urea 50 mg/dl.",unreadable,,,no unit
+s2-067,CAC,"CAC 40, potasio 4,8 mEq/l, Hb 12,0 g/dl.",unreadable,,,no unit abbreviation
+s2-068,CAC,"Cociente albúmina/creatinina inferior a 30 mg/g, LDL 110 mg/dl, HbA1c 6,6 %.",unreadable,,,upper bound
+s2-069,CAC,"CAC <30 mg/g, creatinina 0,9 mg/dl, TA 128/80 mmHg.",unreadable,,,bound less-than
+s2-070,CAC,"Albuminuria mayor de 300 mg/g, creatinina 2,2 mg/dl, K 5,4 mEq/l.",unreadable,,,bound greater-than
+s2-071,CAC,"Cociente albúmina/creatinina >300 mg/g, urea 98 mg/dl, Hb 10,1 g/dl.",unreadable,,,bound >300
+s2-072,CAC,"Microalbuminuria 1.200 mg/g, creatinina 2,0 mg/dl, PCR 12 mg/l.",unreadable,,,thousands separator
+s2-073,CAC,"Cociente albúmina/creatinina 2.450 mg/g, urea 120 mg/dl, potasio 5,7 mEq/l.",unreadable,,,thousands separator
+s2-074,CAC,"CAC 35-20 mg/g, sodio 138 mmol/l, GGT 40 U/l.",unreadable,,,range as result
+s2-075,CAC,"Albuminuria entre 30 y 300 mg/g, LDL 130 mg/dl, TA 142/88 mmHg.",unreadable,,,range as result
+s2-076,CAC,"Cociente albúmina/creatinina (valor normal 0-30 mg/g), creatinina 1,1 mg/dl, Hb 13,0 g/dl.",unreadable,,,only reference range
+s2-077,CAC,"CAC, referencia inferior a 3 mg/mmol; HbA1c 7,2 %; urea 45 mg/dl.",unreadable,,,only reference range
+s2-078,CAC,"Cociente albúmina/creatinina de cuarenta mg/g, potasio 4,6 mEq/l.",unreadable,,,number in words
+s2-079,CAC,"CAC treinta y cinco mg/g, creatinina 1,0 mg/dl, Hb 12,4 g/dl.",unreadable,,,number in words
+s2-080,CAC,"Cociente albúmina/creatinina 25 mg/g en enero y 80 mg/g en junio, creatinina 1,3 mg/dl.",unreadable,,,two ACR results
+s2-081,CAC,CAC 18 mg/g (03/05/2026); CAC 52 mg/g (14/09/2026); LDL 99 mg/dl.,unreadable,,,two dated ACR results
+s2-082,CAC,"Microalbuminuria 60 mg/g, repetida 2,1 mg/mmol, urea 52 mg/dl.",unreadable,,,two results different units
+s2-083,CAC,"Cociente albúmina/creatinina 90 mg/g 1,5, potasio 4,9 mEq/l, Hb 11,5 g/dl.",unreadable,,,stray unitless number
+s2-084,CAC,"CAC 14 mg/g 22, sodio 140 mmol/l, ferritina 60 ng/ml.",unreadable,,,stray number after value
+s2-085,CAC,"Cociente albúmina/creatinina 3 100 mg/g, creatinina 1,8 mg/dl.",unreadable,,,spaced thousands
+s2-086,CAC,"Albuminuria, cociente 55 con creatinina urinaria 80 mg/dl y K 4,4 mEq/l.",unreadable,,,no ACR unit
+s2-087,CAC,"El CAC es elevado, 120, aunque no consta la unidad; Hb 12,8 g/dl.",unreadable,,,"no unit, elevated"
+s2-088,CAC,"Cociente albúmina/creatinina mayor de 30, creatinina 1,4 mg/dl, LDL 140 mg/dl.",unreadable,,,bound without unit
+s2-089,CAC,"Microalbuminuria por encima de 300 mg/g, K 5,2 mEq/l, TA 170/100 mmHg.",unreadable,,,bound phrase
+s2-090,CAC,"CAC 7 y 12 mg/g en dos muestras, HbA1c 6,4 %, peso 80 kg.",unreadable,,,two results
+s2-091,CAC,"Ratio albúmina/creatinina 65, GGT 33 U/l, peso 88 kg, IMC 30 kg/m2.",unreadable,,,no unit in list
+s2-092,CAC,"Cociente microalbúmina/creatinina 1.050 µg/mg, urea 77 mg/dl.",unreadable,,,thousands ug/mg
+s2-093,CAC,"CAC <3 mg/mmol, sodio 137 mmol/l, ferritina 150 ng/ml.",unreadable,,,bound mg/mmol
+s2-094,CAC,"Albuminuria de 20-40 mg/g, TA 135/85 mmHg, LDL 118 mg/dl.",unreadable,,,range
+s2-095,CAC,"Cociente albúmina/creatinina entre 3 y 30 mg/g (rango de referencia), Hb 13,7 g/dl, creatinina 0,9 mg/dl.",unreadable,,,reference range only
+s2-096,CAC,"CAC 150 mg/g y 160 mg/g, potasio 5,0 mEq/l, urea 85 mg/dl.",unreadable,,,two results
+s2-097,CAC,"Índice albúmina/creatinina ciento veinte mg/g, creatinina 1,5 mg/dl.",unreadable,,,number in words
+s2-098,CAC,Cociente albúmina/creatinina: 95; leucocitos 8.200 /µl; plaquetas 190.000 /µl; PCR 14 mg/l.,unreadable,,,"no unit, many units around"
+s2-099,CAC,"Albuminuria superior a 30 mg/g, creatinina 1,2 mg/dl, K 4,6 mEq/l.",unreadable,,,bound superior
+s2-100,CAC,"Microalbuminuria 2 mg/mmol, 4 mg/mmol en el control, Hb 12,0 g/dl.",unreadable,,,two results
+s2-101,CAC,"Albuminuria ++, glucosa 110 mg/dl, creatinina 1,0 mg/dl.",not_acr,,,dipstick ++
+s2-102,CAC,"Tira reactiva con proteinuria +++, urea 62 mg/dl, Hb 11,9 g/dl.",not_acr,,,dipstick
+s2-103,CAC,"Albúmina en orina 24 h 180 mg/24 h, creatinina 1,2 mg/dl, K 4,7 mEq/l.",not_acr,,,24 h albumin
+s2-104,CAC,"Proteinuria 0,9 g/24 h, LDL 140 mg/dl, TA 150/90 mmHg.",not_acr,,,24 h protein
+s2-105,CAC,"Albuminuria 85 mg/l, creatinina urinaria 90 mg/dl, sodio 139 mmol/l.",not_acr,,,urine albumin conc mg/l
+s2-106,CAC,"Albúmina urinaria 12 mg/dl, GGT 28 U/l, peso 75 kg.",not_acr,,,urine albumin mg/dl
+s2-107,CAC,"Cociente proteína/creatinina 0,45 g/g, urea 58 mg/dl, Hb 12,3 g/dl.",not_acr,,,PCR ratio only
+s2-108,CAC,"Albúmina sérica 3,2 g/dl, creatinina 1,4 mg/dl, PCR 30 mg/l.",not_acr,,,serum albumin
+s2-109,CAC,"Microalbuminuria positiva ++, HbA1c 8,3 %, colesterol LDL 150 mg/dl.",not_acr,,,dipstick positive
+s2-110,CAC,"Albuminuria en orina de 24 h de 250 mg/24 h (12/10/2026), potasio 5,0 mEq/l.",not_acr,,,24 h albumin dated
+s2-111,CAC,"Proteinuria de 24 h: 1,4 g/24 h; sodio 140 mmol/l; urea 70 mg/dl.",not_acr,,,24 h protein
+s2-112,CAC,"Albuminuria +, leucocitos 7.000 /µl, plaquetas 240.000 /µl, creatinina 0,9 mg/dl.",not_acr,,,dipstick +
+s2-113,CAC,"Albúmina 4,1 g/dl, ferritina 55 ng/ml, Hb 13,0 g/dl.",not_acr,,,serum albumin only
+s2-114,CAC,"Albuminuria 150 mg/l, hematíes 10 por campo, TA 140/85 mmHg.",not_acr,,,conc mg/l
+s2-115,CAC,"Cociente proteína/creatinina 0,3 g/g y proteinuria 300 mg/24 h, urea 44 mg/dl.",not_acr,,,protein ratio and 24 h
+s2-116,CAC,"Orina: albúmina 30 mg/l, glucosa negativa, creatinina urinaria 100 mg/dl.",not_acr,,,conc mg/l
+s2-117,CAC,"Tira reactiva de orina: proteínas ++, sangre +, glucosa neg; creatinina 1,1 mg/dl.",not_acr,,,dipstick
+s2-118,CAC,"Albúmina en orina de 24 h 95 mg, urea 51 mg/dl, K 4,4 mEq/l.",not_acr,,,24 h albumin no per unit
+s2-119,CAC,"Albuminuria ++, NT-proBNP 2.300 pg/ml, creatinina 1,8 mg/dl.",not_acr,,,dipstick before lab
+s2-120,CAC,"Albúmina urinaria 5,2 mg/dl, HbA1c 7,0 %, peso 83 kg, IMC 29,5 kg/m2.",not_acr,,,mg/dl conc
+s2-121,CAC,"Proteinuria 0,25 g/l, creatinina 0,9 mg/dl, Hb 12,7 g/dl.",not_acr,,,protein g/l
+s2-122,CAC,"Albúmina sérica 2,8 g/dl y proteinuria 3,5 g/24 h, colesterol LDL 190 mg/dl.",not_acr,,,serum albumin and 24 h protein
+s2-123,CAC,"Microalbuminuria 20 mg/24 h, sodio 138 mmol/l, ferritina 70 ng/ml.",not_acr,,,24 h microalbuminuria
+s2-124,CAC,"Albuminuria: 0,12 g/l, creatinina urinaria 1,1 g/l, urea 40 mg/dl.",not_acr,,,conc g/l
+s2-125,CAC,"CPC 0,6 g/g, albúmina sérica 3,5 g/dl, GGT 45 U/l, Hb 11,0 g/dl.",not_acr,,,PCR ratio and serum albumin
+s2-126,CAC,"Albuminuria +++ en tira reactiva, K 5,1 mEq/l, TA 160/95 mmHg.",not_acr,,,dipstick +++
+s2-127,CAC,"Albúmina en orina 45 mg/l (muestra aleatoria), leucocitos 9.000 /µl, creatinina 1,0 mg/dl.",not_acr,,,conc random sample
+s2-128,CAC,"Eliminación de albúmina urinaria de 310 mg/24 h, creatinina 1,5 mg/dl, K 4,9 mEq/l.",not_acr,,,24 h excretion
+s2-129,CAC,"Proteinuria 1,1 g/24 h, albuminuria ++, urea 80 mg/dl, Hb 10,5 g/dl.",not_acr,,,24 h protein and dipstick
+s2-130,CAC,"Albumina en orina 7 mg/dl, sodio 141 mmol/l, glucosa 130 mg/dl, LDL 105 mg/dl.",not_acr,,,unaccented conc
+s2-131,FGe,"Creatinina 1,5 mg/dl, urea 70 mg/dl, FGe CKD-EPI 2021 de 57, K 4,9 mEq/l.",value,57,,eq with year
+s2-132,FGe,"FG (CKD-EPI 2009) 44 ml/min/1,73 m2, Hb 11,6 g/dl, LDL 100 mg/dl.",value,44,"ml/min/1,73 m2",eq year in parens
+s2-133,FGe,"FG MDRD-4 38, creatinina 1,9 mg/dl, sodio 138 mmol/l.",value,38,,MDRD-4 eq
+s2-134,FGe,"FGe 72 ml/min/1,73 m2, creatinina 1,0 mg/dl, HbA1c 6,9 %.",value,72,"ml/min/1,73 m2",plain
+s2-135,FGe,"Filtrado glomerular estimado (CKD-EPI 2021): 29 ml/min/1,73 m2, K 5,5 mEq/l.",value,29,"ml/min/1,73 m2",eq with colon
+s2-136,FGe,"FGe CKD-EPI 2009 de 61 ml/min, creatinina 1,2 mg/dl, TA 135/85 mmHg.",value,61,ml/min,"eq year, short unit"
+s2-137,FGe,"Filtrado glomerular 88 ml/min/1,73 m2 (11/10/2026), peso 74 kg.",value,88,"ml/min/1,73 m2",dated
+s2-138,FGe,"MDRD-4 FG 52 ml/min/1,73 m2; ferritina 90 ng/ml; Hb 12,5 g/dl.",value,52,"ml/min/1,73 m2",eq before FG
+s2-139,FGe,"FGe de 15 ml/min/1,73 m2 con urea 150 mg/dl y K 5,9 mEq/l.",value,15,"ml/min/1,73 m2",low value
+s2-140,FGe,"FG CKD-EPI 2021 105, creatinina 0,7 mg/dl, GGT 20 U/l.",value,105,,eq year no unit
+s2-141,FGe,"Creatinina 2,4 mg/dl con FGe de 27 (CKD-EPI), urea 110 mg/dl.",value,27,,eq no year
+s2-142,FGe,"Se calculó un FG de 66 ml/min/1,73 m2 por CKD-EPI 2012, sodio 140 mmol/l.",value,66,"ml/min/1,73 m2",eq after
+s2-143,FGe,"FGe 41, creatinina 1,7 mg/dl, K 4,8 mEq/l, Hb 11,2 g/dl.",value,41,,no unit
+s2-144,FGe,"Filtrado glomerular estimado 94 ml/min, urea 32 mg/dl.",value,94,ml/min,plain
+s2-145,FGe,"FG (MDRD-4) 33 ml/min/1,73 m2, CAC elevado, creatinina 2,0 mg/dl.",value,33,"ml/min/1,73 m2",ACR word irrelevant
+s2-146,FGe,"FGe >60 ml/min/1,73 m2, creatinina 0,9 mg/dl, K 4,5 mEq/l.",bound,,,bound eGFR
+s2-147,FGe,"Filtrado glomerular superior a 90 ml/min, urea 30 mg/dl, Hb 14 g/dl.",bound,,,bound eGFR
+s2-148,FGe,"FG <15 ml/min/1,73 m2, urea 160 mg/dl, K 6,0 mEq/l.",bound,,,bound eGFR
+s2-149,FGe,"FGe mayor de 60, creatinina 1,0 mg/dl, HbA1c 6,2 %.",bound,,,bound eGFR
+s2-150,FGe,"FG CKD-EPI 2021 >90 ml/min/1,73 m2, LDL 110 mg/dl.",bound,,,bound eGFR
+s2-151,FGe,"Filtrado glomerular estimado inferior a 30 ml/min/1,73 m2, creatinina 2,8 mg/dl.",bound,,,bound eGFR
+s2-152,FGe,"FG (MDRD-4) mayor de 60 ml/min, sodio 139 mmol/l, TA 128/78 mmHg.",bound,,,bound eGFR
+s2-153,FGe,"FGe >90, ferritina 110 ng/ml, peso 68 kg.",bound,,,bound eGFR
+s2-154,FGe,"Creatinina 0,8 mg/dl, FG >60 ml/min/1,73 m2 y GGT 24 U/l.",bound,,,bound eGFR
+s2-155,FGe,"FGe menor de 15 ml/min/1,73 m2 (09/11/2026), urea 140 mg/dl.",bound,,,bound eGFR
+s2-156,FGe,"Filtrado glomerular >90 ml/min/1,73 m2, Hb 13,4 g/dl, K 4,2 mEq/l.",bound,,,bound eGFR
+s2-157,FGe,"FG CKD-EPI 2009 <60 ml/min/1,73 m2, creatinina 1,6 mg/dl.",bound,,,bound eGFR
+s2-158,FGe,"FGe superior a 60 ml/min/1,73 m2; LDL 125 mg/dl; IMC 27 kg/m2.",bound,,,bound eGFR
+s2-159,FGe,"Filtrado glomerular mayor de 90, sodio 140 mmol/l, urea 28 mg/dl.",bound,,,bound eGFR
+s2-160,FGe,"FG MDRD-4 >60, creatinina 1,1 mg/dl, potasio 4,6 mEq/l.",bound,,,bound eGFR

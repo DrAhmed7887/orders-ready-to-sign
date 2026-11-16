@@ -1,0 +1,161 @@
+id,test,sentence,expect,value,unit,why
+v15-001,FGe,"En el control destacaban proteinuria 300 mg/24 h, FG 45 ml/min, HbA1c 6,6 %, TA 150/66 mmHg y CAC 45 mg/g.",value,45,ml/min,eGFR number
+v15-002,CAC,"Al ingreso presentaba peso 55 kg, creatinina 0,6 mg/dl (microalbuminuria no detectable; fósforo 3,2 mg/dl); HbA1c 7,4 %, proteinuria 300 mg/24 h.",normal,,,"ACR stated normal or absent, no number"
+v15-003,CAC,"En la analítica se objetivó creatinina 1,7 mg/dl, sodio 134 mmol/l, colesterol LDL 138 mg/dl, relación albúmina/creatinina sin alteraciones, NT-proBNP 184 pg/ml, bilirrubina 0,3 mg/dl.",normal,,,"ACR stated normal or absent, no number"
+v15-004,CAC,"Datos analíticos: ferritina 146 ng/ml, urea 35 mg/dl, hematíes 8/campo en el sedimento, IMC 26,9 kg/m2, microalbuminuria 35, sodio 136 mmol/l y leucocitos 5.900/µl.",unreadable,,,no unit
+v15-005,CAC,"Los resultados de laboratorio mostraron potasio 4,6 mEq/l, Hb 12,9 g/dl (cociente albúmina/creatinina (referencia <30 mg/g); calcio 9,9 mg/dl); NT-proBNP 510 pg/ml, ferritina 119 ng/ml.",unreadable,,,reference range only
+v15-006,CAC,"Datos analíticos: bicarbonato 23 mmol/l, cociente albúmina/creatinina en orina de 34 mg/g, sodio 140 mmol/l, calcio 10,1 mg/dl, peso 79 kg, ferritina 321 ng/ml, PCR 19 mg/l.",value,34,mg/g,single ACR with unit
+v15-007,CAC,"En la revisión se registró CAC dentro de rango normal, hematíes 23/campo en el sedimento, TA 150/95 mmHg, Hb 14,9 g/dl.",normal,,,"ACR stated normal or absent, no number"
+v15-008,CAC,"Laboratorio: PCR 13 mg/l, leucocitos 7.600/µl, proteinuria 0,6 g/24 h, IMC 24,6 kg/m2, plaquetas 197.000/µl, potasio 4,4 mEq/l.",not_acr,,,"24 h protein, not an ACR"
+v15-009,CAC,"En la revisión se registró CAC normal, hematíes 23/campo en el sedimento, sodio 138 mmol/l, leucocitos 6.500/µl y NT-proBNP 1631 pg/ml.",normal,,,"ACR stated normal or absent, no number"
+v15-010,FGe,"Datos analíticos: ácido úrico 4,0 mg/dl, plaquetas 282.000/µl, colesterol LDL 151 mg/dl, fósforo 4,2 mg/dl y FGe (MDRD) 27 (28/09/2025).",value,27,,eGFR number
+v15-011,FGe,"En el control destacaban HbA1c 9,3 %, sodio 141 mmol/l, FG >90 ml/min, creatinina 1,9 mg/dl, urea 71 mg/dl.",bound,,,eGFR given only as a bound
+v15-012,CAC,"Analítica: creatinina 1,4 mg/dl, TSH 3,2 mUI/l, ácido úrico 7,2 mg/dl, albúmina en orina 150 mg/l, TA 143/69 mmHg y fósforo 5,0 mg/dl.",not_acr,,,"concentration mg/l, not an ACR"
+v15-013,CAC,"Analítica: HbA1c 7,1 %, TSH 2,0 mUI/l (GGT 120 U/l; cociente albúmina/creatinina 55 mg/g 3); plaquetas 155.000/µl, potasio 3,9 mEq/l, creatinina 1,2 mg/dl (23/01/2023).",unreadable,,,stray number after ACR
+v15-014,CAC,"Al ingreso presentaba PCR 18 mg/l, albúmina sérica 3,6 g/dl, IMC 34,3 kg/m2, creatinina 1,1 mg/dl (01/12/2019).",not_acr,,,"serum albumin, not an ACR"
+v15-015,CAC,"Los resultados de laboratorio mostraron TSH 1,6 mUI/l, NT-proBNP 1573 pg/ml, glucosa 130 mg/dl, ácido úrico 7,2 mg/dl, colesterol LDL 87 mg/dl, cociente albúmina/creatinina en orina de 2,6 mg/mmol y plaquetas 316.000/µl.",value,"2,6",mg/mmol,single ACR with unit
+v15-016,CAC,"Datos analíticos: HbA1c 7,0 %, NT-proBNP 1599 pg/ml, glucosa 168 mg/dl, plaquetas 256.000/µl, CAC 60 mg/g el 12/03/2021 y 150 mg/g el 05/09/2022, bicarbonato 21 mmol/l, calcio 9,4 mg/dl.",unreadable,,,two ACR results
+v15-017,CAC,"Paciente con proteinuria 300 mg/24 h, TSH 2,0 mUI/l (CAC de treinta y cinco mg/g; creatinina 0,6 mg/dl); peso 100 kg, ferritina 323 ng/ml, calcio 9,7 mg/dl.",unreadable,,,number in words
+v15-018,CAC,"Al ingreso presentaba bicarbonato 25 mmol/l, ferritina 352 ng/ml, albuminuria 8,2 mg/g, TSH 4,1 mUI/l, peso 66 kg y PCR 4 mg/l.",value,"8,2",mg/g,single ACR with unit
+v15-019,CAC,"Datos analíticos: proteinuria 300 mg/24 h, fósforo 3,9 mg/dl (urea 56 mg/dl; CAC 3.400 µg/mg); PCR 40 mg/l.",unreadable,,,thousands separator
+v15-020,CAC,En la consulta: albuminuria 7 mg/g (04/10/2023).,value,7,mg/g,single ACR with unit
+v15-021,CAC,En la consulta: índice albúmina/creatinina 8 mg/g Cr.,value,8,mg/g,single ACR with unit
+v15-022,FGe,"Los resultados de laboratorio mostraron TSH 0,8 mUI/l, leucocitos 11.800/µl (ferritina 160 ng/ml; filtrado superior a 60); glucosa 193 mg/dl (06/04/2023).",bound,,,eGFR given only as a bound
+v15-023,CAC,"Los resultados de laboratorio mostraron Hb 12,8 g/dl, leucocitos 9.100/µl (cociente albumina/creatinina de 95 mg/g Cr; calcio 9,4 mg/dl; CPC 0,15 g/g); GGT 28 U/l, glucosa 136 mg/dl.",value,95,mg/g,single ACR with unit (other lab nearby)
+v15-024,CAC,"En la analítica se objetivó albuminuria 1,8 g/l, TSH 2,9 mUI/l, fósforo 4,8 mg/dl, sodio 133 mmol/l, colesterol LDL 84 mg/dl, ácido úrico 6,0 mg/dl, glucosa 196 mg/dl.",not_acr,,,"concentration g/l, not an ACR"
+v15-025,FGe,"En el control destacaban FG > 60, plaquetas 188.000/µl, IMC 34,2 kg/m2, leucocitos 4.900/µl, peso 82 kg, PCR 33 mg/l.",bound,,,eGFR given only as a bound
+v15-026,CAC,"Los resultados de laboratorio mostraron potasio 5,1 mEq/l, NT-proBNP 1506 pg/ml, plaquetas 213.000/µl, TSH 2,7 mUI/l, CAC (valores normales 0-30 mg/g), fósforo 4,1 mg/dl, GGT 33 U/l.",unreadable,,,reference range only
+v15-027,FGe,"En el control destacaban creatinina 1,1 mg/dl, IMC 26,3 kg/m2 (filtrado glomerular de 52; plaquetas 314.000/µl); bilirrubina 0,6 mg/dl, hematíes 5/campo en el sedimento, urea 51 mg/dl.",value,52,,eGFR number
+v15-028,CAC,"Al ingreso presentaba ferritina 134 ng/ml, NT-proBNP 1599 pg/ml, bilirrubina 0,8 mg/dl, índice albúmina/creatinina 22, urea 29 mg/dl.",unreadable,,,no unit
+v15-029,FGe,"Analítica: potasio 5,0 mEq/l, PCR 30 mg/l (creatinina 2,1 mg/dl; FG inferior a 60); ácido úrico 7,9 mg/dl, leucocitos 11.100/µl.",bound,,,eGFR given only as a bound
+v15-030,CAC,Se registró cociente albumina/creatinina de 5 mg/g.,value,5,mg/g,single ACR with unit
+v15-031,CAC,"Resultado: NT-proBNP 733 pg/ml, CAC de 0,8 mg/mmol (03/10/2025).",value,"0,8",mg/mmol,single ACR with unit
+v15-032,CAC,"Laboratorio: sodio 135 mmol/l, ferritina 186 ng/ml, índice albúmina/creatinina superior a 30, bilirrubina 0,8 mg/dl y leucocitos 12.700/µl.",unreadable,,,"bound, no unit"
+v15-033,FGe,"En la revisión se registró peso 105 kg, urea 31 mg/dl (IMC 26,8 kg/m2; FGe superior a 60); TSH 3,5 mUI/l, ácido úrico 7,0 mg/dl, creatinina 2,1 mg/dl (09/08/2024).",bound,,,eGFR given only as a bound
+v15-034,CAC,"En la revisión se registró leucocitos 7.900/µl, CAC de 67, TSH 1,5 mUI/l, creatinina 2,3 mg/dl, plaquetas 281.000/µl y bicarbonato 26 mmol/l.",unreadable,,,no unit
+v15-035,CAC,"Datos analíticos: bicarbonato 21 mmol/l, ácido úrico 4,6 mg/dl (cociente albúmina/creatinina 72 mg/g; colesterol LDL 73 mg/dl); ferritina 193 ng/ml, PCR 32 mg/l, Hb 13,7 g/dl.",value,72,mg/g,single ACR with unit
+v15-036,CAC,"Analítica: IMC 27,3 kg/m2, hematíes 5/campo en el sedimento, Hb 10,2 g/dl, HbA1c 6,8 %, ferritina 33 ng/ml, TA 158/78 mmHg, cociente albúmina/creatinina en orina de 7 mg/g, cociente proteína/creatinina 0,12 g/g.",value,7,mg/g,single ACR with unit (other lab nearby)
+v15-037,FGe,"Laboratorio: plaquetas 291.000/µl, ferritina 30 ng/ml (TSH 0,7 mUI/l; filtrado glomerular superior a 90 ml/min/1,73 m2); peso 67 kg.",bound,,,eGFR given only as a bound
+v15-038,CAC,"Los resultados de laboratorio mostraron colesterol LDL 130 mg/dl, Hb 11,0 g/dl, ratio albúmina/creatinina 45 µg/mg, potasio 5,0 mEq/l, GGT 117 U/l y CPC 0,15 g/g.",value,45,µg/mg,single ACR with unit (other lab nearby)
+v15-039,CAC,"Laboratorio: ácido úrico 4,3 mg/dl, plaquetas 232.000/µl, calcio 8,7 mg/dl, TSH 2,3 mUI/l, cociente albúmina/creatinina entre 30 y 300 mg/g.",unreadable,,,range only
+v15-040,CAC,"Analítica: HbA1c 7,7 %, plaquetas 220.000/µl (ratio albúmina/creatinina 85 mg/g; peso 105 kg); IMC 31,1 kg/m2.",value,85,mg/g,single ACR with unit
+v15-041,CAC,"Datos analíticos: potasio 3,8 mEq/l, bicarbonato 25 mmol/l (albuminuria 4,5 g/24 h; bilirrubina 0,5 mg/dl); NT-proBNP 1762 pg/ml, HbA1c 8,9 %, IMC 25,8 kg/m2.",not_acr,,,"24 h albumin, not an ACR"
+v15-042,CAC,"Analítica: proteinuria 300 mg/24 h, TA 148/87 mmHg (Hb 10,3 g/dl; CAC 2,5 mg/mmol y 12 mg/mmol en la segunda muestra); glucosa 166 mg/dl.",unreadable,,,two ACR results
+v15-043,CAC,"En el control destacaban glucosa 209 mg/dl, creatinina 1,7 mg/dl, ferritina 306 ng/ml, calcio 9,4 mg/dl y tira reactiva con albúmina +.",not_acr,,,"dipstick, not an ACR"
+v15-044,CAC,"Los resultados de laboratorio mostraron TSH 2,1 mUI/l, bicarbonato 20 mmol/l, IMC 22,7 kg/m2, glucosa 217 mg/dl, Hb 14,8 g/dl, peso 108 kg, cociente albumina/creatinina inferior a 3 mg/mmol.",unreadable,,,upper bound
+v15-045,FGe,"Paciente con bicarbonato 22 mmol/l, GGT 115 U/l, creatinina 2,1 mg/dl, TSH 2,7 mUI/l, IMC 22,5 kg/m2, urea 54 mg/dl y FG mayor de 90.",bound,,,eGFR given only as a bound
+v15-046,CAC,"Paciente con sodio 138 mmol/l, GGT 89 U/l, glucosa 191 mg/dl, albuminuria 300 mg/24 h y creatinina 0,8 mg/dl.",not_acr,,,"24 h albumin, not an ACR"
+v15-047,CAC,"Los resultados de laboratorio mostraron sin microalbuminuria, colesterol LDL 136 mg/dl, glucosa 220 mg/dl y bilirrubina 1,0 mg/dl.",normal,,,"ACR stated normal or absent, no number"
+v15-048,CAC,"Datos analíticos: NT-proBNP 1377 pg/ml, TSH 3,0 mUI/l (bicarbonato 25 mmol/l; cociente albúmina/creatinina de 3,5); GGT 44 U/l, HbA1c 7,8 %, sodio 141 mmol/l.",unreadable,,,no unit
+v15-049,CAC,"En el control destacaban albúmina en orina de 24 h 320 mg/24 h, NT-proBNP 1043 pg/ml, ácido úrico 4,8 mg/dl, peso 104 kg, sodio 134 mmol/l, fósforo 3,0 mg/dl, colesterol LDL 145 mg/dl.",not_acr,,,"24 h albumin, not an ACR"
+v15-050,CAC,"Datos analíticos: hematíes 3/campo en el sedimento, relación albúmina/creatinina 10 mg/mmol, bilirrubina 0,4 mg/dl, plaquetas 285.000/µl, bicarbonato 27 mmol/l, GGT 33 U/l y orina de 24 h sin hallazgos.",value,10,mg/mmol,single ACR with unit (other lab nearby)
+v15-051,CAC,"Datos analíticos: glucosa 164 mg/dl, TSH 2,8 mUI/l, creatinina 2,1 mg/dl, leucocitos 8.200/µl, CAC 18 mg/g, posteriormente 55 mg/g.",unreadable,,,two ACR results
+v15-052,CAC,"Al ingreso presentaba PCR 38 mg/l, leucocitos 10.400/µl (HbA1c 8,3 %; microalbuminuria negativa); sodio 142 mmol/l (07/03/2020).",normal,,,"ACR stated normal or absent, no number"
+v15-053,CAC,"Se registró proteinuria 300 mg/24 h, cociente microalbúmina/creatinina 180 mg/g.",value,180,mg/g,single ACR with unit
+v15-054,FGe,"En la revisión se registró leucocitos 6.500/µl, FG 15 ml/min/1,73 m2, urea 30 mg/dl, creatinina 0,8 mg/dl y bilirrubina 0,9 mg/dl.",value,15,"ml/min/1,73 m2",eGFR number
+v15-055,CAC,"En la analítica se objetivó urea 46 mg/dl, proteinuria 300 mg/24 h, TA 117/94 mmHg, Hb 14,7 g/dl, plaquetas 175.000/µl, ratio albúmina/creatinina 28 mg/g, 4, hematíes 8/campo en el sedimento.",unreadable,,,stray number after ACR
+v15-056,CAC,"Paciente con Hb 9,2 g/dl, colesterol LDL 129 mg/dl, PCR 28 mg/l, GGT 70 U/l, cociente albúmina/creatinina 16 mg/g de creatinina.",value,16,mg/g,single ACR with unit
+v15-057,CAC,"En la analítica se objetivó calcio 9,2 mg/dl, sodio 134 mmol/l, cociente microalbúmina/creatinina 560 mg/g, glucosa 179 mg/dl, urea 50 mg/dl, colesterol LDL 109 mg/dl y IMC 24,3 kg/m2.",value,560,mg/g,single ACR with unit
+v15-058,CAC,"En la revisión se registró hematíes 23/campo en el sedimento, colesterol LDL 136 mg/dl, leucocitos 12.500/µl, albuminuria +++ en tira reactiva.",not_acr,,,"dipstick, not an ACR"
+v15-059,CAC,"En el control destacaban peso 72 kg, hematíes 11/campo en el sedimento, TA 145/69 mmHg, ferritina 348 ng/ml, CAC de 120 mg/g, plaquetas 185.000/µl, orina de 24 h con proteinuria 300 mg/24 h.",value,120,mg/g,single ACR with unit (other lab nearby)
+v15-060,FGe,"Los resultados de laboratorio mostraron ácido úrico 4,4 mg/dl, ferritina 370 ng/ml, FGe < 15 y hematíes 6/campo en el sedimento.",bound,,,eGFR given only as a bound
+v15-061,CAC,"Laboratorio: bilirrubina 0,9 mg/dl, proteinuria 300 mg/24 h (albuminuria 45 mg/g; cociente proteína/creatinina 0,12 g/g; NT-proBNP 1540 pg/ml); TSH 1,4 mUI/l.",value,45,mg/g,single ACR with unit (other lab nearby)
+v15-062,CAC,"Datos analíticos: ferritina 104 ng/ml, cociente albúmina/creatinina de cuarenta mg/g, sodio 140 mmol/l, colesterol LDL 136 mg/dl, TSH 3,1 mUI/l, potasio 5,1 mEq/l y fósforo 5,2 mg/dl.",unreadable,,,number in words
+v15-063,FGe,"Analítica: peso 81 kg, calcio 8,9 mg/dl, glucosa 107 mg/dl, urea 69 mg/dl, TA 114/70 mmHg, FGe por CKD-EPI 78 ml/min/1,73 m2.",value,78,"ml/min/1,73 m2",eGFR number
+v15-064,CAC,Resultado: leucocitos 12.400/µl y cociente albúmina/creatinina 70 mg/g y albuminuria 8 mg/dl.,value,70,mg/g,single ACR with unit
+v15-065,CAC,"Laboratorio: IMC 29,6 kg/m2, HbA1c 9,1 % (microalbuminuria de 3,9 mg/g; calcio 9,9 mg/dl); fósforo 3,7 mg/dl, sodio 141 mmol/l.",value,"3,9",mg/g,single ACR with unit
+v15-066,CAC,"Laboratorio: Hb 13,1 g/dl, proteinuria 300 mg/24 h (plaquetas 166.000/µl; albuminuria 0,9 g/l); peso 105 kg, bilirrubina 0,9 mg/dl, urea 46 mg/dl.",not_acr,,,"concentration g/l, not an ACR"
+v15-067,CAC,"En la analítica se objetivó plaquetas 217.000/µl, HbA1c 8,9 %, fósforo 4,1 mg/dl, leucocitos 7.900/µl, albuminuria ++, potasio 4,8 mEq/l.",not_acr,,,"dipstick crosses, not an ACR"
+v15-068,CAC,"Analítica: bicarbonato 21 mmol/l, creatinina 2,3 mg/dl (fósforo 3,3 mg/dl; CAC <30 mg/g); PCR 23 mg/l.",unreadable,,,upper bound
+v15-069,CAC,"Al ingreso presentaba peso 58 kg, CAC 45, ferritina 248 ng/ml, TSH 3,3 mUI/l, sodio 140 mmol/l, plaquetas 315.000/µl.",unreadable,,,no unit
+v15-070,CAC,"En el control destacaban urea 53 mg/dl, leucocitos 5.200/µl, IMC 23,4 kg/m2 y CAC 90 mg/g, 1,5.",unreadable,,,stray number after ACR
+v15-071,FGe,"En el control destacaban creatinina 1,0 mg/dl, hematíes 7/campo en el sedimento, PCR 13 mg/l, FGe menor de 15.",bound,,,eGFR given only as a bound
+v15-072,CAC,"En el control destacaban peso 61 kg, bicarbonato 19 mmol/l (cociente proteína/creatinina 0,3 g/g; sodio 138 mmol/l); glucosa 122 mg/dl, proteinuria 300 mg/24 h.",not_acr,,,"protein/creatinine only, not an ACR"
+v15-073,CAC,"Los resultados de laboratorio mostraron proteinuria 300 mg/24 h, IMC 32,4 kg/m2, ratio albúmina/creatinina normal, creatinina 0,8 mg/dl, ferritina 150 ng/ml y calcio 9,3 mg/dl.",normal,,,"ACR stated normal or absent, no number"
+v15-074,CAC,"Los resultados de laboratorio mostraron TSH 1,1 mUI/l, potasio 4,2 mEq/l (CAC > 300 mg/g; glucosa 114 mg/dl); PCR 8 mg/l, GGT 115 U/l.",unreadable,,,lower bound
+v15-075,FGe,"En la analítica se objetivó IMC 33,4 kg/m2, bicarbonato 18 mmol/l, FGe <60, PCR 12 mg/l y urea 27 mg/dl.",bound,,,eGFR given only as a bound
+v15-076,CAC,"En el control destacaban fósforo 3,3 mg/dl, leucocitos 6.400/µl, calcio 9,3 mg/dl, urea 44 mg/dl, GGT 61 U/l, bicarbonato 19 mmol/l y cociente albumina/creatinina 12,4.",unreadable,,,no unit
+v15-077,CAC,"Datos analíticos: ferritina 218 ng/ml, proteinuria ++ en tira reactiva, Hb 14,6 g/dl, ácido úrico 8,4 mg/dl, proteinuria 300 mg/24 h, PCR 3 mg/l, bicarbonato 24 mmol/l.",not_acr,,,"dipstick protein, not an ACR"
+v15-078,CAC,"Analítica: urea 79 mg/dl, cociente albumina/creatinina de 23 mg/g, hematíes 13/campo en el sedimento, calcio 9,0 mg/dl, orina de 24 h con proteinuria 300 mg/24 h.",value,23,mg/g,single ACR with unit (other lab nearby)
+v15-079,CAC,"Laboratorio: calcio 9,9 mg/dl, potasio 4,8 mEq/l, plaquetas 166.000/µl, IMC 25,2 kg/m2, TSH 1,5 mUI/l, CAC 22 mg/g y urea 87 mg/dl.",value,22,mg/g,single ACR with unit
+v15-080,CAC,"En la analítica se objetivó colesterol LDL 71 mg/dl, potasio 4,1 mEq/l, urea 70 mg/dl, ácido úrico 7,8 mg/dl, microalbuminuria 25 mg/l.",not_acr,,,"concentration mg/l, not an ACR"
+v15-081,CAC,"En la analítica se objetivó GGT 21 U/l, potasio 4,8 mEq/l (ferritina 279 ng/ml; índice albúmina/creatinina 3 mg/mmol; orina de 24 h sin hallazgos); NT-proBNP 557 pg/ml.",value,3,mg/mmol,single ACR with unit (other lab nearby)
+v15-082,CAC,"En la revisión se registró IMC 31,7 kg/m2, GGT 52 U/l (TA 160/74 mmHg; albúmina urinaria 12 mg/dl); ácido úrico 4,0 mg/dl.",not_acr,,,"concentration mg/dl, not an ACR"
+v15-083,CAC,"En la analítica se objetivó calcio 9,8 mg/dl, cociente microalbúmina/creatinina negativo, plaquetas 319.000/µl, hematíes 11/campo en el sedimento, fósforo 4,1 mg/dl, TA 128/93 mmHg, bicarbonato 22 mmol/l.",normal,,,"ACR stated normal or absent, no number"
+v15-084,CAC,"Datos analíticos: potasio 5,3 mEq/l, TSH 4,1 mUI/l, colesterol LDL 136 mg/dl, CAC 35-20 mg/g y sodio 133 mmol/l.",unreadable,,,two numbers range
+v15-085,CAC,"Paciente con creatinina 1,9 mg/dl, HbA1c 8,7 %, cociente albúmina/creatinina 410 mg/g, urea 50 mg/dl, colesterol LDL 126 mg/dl, Hb 9,3 g/dl, orina de 24 h sin hallazgos.",value,410,mg/g,single ACR with unit (other lab nearby)
+v15-086,FGe,"Analítica: HbA1c 9,3 %, leucocitos 4.300/µl, FGe CKD-EPI 2021 de 57, bilirrubina 0,5 mg/dl, NT-proBNP 592 pg/ml y hematíes 5/campo en el sedimento.",value,57,,eGFR number
+v15-087,CAC,"En el control destacaban calcio 9,2 mg/dl, cociente proteína/creatinina 1,5 g/g, sodio 145 mmol/l, TA 129/69 mmHg y leucocitos 9.200/µl.",not_acr,,,"protein/creatinine only, not an ACR"
+v15-088,CAC,"En la revisión se registró TSH 0,9 mUI/l, proteinuria 300 mg/24 h (albuminuria +++; creatinina 1,0 mg/dl); calcio 8,8 mg/dl.",not_acr,,,"dipstick crosses, not an ACR"
+v15-089,CAC,"En la analítica se objetivó urea 33 mg/dl, leucocitos 6.800/µl, potasio 4,9 mEq/l, albúmina en orina 45 mg/l, hematíes 13/campo en el sedimento.",not_acr,,,"concentration mg/l, not an ACR"
+v15-090,FGe,"En la revisión se registró HbA1c 7,5 %, creatinina 1,1 mg/dl, FG estimado 61 ml/min, fósforo 4,9 mg/dl, proteinuria 300 mg/24 h, leucocitos 10.800/µl, GGT 23 U/l.",value,61,ml/min,eGFR number
+v15-091,CAC,"Analítica: GGT 63 U/l, hematíes 21/campo en el sedimento, microalbuminuria de 26,7 mg/g, proteinuria 300 mg/24 h.",value,"26,7",mg/g,single ACR with unit
+v15-092,CAC,"Laboratorio: ácido úrico 5,5 mg/dl, cociente albúmina/creatinina 2.350 mg/g, proteinuria 300 mg/24 h, creatinina 1,9 mg/dl, bicarbonato 18 mmol/l.",unreadable,,,thousands separator
+v15-093,FGe,"Analítica: FGe mayor de 60 ml/min, sodio 141 mmol/l, Hb 12,7 g/dl, urea 46 mg/dl, NT-proBNP 791 pg/ml, TA 156/70 mmHg.",bound,,,eGFR given only as a bound
+v15-094,CAC,"Paciente con HbA1c 8,9 %, urea 38 mg/dl (ratio albúmina/creatinina 60 mg/g de creatinina; GGT 55 U/l); TSH 0,7 mUI/l, potasio 4,5 mEq/l (05/03/2024).",value,60,mg/g,single ACR with unit
+v15-095,CAC,"Los resultados de laboratorio mostraron GGT 111 U/l, calcio 9,5 mg/dl (relación albúmina/creatinina 300; fósforo 4,2 mg/dl); proteinuria 300 mg/24 h, colesterol LDL 141 mg/dl, creatinina 0,7 mg/dl.",unreadable,,,no unit
+v15-096,CAC,"Analítica: leucocitos 6.300/µl, GGT 19 U/l, proteínas en orina ++, IMC 29,6 kg/m2 y proteinuria 300 mg/24 h.",not_acr,,,"dipstick protein, not an ACR"
+v15-097,CAC,"En el control destacaban TSH 1,5 mUI/l, Hb 9,2 g/dl, plaquetas 211.000/µl, GGT 36 U/l, albuminuria 1.050 mg/g, NT-proBNP 734 pg/ml.",unreadable,,,thousands separator
+v15-098,FGe,"Al ingreso presentaba fósforo 4,4 mg/dl, Hb 12,2 g/dl (FGe 102 ml/min/1,73 m2; ácido úrico 4,8 mg/dl); bilirrubina 0,6 mg/dl.",value,102,"ml/min/1,73 m2",eGFR number
+v15-099,CAC,"En la consulta: ratio albúmina/creatinina 14,5 mg/g.",value,"14,5",mg/g,single ACR with unit
+v15-100,CAC,Destacaba relación albúmina/creatinina 31 mg/g Cr.,value,31,mg/g,single ACR with unit
+v15-101,FGe,"Laboratorio: Hb 14,3 g/dl, potasio 4,8 mEq/l, colesterol LDL 141 mg/dl, FGe >90 ml/min/1,73 m2, ferritina 252 ng/ml, creatinina 2,2 mg/dl y peso 98 kg.",bound,,,eGFR given only as a bound
+v15-102,CAC,"Laboratorio: peso 98 kg, Hb 13,5 g/dl (plaquetas 208.000/µl; cociente albúmina/creatinina 40 mg/g (previo 120 mg/g)); potasio 3,9 mEq/l, hematíes 20/campo en el sedimento.",unreadable,,,two ACR results
+v15-103,CAC,"Paciente con leucocitos 5.800/µl, bicarbonato 21 mmol/l (albuminuria 12 mg/dl en muestra aislada; GGT 46 U/l); HbA1c 6,9 %, proteinuria 300 mg/24 h, TSH 3,7 mUI/l.",not_acr,,,"concentration mg/dl, not an ACR"
+v15-104,FGe,"Paciente con colesterol LDL 81 mg/dl, Hb 11,6 g/dl, filtrado glomerular estimado >60 ml/min/1,73 m2, IMC 23,9 kg/m2 y calcio 9,9 mg/dl.",bound,,,eGFR given only as a bound
+v15-105,CAC,"En la analítica se objetivó calcio 9,2 mg/dl, proteinuria 1,2 g/24 h, GGT 57 U/l, HbA1c 7,7 % y leucocitos 8.700/µl.",not_acr,,,"24 h protein, not an ACR"
+v15-106,FGe,"En la analítica se objetivó calcio 10,0 mg/dl, hematíes 18/campo en el sedimento, FG 94 ml/min, TA 134/79 mmHg, creatinina 1,1 mg/dl, bilirrubina 1,1 mg/dl.",value,94,ml/min,eGFR number
+v15-107,CAC,Se registró ferritina 343 ng/ml y microalbuminuria de 28 mg/g.,value,28,mg/g,single ACR with unit
+v15-108,CAC,"Datos analíticos: hematíes 4/campo en el sedimento, NT-proBNP 1155 pg/ml, bicarbonato 20 mmol/l, peso 68 kg, ausencia de albuminuria, calcio 8,7 mg/dl.",normal,,,"ACR stated normal or absent, no number"
+v15-109,CAC,"Los resultados de laboratorio mostraron peso 82 kg, glucosa 127 mg/dl (hematíes 21/campo en el sedimento; albuminuria 29,8 mg/dl); Hb 9,3 g/dl.",not_acr,,,"concentration mg/dl, not an ACR"
+v15-110,CAC,"Laboratorio: proteinuria 300 mg/24 h, creatinina 0,6 mg/dl, hematíes 25/campo en el sedimento, cociente albúmina/creatinina 300 mg/g en 2019 y 90 mg/g actual, bicarbonato 25 mmol/l, TSH 2,6 mUI/l.",unreadable,,,two ACR results
+v15-111,FGe,"En la revisión se registró peso 101 kg, calcio 9,8 mg/dl (creatinina 1,2 mg/dl; filtrado glomerular estimado 36); GGT 38 U/l, ácido úrico 8,8 mg/dl, proteinuria 300 mg/24 h.",value,36,,eGFR number
+v15-112,CAC,"Datos analíticos: Hb 13,3 g/dl, bicarbonato 19 mmol/l, glucosa 160 mg/dl, bilirrubina 0,3 mg/dl, plaquetas 231.000/µl, albuminuria + en tira, peso 72 kg.",not_acr,,,"dipstick, not an ACR"
+v15-113,CAC,Destacaba cociente albumina/creatinina de 20 µg/mg.,value,20,µg/mg,single ACR with unit
+v15-114,CAC,"Los resultados de laboratorio mostraron sodio 142 mmol/l, urea 48 mg/dl (microalbuminuria ausente; hematíes 6/campo en el sedimento); plaquetas 247.000/µl.",normal,,,"ACR stated normal or absent, no number"
+v15-115,CAC,"Datos analíticos: peso 62 kg, TA 146/80 mmHg (albúmina 4,1 g/dl; creatinina 1,1 mg/dl); GGT 72 U/l, TSH 2,4 mUI/l.",not_acr,,,"serum albumin, not an ACR"
+v15-116,FGe,"Al ingreso presentaba FG de 68, TA 153/75 mmHg, IMC 28,6 kg/m2, fósforo 4,0 mg/dl, plaquetas 308.000/µl, bicarbonato 22 mmol/l y calcio 9,3 mg/dl.",value,68,,eGFR number
+v15-117,CAC,"Los resultados de laboratorio mostraron HbA1c 7,3 %, relación albúmina/creatinina 80 µg/mg, peso 62 kg, ácido úrico 6,0 mg/dl, ferritina 350 ng/ml y glucosa 172 mg/dl.",value,80,µg/mg,single ACR with unit
+v15-118,CAC,"Analítica: bicarbonato 25 mmol/l, albuminuria 29 mg/g, NT-proBNP 1357 pg/ml y creatinina 0,6 mg/dl.",value,29,mg/g,single ACR with unit
+v15-119,CAC,"En el control destacaban fósforo 2,8 mg/dl, peso 73 kg (ferritina 234 ng/ml; cociente albúmina/creatinina 150 µg/mg); colesterol LDL 132 mg/dl, TA 139/94 mmHg.",value,150,µg/mg,single ACR with unit
+v15-120,CAC,"En la analítica se objetivó TSH 0,9 mUI/l, NT-proBNP 231 pg/ml (CAC 25 mg/mmol; calcio 9,8 mg/dl); GGT 59 U/l, sodio 139 mmol/l, leucocitos 10.900/µl.",value,25,mg/mmol,single ACR with unit
+v15-121,FGe,"Datos analíticos: plaquetas 180.000/µl, ferritina 70 ng/ml, filtrado glomerular 41 ml/min, peso 93 kg, HbA1c 7,9 %, bilirrubina 0,3 mg/dl.",value,41,ml/min,eGFR number
+v15-122,CAC,"Analítica: proteinuria 300 mg/24 h, bilirrubina 0,7 mg/dl (proteinuria de 24 h 850 mg/24 h; plaquetas 253.000/µl); TSH 2,4 mUI/l, colesterol LDL 145 mg/dl, NT-proBNP 150 pg/ml (17/01/2021).",not_acr,,,"24 h protein, not an ACR"
+v15-123,CAC,"Al ingreso presentaba creatinina 2,0 mg/dl, proteinuria 300 mg/24 h (albuminuria ++++; bilirrubina 0,5 mg/dl); hematíes 10/campo en el sedimento.",not_acr,,,"dipstick crosses, not an ACR"
+v15-124,CAC,"Laboratorio: bicarbonato 24 mmol/l, HbA1c 8,1 % (NT-proBNP 447 pg/ml; índice albúmina/creatinina normal); ácido úrico 5,0 mg/dl.",normal,,,"ACR stated normal or absent, no number"
+v15-125,CAC,"Analítica: leucocitos 11.000/µl, calcio 8,9 mg/dl, índice albúmina/creatinina 340 mg/g, fósforo 3,9 mg/dl, ferritina 155 ng/ml, glucosa 154 mg/dl y cociente proteína/creatinina 0,2 g/g.",value,340,mg/g,single ACR with unit (other lab nearby)
+v15-126,CAC,"Resultado: plaquetas 313.000/µl, cociente microalbúmina/creatinina 1,5 mg/mmol.",value,"1,5",mg/mmol,single ACR with unit
+v15-127,CAC,"En la analítica se objetivó fósforo 4,5 mg/dl, ácido úrico 5,3 mg/dl, HbA1c 8,4 %, ferritina 107 ng/ml, calcio 10,0 mg/dl, CAC 25 mg/g y en la repetición 80 mg/g.",unreadable,,,two ACR results
+v15-128,CAC,"Al ingreso presentaba PCR 21 mg/l, bilirrubina 0,4 mg/dl, TSH 1,1 mUI/l, CAC 12 mg/g de creatinina, urea 70 mg/dl y NT-proBNP 1512 pg/ml.",value,12,mg/g,single ACR with unit
+v15-129,CAC,Destacaba CAC 18 mg/g y colesterol LDL 160 mg/dl.,value,18,mg/g,single ACR with unit
+v15-130,CAC,"Laboratorio: fósforo 4,1 mg/dl, ácido úrico 8,3 mg/dl, CPC 0,45 g/g y bicarbonato 20 mmol/l.",not_acr,,,"protein/creatinine only, not an ACR"
+v15-131,CAC,"Los resultados de laboratorio mostraron calcio 10,0 mg/dl, ácido úrico 8,3 mg/dl, PCR 7 mg/l, bicarbonato 21 mmol/l, CAC de 250 mg/g, leucocitos 6.600/µl, TA 133/93 mmHg.",value,250,mg/g,single ACR with unit
+v15-132,CAC,"Los resultados de laboratorio mostraron leucocitos 9.100/µl, fósforo 4,6 mg/dl (HbA1c 9,4 %; albúmina 3,2 g/dl); urea 74 mg/dl, bicarbonato 26 mmol/l, Hb 10,3 g/dl (16/09/2022).",not_acr,,,"serum albumin, not an ACR"
+v15-133,CAC,"Datos analíticos: bilirrubina 1,0 mg/dl, hematíes 23/campo en el sedimento, tira reactiva: albúmina ++, proteínas ++, potasio 4,2 mEq/l, colesterol LDL 149 mg/dl, HbA1c 7,2 %.",not_acr,,,"dipstick, not an ACR"
+v15-134,CAC,"Analítica: Hb 14,8 g/dl, TSH 2,1 mUI/l (albuminuria ausente; NT-proBNP 1224 pg/ml); peso 69 kg, bicarbonato 24 mmol/l, bilirrubina 0,8 mg/dl.",normal,,,"ACR stated normal or absent, no number"
+v15-135,CAC,"Laboratorio: PCR 34 mg/l, NT-proBNP 1627 pg/ml, ácido úrico 4,6 mg/dl, peso 73 kg, bilirrubina 1,0 mg/dl, IMC 28,1 kg/m2, albuminuria de 24 h 2,1 g/24 h.",not_acr,,,"24 h albumin, not an ACR"
+v15-136,FGe,"Analítica: TSH 3,8 mUI/l, ácido úrico 4,1 mg/dl, hematíes 25/campo en el sedimento, Hb 13,0 g/dl, NT-proBNP 1192 pg/ml, sodio 143 mmol/l y FG > 90.",bound,,,eGFR given only as a bound
+v15-137,FGe,"En la analítica se objetivó TSH 4,5 mUI/l, bicarbonato 22 mmol/l (FG <30 ml/min; sodio 137 mmol/l); ácido úrico 7,0 mg/dl.",bound,,,eGFR given only as a bound
+v15-138,CAC,"Laboratorio: calcio 8,8 mg/dl, ferritina 290 ng/ml (Hb 9,2 g/dl; microalbuminuria en orina de 24 h 90 mg/24 h); fósforo 4,7 mg/dl.",not_acr,,,"24 h albumin, not an ACR"
+v15-139,FGe,"Paciente con ferritina 267 ng/ml, glucosa 210 mg/dl (GGT 21 U/l; FGe 24,5 ml/min/1,73 m2); bicarbonato 22 mmol/l.",value,"24,5","ml/min/1,73 m2",eGFR number
+v15-140,FGe,"Paciente con FGe 33 ml/min/1,73 m2, glucosa 120 mg/dl, TA 115/67 mmHg, ácido úrico 5,6 mg/dl, proteinuria 300 mg/24 h.",value,33,"ml/min/1,73 m2",eGFR number
+v15-141,CAC,"Al ingreso presentaba hematíes 16/campo en el sedimento, cociente proteína/creatinina 0,8 g/g, colesterol LDL 71 mg/dl, urea 35 mg/dl, Hb 12,4 g/dl, GGT 78 U/l y sodio 138 mmol/l.",not_acr,,,"protein/creatinine only, not an ACR"
+v15-142,CAC,Destacaba CAC 15 mg/g y microalbuminuria 40 mg/l y ferritina 277 ng/ml (20/01/2022).,value,15,mg/g,single ACR with unit
+v15-143,CAC,"Al ingreso presentaba Hb 10,7 g/dl, hematíes 16/campo en el sedimento, calcio 9,3 mg/dl, CAC 22 mg/g (microalbuminuria 35 mg/l).",value,22,mg/g,single ACR with unit
+v15-144,FGe,"En la analítica se objetivó bilirrubina 0,6 mg/dl, fósforo 4,6 mg/dl (calcio 10,1 mg/dl; filtrado glomerular estimado (CKD-EPI) 88 ml/min/1,73 m2); proteinuria 300 mg/24 h, bicarbonato 24 mmol/l.",value,88,"ml/min/1,73 m2",eGFR number
+v15-145,CAC,"Al ingreso presentaba bilirrubina 0,6 mg/dl, bicarbonato 22 mmol/l (hematíes 14/campo en el sedimento; ratio albúmina/creatinina 180); Hb 12,7 g/dl.",unreadable,,,no unit
+v15-146,CAC,"En el control destacaban IMC 27,3 kg/m2, Hb 10,9 g/dl, CAC menor de 10 mg/g, HbA1c 9,5 %, glucosa 194 mg/dl, leucocitos 8.500/µl y sodio 140 mmol/l.",unreadable,,,upper bound
+v15-147,CAC,"Datos analíticos: cociente albumina/creatinina dentro de la normalidad, NT-proBNP 408 pg/ml, leucocitos 4.300/µl, GGT 115 U/l, colesterol LDL 116 mg/dl, ácido úrico 4,6 mg/dl (27/02/2021).",normal,,,"ACR stated normal or absent, no number"
+v15-148,CAC,"Los resultados de laboratorio mostraron bicarbonato 21 mmol/l, leucocitos 5.200/µl, calcio 9,6 mg/dl, peso 60 kg, fósforo 3,8 mg/dl, cociente albúmina/creatinina mayor de 50 mg/g.",unreadable,,,lower bound
+v15-149,CAC,"Analítica: hematíes 24/campo en el sedimento, colesterol LDL 83 mg/dl (orina de 24 h sin hallazgos; microalbuminuria de 150 mg/g; GGT 66 U/l); bicarbonato 20 mmol/l, bilirrubina 1,0 mg/dl.",value,150,mg/g,single ACR with unit (other lab nearby)
+v15-150,CAC,"Al ingreso presentaba bicarbonato 21 mmol/l, IMC 25,9 kg/m2, urea 36 mg/dl y CAC 40 mg/g, 2.",unreadable,,,stray number after ACR
+v15-151,CAC,"Analítica: bicarbonato 25 mmol/l, GGT 99 U/l, CAC doscientos mg/g, peso 102 kg, PCR 4 mg/l, hematíes 7/campo en el sedimento.",unreadable,,,number in words
+v15-152,CAC,"Analítica: HbA1c 7,9 %, GGT 113 U/l, colesterol LDL 77 mg/dl, TSH 2,4 mUI/l, Hb 9,6 g/dl, calcio 9,5 mg/dl, CPC 0,15 g/g, índice albúmina/creatinina 52,8 mg/g (20/06/2025).",value,"52,8",mg/g,single ACR with unit (other lab nearby)
+v15-153,CAC,"Analítica: bicarbonato 23 mmol/l, microalbuminuria 150 mg/24 h, TA 147/81 mmHg, plaquetas 272.000/µl, PCR 33 mg/l, urea 46 mg/dl y bilirrubina 1,1 mg/dl.",not_acr,,,"24 h albumin, not an ACR"
+v15-154,CAC,"Laboratorio: leucocitos 12.600/µl, ferritina 122 ng/ml, IMC 31,5 kg/m2, glucosa 128 mg/dl, cociente albúmina/creatinina normal, HbA1c 9,4 %.",normal,,,"ACR stated normal or absent, no number"
+v15-155,CAC,"Paciente con hematíes 5/campo en el sedimento, albúmina sérica 2,9 g/dl, calcio 9,2 mg/dl, urea 75 mg/dl, GGT 105 U/l, HbA1c 9,4 %, colesterol LDL 160 mg/dl.",not_acr,,,"serum albumin, not an ACR"
+v15-156,CAC,"Destacaba creatinina 2,2 mg/dl y cociente microalbúmina/creatinina 132,4 mg/g.",value,"132,4",mg/g,single ACR with unit
+v15-157,CAC,En la consulta: relación albúmina/creatinina 4 mg/g.,value,4,mg/g,single ACR with unit
+v15-158,CAC,"En la revisión se registró HbA1c 8,7 %, ferritina 360 ng/ml, ácido úrico 4,1 mg/dl, microalbuminuria 80 mg/l, creatinina 2,2 mg/dl, sodio 144 mmol/l, TA 156/85 mmHg.",not_acr,,,"concentration mg/l, not an ACR"
+v15-159,CAC,"Analítica: CAC negativo, Hb 14,8 g/dl, HbA1c 7,2 %, TSH 4,4 mUI/l.",normal,,,"ACR stated normal or absent, no number"
+v15-160,CAC,"Datos analíticos: sodio 144 mmol/l, calcio 9,2 mg/dl (CAC 1.200 mg/g; calcio 9,6 mg/dl); ácido úrico 4,7 mg/dl.",unreadable,,,thousands separator

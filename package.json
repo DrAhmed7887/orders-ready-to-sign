@@ -1,0 +1,16 @@
+{
+  "name": "orders-ready-to-sign-ui-tests",
+  "private": true,
+  "description": "Automated tests of the doctor's screen (ui/index.html) with the system Chrome",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:ui",
+    "test:ui": "node --test ui/tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.1"
+  }
+}

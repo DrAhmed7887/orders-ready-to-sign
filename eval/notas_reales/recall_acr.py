@@ -1,0 +1,120 @@
+"""ACR recall on the albumin cases of held-out 2 (docs/NOTES_REAL_PROTOCOL.md, amendment 8).
+
+    python3 eval/notas_reales/recall_acr.py  ->  eval/results/notas_reales_recall_acr.json and .md
+
+Reference: eval/notas_reales/recall_acr_labels_heldout2.csv, marked by AI agents that read the numbered case texts
+without the model's output or the checks (not a physician). Primary: per note, of albumin cases with at least one
+marked ACR sentence, the share in which the code accepted an ACR finding on a marked ACR sentence.
+"""
+from __future__ import annotations
+
+import collections
+import csv
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "eval" / "notas_reales"))
+
+from notas.leer import LectorGrabado, nota_numerada  # noqa: E402
+from notas.verificar import verificar  # noqa: E402
+from revisar import HOY, NOTE_DATE, clopper_pearson  # noqa: E402
+
+HERE = ROOT / "eval" / "notas_reales"
+LABELS = HERE / "recall_acr_labels_heldout2.csv"
+OUT = ROOT / "eval" / "results" / "notas_reales_recall_acr"
+
+
+def _num(s):
+    m = re.search(r"\d+(?:[.,]\d+)?", s or "")
+    return float(m.group(0).replace(",", ".")) if m else None
+
+
+def _unit(s):
+    u = (s or "").lower().replace(" ", "").replace("μ", "µ").replace("mcg", "µg").replace("ug", "µg")
+    return "mg/g" if u in ("mg/g", "mg/gr", "µg/mg", "µg/mgr") else "mg/mmol" if u == "mg/mmol" else u or None
+
+
+def rate(k, n):
+    lo, hi = clopper_pearson(k, n)
+    return {"k": k, "n": n, "pct": round(100 * k / n, 1) if n else None, "ci95": [round(100 * lo, 1), round(100 * hi, 1)]}
+
+
+def main(dest: Path = OUT) -> int:
+    muestra = json.loads((HERE / "muestra_heldout2.json").read_text(encoding="utf-8"))
+    albumin = [c["id"] for c in muestra["cases"] if c["stratum"] == "albumin"]
+    with LABELS.open(encoding="utf-8", newline="") as fh:
+        marks = list(csv.DictReader(fh))
+    unknown = {m["case"] for m in marks} - set(albumin)
+    if unknown:
+        raise SystemExit(f"labels for cases outside the albumin stratum: {sorted(unknown)[:3]}")
+    lector = LectorGrabado(HERE / "salidas_heldout2_qwen3-4b-instruct-2507.jsonl")
+    acr = collections.defaultdict(dict)
+    for m in marks:
+        if m["label"] == "acr":
+            acr[m["case"]][int(m["sentence"])] = m
+    pointed = pointed_cac = accepted = value_right = value_read = 0
+    rows = []
+    for cid in albumin:
+        if cid not in acr:
+            continue
+        text = (HERE / "raw" / f"{cid}.txt").read_text(encoding="utf-8")
+        n_sent = nota_numerada(text).count("\n[")
+        if max(acr[cid]) > n_sent:
+            raise SystemExit(f"{cid}: a marked sentence is beyond the {n_sent} sentences the reader saw")
+        out = lector(text) or {}
+        frase = out.get("frase")
+        hit_ptr = out.get("etiqueta") == "ya_realizada" and frase in acr[cid]
+        acc = [r for r in verificar(text, NOTE_DATE, out, HOY)
+               if r["verificada"] == 1 and r["etiqueta"] == "ya_realizada" and r.get("prueba") == "CAC"]
+        hit = hit_ptr and bool(acc)
+        pointed += hit_ptr
+        pointed_cac += hit_ptr and out.get("prueba") == "CAC"
+        accepted += hit
+        row = {"case": cid, "model_said": out.get("etiqueta"), "model_test": out.get("prueba"), "model_sentence": frase,
+               "marked_acr_sentences": sorted(acr[cid]), "accepted": hit}
+        if hit:
+            m = acr[cid][frase]
+            want_v, want_u = _num(m["value"]), _unit(m["unit"])
+            got = acc[0]
+            row.update({"value_marked": m["value"], "unit_marked": m["unit"], "value_read": got.get("valor"),
+                        "unit_read": got.get("unidad")})
+            if got.get("valor") is not None:
+                value_read += 1
+                value_right += (want_v is not None and abs(got["valor"] - want_v) < 1e-6 and _unit(got.get("unidad")) == want_u)
+        rows.append(row)
+    n = len(rows)
+    res = {
+        "reference": "AI agents (Claude Sonnet 5.5 sub-agents) blind to the model output; not a physician",
+        "sample": "albumin stratum of held-out 2 (LivingNER): every case naming urine albumin, all of them",
+        "albumin_cases": len(albumin),
+        "cases_with_a_marked_acr": n,
+        "marks_by_label": dict(collections.Counter(m["label"] for m in marks)),
+        "primary_acr_recall_per_note": rate(accepted, n),
+        "model_pointed_to_a_marked_acr_sentence": rate(pointed, n),
+        "of_which_model_named_the_acr_test": pointed_cac,
+        "accepted_with_a_value_read": value_read,
+        "accepted_with_the_right_value_and_unit": value_right,
+        "cases": rows,
+    }
+    dest.with_suffix(".json").write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    P = res["primary_acr_recall_per_note"]
+    md = ["# ACR recall on held-out real texts (LivingNER albumin cases)", "",
+          "Generated by `python3 eval/notas_reales/recall_acr.py` (notes protocol amendment 8). Reference: marks by "
+          "AI agents blind to the model's output, **not a physician**. No new model run: the held-out 2 recording.", "",
+          f"- Albumin cases: {res['albumin_cases']}; with at least one marked ACR sentence: {n}.",
+          f"- **ACR recall per note (primary): {P['k']} of {P['n']}, {P['pct']} % (95 % CI {P['ci95'][0]}–{P['ci95'][1]}).**",
+          f"- The model pointed to a marked ACR sentence in {res['model_pointed_to_a_marked_acr_sentence']['k']} of {n} "
+          f"(it named the ACR test in {pointed_cac}, another test in {pointed - pointed_cac}).",
+          f"- Of the {P['k']} accepted, the code read a value in {value_read}; the right value and unit in {value_right}.",
+          f"- Other marks: {res['marks_by_label']}.", ""]
+    dest.with_suffix(".md").write_text("\n".join(md), encoding="utf-8")
+    print("\n".join(md))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

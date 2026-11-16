@@ -1,0 +1,734 @@
+{
+ "set": "eval/ciego_v15/frases_set2.csv",
+ "split_handling": "trozo",
+ "rows": 160,
+ "before_commit": "b83fa2c",
+ "versions": {
+  "before": {
+   "by_expected": {
+    "CAC/value": {
+     "missed": 43,
+     "correct": 2
+    },
+    "CAC/normal": {
+     "missed": 20
+    },
+    "CAC/unreadable": {
+     "correct": 30,
+     "UNSAFE": 1,
+     "missed": 4
+    },
+    "CAC/not_acr": {
+     "grey_line": 11,
+     "correct": 19
+    },
+    "FGe/value": {
+     "UNSAFE": 6,
+     "correct": 8,
+     "missed": 1
+    },
+    "FGe/bound": {
+     "UNSAFE": 14,
+     "missed": 1
+    }
+   },
+   "unsafe": 21,
+   "acr_values_correct": 2,
+   "not_acr_as_grey_line": 11
+  },
+  "after": {
+   "by_expected": {
+    "CAC/value": {
+     "correct": 40,
+     "missed": 5
+    },
+    "CAC/normal": {
+     "missed": 19,
+     "correct": 1
+    },
+    "CAC/unreadable": {
+     "correct": 32,
+     "UNSAFE": 2,
+     "missed": 1
+    },
+    "CAC/not_acr": {
+     "correct": 28,
+     "grey_line": 2
+    },
+    "FGe/value": {
+     "correct": 15
+    },
+    "FGe/bound": {
+     "correct": 10,
+     "missed": 5
+    }
+   },
+   "unsafe": 2,
+   "acr_values_correct": 40,
+   "not_acr_as_grey_line": 2
+  }
+ },
+ "cases": [
+  {
+   "id": "s2-081",
+   "version": "before",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "value",
+    18.0,
+    "mg/g"
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-131",
+   "version": "before",
+   "expect": "FGe/value",
+   "value": "57",
+   "got": [
+    "value",
+    2021.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-132",
+   "version": "before",
+   "expect": "FGe/value",
+   "value": "44",
+   "got": [
+    "value",
+    2009.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-133",
+   "version": "before",
+   "expect": "FGe/value",
+   "value": "38",
+   "got": [
+    "value",
+    4.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-136",
+   "version": "before",
+   "expect": "FGe/value",
+   "value": "61",
+   "got": [
+    "value",
+    2009.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-140",
+   "version": "before",
+   "expect": "FGe/value",
+   "value": "105",
+   "got": [
+    "value",
+    2021.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-145",
+   "version": "before",
+   "expect": "FGe/value",
+   "value": "33",
+   "got": [
+    "value",
+    4.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-146",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-147",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-148",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    15.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-149",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-150",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    2021.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-151",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    30.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-152",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    4.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-153",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-154",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-156",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-157",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    2009.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-158",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    60.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-159",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    90.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-160",
+   "version": "before",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "value",
+    4.0,
+    null
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-014",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "6",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-020",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "72",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-024",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "560",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-035",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "70",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-036",
+   "version": "after",
+   "expect": "CAC/value",
+   "value": "19",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-046",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-047",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-048",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-049",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "not_acr",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-050",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-051",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-052",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-054",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "not_acr",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-055",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-056",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-057",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-058",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-059",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-060",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-061",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-062",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-063",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-064",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-065",
+   "version": "after",
+   "expect": "CAC/normal",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-081",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "value",
+    18.0,
+    "mg/g"
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-087",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "not_acr",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-089",
+   "version": "after",
+   "expect": "CAC/unreadable",
+   "value": "",
+   "got": [
+    "value",
+    300.0,
+    "mg/g"
+   ],
+   "verdict": "UNSAFE"
+  },
+  {
+   "id": "s2-109",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "s2-110",
+   "version": "after",
+   "expect": "CAC/not_acr",
+   "value": "",
+   "got": [
+    "unreadable",
+    null,
+    null
+   ],
+   "verdict": "grey_line"
+  },
+  {
+   "id": "s2-150",
+   "version": "after",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "no_value",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-152",
+   "version": "after",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "no_value",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-155",
+   "version": "after",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "rejected",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-157",
+   "version": "after",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "no_value",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  },
+  {
+   "id": "s2-160",
+   "version": "after",
+   "expect": "FGe/bound",
+   "value": "",
+   "got": [
+    "no_value",
+    null,
+    null
+   ],
+   "verdict": "missed"
+  }
+ ],
+ "pass": false
+}

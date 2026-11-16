@@ -1,0 +1,1517 @@
+{
+ "source": "CodiEsp v1.4, doi:10.5281/zenodo.3837305, CC BY 4.0",
+ "seed": 20261117,
+ "excluded_earlier_samples": [
+  "eval/notas_reales/muestra.json"
+ ],
+ "excluded_cases": 300,
+ "pool_sizes": {
+  "albumin": 0,
+  "nefrologia": 14,
+  "fg": 151,
+  "rechazo": 91,
+  "resto": 3195
+ },
+ "cases": [
+  {
+   "id": "test/S0210-48062005001000013-1",
+   "stratum": "rechazo",
+   "sha256": "892939a1e82e3d278f675f12e538fa13ab485c75c04f5c2a6cc78815bc0d3c6c"
+  },
+  {
+   "id": "background/S1130-01082012000700009-1",
+   "stratum": "resto",
+   "sha256": "b3799bb85632c722b7a68fa6d72a4a717e8d60b2b1bbb5854f52047a6d1dcdbc"
+  },
+  {
+   "id": "background/S1137-66272007000300011-1",
+   "stratum": "resto",
+   "sha256": "241e09e2d505e79e69224475d160c84d14d19d169a3b1c139917390badec36d2"
+  },
+  {
+   "id": "background/S0034-98872018000700933-1",
+   "stratum": "rechazo",
+   "sha256": "10fc138433c4d175df761fcdf3dc07046c0e5f82893cff7badd13f5445ba63d5"
+  },
+  {
+   "id": "dev/S0212-16112005000600011-1",
+   "stratum": "resto",
+   "sha256": "558fa152a7d301aa3880fee52da653c9081e646acda7f24654a090d0b85b41e3"
+  },
+  {
+   "id": "background/S0034-98872014001200014-1",
+   "stratum": "fg",
+   "sha256": "7b05169ab2925bdc6cb4343747b5631427ccdb43d167af3bab29c04f87c218ae"
+  },
+  {
+   "id": "background/S0034-98872014000500015-6",
+   "stratum": "resto",
+   "sha256": "a8d024dbd2151018fe91aee7d09f85f0578b5b742c5fb37a13e233bcb8af8c94"
+  },
+  {
+   "id": "background/S0716-10182014000300003-2",
+   "stratum": "resto",
+   "sha256": "df643c8917c46608f1e865dc789058675e909fe936b66be55c4a4f7a263b7517"
+  },
+  {
+   "id": "background/S0211-69952013000600018-1",
+   "stratum": "rechazo",
+   "sha256": "f0f28c4720f43723f0a482d8e00bd1f82d0865d1384813dcc1a06ffa9775a3f7"
+  },
+  {
+   "id": "train/S1139-76322011000100011-1",
+   "stratum": "rechazo",
+   "sha256": "b441c93c9eb6d31ead258d20cae2757b88f7befaa2f64b3b54c308fad7e03c26"
+  },
+  {
+   "id": "test/S0210-56912008000200007-1",
+   "stratum": "fg",
+   "sha256": "000a8f1405b844f2f56278560eeefaad651a3a3202c472b5fe41b2eebed25e20"
+  },
+  {
+   "id": "background/S0034-98872009000800010-1",
+   "stratum": "rechazo",
+   "sha256": "64d0a1b26c23d4a814253ce09151055a99b1763649b36c98419185063436e395"
+  },
+  {
+   "id": "background/S1130-05582008000500005-1",
+   "stratum": "rechazo",
+   "sha256": "841d1e849dbf8f1ad910f0532e21300aa96896b44c021d0beb05c2293198699a"
+  },
+  {
+   "id": "background/S0378-48352005000600007-1",
+   "stratum": "resto",
+   "sha256": "e17c904321f78ab52169d82c272393b00dac0c32a9f2bfbb903081b7b122db77"
+  },
+  {
+   "id": "background/S0716-10182015000500013-1",
+   "stratum": "resto",
+   "sha256": "659f794528d177c5fe3d0465daff172f4af64282d91be2dff3d6b4be2152c5e1"
+  },
+  {
+   "id": "background/S1137-66272015000100021-1",
+   "stratum": "resto",
+   "sha256": "6ec207486ce632f951b4397534a3122c614e3c14bb1812da597cf9a67866f7a6"
+  },
+  {
+   "id": "background/S0325-00752008000600014-1",
+   "stratum": "resto",
+   "sha256": "c5ebe908e567248c194be3364a4d98cdc3599ffb310ac29b3edcc1e17a2da524"
+  },
+  {
+   "id": "background/S1132-62552016000200006-1",
+   "stratum": "resto",
+   "sha256": "a3932c2e8386642f408bcf9bfce2975d821183cd985bbf16ede958e7d8beb327"
+  },
+  {
+   "id": "train/S1135-76062016000100006-1",
+   "stratum": "rechazo",
+   "sha256": "7ece15938031c3b5699dad4ec18a337ba646ad4422cd8034bacca969cd4860c8"
+  },
+  {
+   "id": "background/S0365-66912010000100006-1",
+   "stratum": "rechazo",
+   "sha256": "8f8d01feedf7733825913a358f090b12f93f5ac2cd579efe9177a52bece16c82"
+  },
+  {
+   "id": "background/S0034-98872016000900019-1",
+   "stratum": "fg",
+   "sha256": "751bc9cc9dbc6e4bf0a50c8dd558776d97598389ae461498097b1a95f476b8a2"
+  },
+  {
+   "id": "background/S0716-10182012000600013-1",
+   "stratum": "resto",
+   "sha256": "875421a970ce0a8a0477fe98d5f1434d212a29419f08580271a483cb5ea11445"
+  },
+  {
+   "id": "background/S1135-76062003000400007-1",
+   "stratum": "resto",
+   "sha256": "de4b86fb3938d5fb7df37bc4dd4c3b9f8c29debf4e51b83dfb6aefe5227d7d5a"
+  },
+  {
+   "id": "train/S1137-66272009000300015-1",
+   "stratum": "resto",
+   "sha256": "2340628b38467eff6e3814168b1826ce52491e491c7358492c0d4fa6a4ec7c20"
+  },
+  {
+   "id": "test/S1130-01082007000300014-1",
+   "stratum": "resto",
+   "sha256": "aa4b2debf11037a530f7f4f2e646a631989bab61b013aa8ff168b6b8da520caf"
+  },
+  {
+   "id": "background/S0034-98872007000100014-1",
+   "stratum": "fg",
+   "sha256": "36d92a7788f12e8ad072df1c2d393282c88efcd12e901407d85090b96ea4ecdd"
+  },
+  {
+   "id": "background/S0034-98872013000600016-1",
+   "stratum": "fg",
+   "sha256": "803128b9d1613e74cd428eb6ec17884ee746c16d19741b09775c4f7fba43227e"
+  },
+  {
+   "id": "test/S0211-69952011000600018-1",
+   "stratum": "fg",
+   "sha256": "b55cd47fd1bc528c8d34ab6e26afd3167a2f52da3c7bd65754875dcce4d24149"
+  },
+  {
+   "id": "background/S0211-69952013000200016-1",
+   "stratum": "fg",
+   "sha256": "18289b2be91f8cbf26e1b85b7ecd17d4ee779f1e7d37cd6acaef39e9612a087b"
+  },
+  {
+   "id": "train/S0365-66912007001200012-1",
+   "stratum": "resto",
+   "sha256": "4e96f58315620b7fd0efaa6f6ef9fe743b08e8bd0cb528d1d58a05e1c715d4fd"
+  },
+  {
+   "id": "train/S0211-69952014000200016-1",
+   "stratum": "nefrologia",
+   "sha256": "66ac65ee4b4df39e5254457def199cc213116a58d41fbea92e14cb9c4e18afed"
+  },
+  {
+   "id": "background/S0034-98872013000400014-1",
+   "stratum": "fg",
+   "sha256": "d797db12c8b824d87698c9ed62146de10bd183fb6bdc2432b4749bf00acc264b"
+  },
+  {
+   "id": "background/S1130-01082013000900013-1",
+   "stratum": "resto",
+   "sha256": "122eb660dfabc4f052b4642a6b9ccbe644b8c92cb44b64833ce10251b059d44b"
+  },
+  {
+   "id": "background/S1130-63432014000100014-1",
+   "stratum": "resto",
+   "sha256": "addd61470a4f025b040f733522436b7a617a8495d1f238be5d101e31b50af2ff"
+  },
+  {
+   "id": "background/S1139-76322017000200011-1",
+   "stratum": "rechazo",
+   "sha256": "bbae56f86f6f58b025172a408c360d8439531a44f938123fee3d60c64d193474"
+  },
+  {
+   "id": "background/S0034-98872014000600015-6",
+   "stratum": "resto",
+   "sha256": "01fc50e3928b2860f9a662a8e7555697928daeec4d4b6da8ca198222c3e4bc3c"
+  },
+  {
+   "id": "test/S0210-48062004000700006-1",
+   "stratum": "rechazo",
+   "sha256": "0e8c6f66f252378e9794862f06242eae09aa72839a4136cc95b16a8986ab9dd9"
+  },
+  {
+   "id": "background/S0365-66912011001000004-2",
+   "stratum": "resto",
+   "sha256": "adbf8739d6461dc22ba2694e8a8c72a9c848fd3d80520745f6b98ea9371c8fa2"
+  },
+  {
+   "id": "background/S0211-69952011000100023-1",
+   "stratum": "fg",
+   "sha256": "a83712e22552f52ecdc2baec0e25c29acd2b706b25c6a7bc9c8af2f23ecdfeb4"
+  },
+  {
+   "id": "test/S1137-66272007000300014-1",
+   "stratum": "resto",
+   "sha256": "19c6d115c13c943e8c446e282c539adc1e8e0caa1d9c03db31ac3fe3c4b27f70"
+  },
+  {
+   "id": "background/S0716-10182007000400010-1",
+   "stratum": "resto",
+   "sha256": "4afa91b92201decc818c3b401b9343278559fe5fa6e31c62f89c564be5f12f6b"
+  },
+  {
+   "id": "background/S1130-01082017000900009-2",
+   "stratum": "rechazo",
+   "sha256": "35d089535f5cfd0e7354673d006e84c373b5ce23c8c111e0420d43be8e94336d"
+  },
+  {
+   "id": "background/S1130-01082009001000015-1",
+   "stratum": "resto",
+   "sha256": "3d1d6572906798fa20aa95e4c5dfc4c522b90efd5b393c05be7f733d540b875c"
+  },
+  {
+   "id": "test/S1139-76322017000100011-1",
+   "stratum": "fg",
+   "sha256": "708cce8e60ec3837d7c19d51a1198e0b2111cf28e28f996e4f37abbd748a6806"
+  },
+  {
+   "id": "test/S1130-01082005001000011-1",
+   "stratum": "rechazo",
+   "sha256": "a9c7518a97d6cf2d8fc152b253b49470f381e26ddda49be52f58c350867da679"
+  },
+  {
+   "id": "background/S0376-78922007000400003-1",
+   "stratum": "rechazo",
+   "sha256": "78fc80383ad08000cbcbab5890910f9ac3abc735f0f181c8b54f842572e85c24"
+  },
+  {
+   "id": "background/S0716-10182007000600011-1",
+   "stratum": "rechazo",
+   "sha256": "f431d0e998de4a56ee9684d1da938d81ea7e80c701e05a3c2dfeffc6e8c567a2"
+  },
+  {
+   "id": "background/S0211-69952013000500018-1",
+   "stratum": "fg",
+   "sha256": "6f5c17b293603f9cce8c94629e1d07e9aa5067d9988c7947efd9938574102345"
+  },
+  {
+   "id": "background/S0211-69952013000500032-1",
+   "stratum": "nefrologia",
+   "sha256": "7d4556f63b0291cc03398726d1b27434a00f490de1b70671e04a398535435132"
+  },
+  {
+   "id": "background/S0120-41572012000100002-1",
+   "stratum": "resto",
+   "sha256": "0a1416b4f49d9e1585fe77dd94c5786de5c879f6886bcdd9125baeddf9123468"
+  },
+  {
+   "id": "dev/S0376-78922017000100008-1",
+   "stratum": "resto",
+   "sha256": "c5a04aeb61d4acadcb7676bc2a5f9caa8204bfab3b208e8477e6d43f7e00a257"
+  },
+  {
+   "id": "train/S0211-69952014000100016-1",
+   "stratum": "fg",
+   "sha256": "3b7fb2f696485c165bd116e03c85b93fcf931f34d7d79a79b5b666c84f6cb07d"
+  },
+  {
+   "id": "background/S0365-66912010001000006-1",
+   "stratum": "resto",
+   "sha256": "fac916d41ba5fc9d59b9813b5a35ee849832d0f83b38516aa482d1283d348576"
+  },
+  {
+   "id": "background/S0034-98872015000800017-1",
+   "stratum": "resto",
+   "sha256": "02044ba4b1af9dda7b7468d77a19df1c7bded8b801a3f3158ed51b16e6017a75"
+  },
+  {
+   "id": "background/S0211-69952011000100018-1",
+   "stratum": "fg",
+   "sha256": "837503176de5ac000ad2d69602032e6a8c113cda8db57a43fa6a9954e683cda7"
+  },
+  {
+   "id": "test/S1134-80462009000100005-16",
+   "stratum": "resto",
+   "sha256": "85ed3430c7076fdb4b826f6668896e2915a459d5a99bd6341fa4a703a04716ce"
+  },
+  {
+   "id": "background/S0370-41062014000100009-1",
+   "stratum": "rechazo",
+   "sha256": "afea7793e1293649faf14079e39d1395899969bb832495d3cce54b5fa800979a"
+  },
+  {
+   "id": "background/S1130-05582006000100005-1",
+   "stratum": "resto",
+   "sha256": "69e8593b0c99b6d7e660e52ffaa39944d5bf51bfc88563f868872ed31a083005"
+  },
+  {
+   "id": "dev/S1130-01082009000600018-1",
+   "stratum": "resto",
+   "sha256": "e0adf0f13e24244ec677f4b4afa090e1918462d1b45bdab03f4db90078c68e1d"
+  },
+  {
+   "id": "background/S1137-66272012000300022-1",
+   "stratum": "fg",
+   "sha256": "ea7297bcbc4a488ac38bbd62ca60bb9e722036c6344a6f0cd9ac1b60f465344a"
+  },
+  {
+   "id": "background/S0212-71992007000600007-1",
+   "stratum": "resto",
+   "sha256": "8ad4b16ccc65c7d8d7a73556c563642370c206567bf7b26f6a1bd78b9a3b5915"
+  },
+  {
+   "id": "background/S0034-98872017000100018-1",
+   "stratum": "fg",
+   "sha256": "f99ba647337cbb494e8aded3e3ae4033397369ce84ae92c934fa4f0f35476e3f"
+  },
+  {
+   "id": "background/S0034-98872008000100011-1",
+   "stratum": "resto",
+   "sha256": "f6149b689894de97afe1fab1addb62503918e3141369106fe18d91a9c6e294fb"
+  },
+  {
+   "id": "background/S0004-06142006000700009-1",
+   "stratum": "resto",
+   "sha256": "a0038a12fc6869c2861b3b9f7009b11381cf7c63d42e1bc4b069e444cc2f74e6"
+  },
+  {
+   "id": "background/S0325-00752010000100014-1",
+   "stratum": "resto",
+   "sha256": "475660a514a070d306f4537af308db50efbcf01fd597ff5f192147c9de8f0707"
+  },
+  {
+   "id": "train/S0211-69952013000500035-1",
+   "stratum": "fg",
+   "sha256": "2c197a2318fd5c8542f7a3f62586135975ccd2d51b94a78193d48ac06eb18d78"
+  },
+  {
+   "id": "background/S1130-01082013000400010-1",
+   "stratum": "resto",
+   "sha256": "10af71f0a291b23bdbbda71dea3cf664c476a0376490a1c81c1db5bccedc15f9"
+  },
+  {
+   "id": "train/S0365-66912005001100009-1",
+   "stratum": "resto",
+   "sha256": "bb227ca27efa8a7b657f93a7b85dbad716a8d8c79b7bdf187f12274ebd873e28"
+  },
+  {
+   "id": "train/S1130-05582008000500007-1",
+   "stratum": "resto",
+   "sha256": "3f42d5a6baace610d300d85e801d8539be79b2932561b998aa520becc75b214a"
+  },
+  {
+   "id": "background/S1130-01082015000400011-1",
+   "stratum": "fg",
+   "sha256": "e2dea23334d2a37f229ebe9520e8877d32e525638f7cc1616cd2cbc96ed7471f"
+  },
+  {
+   "id": "background/S0211-69952012000800033-1",
+   "stratum": "resto",
+   "sha256": "d0dfa22311223c4d62de493a7e2149f90c46f0145560b46bb7a0ff162eb30693"
+  },
+  {
+   "id": "test/S1130-01082009000400009-1",
+   "stratum": "fg",
+   "sha256": "571c03c7306c76508597a28e607f47b2ed25488f676138d25805ea54be2ee116"
+  },
+  {
+   "id": "background/S0211-69952017000200206-1",
+   "stratum": "fg",
+   "sha256": "2a656268be181028e1b7fc7d21ebc87138f5176bd549bd05f2fb2f104bc71e89"
+  },
+  {
+   "id": "background/S1134-80462004000100004-2",
+   "stratum": "resto",
+   "sha256": "e778d17c83aed63d2d76cd1815fcacee95f06e360e6c589cacc256f1d08d959a"
+  },
+  {
+   "id": "background/S0376-78922009000200010-1",
+   "stratum": "resto",
+   "sha256": "181b9e46e59355147530b0669c206da41a3e48fb663710300f60ba3c64e257a5"
+  },
+  {
+   "id": "test/S0212-71992005000400007-1",
+   "stratum": "fg",
+   "sha256": "73fb9d991850eed1e3464f25454019a970d962b562fddb3bbed30f7c8055e764"
+  },
+  {
+   "id": "test/S0210-48062009000600017-1",
+   "stratum": "fg",
+   "sha256": "c694fc2651c9ad726b5a54832aacc9a01bbbf4a2ed87e80c4a6b090ebd0e27dd"
+  },
+  {
+   "id": "background/S0004-06142009000300010-1",
+   "stratum": "fg",
+   "sha256": "b34395174d95d649eebdae55f1df84e102e47a5f304f9f076f1ba2ff5b581ca3"
+  },
+  {
+   "id": "train/S1130-01082007001100010-2",
+   "stratum": "resto",
+   "sha256": "50dcce8046b565a4f8f818c9ae240ec5fc3ca277457fcc1b817a7326181b1445"
+  },
+  {
+   "id": "background/S0365-66912004001100007-1",
+   "stratum": "resto",
+   "sha256": "1824c3dcf48b1dd4cb6d2363b953a8c1b39cd6211d2e6bcd98dfcfb3747cf5cf"
+  },
+  {
+   "id": "train/S0211-69952011000100019-1",
+   "stratum": "resto",
+   "sha256": "2d2e1e5937b58dea78990a577af11cd8167210fb5a960e6c19a44bb3ec64169a"
+  },
+  {
+   "id": "background/S0370-41062014000600010-1",
+   "stratum": "resto",
+   "sha256": "498bc3345990be2f3e27f2c44584df52ba1590391e9738119e44c1ca2df6cff0"
+  },
+  {
+   "id": "background/S0211-69952016000100010-1",
+   "stratum": "fg",
+   "sha256": "11820b32a2b85ce982994d276934d62ebe492d793690b30eb70eb9f5d611b983"
+  },
+  {
+   "id": "train/S1139-76322010000600010-1",
+   "stratum": "resto",
+   "sha256": "33fbae68af49e7804b8226b7e6f665d332cc8e98fe5822dc0e81a760f331ebc7"
+  },
+  {
+   "id": "background/S1130-01082010000100015-1",
+   "stratum": "resto",
+   "sha256": "f4e28310df6c75bd163cd2cd9b877170495ff1ea6a2841f8d256800dd4679753"
+  },
+  {
+   "id": "background/S0120-41572009000400007-1",
+   "stratum": "nefrologia",
+   "sha256": "482030d57e7ef5009ed09c6b2173a2277a26866a79fb5ad55060c3bcf0109612"
+  },
+  {
+   "id": "train/S1137-66272012000100011-1",
+   "stratum": "resto",
+   "sha256": "05454f6ddcd0f39196f4700d15292e05f9eb5dfe6a1949136719b4654e8012d0"
+  },
+  {
+   "id": "background/S1137-66272010000400009-1",
+   "stratum": "fg",
+   "sha256": "56910a790780ee65aa0cc6600e6efff765aa1644dd49019ac3891783a79f4c8f"
+  },
+  {
+   "id": "test/S0004-06142007000500017-1",
+   "stratum": "resto",
+   "sha256": "e60b6c6bd3ae22f7c483438720dad340e0e64ae42242ccaa36912bdb3721218f"
+  },
+  {
+   "id": "test/S1699-695X2015000100013-1",
+   "stratum": "resto",
+   "sha256": "31e48d8cebf441ba15b2cf12b331889ba154ac5f940f6768ddbc48f8f1b8e6e2"
+  },
+  {
+   "id": "dev/S0376-78922011000200004-1",
+   "stratum": "nefrologia",
+   "sha256": "77838ef64d9bdd156f8dd6a45635f0fd497c86de1f683dadb61c9e5e978ee8d5"
+  },
+  {
+   "id": "background/S0365-66912004000700010-1",
+   "stratum": "resto",
+   "sha256": "407d7e7a3f9d74f5c070b01ba5fd57a5702e489d2dc535ef390d9e08d4ae0150"
+  },
+  {
+   "id": "background/S0034-98872012000300013-1",
+   "stratum": "resto",
+   "sha256": "662616143c9188505827d87b15dac9fe39a0acc3340f45c55f03be04133e07d5"
+  },
+  {
+   "id": "test/S0210-56912006000200007-1",
+   "stratum": "fg",
+   "sha256": "ba6db9df55b24f32e7275a35aeb5009eb7c5246ad2f12c0a0f81a96266dc2332"
+  },
+  {
+   "id": "background/S0034-98872012000700011-1",
+   "stratum": "resto",
+   "sha256": "d4f7aae464e16dbd59288f5cef50fd7845de85ea257df8edc2ac17a381c17d34"
+  },
+  {
+   "id": "dev/S1130-05582015000200006-1",
+   "stratum": "resto",
+   "sha256": "9654993a0ee4157c6bd527863ac7e30977d008bc77574325933a812b1caddf37"
+  },
+  {
+   "id": "background/S0034-98872012001000011-1",
+   "stratum": "fg",
+   "sha256": "1102d3af017ddc5235cd3ca0ffae8fdb27ff678ff9f161ebcaae7aa87aa29e80"
+  },
+  {
+   "id": "dev/S1135-76062010000200006-1",
+   "stratum": "resto",
+   "sha256": "b2465e8ad2c5ae1a6f130315206303af481f60257ad885a0a6eb23e3bc5826b6"
+  },
+  {
+   "id": "background/S0210-48062006000700014-1",
+   "stratum": "resto",
+   "sha256": "0aa528bc20b67fc7600459b232648fe59dcf74dd5af0d06d1184c6129cda64bf"
+  },
+  {
+   "id": "train/S0212-16112009000600018-1",
+   "stratum": "fg",
+   "sha256": "0975cab4318614308d1f71464cf0420c4cd2bec25c515cfdbf9871889300fc1c"
+  },
+  {
+   "id": "background/S0034-98872005000400008-2",
+   "stratum": "resto",
+   "sha256": "b9b1264774f2e79c9765c315cf47ccfd04679cd945216f35d9e0460e9de9995e"
+  },
+  {
+   "id": "background/S0211-57352014000300007-1",
+   "stratum": "resto",
+   "sha256": "7e7208a3c68c35ee722f430ab42cbc2ec5df78c4cb098a9987563e1b2e297cc6"
+  },
+  {
+   "id": "background/S0365-66912004000700007-2",
+   "stratum": "rechazo",
+   "sha256": "3fe66941c2fa03b18dc4aa260257312c030da78bfed1fc20dd532c07fe308319"
+  },
+  {
+   "id": "background/S0210-48062009000900018-1",
+   "stratum": "resto",
+   "sha256": "c139a2aa922f14aee702ccfbdbfbbb09404eb1b8e1f088ddba15b0d91a254029"
+  },
+  {
+   "id": "background/S1139-13752005000200008-1",
+   "stratum": "resto",
+   "sha256": "5ff8a432dbb47842cfdc7b4544a7e888c4873bda99b67147adbf2725951ad0a4"
+  },
+  {
+   "id": "train/S0378-48352006000500005-1",
+   "stratum": "fg",
+   "sha256": "48f9157a286502d3614c7e1fd0547051f7d08eb113d0c91c6ce25b519e8ed099"
+  },
+  {
+   "id": "background/S0210-48062007000500019-1",
+   "stratum": "rechazo",
+   "sha256": "c7feea0e5f9483c636b0d15a6aaee65b336d59a9e9ba46218b2fd2facb1101ea"
+  },
+  {
+   "id": "test/S0004-06142009000100009-1",
+   "stratum": "resto",
+   "sha256": "27c172f7b19d299ffe4874945114b14593eb688faa4e0b26ca655a07ccb95415"
+  },
+  {
+   "id": "background/S0465-546X2012000200009-1",
+   "stratum": "nefrologia",
+   "sha256": "2bb561247410a1e87fd11021904799f1fce1fb487a97b0b9be057de969ce9fae"
+  },
+  {
+   "id": "background/S0365-66912008000700009-1",
+   "stratum": "resto",
+   "sha256": "90e82e05f138e0e2ea22ce097449626892d645c37491ed440c6887354455fbbb"
+  },
+  {
+   "id": "background/S1130-01082011000400009-1",
+   "stratum": "resto",
+   "sha256": "0f1ee678addb01ba74744b0df650f8153e88d7804d883d429b0c6a44c7490b99"
+  },
+  {
+   "id": "background/S1130-01082014000500007-1",
+   "stratum": "resto",
+   "sha256": "a1dbe27efa9657b1f59fe650b984329ef70dcae2c487e6ac77e24dda2588257b"
+  },
+  {
+   "id": "background/S0376-78922015000200012-1",
+   "stratum": "resto",
+   "sha256": "0a279715316921d994dbae32a9f9c4d8bde31bd8d90c60ec690df5108d47c1c5"
+  },
+  {
+   "id": "background/S1130-01082011000600016-1",
+   "stratum": "resto",
+   "sha256": "2e4b1348608132e3cacebdea57b9df4804672c4644814c95090a9d30abc6113d"
+  },
+  {
+   "id": "background/S1699-65852009000300003-2",
+   "stratum": "rechazo",
+   "sha256": "672bdfe6d492401e489c96d96a50a500588486bcd98251e73d68a28407469d29"
+  },
+  {
+   "id": "background/S0004-06142008000500013-1",
+   "stratum": "fg",
+   "sha256": "30a26950618e4c403820edfc5beefe5e1738f66c706eefc5ebb8d31451c4d729"
+  },
+  {
+   "id": "background/S0211-69952012000800031-1",
+   "stratum": "nefrologia",
+   "sha256": "75d0cd0e92610b3d104f5e52c4ebedf2a70af2072731718be3ba4ebaf8cbca36"
+  },
+  {
+   "id": "background/S1135-76062008000300009-2",
+   "stratum": "resto",
+   "sha256": "4973ed7f431b100bd4a920ffd827736ba68eedd72aa8aa3337ef1a6bc96cd6a1"
+  },
+  {
+   "id": "background/S0034-98872018001101347-1",
+   "stratum": "fg",
+   "sha256": "1283c688ac0468728fa757dfef8ed1f25ab78172842c81bbc29f17a8cc82f4ba"
+  },
+  {
+   "id": "test/S0210-48062009000900015-3",
+   "stratum": "fg",
+   "sha256": "69a9ff262fc1b22f703ce998fed74dd8907494e0cf1e50a43606fcda509a4d7e"
+  },
+  {
+   "id": "background/S0365-05962011000200021-2",
+   "stratum": "resto",
+   "sha256": "52842b33ad40309024abf21c9225d41c52496aee63c560bc8317069e83af6eca"
+  },
+  {
+   "id": "background/S0211-69952010000500016-1",
+   "stratum": "fg",
+   "sha256": "ef9ce1e7c80adc1da280ea801b2f2402732c290370c1c0e43a5403e8954262c2"
+  },
+  {
+   "id": "background/S0034-98872012000800011-1",
+   "stratum": "fg",
+   "sha256": "de3186263d09307d759dc462d3f5aa66a1200a910dd2ba44b868cae915167831"
+  },
+  {
+   "id": "background/S1887-85712016000300004-1",
+   "stratum": "resto",
+   "sha256": "ec2cee435459cd910b5ba037544dcd2ef4650359ca3797cbcf4de811bf78ee4d"
+  },
+  {
+   "id": "train/S0211-69952013000500032-2",
+   "stratum": "nefrologia",
+   "sha256": "2dfa326b7a94da3bdae0d68bebcd60ed797743efb24f4e7b8c614368544f3338"
+  },
+  {
+   "id": "background/S0034-98872009000400014-1",
+   "stratum": "resto",
+   "sha256": "0ad940f648e9f6f2f0ce2b6634b25d50779b3287c7e519b12cf52e53ee70bdac"
+  },
+  {
+   "id": "background/S1131-57682003000300007-1",
+   "stratum": "resto",
+   "sha256": "1d9a9b04c256099236612ff898067b6973b4bb636a0738720143fb481bd39d2b"
+  },
+  {
+   "id": "background/S1139-13752011000300008-1",
+   "stratum": "nefrologia",
+   "sha256": "ef7dfbf414f23b76618271fce98f1542ccd4a28f55b668acaa565e7f5eb25432"
+  },
+  {
+   "id": "background/S1135-76062013000100009-1",
+   "stratum": "resto",
+   "sha256": "446c2397cbf22d3078373120031a39623cd4e05a4c456f5041bd334ac2d1fa06"
+  },
+  {
+   "id": "train/S0212-16112010000600022-1",
+   "stratum": "fg",
+   "sha256": "b4918becc3e56929d67de06a3443673c899674e12030ab29e4979645809982ff"
+  },
+  {
+   "id": "background/S0004-06142007000200016-1",
+   "stratum": "resto",
+   "sha256": "c76ca5afc47e47c3917831361bd0ee6b4c469c09a1ffb69e23a6f7b485e02a6b"
+  },
+  {
+   "id": "background/S0034-98872014000700013-2",
+   "stratum": "resto",
+   "sha256": "197cce29b0f5f38aae2fadb538e4415f5c89b1ee868662c8538664193d9a2612"
+  },
+  {
+   "id": "background/S1130-01082009000800016-1",
+   "stratum": "resto",
+   "sha256": "6c52415b0ae168aab2403d5a2d926832458884d63368a660a422f12d8247bf07"
+  },
+  {
+   "id": "background/S0378-48352006000200005-1",
+   "stratum": "resto",
+   "sha256": "c4e4dcfd4dfa8c387af37b0d7dd6b1f7c5619e85e22b29b4eaae4a2ed6ee317a"
+  },
+  {
+   "id": "background/S0034-98872013000100014-1",
+   "stratum": "resto",
+   "sha256": "e450d5d9cf39c82bf77479bc1105979cb0b5bb8ed6662a808a8286a385d878da"
+  },
+  {
+   "id": "background/S0210-56912007000200007-1",
+   "stratum": "fg",
+   "sha256": "845974567af36d9541dba1243a3449d22d2151ce6e3ef250f685459bea129e42"
+  },
+  {
+   "id": "background/S1887-85712013000300007-1",
+   "stratum": "resto",
+   "sha256": "8a0b905229fcc17bd46d8c586441a2fc1dd314c99bd85d094b2bf1ef747576e1"
+  },
+  {
+   "id": "background/S0365-66912007000500013-1",
+   "stratum": "resto",
+   "sha256": "2b86b0cd9e6dec081943d9609a207fbecf684a018ce734bd7313d7ddcc5e4342"
+  },
+  {
+   "id": "train/S1139-76322016000400020-1",
+   "stratum": "resto",
+   "sha256": "4b9ce33701517ab51fc4e5878517e0e0e37b31df5fe80cee84a49c0dc3f73193"
+  },
+  {
+   "id": "background/S0034-98872015000500015-1",
+   "stratum": "fg",
+   "sha256": "b3c04f5b196258f7640adf1fd9098018a2023e7ad16b05ca371cb78dcda7e5c8"
+  },
+  {
+   "id": "background/S0716-10182012000600019-1",
+   "stratum": "resto",
+   "sha256": "20786ae2ef37d41fdf8ccd9a8871a96490e4fa6740099932d1826d3cef24bb6e"
+  },
+  {
+   "id": "background/S0212-71992003000700009-1",
+   "stratum": "resto",
+   "sha256": "05f14f404b3627e910896a4c9af48fd44d0aaf59ea012d90d06b84473ec1d410"
+  },
+  {
+   "id": "background/S1139-76322016000400019-1",
+   "stratum": "nefrologia",
+   "sha256": "2b6e10162e76e89bd31af2e0bc80272fb55c960d0f201d1f7bf2a0976381936f"
+  },
+  {
+   "id": "background/S1130-01082017000900017-1",
+   "stratum": "resto",
+   "sha256": "783cd3c3fea1f3e89f8ce95eec50b962313fe10a0b6928f0728007ad12395a14"
+  },
+  {
+   "id": "background/S1887-85712013000300006-1",
+   "stratum": "rechazo",
+   "sha256": "0dfc86b6d1791a77ccf54874a78c7409d3bdebc7a020918ef6f317fd834dba77"
+  },
+  {
+   "id": "background/S0376-78922007000400009-1",
+   "stratum": "resto",
+   "sha256": "ed89a4bae05668b3e8f2feb1c2e4d11b2ac8fd7528c98bce088c4be8821c825c"
+  },
+  {
+   "id": "background/S1134-80462009000100005-17",
+   "stratum": "resto",
+   "sha256": "d992e5495f3ed9d373ca438d3300a7c249cd2d0e1ef1786ab5f78855be28f43e"
+  },
+  {
+   "id": "background/S0365-66912004001100010-1",
+   "stratum": "rechazo",
+   "sha256": "64577c6d1d8c7ebccd0a7a53fa7848f462a7d1839f8b28c2a0e1b4aea09fdaa5"
+  },
+  {
+   "id": "background/S0034-98872007000800013-1",
+   "stratum": "resto",
+   "sha256": "71ceb3e40220a59494f64484675cfa4b925092722bf8dddcf585fd197b4243ce"
+  },
+  {
+   "id": "background/S0004-06142009000300014-3",
+   "stratum": "resto",
+   "sha256": "e55a97171cf38a98010d38c694ea91074af83f000ab00b8f23d46ee3d8cbe685"
+  },
+  {
+   "id": "background/S1889-836X2015000200004-1",
+   "stratum": "fg",
+   "sha256": "bfa7f7cbda9fc03e88cfc7f94f3fd4ff1b364032f54527cdc41ce311320bbfcf"
+  },
+  {
+   "id": "background/S0120-41572009000200002-1",
+   "stratum": "fg",
+   "sha256": "ca1403719c90bb81b83eb291ddd01b7530c2b81c2c4c5d36744deb6228db7406"
+  },
+  {
+   "id": "background/S0716-10182008000400011-1",
+   "stratum": "resto",
+   "sha256": "977998eb6c574045257d17a991c4c89321fd903cf9d71e67ab1da5fe041bc542"
+  },
+  {
+   "id": "dev/S0211-69952010000400013-1",
+   "stratum": "fg",
+   "sha256": "7a985cf0b18d0291e98fd62891b8cbb428594b10016163f9e66a9521a857d3d4"
+  },
+  {
+   "id": "background/S1130-01082011000300009-1",
+   "stratum": "fg",
+   "sha256": "46e63f86375c769cbb92b636411e104ce3d03cc6e98ccd6520185fd8ba6cf027"
+  },
+  {
+   "id": "background/S0034-98872015000800016-1",
+   "stratum": "resto",
+   "sha256": "7658b1b52cf9344c9385e1b9bd586e206ed791887902a0556562e2bc93477a99"
+  },
+  {
+   "id": "background/S0365-66912011001100007-1",
+   "stratum": "resto",
+   "sha256": "4fcd5792ea1146fdbce1ddcb4edf1f2895f166ec6c5755f8248e0f5b9aaab435"
+  },
+  {
+   "id": "background/S1130-01082014000800010-2",
+   "stratum": "resto",
+   "sha256": "5c0617d3431eabfad9523d35a9c6c1802d06d708a32a293e93bb3f173a6fb381"
+  },
+  {
+   "id": "train/S1130-63432014000100012-1",
+   "stratum": "fg",
+   "sha256": "f55056928dda31fa18f6c3b950c3236094cc4b608e32418216a8a9d19087ec3e"
+  },
+  {
+   "id": "background/S0210-48062004000300009-1",
+   "stratum": "rechazo",
+   "sha256": "b0d24e37052c870beecd4fbea2ade63ef8a3a6785df5cfe9e3dec0d2689a36b4"
+  },
+  {
+   "id": "background/S0212-71992005000300008-2",
+   "stratum": "resto",
+   "sha256": "a00fac7ba5d1c18d293ba6d48daef9102ca739037459411b4bd8385d0ac372f6"
+  },
+  {
+   "id": "background/S0370-41062014000300011-1",
+   "stratum": "resto",
+   "sha256": "11f5a868bd47168c4f8d0ee06e8c33ed60dbaccff5aa1ada632fb518f57f8a9c"
+  },
+  {
+   "id": "background/S1130-01082011001100012-1",
+   "stratum": "resto",
+   "sha256": "cd7f894ed840e082310d804282c422ead108a8deedca35f7b1612c6ebca4320f"
+  },
+  {
+   "id": "background/S1130-01082013000600013-1",
+   "stratum": "resto",
+   "sha256": "ab1b4e0ff631d8f22e0086a622eefe9d24f0232818f6f55d3e6f9f023dbf1c21"
+  },
+  {
+   "id": "background/S0465-546X2014000400011-1",
+   "stratum": "resto",
+   "sha256": "1ec0987fc0e87b5b6b598239ec1cd47d46f825ee86d5c968173e2adf16fe1d39"
+  },
+  {
+   "id": "train/S0376-78922009000400011-1",
+   "stratum": "fg",
+   "sha256": "750282cec16cf0e8a14ed61845a964fa7305beff520174e1f9923e41a83b2e6f"
+  },
+  {
+   "id": "test/S0365-66912004000800009-1",
+   "stratum": "resto",
+   "sha256": "a43e4e1fcf906f88add0dc022a18faebfd89a7a759e52e1f74da1b0b8c0f1757"
+  },
+  {
+   "id": "background/S1130-01082017001200013-1",
+   "stratum": "resto",
+   "sha256": "3af59a378168fe3ef9c2c997ae502c43b291ea671f6b34e74c6c579ff611c9b9"
+  },
+  {
+   "id": "background/S0212-71992007000500005-5",
+   "stratum": "resto",
+   "sha256": "5acd3cc51d87d906126382d8d1895a7b0c555d769dcecdc506d35d33b5647e79"
+  },
+  {
+   "id": "train/S0210-48062007001000004-1",
+   "stratum": "fg",
+   "sha256": "45f6289f8935aae54daae52b3d9199ba07079c7a693741bef8318150e354f781"
+  },
+  {
+   "id": "background/S1139-76322013000400012-1",
+   "stratum": "resto",
+   "sha256": "2c3687effb5f3a439460fa52e0f7c5748ff801e6c2640f3262e1c7c8a07f0496"
+  },
+  {
+   "id": "background/S0120-41572014000400005-1",
+   "stratum": "fg",
+   "sha256": "6f1414b1cabd4096c3ea4dd548b3a9fe4c0b9317e63dc664a1e50322aabd9c54"
+  },
+  {
+   "id": "background/S2254-28842016000400011-1",
+   "stratum": "resto",
+   "sha256": "703460e5001d89dad2045fe11e61c460f1a54134282944be91bcdd65a5096b00"
+  },
+  {
+   "id": "background/S1888-75462015000200007-1",
+   "stratum": "resto",
+   "sha256": "d9459305404a663127aef533dc2413a74762b519551f647b1607395199d4743a"
+  },
+  {
+   "id": "background/S0376-78922015000300013-1",
+   "stratum": "rechazo",
+   "sha256": "9c8eb388504aad10cf9b30f3bfcc5e96870a7b7bad774b2da0ef57f9f11e6c74"
+  },
+  {
+   "id": "background/S0716-10182012000600016-3",
+   "stratum": "resto",
+   "sha256": "c1ca955773f466100f7f290318bbddb40891ed978c0df89159ab9184b048f66d"
+  },
+  {
+   "id": "train/S0212-71992004000800009-1",
+   "stratum": "rechazo",
+   "sha256": "1be6a4dc76e166d396501d6e18cef3c45445b337b44009a036a7bf173165bd1e"
+  },
+  {
+   "id": "background/S0716-10182010000300007-1",
+   "stratum": "resto",
+   "sha256": "8b64217fb241b939add5ff84057d5b74a14f591f6a9a1404d9187ca7f038f546"
+  },
+  {
+   "id": "background/S1134-80462009000100005-12",
+   "stratum": "resto",
+   "sha256": "57207bcf3975d74769d115c61936a80dc0413192fa9bb5ebd4fdd9cc3d5ce96a"
+  },
+  {
+   "id": "background/S0210-48062003000200011-1",
+   "stratum": "rechazo",
+   "sha256": "044a8890dcc218ad65f2c113be8fb004148997468b419ffcd7740ae0b8d32b06"
+  },
+  {
+   "id": "background/S1134-928X2016000200010-1",
+   "stratum": "resto",
+   "sha256": "c6529051e35c5e0fd0dc2077b791e8ed9781392ee761d53fe892078912854bb8"
+  },
+  {
+   "id": "dev/S0004-06142008000500014-1",
+   "stratum": "rechazo",
+   "sha256": "8aa1fa29539581b30a52a8eadf2a4edce7f9c1ca501d83a1ced50564234340d3"
+  },
+  {
+   "id": "background/S1131-57682001000800008-1",
+   "stratum": "fg",
+   "sha256": "1c3d713200c839629ca4fef1787cab6071480b11fa839dd95d733e1a6bba1a73"
+  },
+  {
+   "id": "train/S1130-05582017000200119-1",
+   "stratum": "resto",
+   "sha256": "50f86544c2c55343a256fb8feb483c2218f3f51b2c27d8ef6079f2b7e7fe0fdc"
+  },
+  {
+   "id": "background/S1130-01082008000300016-1",
+   "stratum": "resto",
+   "sha256": "146a81560de7135989a17de13468acb98310fc8f0ccdb879f8c219d62eaaf157"
+  },
+  {
+   "id": "test/S1130-01082007001000017-1",
+   "stratum": "fg",
+   "sha256": "4c50ea126c50c32a1e36c57ae8f48f87c115febc0ba46f7b42ec930201e32b7e"
+  },
+  {
+   "id": "train/S0210-48062007001000016-1",
+   "stratum": "resto",
+   "sha256": "88b547473288d43dc63f9a7aaac3b98906bfb61bede8b4870f267f627ec109bb"
+  },
+  {
+   "id": "background/S0211-69952014000100021-1",
+   "stratum": "resto",
+   "sha256": "7ed50cb0c8034b846c1d82389e9a4822f1e806d5c80300ae78a524d88e2b089e"
+  },
+  {
+   "id": "background/S0120-41572015000300003-1",
+   "stratum": "fg",
+   "sha256": "0dce9228c90533037a0daba2d47c8a4a1f0ef9b8d883f84e3a2d839f726465bb"
+  },
+  {
+   "id": "train/S1130-05582008000300005-1",
+   "stratum": "resto",
+   "sha256": "17e0ea15489955b851cf518bf9be6836713403142482ce40ccb083a6559b5583"
+  },
+  {
+   "id": "train/S1130-01082007001100010-1",
+   "stratum": "resto",
+   "sha256": "fece9731be37c0fba603d856757fde5f5961864e0d0138cdfb2b91d80670ecfd"
+  },
+  {
+   "id": "test/S0211-57352013000300012-1",
+   "stratum": "rechazo",
+   "sha256": "66917d32c6464dbef5315bb777a18dd319c12aebae12eecf270a384238463685"
+  },
+  {
+   "id": "background/S1130-01082015000200011-1",
+   "stratum": "resto",
+   "sha256": "2396944984f5fde2edf1bc6522b14fe44114a210ce4ca18b858638af760c5342"
+  },
+  {
+   "id": "background/S1139-76322009000500007-1",
+   "stratum": "resto",
+   "sha256": "e42f70dadfff529b3ac2ffb860bacda21a2a24531f805c39381bf8cf5d9dbb94"
+  },
+  {
+   "id": "background/S1130-05582015000300006-1",
+   "stratum": "rechazo",
+   "sha256": "51458baa2ad9eff057e0bd9146eca516c81dd02435b7c6351cdf14bc42add946"
+  },
+  {
+   "id": "background/S0004-06142006000600010-1",
+   "stratum": "resto",
+   "sha256": "6b6f6404f07c5659e5e5a7b53ce286a18b94a29716430f5a1900aeda834b12ca"
+  },
+  {
+   "id": "background/S0325-00752011000400019-1",
+   "stratum": "rechazo",
+   "sha256": "69b39e3585754d530fff729f0dd5d1188fc63eb56e7dbc0824cbe9f0c707215d"
+  },
+  {
+   "id": "background/S1130-01082008000800012-1",
+   "stratum": "fg",
+   "sha256": "447ffee0627cb6bc144ed6dbe5faab1de6aaf691877df10761782cbe14a71064"
+  },
+  {
+   "id": "background/S0212-71992007000400006-2",
+   "stratum": "fg",
+   "sha256": "14b15a6e1fbe9625d413cced131833f16a674e0dcc6c4d02064f43c0ff723653"
+  },
+  {
+   "id": "background/S0034-98872016000800018-1",
+   "stratum": "resto",
+   "sha256": "c5dd04d435b2896cc0cf8b7f6ac1eb36edcfb462899ca6567cca9ed160eefc1d"
+  },
+  {
+   "id": "background/S1699-695X2009000200009-1",
+   "stratum": "rechazo",
+   "sha256": "a4d891c9cf1fcfb8c36ec55947e66f171cc73cd25867e803e519f9b6d0127c62"
+  },
+  {
+   "id": "background/S1130-01082010000200014-1",
+   "stratum": "fg",
+   "sha256": "66181081c6559774961deb3d93bdf5f9df122f33265413ec9e41f6cfbb37ca76"
+  },
+  {
+   "id": "background/S0120-41572009000100005-3",
+   "stratum": "resto",
+   "sha256": "a9a76dbbccaed521f685ec3b99f16cac7ef3d57e96ca3ceebf249861ef2ba977"
+  },
+  {
+   "id": "background/S0034-98872013000400016-1",
+   "stratum": "resto",
+   "sha256": "33d8a94f3315c16bf56afcf3eecec012041a8541302b4d69b313e0ce57cf88aa"
+  },
+  {
+   "id": "background/S1130-01082011000500008-1",
+   "stratum": "rechazo",
+   "sha256": "9f6edfcd9d55d01465f9aa862a44dc434cb317effeba5165fa0b3542df9b5fb5"
+  },
+  {
+   "id": "background/S0716-10182015000200015-1",
+   "stratum": "resto",
+   "sha256": "a86852d5b79ce3e771eaca63b894884a95dbcbd67382c3a3ff45d4b56fc29537"
+  },
+  {
+   "id": "background/S0716-10182010000700005-5",
+   "stratum": "resto",
+   "sha256": "865f16aa2ce0c8cbc9e47a2c2cb46db0e3a11cedd830e38f05fb970ff8caef27"
+  },
+  {
+   "id": "background/S0325-00752010000300014-1",
+   "stratum": "resto",
+   "sha256": "c1ead8e8aed6e37c48c0242bf25742e10f012a4e31245ed519e9981e1bd07c03"
+  },
+  {
+   "id": "background/S0325-00752008000100011-2",
+   "stratum": "rechazo",
+   "sha256": "98f64743ac8b702f4324d99bf50a9f73afd5640f05dc2203411b9dc26376dd46"
+  },
+  {
+   "id": "background/S0376-78922009000200013-1",
+   "stratum": "resto",
+   "sha256": "21bbf6c2042d6413228b8fd759622c5ed749226ce7fc653ad2da64e5e18ecde3"
+  },
+  {
+   "id": "background/S0034-98872010001100009-1",
+   "stratum": "rechazo",
+   "sha256": "8ffcc7347dbc02648c62015ea3639ce63f847ff399a9254a76459e67d0715918"
+  },
+  {
+   "id": "background/S0716-10182017000300013-2",
+   "stratum": "rechazo",
+   "sha256": "faa1887f052e96d6dbde20868a6e29c8bb44fa1bc4379400dcbf755c56c540da"
+  },
+  {
+   "id": "background/S0370-41062014000100012-2",
+   "stratum": "resto",
+   "sha256": "b727e397e84d319575dbf18c699f6fb7b8c8f6c181ccc186b51227e3d30e778f"
+  },
+  {
+   "id": "background/S0004-06142008000400015-1",
+   "stratum": "nefrologia",
+   "sha256": "4e3a22802a59e3da18ce8305d6899007537aafe39ec03e6ba946f793471fed02"
+  },
+  {
+   "id": "background/S1139-13752009000300010-1",
+   "stratum": "nefrologia",
+   "sha256": "62f70f7a3d2be971623c3aa98a40744a5c35e6717e7ab6b91d282242951cd12d"
+  },
+  {
+   "id": "background/S1130-01082017000400020-2",
+   "stratum": "resto",
+   "sha256": "5035627b272e8bebe43df695098edf6c7446af0624efb071791b0ff002ca9c36"
+  },
+  {
+   "id": "train/S1130-05582017000300150-2",
+   "stratum": "resto",
+   "sha256": "027cc341267b4cc6b831efc618444e1cbc7f4813950d2035a2a6da0117d22948"
+  },
+  {
+   "id": "background/S0210-48062006000900015-1",
+   "stratum": "rechazo",
+   "sha256": "a7b6c8e7f06abe36a1376277fbcfd0f4e81e46b1335e9ebdf0819fd71202d53e"
+  },
+  {
+   "id": "background/S1130-01082015000700010-1",
+   "stratum": "resto",
+   "sha256": "1cad5fbdd95dec52f72b620bd8459f7f8eea6560b54f253f85e08c15681e7ece"
+  },
+  {
+   "id": "background/S1139-76322010000400006-1",
+   "stratum": "resto",
+   "sha256": "2dd04aa2c6fed20a0406f8380c8a2efd4653a6e7f1539503f9cea092abc77e7b"
+  },
+  {
+   "id": "dev/S0210-56912007000900007-6",
+   "stratum": "fg",
+   "sha256": "2f8999ecf982b5c285ae87b6a568b798e035f67c460dc6ed810e0910e95f6aba"
+  },
+  {
+   "id": "background/S0365-66912011000100006-1",
+   "stratum": "resto",
+   "sha256": "b3d56d934c6458264b759009ad7b1b5daeabe697f2b29af65a53452fe5363534"
+  },
+  {
+   "id": "dev/S0365-66912006000100008-1",
+   "stratum": "resto",
+   "sha256": "bfd501d1febc92869d8dd5c8afbcf8ca337a6db378d968955daf833fddc1ec1a"
+  },
+  {
+   "id": "dev/S0210-48062007000700016-1",
+   "stratum": "resto",
+   "sha256": "7034ac3c4209c55d39a88e3c78b771660c8cce78aa93b0f65f56bdc316753f52"
+  },
+  {
+   "id": "test/S0212-16112012000500042-1",
+   "stratum": "fg",
+   "sha256": "f5fccedb82d2d46250c2e491617afcf634337c42e3fce0c9f35f33d3a2fe26e1"
+  },
+  {
+   "id": "background/S1130-01082011001000009-1",
+   "stratum": "fg",
+   "sha256": "7fc3adaa7e23f6712e2b59b937ba55c8b2f9e99f906bbe3428980c6e3b02f0e9"
+  },
+  {
+   "id": "dev/S0378-48352004000300007-1",
+   "stratum": "resto",
+   "sha256": "5a3b8e1f3bfa879898631bef35be84ee458ae036805b3beeedf5a809876173fc"
+  },
+  {
+   "id": "train/S0211-69952016000200176-1",
+   "stratum": "fg",
+   "sha256": "ffcb4d1030bbd283d35117a7eb1fde89034101e6e75817b5fb2de87bf8652af3"
+  },
+  {
+   "id": "background/S1130-05582009000600003-1",
+   "stratum": "resto",
+   "sha256": "2f20f8515a17200ad3d8b363e075f65ec1da43ced1237b976e1eb11e68daaf21"
+  },
+  {
+   "id": "background/S1132-62552015000300006-1",
+   "stratum": "resto",
+   "sha256": "62f2e8140f5c40001f51834c65e3842de48d4c2d303653f359e7b4696be481b8"
+  },
+  {
+   "id": "background/S0716-10182016000600015-1",
+   "stratum": "rechazo",
+   "sha256": "162fba54aef4e4d95b1b8725c5eeabfe61442b4d848d67f861812c24fa2219f7"
+  },
+  {
+   "id": "background/S0365-66912009001100005-2",
+   "stratum": "rechazo",
+   "sha256": "014919f274ad1b13bb0dc7add0a9112882fe96033dde7d7be2402c15f180cdbf"
+  },
+  {
+   "id": "background/S1135-76062012000200007-1",
+   "stratum": "resto",
+   "sha256": "2a2e098b4a5d01f915d4ab8cd7a2a34a8b7bfb19e115aa2a8b444c2b8e44e858"
+  },
+  {
+   "id": "background/S1130-01082017000800015-1",
+   "stratum": "resto",
+   "sha256": "9c66c8ac9d74dd27f59ab7e37b43d2c4b26c057c5732b579794134c41b698c66"
+  },
+  {
+   "id": "background/S1134-80462009000100006-1",
+   "stratum": "resto",
+   "sha256": "ecfc423b54de4ee3531689695297c190048767541a7f5460fd16577859a908b1"
+  },
+  {
+   "id": "background/S1130-01082009000800017-1",
+   "stratum": "resto",
+   "sha256": "83c2ffb717601d4fd21730d0e5af797cceea8267848e80fc53933e58c9936f2f"
+  },
+  {
+   "id": "background/S0376-78922010000300008-1",
+   "stratum": "resto",
+   "sha256": "3e45a68008747dcc24d292f7af00c9b16f2e29303bfade3268896ce0e4698c63"
+  },
+  {
+   "id": "background/S1698-69462006000200021-1",
+   "stratum": "resto",
+   "sha256": "aa908c1e70b0732fa7d86fd261ca277ee17066255f9e5839fd3d404e2951186a"
+  },
+  {
+   "id": "background/S0716-10182015000500016-2",
+   "stratum": "resto",
+   "sha256": "2752aa985bf48bf6951245a34a496e82b1da250c600a630ab3c228e240102dfe"
+  },
+  {
+   "id": "train/S0004-06142006000700013-1",
+   "stratum": "resto",
+   "sha256": "86f8b9f5817c0abc82fcae9d6b07a6c7f8aaa72d5ab814ea6b0e0c3b2c899fb8"
+  },
+  {
+   "id": "background/S0034-98872009000200011-1",
+   "stratum": "resto",
+   "sha256": "b847878f7dea9150c47fdce49d65dea697908f560359956c496c178352674885"
+  },
+  {
+   "id": "train/S0210-56912009000600008-1",
+   "stratum": "resto",
+   "sha256": "afa58f89f99bdad8100e21f0c4ec93667578947ab916e1d6d0441692a12608f8"
+  },
+  {
+   "id": "train/S0365-66912002001100008-1",
+   "stratum": "resto",
+   "sha256": "8fcd9cdcbf70e0df83597e7ce0bffb56a780aabde7f4feeb95083bc3d5e473ea"
+  },
+  {
+   "id": "background/S0034-98872014000400015-1",
+   "stratum": "resto",
+   "sha256": "67db4d43f3ba0ab999db90825c5fdb1a6d87881aaa3c58488607ec35ea423150"
+  },
+  {
+   "id": "dev/S0365-66912003000600010-1",
+   "stratum": "fg",
+   "sha256": "be304212f40c071218eb4146803aeeb30d634ada7ca1df1eac11ece7437c1ff6"
+  },
+  {
+   "id": "background/S0004-06142008000700015-1",
+   "stratum": "resto",
+   "sha256": "696ce42b7012c3e821cd1a9f4f2d8f12a35254d44238f247a2ccfc67c4c4e15d"
+  },
+  {
+   "id": "background/S1130-01082008000100015-1",
+   "stratum": "resto",
+   "sha256": "0bbc13d6c1ea461eb449420809952abe7e4ae1edc3f05a9f4188794fd35e739b"
+  },
+  {
+   "id": "background/S0370-41062014000400013-1",
+   "stratum": "resto",
+   "sha256": "e196b2e96c483e7af54876a08f4b3e15e7709071b908ce8606dfd9055601097c"
+  },
+  {
+   "id": "background/S0211-69952013000600021-1",
+   "stratum": "fg",
+   "sha256": "972170c2c54b85b7411a39de2329a5e5bea45a8019f260f5a711a68d9eae0673"
+  },
+  {
+   "id": "test/S0212-16112004000400007-1",
+   "stratum": "fg",
+   "sha256": "69e9dddeea711a7cd80a76588eeaa0d6b6a456755f0fee5bf5948191e8487579"
+  },
+  {
+   "id": "background/S0211-69952010000100017-1",
+   "stratum": "fg",
+   "sha256": "d83968d0439596bb4210ed0056965d3aa2b2fb41a36b75cadbb4d82d43c63eda"
+  },
+  {
+   "id": "background/S1887-85712015000100006-1",
+   "stratum": "resto",
+   "sha256": "cbfecc517d18a48090fe825750d2d273d357a99781d743093cb5ec061ef2d4b9"
+  },
+  {
+   "id": "train/S0210-48062005000600012-1",
+   "stratum": "resto",
+   "sha256": "0d0a856beea21d9d6663df55e656a67513d70692bf47efec45625e5cbe5f1348"
+  },
+  {
+   "id": "train/S1130-01082008000400013-1",
+   "stratum": "fg",
+   "sha256": "e461a6a8b6381db9bbe3ae603b4f2c279dd970a6f0cd9898081ef3589a68d9ca"
+  },
+  {
+   "id": "background/S0716-10182012000300016-1",
+   "stratum": "fg",
+   "sha256": "a8572bd726c95545b678ee0f7394da3d3872ba5fdff986ec9eadb89f3172d4ce"
+  },
+  {
+   "id": "background/S1130-14732009000300004-2",
+   "stratum": "resto",
+   "sha256": "57beac034a28c3022f73590174acd5b95376228daa2ade2098170dd6f7a8be9b"
+  },
+  {
+   "id": "background/S0120-41572009000400005-2",
+   "stratum": "resto",
+   "sha256": "1a804f412bb115be9984cc11fc06eba004924c833cb82104128bfc3b3f369236"
+  },
+  {
+   "id": "train/S0004-06142007000100015-1",
+   "stratum": "resto",
+   "sha256": "dfe155ec8af69aabcc117d025264bab6c91eee66eefacbb404ab50e91462e610"
+  },
+  {
+   "id": "background/S1887-85712014000300012-1",
+   "stratum": "resto",
+   "sha256": "7a1f21c8e425198e2ec3b45057336adb142704d6c2a47a61f133c2e0e8b98612"
+  },
+  {
+   "id": "background/S0365-66912004000900008-1",
+   "stratum": "resto",
+   "sha256": "64ea41c289ffa8cbc64ca8271a358b0405003cd3c56b9a2485e925d3595fb64f"
+  },
+  {
+   "id": "background/S0034-98872009001200008-1",
+   "stratum": "resto",
+   "sha256": "916edd92a15ead0e076890d15b32c96f015adbb7e2673876c3b4f28bf682050c"
+  },
+  {
+   "id": "background/S0365-66912005001000012-1",
+   "stratum": "rechazo",
+   "sha256": "abc05cb341d3009cfa0eb7d608356e4d4d6183f2a5fb2ba85db3eb99ecd13ed1"
+  },
+  {
+   "id": "background/S0211-69952012000200015-1",
+   "stratum": "nefrologia",
+   "sha256": "d3af5f012940e20e805d01553d522abdb9baa84d0ab2032164f3ae2eeeabd355"
+  },
+  {
+   "id": "background/S0034-98872016000600016-1",
+   "stratum": "resto",
+   "sha256": "27a6c1a5355866bf6695c74b4fd3615594ef6380a9754b8c0f8ff0eeac4278fb"
+  },
+  {
+   "id": "train/S1137-66272016000300012-1",
+   "stratum": "fg",
+   "sha256": "d5226414ad6d40fb5047c211f83200ae030c1f3a9ab9570cc7f473479d45dc14"
+  },
+  {
+   "id": "background/S1130-01082008001200011-1",
+   "stratum": "nefrologia",
+   "sha256": "2f2ca8656ca7c27f3ba61d0bf4b0fe23f452519cae7e9a39f0ddc3f982eb68aa"
+  },
+  {
+   "id": "background/S0210-56912006000900008-1",
+   "stratum": "resto",
+   "sha256": "a7379b7f6bb882ac3746b227245c7d5d0b6c9827b11c76fe237751af7dbb1949"
+  },
+  {
+   "id": "train/S0211-69952015000200015-1",
+   "stratum": "fg",
+   "sha256": "39968de48345a2312098613b481f14fc358fc932bb93eb322428c385afccedd7"
+  },
+  {
+   "id": "test/S1130-01082008000100010-1",
+   "stratum": "resto",
+   "sha256": "eedf98abe64988e1b9efee055babe013a9a7f846cde08d2b9bbc04a7b8f82703"
+  },
+  {
+   "id": "background/S0034-98872005000300009-1",
+   "stratum": "resto",
+   "sha256": "9741919ee21bca9124adaa39a734d992713549ae858726ba1e91dd258021a8ac"
+  },
+  {
+   "id": "train/S0004-06142009000500011-1",
+   "stratum": "fg",
+   "sha256": "0ae37dfab7d31be341d0f774e3ac4b07a54ae7267b33f2d9c3adbd80662df2b9"
+  },
+  {
+   "id": "background/S0365-66912009000800006-1",
+   "stratum": "resto",
+   "sha256": "5a54b8a990f70924c57169db791db6792e85fe3e855a10de974b875a9568af65"
+  },
+  {
+   "id": "dev/S1135-76062014000300006-1",
+   "stratum": "resto",
+   "sha256": "90b28a7d3b7481520751bb99ece7ea9e1ba91bda8e260bdeeaedb727c6ac1e87"
+  },
+  {
+   "id": "background/S0120-41572014000200003-1",
+   "stratum": "resto",
+   "sha256": "59adf546e5346c467ceb5449d44513828dc6d738d6f1b05a38a94f08afa9684e"
+  },
+  {
+   "id": "background/S0212-71992006000200008-1",
+   "stratum": "rechazo",
+   "sha256": "1819f0c39ff789199002408fcfcaba9b6321a3f15211d88e64e5250dd234b66f"
+  },
+  {
+   "id": "background/S0034-98872007000600012-1",
+   "stratum": "resto",
+   "sha256": "92267be297d72d69483ddda0bb9fa7e3f9265e6afbfd7273c94919de7a9ab693"
+  },
+  {
+   "id": "train/S1139-76322016000400018-1",
+   "stratum": "resto",
+   "sha256": "5006d91143231c2a2a0beec2ba27f87e8c873bcba1218c0360812f380291eded"
+  },
+  {
+   "id": "background/S0211-57352017000100007-2",
+   "stratum": "rechazo",
+   "sha256": "eb47653a03d578080ab80ef111a0e15fafd89469b85b032a6f356323ff4e9ed0"
+  },
+  {
+   "id": "background/S0210-56912007000200007-2",
+   "stratum": "fg",
+   "sha256": "d9bd6b2d6bace38086145d96a6dd28261e24f08dcaed84b86ec26a705b500289"
+  },
+  {
+   "id": "train/S0212-16112010000100017-1",
+   "stratum": "fg",
+   "sha256": "306988ee86baba466082b0360b5bb9a64b61df42caeea9184949aa08ceaf37b9"
+  },
+  {
+   "id": "test/S1130-63432015000200008-1",
+   "stratum": "resto",
+   "sha256": "ad2d9e81aa4f045c7b2a26573516da9505e7a0fc67375e169d3a07bdd9014f1c"
+  },
+  {
+   "id": "background/S1130-01082009000100009-1",
+   "stratum": "fg",
+   "sha256": "e316568fe3dbbc99b04e7a29bb4395127f1f05885cb952f29f858446c2e909a7"
+  },
+  {
+   "id": "background/S0212-71992001000400009-2",
+   "stratum": "fg",
+   "sha256": "b905443830e25badc7123d9ba3a79b4f7e67742b59c5979d59d26aba55a44e2d"
+  },
+  {
+   "id": "train/S1139-76322015000400006-1",
+   "stratum": "rechazo",
+   "sha256": "09ad509d6f6727f1f7676d48f9971d105a10794dee8a86465775f356797f9bed"
+  },
+  {
+   "id": "test/S0210-56912006000800008-1",
+   "stratum": "fg",
+   "sha256": "fc063fbb76a047e1eec721d333d885f101cb6ae4397c57d69abad1a13d14aa2d"
+  },
+  {
+   "id": "background/S1130-01082017000800010-3",
+   "stratum": "resto",
+   "sha256": "6495da56c41053f067f2435d8f270ba80447dda250850d711b03f19629678e7a"
+  },
+  {
+   "id": "background/S0034-98872016000500017-1",
+   "stratum": "resto",
+   "sha256": "cd9ab4676e4af9bc48fbaa62dd5c0582a9ad24c61f8fab4eeabcfcb5e955dc93"
+  },
+  {
+   "id": "background/S0716-10182012000300018-1",
+   "stratum": "resto",
+   "sha256": "8da31dfa7251440945f1ae04cff050f97706ac491e0e4d0a4c6094c23369c8af"
+  },
+  {
+   "id": "background/S0211-69952012000500028-1",
+   "stratum": "nefrologia",
+   "sha256": "f7a98cf59a3fc4d77fe029778ce2a7a6241119c140d0350c6190631f3d8f0939"
+  },
+  {
+   "id": "background/S0325-00752008000300013-1",
+   "stratum": "fg",
+   "sha256": "8c927315191ef317e190c739cdd056d948ec33a656f0e0ffe36155b74fa8695c"
+  },
+  {
+   "id": "background/S0004-06142009000400007-1",
+   "stratum": "resto",
+   "sha256": "d775c9a7f09af50e3eec81c272a1cabdd64385ec753eea4218d0d7d5a111e068"
+  },
+  {
+   "id": "background/S0212-71992005000100006-3",
+   "stratum": "resto",
+   "sha256": "5096051b483c8c00f69691f15341695f1a032f70ad607773e2fba66f07f3288b"
+  },
+  {
+   "id": "background/S0034-98872011001200010-2",
+   "stratum": "resto",
+   "sha256": "a4d30c3b5d6b4dcfaa831c8d34a7e67865244d6b8faa477b42f419159cb1bd1a"
+  },
+  {
+   "id": "background/S0716-10182010000700005-8",
+   "stratum": "resto",
+   "sha256": "bd3beaceb5953869c401e89a05237293ba5e8431b7f03d3e4a906971d893a1d0"
+  },
+  {
+   "id": "background/S0716-10182014000300016-1",
+   "stratum": "resto",
+   "sha256": "64be3b09d50b0bc2f3c0872310cd906cd8024d6081573edc64442d822d84fec2"
+  },
+  {
+   "id": "background/S1135-76062015000200010-1",
+   "stratum": "resto",
+   "sha256": "1ae2a22b9019b8c6735fc36a4195cfa211668e5c7664c817f93876ed30e899a6"
+  },
+  {
+   "id": "background/S1135-76062007000300004-1",
+   "stratum": "resto",
+   "sha256": "1a64bb6cc96bc41892d7601c5cc99acea381417659ccba309b279909bd7b1852"
+  },
+  {
+   "id": "background/S1130-01082017000100019-1",
+   "stratum": "resto",
+   "sha256": "0d650314b3e15a54b5d0dfed42eb46f8ea1b8fa596ef517765e216a37d1a9b2f"
+  },
+  {
+   "id": "background/S0004-06142009000200007-1",
+   "stratum": "resto",
+   "sha256": "ce2141ca12bf630be5b1a26d3683eda80dab875fafb2e472e156b0e18be1274f"
+  },
+  {
+   "id": "background/S0210-48062009000800016-1",
+   "stratum": "fg",
+   "sha256": "55bae55871d8cfdf8b41d06712ee00af6f6496bebfa7d6d4bc57972811cb2fc1"
+  }
+ ]
+}

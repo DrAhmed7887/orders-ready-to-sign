@@ -1,0 +1,310 @@
+{
+  "data": "NHANES 2009-2010; reference = ACR >= 30 mg/g on the second urine (first-morning void within 10 days)",
+  "population_with_second_sample": 1933,
+  "reference_positive_unweighted": 230,
+  "strategies": {
+    "engine": {
+      "sensitivity": {
+        "per_1000": 868.4,
+        "ci95_lo": 810.4,
+        "ci95_hi": 910.6,
+        "n": 230,
+        "events": 202,
+        "df": 16,
+        "t": 2.1199
+      },
+      "specificity": {
+        "per_1000": 924.4,
+        "ci95_lo": 898.7,
+        "ci95_hi": 944.0,
+        "n": 1703,
+        "events": 1545,
+        "df": 16,
+        "t": 2.1199
+      },
+      "ppv": {
+        "per_1000": 523.8,
+        "ci95_lo": 440.8,
+        "ci95_hi": 605.6,
+        "n": 360,
+        "events": 202,
+        "df": 16,
+        "t": 2.1199
+      },
+      "npv": {
+        "per_1000": 986.5,
+        "ci95_lo": 979.8,
+        "ci95_hi": 991.0,
+        "n": 1573,
+        "events": 1545,
+        "df": 16,
+        "t": 2.1199
+      },
+      "flagged_per_1000": {
+        "per_1000": 144.9,
+        "ci95_lo": 119.4,
+        "ci95_hi": 174.7,
+        "n": 1933,
+        "events": 360,
+        "df": 16,
+        "t": 2.1199
+      },
+      "missed_per_1000": {
+        "per_1000": 11.5,
+        "ci95_lo": 7.7,
+        "ci95_hi": 17.1,
+        "n": 1933,
+        "events": 28,
+        "df": 16,
+        "t": 2.1199
+      },
+      "false_alarms_per_1000": {
+        "per_1000": 69.0,
+        "ci95_lo": 51.4,
+        "ci95_hi": 92.0,
+        "n": 1933,
+        "events": 158,
+        "df": 16,
+        "t": 2.1199
+      },
+      "number_needed_to_evaluate": {
+        "point": 1.91,
+        "ci95": [
+          1.65,
+          2.27
+        ]
+      },
+      "counts_unweighted": {
+        "tp": 202,
+        "fp": 158,
+        "fn": 28,
+        "tn": 1545
+      }
+    },
+    "baseline": {
+      "sensitivity": {
+        "per_1000": 327.9,
+        "ci95_lo": 245.2,
+        "ci95_hi": 422.9,
+        "n": 230,
+        "events": 82,
+        "df": 16,
+        "t": 2.1199
+      },
+      "specificity": {
+        "per_1000": 889.5,
+        "ci95_lo": 871.2,
+        "ci95_hi": 905.6,
+        "n": 1703,
+        "events": 1470,
+        "df": 16,
+        "t": 2.1199
+      },
+      "ppv": {
+        "per_1000": 221.4,
+        "ci95_lo": 173.4,
+        "ci95_hi": 278.2,
+        "n": 315,
+        "events": 82,
+        "df": 16,
+        "t": 2.1199
+      },
+      "npv": {
+        "per_1000": 932.5,
+        "ci95_lo": 912.4,
+        "ci95_hi": 948.3,
+        "n": 1618,
+        "events": 1470,
+        "df": 16,
+        "t": 2.1199
+      },
+      "flagged_per_1000": {
+        "per_1000": 129.5,
+        "ci95_lo": 111.9,
+        "ci95_hi": 149.4,
+        "n": 1933,
+        "events": 315,
+        "df": 16,
+        "t": 2.1199
+      },
+      "missed_per_1000": {
+        "per_1000": 58.7,
+        "ci95_lo": 45.0,
+        "ci95_hi": 76.3,
+        "n": 1933,
+        "events": 148,
+        "df": 16,
+        "t": 2.1199
+      },
+      "false_alarms_per_1000": {
+        "per_1000": 100.8,
+        "ci95_lo": 86.4,
+        "ci95_hi": 117.3,
+        "n": 1933,
+        "events": 233,
+        "df": 16,
+        "t": 2.1199
+      },
+      "number_needed_to_evaluate": {
+        "point": 4.52,
+        "ci95": [
+          3.59,
+          5.77
+        ]
+      },
+      "counts_unweighted": {
+        "tp": 82,
+        "fp": 233,
+        "fn": 148,
+        "tn": 1470
+      }
+    },
+    "combined": {
+      "sensitivity": {
+        "per_1000": 902.3,
+        "ci95_lo": 863.1,
+        "ci95_hi": 931.1,
+        "n": 230,
+        "events": 209,
+        "df": 16,
+        "t": 2.1199
+      },
+      "specificity": {
+        "per_1000": 829.6,
+        "ci95_lo": 809.5,
+        "ci95_hi": 848.1,
+        "n": 1703,
+        "events": 1345,
+        "df": 16,
+        "t": 2.1199
+      },
+      "ppv": {
+        "per_1000": 336.6,
+        "ci95_lo": 294.2,
+        "ci95_hi": 381.7,
+        "n": 567,
+        "events": 209,
+        "df": 16,
+        "t": 2.1199
+      },
+      "npv": {
+        "per_1000": 988.8,
+        "ci95_lo": 984.0,
+        "ci95_hi": 992.2,
+        "n": 1366,
+        "events": 1345,
+        "df": 16,
+        "t": 2.1199
+      },
+      "flagged_per_1000": {
+        "per_1000": 234.3,
+        "ci95_lo": 208.6,
+        "ci95_hi": 262.2,
+        "n": 1933,
+        "events": 567,
+        "df": 16,
+        "t": 2.1199
+      },
+      "missed_per_1000": {
+        "per_1000": 8.5,
+        "ci95_lo": 6.0,
+        "ci95_hi": 12.2,
+        "n": 1933,
+        "events": 21,
+        "df": 16,
+        "t": 2.1199
+      },
+      "false_alarms_per_1000": {
+        "per_1000": 155.5,
+        "ci95_lo": 139.7,
+        "ci95_hi": 172.7,
+        "n": 1933,
+        "events": 358,
+        "df": 16,
+        "t": 2.1199
+      },
+      "number_needed_to_evaluate": {
+        "point": 2.97,
+        "ci95": [
+          2.62,
+          3.4
+        ]
+      },
+      "counts_unweighted": {
+        "tp": 209,
+        "fp": 358,
+        "fn": 21,
+        "tn": 1345
+      }
+    }
+  },
+  "added_value_over_baseline": {
+    "reference_positive_missed_by_baseline_per_1000_ref": {
+      "per_1000": 672.1,
+      "ci95_lo": 577.1,
+      "ci95_hi": 754.8,
+      "n": 230,
+      "events": 148,
+      "df": 16,
+      "t": 2.1199
+    },
+    "of_those_found_by_engine_per_1000": {
+      "per_1000": 854.6,
+      "ci95_lo": 792.7,
+      "ci95_hi": 900.3,
+      "n": 148,
+      "events": 127,
+      "df": 16,
+      "t": 2.1199
+    },
+    "found_only_by_engine_per_1000_population": {
+      "per_1000": 50.2,
+      "ci95_lo": 37.3,
+      "ci95_hi": 67.2,
+      "n": 1933,
+      "events": 127,
+      "df": 16,
+      "t": 2.1199
+    }
+  },
+  "nonresponse_sensitivity": {
+    "first_acr_ge_30_without_second_sample_pct_unweighted": 24.6,
+    "first_acr_ge_30_with_second_sample_pct_unweighted": 18.6,
+    "cells": "first-ACR band (<30, 30-44, 45-99, 100-299, >=300) x age 18-39/40-59/60+ x diabetes",
+    "engine_ppv_reweighted": {
+      "per_1000": 528.1,
+      "ci95_lo": 442.0,
+      "ci95_hi": 612.6,
+      "n": 360,
+      "events": 202,
+      "df": 16,
+      "t": 2.1199
+    },
+    "engine_sensitivity_reweighted": {
+      "per_1000": 874.4,
+      "ci95_lo": 819.3,
+      "ci95_hi": 914.4,
+      "n": 230,
+      "events": 202,
+      "df": 16,
+      "t": 2.1199
+    },
+    "engine_missed_per_1000_reweighted": {
+      "per_1000": 11.4,
+      "ci95_lo": 7.7,
+      "ci95_hi": 16.9,
+      "n": 1933,
+      "events": 28,
+      "df": 16,
+      "t": 2.1199
+    }
+  },
+  "not_measured": [
+    "discrimination: the engine's flag (ACR >= 30 on the first sample) and the reference (ACR >= 30 on the second) are the same test, so sensitivity and specificity are largely 10-day test-retest agreement; the eGFR filter was never meant to detect albuminuria",
+    "persistence over 3 months (KDIGO): the second sample is within 10 days",
+    "calibration: the rules give no scores, only orders",
+    "other countries or record systems: US survey data only (cf. Reyna 2020 on generalisability)",
+    "outcomes after a signed order (cf. Adams 2022, TREWS): no prospective study",
+    "note reader recall"
+  ]
+}

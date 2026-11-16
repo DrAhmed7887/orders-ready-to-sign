@@ -1,0 +1,108 @@
+{
+  "source": "LivingNER v6.3.1, doi:10.5281/zenodo.7684093, CC BY 4.0",
+  "cases": 300,
+  "model": "grabado:Qwen/Qwen3-4B-Instruct-2507",
+  "checks_sha256": "5b8cd97e36d677b2a17037e10d91b8e9c0d80514fd2190817ece0f8d5275c3ef",
+  "missing_outputs": 0,
+  "cases_cut_at_6000_chars": 70,
+  "model_said": {
+    "ninguna": 241,
+    "nefrologia": 21,
+    "ya_realizada": 21,
+    "malformed": 16,
+    "rechazo": 1
+  },
+  "model_said_by_stratum": {
+    "albumin": {
+      "ninguna": 40,
+      "ya_realizada": 17,
+      "nefrologia": 2,
+      "malformed": 7
+    },
+    "fg": {
+      "ninguna": 59,
+      "malformed": 7,
+      "ya_realizada": 3,
+      "nefrologia": 1
+    },
+    "nefrologia": {
+      "nefrologia": 18,
+      "ninguna": 19,
+      "ya_realizada": 1,
+      "malformed": 2
+    },
+    "rechazo": {
+      "ninguna": 39,
+      "rechazo": 1
+    },
+    "resto": {
+      "ninguna": 84
+    }
+  },
+  "accepted_findings": 25,
+  "accepted_by_label": {
+    "ya_realizada": 17,
+    "nefrologia": 8
+  },
+  "rejected_by_reason": {
+    "el modelo no encontró nada": 241,
+    "claves distintas del esquema": 16,
+    "la frase no dice que esté en seguimiento por Nefrología (derivación, valoración o mención)": 11,
+    "la cita no nombra la prueba (N1a)": 5,
+    "rechaza otra cosa (un tratamiento…), no la prueba": 1,
+    "negación, plan o petición en la frase (N1d)": 1,
+    "la nota contiene órdenes para el modelo: no se usa (§5.6)": 1,
+    "la frase no habla de Nefrología": 1
+  },
+  "primary": {
+    "reviewer": "AI agent (Claude Sonnet 5.5 sub-agent), not a physician; every verdict re-read against the text by the main Claude session (one verdict changed: neurologia305)",
+    "wrong_accepted_findings": 3,
+    "notes": 300,
+    "sample": "enriched: resto 84, fg 70, albumin 66, nefrologia 40, rechazo 40 (only 'resto' is random)",
+    "judgment_calls_counted_correct": [
+      "livingner_test_background/caso_clinico_medicina_interna314#0",
+      "livingner_test_background/cc_onco547#0",
+      "livingner_test_background/casos_clinicos_pediatria88#0",
+      "livingner_test_background/caso_clinico_medicina_interna955#0",
+      "livingner_test_background/caso_clinico_urologia409#0",
+      "livingner_test_background/cc_reumatologia10#0",
+      "livingner_test_background/caso_clinico_endocrinologia122#0"
+    ],
+    "strict_reading_wrong": 10,
+    "per_100_notes": 1.0,
+    "ci95_exact": [
+      0.21,
+      2.89
+    ],
+    "by_verdict": {
+      "correct": 22,
+      "wrong_label": 2,
+      "wrong_value_or_unit": 1
+    },
+    "wrong_that_could_change_an_order": 0,
+    "wrong_shown_only_as_a_grey_line_under_the_order": 3,
+    "wrong_cases": [
+      {
+        "key": "livingner_test_background/cc_reumatologia341#0",
+        "label": "ya_realizada",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "\"uroanálisis con albuminuria ++++\" is a dipstick semi-quantitative albuminuria, not an albumin/creatinine ratio or microalbuminuria."
+      },
+      {
+        "key": "livingner_test_background/cc_reumatologia175#0",
+        "label": "ya_realizada",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "\"albuminuria, 4.5 g/24 h\" is a 24-hour urinary albumin excretion, not an albumin/creatinine ratio or microalbuminuria."
+      },
+      {
+        "key": "livingner_test_background/caso_clinico_neurologia305#0",
+        "label": "ya_realizada",
+        "verdict": "wrong_value_or_unit",
+        "could_change_an_order": false,
+        "comment": "Changed by Claude on re-reading (the agent marked it correct as a judgment call): the sentence says \"FG > 60\" and the checker stored exactly 60, dropping the bound."
+      }
+    ]
+  }
+}

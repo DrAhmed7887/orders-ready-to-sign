@@ -1,0 +1,159 @@
+case,sentence,label,prueba,date,quote,note,part
+background/S0034-98872014001200014-1,5,ya_realizada,FGe,,Por sospecha de MM se continuó estudio destacando proteínas ,,1
+background/S0716-10182014000300003-2,7,ya_realizada,FGe,,Los análisis de laboratorio mostraban: recuento leucocitario,,1
+test/S0210-56912008000200007-1,2,ya_realizada,FGe,,"Se inicia DPA a las 36 h por oligo-anuria (diuresis de 0,1 m",,1
+test/S0210-56912008000200007-1,5,ya_realizada,FGe,,"El día 12, con pases cada 2 h de líquido al 3,27%, 40 minuto",,1
+background/S0034-98872009000800010-1,17,ya_realizada,FGe,,En la actualidad se encuentra desarrollando una vida laboral,vague: funcion renal conservada,1
+background/S0034-98872016000900019-1,15,ya_realizada,FGe,,En los exámenes de laboratorio iniciales destacaba unos nive,,1
+background/S0034-98872007000100014-1,13,ya_realizada,FGe,,"Egresó a los 34 días, con una creatinina de 1,6 mg/dl.",,1
+background/S0034-98872007000100014-1,17,ya_realizada,FGe,,"Egresó 2 semanas más tarde con una creatinina de 1,6 mg/dl y",,1
+background/S0034-98872007000100014-1,18,ya_realizada,FGe,,A los cuatro meses del trasplante renal (TxR) y días después,,1
+background/S0034-98872007000100014-1,21,ya_realizada,FGe,,"Se trató con metilprednisolona por 3 días, descendiendo la c",,1
+background/S0034-98872007000100014-1,24,ya_realizada,FGe,,"Once semanas después, recibiendo MMF 1.000 mg, CsA 70 mg (ob",,1
+background/S0034-98872007000100014-1,27,ya_realizada,FGe,,"Egresó con una creatinina de 1,6 mg/dl.",,1
+background/S0034-98872013000600016-1,6,ya_realizada,FGe,,Los exámenes de laboratorio mostraron hematuria microscópica,,1
+background/S0034-98872013000600016-1,17,ya_realizada,FGe,,"En el último control, 10 sem después de la última dosis de G",,1
+test/S0211-69952011000600018-1,11,ya_realizada,FGe,,"La función renal presentaba una creatinina de 1,2 mg/dl, sed",,1
+test/S0211-69952011000600018-1,18,ya_realizada,FGe,,"A los dos años de haber realizado tratamiento anti-CD20, el ",,1
+background/S0211-69952013000200016-1,10,ya_realizada,FGe,,"En los estudios complementarios destacaba: creatinina: 2,2 m",,1
+train/S0211-69952014000200016-1,2,ya_realizada,FGe,,"Tras anemización progresiva (hemoglobina 6,5g/dl), se remiti",,1
+train/S0211-69952014000200016-1,10,ya_realizada,FGe,,"Actualmente presenta una creatinina de 0,3mg/dl y una hemogl",,1
+background/S0034-98872013000400014-1,21,ya_realizada,FGe,,El día 32 presentó bruscamente un dolor intenso en el área d,,1
+background/S0034-98872013000400014-1,25,ya_realizada,FGe,,La azotemia descendió hasta estabilizarse la creatinina en 2,,1
+background/S0034-98872013000400014-1,38,ya_realizada,FGe,,En los días siguientes el estado general mejoró progresivame,,1
+background/S0034-98872013000400014-1,41,ya_realizada,FGe,,"Al día 56, la creatininemia fue 2,7 mg/dl y no habían signos",,1
+background/S0034-98872013000400014-1,43,ya_realizada,FGe,,En el control ambulatorio cuatro semanas después del egreso ,,1
+test/S0210-48062004000700006-1,3,ya_realizada,FGe,,En la analítica presenta una bioquímica con parámetros norma,vague: funcion renal conservada,1
+background/S0211-69952011000100023-1,4,ya_realizada,FGe,,En el ingreso actual ha sido derivado para el estudio de ins,,1
+test/S1139-76322017000100011-1,6,ya_realizada,FGe,,"Bioquímica: glucosa 82 mg/dl, urea 20 mg/dl, creatinina 0,40",,1
+background/S0211-69952013000500018-1,1,ya_realizada,FGe,,El caso índice es un varón que inició el control en nuestro ,,1
+background/S0211-69952013000500018-1,7,ya_realizada,FGe,,"Actualmente, a los 42 años de edad, presenta una función ren",,1
+background/S0211-69952013000500032-1,6,ya_realizada,FGe,,"Se realizó analítica: glucosa 214 mg/dl, urea 403 mg/dl, cre",,1
+background/S0211-69952013000500032-1,7,ya_realizada,FGe,,Se ingresó en Nefrología con el diagnóstico de IRA prerrenal,,1
+train/S0211-69952014000100016-1,19,ya_realizada,FGe,,Seis meses después el paciente estaba en buenas condiciones ,,1
+background/S0211-69952011000100018-1,11,ya_realizada,FGe,,La analítica en sangre reveló glucosa 200 mg/dl; urea 52 mg/,,1
+background/S0211-69952011000100018-1,23,ya_realizada,FGe,,A pesar de estas medidas el paciente requirió nuevos ingreso,,1
+background/S0370-41062014000100009-1,9,ya_realizada,FGe,,En los estudios clínicos iniciales destacaba hemograma norma,vague: pruebas de funcion renal normales,1
+background/S1137-66272012000300022-1,3,ya_realizada,FGe,,En la exploración física destacaba una molestia difusa a la ,,1
+background/S0034-98872017000100018-1,4,ya_realizada,FGe,,"Destaca en exámenes una eosinofilia de 3.300 x mm3, VHS 90 m",,1
+background/S0034-98872017000100018-1,10,ya_realizada,FGe,,Se interpreta como cuadro vasculítico y se indica metilpredn,,1
+background/S0034-98872017000100018-1,23,ya_realizada,FGe,,"Luego de 6 meses de tratamiento, se encuentra con 5 mg de pr",,1
+background/S0034-98872008000100011-1,10,ya_realizada,FGe,,Los exámenes de química sanguínea se encontraban dentro de r,"vague: sin disfuncion renal, no creatinina",1
+train/S0211-69952013000500035-1,6,ya_realizada,FGe,,"En la analítica destacaba: hemoglobina 8,7 g/dl, hematocrito",,1
+background/S1130-01082015000400011-1,22,ya_realizada,FGe,,El deterioro de la función hepática continuó y se asoció un ,,1
+test/S1130-01082009000400009-1,5,ya_realizada,FGe,,"La analítica urgente mostraba anemia (Hb 7,9 g/dl, Hcto 29%)",,1
+test/S1130-01082009000400009-1,7,ya_realizada,FGe,,"Durante las siguientes 24 horas, el paciente presentó desori",,1
+background/S0211-69952017000200206-1,7,ya_realizada,FGe,,"Al alta, se observan los siguientes valores: creatinina plas",,1
+background/S0211-69952017000200206-1,10,ya_realizada,FGe,,"El paciente evoluciona sin síntomas, con reducción de las ci",,1
+background/S0211-69952017000200206-1,14,ya_realizada,FGe,,"El paciente, asintomático, no mostraba deterioro de función ",,1
+background/S0211-69952017000200206-1,18,ya_realizada,FGe,,"Desde el punto de vista de la función renal, la creatinina p",,1
+test/S0212-71992005000400007-1,3,ya_realizada,FGe,,Pruebas complementarias: Las pruebas complementarias aportab,,1
+test/S0210-48062009000600017-1,3,ya_realizada,FGe,,En la ecografía abdominal realizada se objetivó una ureteroh,,1
+test/S0210-48062009000600017-1,22,ya_realizada,FGe,,"En la actualidad, tras 4 años de la última intervención quir",,1
+background/S0004-06142009000300010-1,4,ya_realizada,FGe,,En la analítica de sangre realizada se objetiva una elevació,,1
+background/S0211-69952016000100010-1,7,ya_realizada,FGe,,Analíticamente el enfermo presentaba una creatinina sérica d,,1
+background/S0211-69952016000100010-1,21,ya_realizada,FGe,,"En su última visita (42 meses tras el inicio de anakinra), l",,1
+background/S0120-41572009000400007-1,1,ya_realizada,FGe,,"Se trata de un hombre de 51 años de edad, remitido a consult",,1
+background/S0120-41572009000400007-1,25,nefrologia,,,"Durante el seguimiento, su evolución clínica se caracterizó ",borderline: seguimiento 3 anos tras remision a consulta de nefrologia ([1]); no dice explicitamente nefrologia,1
+background/S0120-41572009000400007-1,26,ya_realizada,FGe,,"Después de tres años de seguimiento, ingresó al servicio de ",,1
+background/S1137-66272010000400009-1,13,ya_realizada,FGe,,Se realizó analítica de sangre en la que destacaba: bilirrub,,1
+background/S1137-66272010000400009-1,17,ya_realizada,FGe,,Se realizó control analítico a las 48 horas apreciándose ent,,1
+test/S0210-56912006000200007-1,10,ya_realizada,FGe,,Los datos analíticos más destacados fueron: glucosa 64 mg/dl,,1
+background/S0034-98872012000700011-1,4,ya_realizada,FGe,,"En el laboratorio se encontró anemia (hemoglobina 7,2 g/dl),",vague: funcion renal normal,1
+background/S0034-98872012000700011-1,12,ya_realizada,FGe,,"El laboratorio muestra anemia moderada (hemoglobina 9,1 g/dl",vague: funcion renal normal,1
+background/S0034-98872012001000011-1,4,ya_realizada,FGe,,"Nitrógeno ureico 21,8 mg/dl, creatinina plasmática 0,59 mg/d",,1
+background/S0210-48062006000700014-1,6,ya_realizada,FGe,,"Bioquímica ordinaria normal, incluyendo pruebas de función h",vague: pruebas funcion renal normales,1
+train/S0212-16112009000600018-1,15,ya_realizada,FGe,,"La valoración analítica mostraba: glucosa 92 mg/dl (60-100),",,1
+train/S0378-48352006000500005-1,6,ya_realizada,FGe,,"Analíticamente sólo destacaba una urea de 74 mg/dl, con crea",,2
+background/S1130-01082011000400009-1,10,ya_realizada,FGe,,"Las determinaciones de bilirrubina, glucosa, urea, creatinin",creatinina listed among normal values,2
+background/S0004-06142008000500013-1,5,ya_realizada,FGe,,"La analítica de sangre es normal, excepto creatinina de 1,63",,2
+background/S0211-69952012000800031-1,8,ya_realizada,FGe,2007-10-01,En octubre de 2007 consulta por fiebre y dolor abdominal; se,,2
+background/S0211-69952012000800031-1,9,ya_realizada,FGe,2007-05-01,"En mayo de 2007 la creatinina era de 1,2 mg/dl.",,2
+background/S0211-69952012000800031-1,11,ya_realizada,FGe,,"Exámenes: creatinina 7,6 mg/dl, nitrógeno ureico en sangre (",,2
+background/S0211-69952012000800031-1,14,ya_realizada,FGe,,"Al día siguiente, con el retiro del antibiótico e hidratació",,2
+background/S0211-69952012000800031-1,16,ya_realizada,FGe,,"Se le dio el alta con creatinina de 2,2 mg/dl.",,2
+background/S0211-69952012000800031-1,18,ya_realizada,FGe,,"Al ingreso presenta creatinina 15 mg/dl, potasio 5,8 mEq/L; ",,2
+background/S0211-69952012000800031-1,23,ya_realizada,FGe,,"Se continuó manejo con esteroides y, al egreso, creatinina 3",,2
+background/S0211-69952012000800031-1,26,ya_realizada,FGe,,"Primer control ambulatorio: creatinina 1,6 mg/dl.",,2
+background/S0211-69952012000800031-1,28,ya_realizada,FGe,,"Controles posteriores con creatinina entre 1,7 y 1,4 mg/dl.",,2
+background/S0211-69952012000800031-1,29,ya_realizada,FGe,2010-12-01,El último control se realiza en diciembre de 2010 con creati,,2
+background/S0034-98872018001101347-1,7,ya_realizada,FGe,,"Sus exámenes de ingreso mostraron Hb 3,3 g/dL, leucocitos 19",,2
+background/S0034-98872018001101347-1,8,ya_realizada,FGe,,El cuadro es interpretado como una crisis hemolítica de ACF ,,2
+test/S0210-48062009000900015-3,5,ya_realizada,FGe,,"La biometría hemática informó: hemoglobina 10,1 g/dl, leucoc",,2
+background/S0211-69952010000500016-1,8,ya_realizada,FGe,,"Los datos de laboratorio al ingreso mostraron: Hto, 25,5%,Hb",,2
+background/S0034-98872012000800011-1,9,ya_realizada,FGe,,El nitrógeno ureico sanguíneo fue de 125 mg/dL y creatininem,,2
+background/S0034-98872012000800011-1,22,ya_realizada,FGe,,Fue dado de alta a los 4 días con valores de nitrógeno ureic,,2
+train/S0211-69952013000500032-2,5,ya_realizada,FGe,,"Se realizó analítica: urea 284 mg/dl, Cr 6,98 mg/dl, Na 119 ",,2
+background/S1139-13752011000300008-1,9,ya_realizada,FGe,,"Diuresis conservada de 1-2 l/día, no nauseas ni vómitos, des",,2
+background/S1139-13752011000300008-1,2,nefrologia,,,Como antecedentes personales destacan: Sordera neurosensoria,followed by pediatric nephrology until then; past/ongoing borderline,2
+train/S0212-16112010000600022-1,9,ya_realizada,FGe,,En analítica realizada en urgencias se observa: Creatinina: ,,2
+background/S0034-98872013000100014-1,25,ya_realizada,FGe,,Los exámenes previos al alta mostraron hiponatremia leve (13,,2
+background/S0210-56912007000200007-1,3,ya_realizada,FGe,,En las exploraciones complementarias destacan: leucopenia (3,,2
+background/S0034-98872015000500015-1,10,ya_realizada,FGe,,"Se mantuvo con creatinina 1,4-1,5 mg/dl, pero 1 año y medio ",,2
+background/S0034-98872007000800013-1,9,ya_realizada,FGe,,En los exámenes de laboratorio de ingreso se obtuvo: gliceml,,2
+background/S1889-836X2015000200004-1,7,ya_realizada,FGe,,"En la analítica, el hemograma y fórmula fueron normales; los",,2
+background/S0120-41572009000200002-1,6,ya_realizada,FGe,,Los exámenes paraclínicos iniciales demostraron un recuento ,,2
+dev/S0211-69952010000400013-1,8,ya_realizada,FGe,,"En el estudio analítico se detectaron Hb 9,2 g/dl, creatinin",,2
+background/S1130-01082011000300009-1,7,ya_realizada,FGe,,"Se realizó analítica en la que destacaba: glucosa 119 mg/dl,",,2
+train/S1130-63432014000100012-1,11,ya_realizada,FGe,,La paciente presentó deterioro hemodinámico e IR progresiva ,,2
+train/S1130-63432014000100012-1,26,ya_realizada,FGe,,"En el día + 17, se objetivó un hemocultivo positivo para Est",,2
+train/S1130-63432014000100012-1,27,ya_realizada,FGe,,Tras tres dosis de tratamiento se monitorizaron las concentr,,2
+train/S0376-78922009000400011-1,6,ya_realizada,FGe,,"Los exámenes de laboratorio reportan: leucocitos de 7200/ul,",,2
+train/S0210-48062007001000004-1,27,ya_realizada,FGe,,"En las analíticas sanguíneas de control: hemograma, bioquími",,2
+background/S0120-41572014000400005-1,3,ya_realizada,FGe,,En los exámenes de laboratorio de ingreso se obtuvieron los ,,2
+background/S0120-41572014000400005-1,11,ya_realizada,FGe,,Una nueva medición de la proteína C reactiva fue de 237 mg/d,,2
+background/S1131-57682001000800008-1,14,ya_realizada,FGe,,"Bioquímica: glucosa 83 mg/dl, creatinina 0,7 mg/dl, urea 54 ",,2
+test/S1130-01082007001000017-1,7,ya_realizada,FGe,,Los hallazgos analíticos más relevantes fueron: leucocitos 1,,2
+background/S0120-41572015000300003-1,16,ya_realizada,FGe,,"En los exámenes de laboratorio en el momento del reingreso, ",,2
+background/S1130-01082008000800012-1,15,ya_realizada,FGe,,"Creatinina 0,93 mg/dl.",,2
+background/S0212-71992007000400006-2,5,ya_realizada,FGe,,"Bioquímica: glucosa: 134 mg/dl (76-120), urea 56 mg/dl (10-5",,2
+background/S0465-546X2012000200009-1,18,nefrologia,,,"Se remite a control por su Médico de Atención Primaria, que ",current specialist care by Internal Med and Nefrologia,2
+background/S1130-01082010000200014-1,4,ya_realizada,FGe,,"En analítica destaca: Hb 9,9 mg/dl, eosinófilos 7,5%, GGT 22",,3
+background/S0034-98872013000400016-1,4,ya_realizada,FGe,,"Se realizó una tomografía de cerebro (TC),y una analítica de","creatinina listed, normal",3
+background/S0325-00752010000300014-1,19,ya_realizada,FGe,,"Además, se realizaron estudios para descartar compromiso sis","urea, creatinina studies done, no alterations",3
+background/S0325-00752008000100011-2,19,ya_realizada,FGe,,Se le realizaron los siguientes exámenes de laboratorio: Hem,creatinina in lab list; results normal in next sentence,3
+background/S0004-06142008000400015-1,1,nefrologia,,,"Paciente de 17 años, en control por nefrología infantil, afe",en control por nefrologia infantil,3
+background/S1139-13752009000300010-1,1,nefrologia,,,Paciente de 50 años que era tratado en consulta de Nefrologí,tratado en consulta de Nefrologia desde mayo 2001,3
+dev/S0210-56912007000900007-6,11,ya_realizada,FGe,,"A las 12 horas del ingreso la creatinina era de 2,2 mg/dl y ","creatinina 2,2",3
+test/S0212-16112012000500042-1,20,ya_realizada,FGe,,En cuanto a la evolución de los parámetros bioquímicos (medi,creatinina mean 1,3
+background/S1130-01082011001000009-1,13,ya_realizada,FGe,,"Analíticamente destacaba: Hb: 12,1 g/dl; leucocitos: 12.800;","creatinina 0,5",3
+train/S0211-69952016000200176-1,7,ya_realizada,FGe,,"Sus creatininas séricas oscilaban entre 1,5 y 1,7 mg/dl.","creatininas 1,5-1,7",3
+train/S0211-69952016000200176-1,9,ya_realizada,FGe,,"En ese momento su situación clínica era buena, con creatinin","creatinina 1,5 (Dec 2013 given in prior sentence)",3
+train/S0211-69952016000200176-1,12,ya_realizada,FGe,,"Sin embargo, la función renal empeoró en pocos días hasta al",creatinina 4,3
+train/S0211-69952016000200176-1,24,ya_realizada,FGe,,"A los 12 días del ingreso, el paciente fue dado de alta con ","creatinina 2,9",3
+train/S0211-69952016000200176-1,25,ya_realizada,FGe,,"En un control ambulatorio un mes más tarde, la creatinina er","creatinina 2,3",3
+background/S1130-01082009000800017-1,7,ya_realizada,FGe,,"Analíticamente presentaba hemoglobina de 7 g/dl, hematocrito",creatinina normal,3
+background/S0034-98872009000200011-1,8,ya_realizada,FGe,,Requirió múltiples hospitalizaciones por descompensaciones m,clearence 60 ml/min,3
+dev/S0365-66912003000600010-1,4,ya_realizada,FGe,,En los datos de laboratorio destacaban la elevación de las t,"creatinina 1,48",3
+background/S0211-69952013000600021-1,2,ya_realizada,FGe,,"A los 57 días de este, presentaba función renal correcta con",creatinina 1 mg/dl,3
+background/S0211-69952013000600021-1,5,ya_realizada,FGe,,"Se evidenció fallo renal agudo con creatinina de 12 mg/dl, a",creatinina 12,3
+background/S0211-69952013000600021-1,8,ya_realizada,FGe,,"En el momento de la biopsia presentaba una creatinina de 3,5","creatinina 3,51 and FG 15%",3
+background/S0211-69952013000600021-1,16,ya_realizada,FGe,,"En este momento la paciente presentaba creatinina de 5,23 mg","creatinina 5,23 FG 9%",3
+background/S0211-69952013000600021-1,18,ya_realizada,FGe,,"La evolución posprocedimental fue satisfactoria, sin recidiv","creatinina 2,84 FG 20%",3
+test/S0212-16112004000400007-1,8,ya_realizada,FGe,,"Analíticamente presentaba: hemoglobina 12,3 g/dl; leucocitos","creatinina 2,9",3
+test/S0212-16112004000400007-1,31,ya_realizada,FGe,,"Analíticamente presentaba: Hb 10,7 g/l; 12.800 leucocitos co","creatinina 0,5",3
+background/S0211-69952010000100017-1,8,ya_realizada,FGe,,"Otros datos de laboratorio mostraron: hematocrito 37%, hemog","creatinina 0,96",3
+train/S1130-01082008000400013-1,3,ya_realizada,FGe,,Los datos analíticos más relevantes fueron: glucosa 84 mg/dl,"creatinina 0,9",3
+background/S0716-10182012000300016-1,4,ya_realizada,FGe,,Ingresó a la Unidad de Cuidados Intensivos donde se realizar,"creatinina 4,5",3
+background/S0211-69952012000200015-1,4,nefrologia,,,"Por remisión parcial espontánea del cuadro, con proteinuria ",seguimiento en consulta externa de Nefrologia,3
+train/S1137-66272016000300012-1,8,ya_realizada,FGe,,"Asimismo presentaba anemia (Hb: 9,2 g/dL), deterioro de la f","Cr 1,76",3
+train/S1137-66272016000300012-1,17,ya_realizada,FGe,,Analíticamente se objetivó una normalización de las cifras d,"creatinina 0,72",3
+background/S1130-01082008001200011-1,18,ya_realizada,FGe,,Se evidencia hipoalbuminemia e hipoproteinemia severa que se,"creatinina 1,0 a 2,4",3
+train/S0211-69952015000200015-1,1,ya_realizada,FGe,,"Varón de 70 años de raza blanca, con antecedentes de hiperpl","creatinina basal 1,5",3
+train/S0211-69952015000200015-1,15,ya_realizada,FGe,,"Nueve meses después, el paciente está asintomático, con calc","creatinina 2,7",3
+train/S0004-06142009000500011-1,6,ya_realizada,FGe,,Es dada de alta en la quinta semana tras la intervención con,"creatinina 0,9",3
+train/S0004-06142009000500011-1,7,ya_realizada,FGe,,Reingresa dos semanas después por un cuadro consistente en i,creatinina 2,3
+background/S0210-56912007000200007-2,3,ya_realizada,FGe,,En la analítica destacan: plaquetopenia (13.000/mm3); proteí,"creatinina 0,7",3
+train/S0212-16112010000100017-1,17,ya_realizada,FGe,,"La bioquímica mostró anemia (hemoglobina 9,4 g/dL; hematocri","creatinina 0,6",3
+background/S1130-01082009000100009-1,10,ya_realizada,FGe,,Hcto: 40%; leucocitos: 13400 (81% neutrófilos). -Glucosa: 99,"creatinina 1,03",3
+background/S0212-71992001000400009-2,4,ya_realizada,FGe,,"Los estudios analíticos revelaron un hemograma normal, gluco","creatinina 1,5",3
+test/S0210-56912006000800008-1,5,ya_realizada,FGe,,En la analítica de ingreso se obtuvieron los siguiente resul,"creatinina 1,9",3
+test/S0210-56912006000800008-1,15,ya_realizada,FGe,,En la analítica se aprecia un empeoramiento de la función re,"creatinina 4,19",3
+background/S0211-69952012000500028-1,1,ya_realizada,FGe,,Mujer de 77 años de edad remitida a la consulta de Nefrologí,"creatinina 2,4; also referral to Nefrologia consult (not counted as nefrologia: single referral)",3
+background/S0211-69952012000500028-1,16,ya_realizada,FGe,2010-11-01,"Revisada la historia analítica, se observó que en noviembre ","creatinina nov 2010 2,4-2,5; also dic 2010, ene 2011; first date used",3
+background/S0211-69952012000500028-1,26,ya_realizada,FGe,,En el análisis de orina recogida de 24 horas: proteinuria: 0,aclaramiento de creatinina 17 ml/min,3
+background/S0211-69952012000500028-1,46,ya_realizada,FGe,,"Ocho meses después, la paciente mantiene una función renal e","creatinina 2,2 aclaramiento 20",3
+background/S0325-00752008000300013-1,8,ya_realizada,FGe,,"Laboratorio: hematócrito 14%, hemoglobina 5,5 g/dl, plaqueta","creatinina 0,8",3
+background/S0212-71992005000100006-3,3,ya_realizada,FGe,,"Exámenes de laboratorio: hemoglobina, hematocrito, leucogram",creatinina listed as normal (result in [4]),3
+background/S0210-48062009000800016-1,12,ya_realizada,FGe,,"Su creatinina sérica fue de 3,2 mg/dl y la creatina fosfocin","creatinina serica 3,2",3
+background/S0210-48062009000800016-1,14,ya_realizada,FGe,,"En los días posquirúrgicos siguientes, aunque los pulsos ped","creatinina serica improving, no value",3

@@ -1,0 +1,123 @@
+{
+  "source": "CodiEsp v1.4, doi:10.5281/zenodo.3837305, CC BY 4.0",
+  "cases": 300,
+  "model": "grabado:Qwen/Qwen3-4B-Instruct-2507",
+  "checks_sha256": "26bfa40bbfcb3c444d2cda9838ccc85b07bf71ef36822cc6dc192e9a15e43f8f",
+  "missing_outputs": 0,
+  "cases_cut_at_6000_chars": 15,
+  "model_said": {
+    "ninguna": 278,
+    "nefrologia": 14,
+    "ya_realizada": 6,
+    "rechazo": 1,
+    "malformed": 1
+  },
+  "accepted_findings": 20,
+  "accepted_by_label": {
+    "nefrologia": 14,
+    "ya_realizada": 5,
+    "rechazo": 1
+  },
+  "rejected_by_reason": {
+    "el modelo no encontró nada": 277,
+    "la nota contiene órdenes para el modelo: no se usa (§5.6)": 1,
+    "claves distintas del esquema": 1,
+    "la cita no nombra la prueba (N1a)": 1
+  },
+  "primary": {
+    "reviewer": "AI agent (Claude Sonnet 5.5 sub-agent), not a physician; every verdict re-read against the text by the main Claude session",
+    "wrong_accepted_findings": 10,
+    "notes": 300,
+    "sample": "enriched: resto 136, fg 70, rechazo 40, nefrologia 40, albumin 14 (only 'resto' is random)",
+    "judgment_calls_counted_correct": [
+      "background/S0034-98872008000300011-1#0",
+      "train/S1139-76322009000700014-2#0",
+      "background/S2254-28842016000400014-1#0"
+    ],
+    "strict_reading_wrong": 13,
+    "per_100_notes": 3.33,
+    "ci95_exact": [
+      1.61,
+      6.04
+    ],
+    "by_verdict": {
+      "correct": 10,
+      "wrong_label": 7,
+      "wrong_value_or_unit": 3
+    },
+    "wrong_that_could_change_an_order": 0,
+    "wrong_shown_only_as_a_grey_line_under_the_order": 10,
+    "wrong_cases": [
+      {
+        "key": "dev/S0211-69952011000400013-1#0",
+        "label": "ya_realizada",
+        "verdict": "wrong_value_or_unit",
+        "could_change_an_order": false,
+        "comment": "The ACR was done and has a legible value: \"índice microalbuminuria/creatininuria de 261,9 mg/g\"; the code read none."
+      },
+      {
+        "key": "background/S0365-66912004000700007-5#0",
+        "label": "rechazo",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "The patient refused another immunosuppressant, not a test: \"rechazo del paciente a otro tratamiento inmunosupresor\"."
+      },
+      {
+        "key": "train/S0211-69952014000500020-1#0",
+        "label": "ya_realizada",
+        "verdict": "wrong_value_or_unit",
+        "could_change_an_order": false,
+        "comment": "eGFR was reported with a legible value: \"FGe MDRD 34ml/min/1,73m2\"; the code read no value."
+      },
+      {
+        "key": "background/S1130-01082008001200011-2#0",
+        "label": "nefrologia",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "One-off inpatient consult with no ongoing follow-up: \"valorado por el Servicio de Nefrología, instaurándose tratamiento con furosemida\"; the patient died 5 months later."
+      },
+      {
+        "key": "background/S0376-78922008000400006-1#0",
+        "label": "nefrologia",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "Single inpatient assessment during a terminal admission: \"Tras valoración por el Servicio de Nefrología, se inició tratamiento con diálisis\"; no follow-up, patient died."
+      },
+      {
+        "key": "train/S0211-69952009000500014-1#0",
+        "label": "nefrologia",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "Only a referral for proteinuria (\"La envían a Nefrología por detectar proteinuria de +++\"); ongoing Nephrology follow-up is never stated, though renal biopsy and 12 months of follow-up suggest it. Unsure."
+      },
+      {
+        "key": "train/S1134-80462015000100006-1#0",
+        "label": "nefrologia",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "Acute kidney injury in a hospitalised patient with a single haemodialysis session: \"Nefrología confirma diagnóstico de insuficiencia renal aguda\"; discharged with normal renal function and \"niega antecedente de enfermedad renal\"."
+      },
+      {
+        "key": "train/S1137-66272011000300024-1#0",
+        "label": "ya_realizada",
+        "verdict": "wrong_value_or_unit",
+        "could_change_an_order": false,
+        "comment": "The ACR was done with a legible value: \"Cociente albúmina/creatinina: 0,6µg/mgr\"; the code read none."
+      },
+      {
+        "key": "test/S0211-69952014000400019-1#0",
+        "label": "nefrologia",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "Nephrology referral in 2009 with no continuing follow-up: \"deja de acudir a las consultas de nefrología\" the same year."
+      },
+      {
+        "key": "dev/S0211-69952009000500017-1#0",
+        "label": "nefrologia",
+        "verdict": "wrong_label",
+        "could_change_an_order": false,
+        "comment": "The sentence is an author affiliation line (\"Instituto de Nefrología\"), not a statement about the patient; the body only says \"Control nefrológico: creatinina 1,56 mg/dl\". Unsure."
+      }
+    ]
+  }
+}
