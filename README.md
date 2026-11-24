@@ -150,3 +150,7 @@ Of the people whose second sample is high, the blood-test filter misses 67.2 % (
 - **Origin:** first prototyped at a hackathon in Spain (13–15 Nov 2026); the evaluation, English version and landing page were built afterwards.
 
 Author: Dr Ahmed Zayed (MB BCh), M.Sc. student in Applied Health Informatics and Digital Medicine, RWTH Aachen.
+
+## License
+
+Code: [MIT](LICENSE). Third-party data keeps its own licence: the CodiEsp and LivingNER corpora (CC BY 4.0) are fetched by the evaluation scripts, not shipped here. Model weights (Qwen3-4B-Instruct-2507, Apache-2.0) are not included.
