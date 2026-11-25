@@ -45,9 +45,9 @@ def test_primary_measure_is_labelled_and_consistent():
     assert "not a physician" in p["reviewer"]
     assert p["wrong_accepted_findings"] == len(p["wrong_cases"]) == sum(v for k, v in p["by_verdict"].items() if k != "correct")
     assert p["wrong_that_could_change_an_order"] + p["wrong_shown_only_as_a_grey_line_under_the_order"] == p["wrong_accepted_findings"]
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    assert f"{p['wrong_accepted_findings']} were wrong ({p['per_100_notes']} per 100 notes" in readme and "not a physician" in readme
-    assert f"{p['strict_reading_wrong']} counting three judgment calls" in readme and "enriched for kidney terms" in readme
+    limitations = (ROOT / "docs/LIMITATIONS.md").read_text(encoding="utf-8")
+    assert f"{p['wrong_accepted_findings']} were wrong ({p['per_100_notes']} per 100 notes" in limitations and "not a physician" in limitations
+    assert f"{p['strict_reading_wrong']} counting three judgment calls" in limitations and "enriched for kidney terms" in limitations
     assert p["sample"].startswith("enriched")
 
 
@@ -72,8 +72,8 @@ def test_heldout_scored_with_the_signed_checks_and_labelled():
     assert HELD["checks_sha256"] in (CHECKS, ROUND11_CHECKS), "held-out result must describe signed checks"
     p = HELD["primary"]
     assert "not a physician" in p["reviewer"] and p["sample"].startswith("enriched")
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    assert f"{p['wrong_accepted_findings']} was wrong ({p['per_100_notes']} per 100 notes" in readme
+    limitations = (ROOT / "docs/LIMITATIONS.md").read_text(encoding="utf-8")
+    assert f"{p['wrong_accepted_findings']} was wrong ({p['per_100_notes']} per 100 notes" in limitations
 
 
 @pytest.mark.skipif(not (HERE / "raw").exists(), reason="CodiEsp texts not downloaded (CI)")
@@ -105,8 +105,8 @@ def test_heldout2_scored_with_current_checks_and_in_readme():
     assert H2["checks_sha256"] == ROUND14_CHECKS, "held-out 2 measures the round 13 + 14 checks"
     p = H2["primary"]
     assert "not a physician" in p["reviewer"] and p["wrong_accepted_findings"] == len(p["wrong_cases"])
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    assert f"{p['wrong_accepted_findings']} were wrong ({p['per_100_notes']} per 100 notes, 95 % CI {p['ci95_exact'][0]}–{p['ci95_exact'][1]}" in readme
+    limitations = (ROOT / "docs/LIMITATIONS.md").read_text(encoding="utf-8")
+    assert f"{p['wrong_accepted_findings']} were wrong ({p['per_100_notes']} per 100 notes, 95 % CI {p['ci95_exact'][0]}–{p['ci95_exact'][1]}" in limitations
 
 
 @pytest.mark.skipif(not (HERE / "raw" / "livingner_training").exists(), reason="LivingNER texts not downloaded (CI)")

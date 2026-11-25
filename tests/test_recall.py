@@ -10,13 +10,13 @@ R = json.loads((ROOT / "eval/results/notas_reales_recall.json").read_text(encodi
 
 def test_readme_and_claims_match():
     p = R["primary_recall_per_note"]
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    limitations = (ROOT / "docs/LIMITATIONS.md").read_text(encoding="utf-8")
     claims = (ROOT / "docs/CLAIMS.md").read_text(encoding="utf-8")
     claim = f"{p['k']} of {p['n']}"
-    assert f"**{claim}**" in readme and f"{p['pct']} %, 95 % CI {p['ci95'][0]}–{p['ci95'][1]}" in readme
+    assert f"**{claim}**" in limitations and f"{p['pct']} %, 95 % CI {p['ci95'][0]}–{p['ci95'][1]}" in limitations
     assert claim in claims and "not a physician" in R["reference"]
     ya = R["recall_by_label"]["ya_realizada"]
-    assert f"none of {ya['n']}" in readme and ya["k"] == 0
+    assert f"none of {ya['n']}" in limitations and ya["k"] == 0
 
 
 def test_physician_check_is_listed_and_pending():
@@ -28,10 +28,10 @@ A = json.loads((ROOT / "eval/results/notas_reales_recall_acr.json").read_text(en
 
 def test_acr_recall_in_readme_and_claims():
     p = A["primary_acr_recall_per_note"]
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    assert f"**{p['k']} of {p['n']}**" in readme and f"95 % CI {p['ci95'][0]}–{p['ci95'][1]}" in readme
+    limitations = (ROOT / "docs/LIMITATIONS.md").read_text(encoding="utf-8")
+    assert f"**{p['k']} of {p['n']}**" in limitations and f"95 % CI {p['ci95'][0]}–{p['ci95'][1]}" in limitations
     assert f"{p['k']} of {p['n']} notes" in (ROOT / "docs/CLAIMS.md").read_text(encoding="utf-8")
-    assert A["accepted_with_a_value_read"] == 0 and "none of the 5 did it read the value" in readme
+    assert A["accepted_with_a_value_read"] == 0 and "none of the 5 did it read the value" in limitations
 
 
 def test_acr_recall_is_pinned():

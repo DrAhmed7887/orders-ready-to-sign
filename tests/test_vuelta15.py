@@ -112,6 +112,6 @@ def test_signed_rescores_match_readme_and_claims():
     before = [r["versions"]["before"]["unsafe"] for r in res]
     after = [r["versions"]["after"]["unsafe"] for r in res]
     assert (before, after) == ([16, 21, 28], [0, 0, 4])
-    readme = (root / "README.md").read_text(encoding="utf-8")
-    assert "fell from 16, 21 and 28 to 0, 0 and 4" in readme
+    limitations = (root / "docs/LIMITATIONS.md").read_text(encoding="utf-8")
+    assert "fell from 16, 21 and 28 to 0, 0 and 4" in limitations
     assert "16 / 21 / 28 (round 14) → 0 / 0 / 4" in (root / "docs/CLAIMS.md").read_text(encoding="utf-8")
